@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
+  m_Name: WorldDialogue
+  m_EditorClassIdentifier: 
+  npcName: Cube
+  npcGender: 
+  npcProfileID: 400
+  npcMood:
+    listOfEmotions:
+    - emotionName: Angry
+      emotionValue: 0
+      currentThreshold: 0
+    - emotionName: Calm
+      emotionValue: 10
+      currentThreshold: 1
+    - emotionName: Sad
+      emotionValue: 17
+      currentThreshold: 1
+    - emotionName: Happy
+      emotionValue: 15
+      currentThreshold: 1
+    listOfPersonalityThresholds:
+    - emotion:
+        emotionName: Calm
+        emotionValue: 24
+        currentThreshold: 1
+      baseValue: 0
+      minThreshold: 10
+      midThreshold: 25
+      maxThreshold: 50
+      currentElementNum: 0
+    - emotion:
+        emotionName: Happy
+        emotionValue: 15
+        currentThreshold: 1
+      baseValue: 0
+      minThreshold: 10
+      midThreshold: 25
+      maxThreshold: 50
+      currentElementNum: 0
+    - emotion:
+        emotionName: Sad
+        emotionValue: 17
+        currentThreshold: 1
+      baseValue: 0
+      minThreshold: 10
+      midThreshold: 25
+      maxThreshold: 50
+      currentElementNum: 0
+    - emotion:
+        emotionName: Angry
+        emotionValue: 0
+        currentThreshold: 0
+      baseValue: 0
+      minThreshold: 10
+      midThreshold: 25
+      maxThreshold: 50
+      currentElementNum: 0
+    currentEmotion:
+      emotionName: Calm
+      emotionValue: 24
+      currentThreshold: 1
+    newEmotionName: Emotion
+    npcPresetsFolderPath: Assets/DialogueSystem/NPC Presets
+  npcDialogue:
+    greetingDialogue:
+    - {fileID: 11400000, guid: 998e8f2627ebf2a41bdcfea970d9f6c8, type: 2}
+    goodbyeDialogue:
+    - {fileID: 11400000, guid: 15d4f5ff76de9b349a9c8148c0cee086, type: 2}
+    changeTopicDialogue:
+    - {fileID: 11400000, guid: 757d6f8079bc1384eb60e11df36ba286, type: 2}
+    nothingToSayDialogue: {fileID: 11400000, guid: 3edff59e03006c545860fcea1cf538dd,
+      type: 2}
+    dialogueConnections:
+    - playerDialogueInput: {fileID: 0}
+      npcResponses:
+      - requiredEmotion: Calm
+        response: {fileID: 11400000, guid: 3d95e050aa1c52646b003ca3bd4e1a12, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 7cd4ac66200e28f4aa9d28947abdcf26,
+        type: 2}
+      npcResponses:
+      - requiredEmotion: Calm
+        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: f46144293901d0f4ba32d33905ed8f95,
+        type: 2}
+      npcResponses:
+      - requiredEmotion: Calm
+        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 6b73d08102b3c5a439d7d6a63085f613,
+        type: 2}
+      npcResponses:
+      - requiredEmotion: Calm
+        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 3f9271018d8f8624e8227a7d3c9c6a1f,
+        type: 2}
+      npcResponses:
+      - requiredEmotion: Calm
+        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: aa557ca25bac5db45a35ae43eaf641d3,
+        type: 2}
+      npcResponses:
+      - requiredEmotion: Calm
+        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: eef727eb0cef38b419cf07c839e6faf6,
+        type: 2}
+      npcResponses:
+      - requiredEmotion: Calm
+        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 7743db384c01506408253e893fcc8172,
+        type: 2}
+      npcResponses:
+      - requiredEmotion: Calm
+        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}

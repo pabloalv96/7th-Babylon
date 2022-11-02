@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: What is your greatest desire
+  m_EditorClassIdentifier: 
+  dialogue: Tell me, what is your greatest desire?
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: 7cd4ac66200e28f4aa9d28947abdcf26, type: 2}
+  - {fileID: 11400000, guid: f46144293901d0f4ba32d33905ed8f95, type: 2}
+  - {fileID: 11400000, guid: 6b73d08102b3c5a439d7d6a63085f613, type: 2}
+  - {fileID: 11400000, guid: 3f9271018d8f8624e8227a7d3c9c6a1f, type: 2}
+  - {fileID: 11400000, guid: aa557ca25bac5db45a35ae43eaf641d3, type: 2}
+  - {fileID: 11400000, guid: eef727eb0cef38b419cf07c839e6faf6, type: 2}
+  - {fileID: 11400000, guid: 7743db384c01506408253e893fcc8172, type: 2}
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 1
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
