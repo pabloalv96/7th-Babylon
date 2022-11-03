@@ -47,6 +47,8 @@ public class StartDialogue : MonoBehaviour
         Cursor.visible = true;
         dialogueSystem.BeginDialogue();
 
+        dialogueSystem.playerIsSpeaking = true;
+
         dialogueSystem.SetNewDialogueText(greetingDialogue);
 
     }
@@ -56,8 +58,10 @@ public class StartDialogue : MonoBehaviour
         //Set NPC
         //Set greeting text
         //Set player options
-        dialogueSystem.inDialogue = true;
         dialogueSystem.enabled = true;
+
+        dialogueSystem.inDialogue = true;
+        
 
         dialogueSystem.npc = npc;
 
@@ -82,6 +86,8 @@ public class StartDialogue : MonoBehaviour
         Cursor.visible = true;
 
         dialogueSystem.BeginDialogue();
+
+        dialogueSystem.playerIsSpeaking = false;
 
         dialogueSystem.SetNewDialogueText(startingDialogue);
     }

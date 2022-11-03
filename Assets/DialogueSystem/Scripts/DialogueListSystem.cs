@@ -402,7 +402,7 @@ public class DialogueListSystem : MonoBehaviour
         inDialogue = true;
         dialogueUI.SetActive(true);
 
-        playerIsSpeaking = true;
+        
 
     }
 

@@ -98,13 +98,25 @@ public class PlayerDialogue : MonoBehaviour
 
                 for (int d = 0; d < playerQuestions[i].npc.npcDialogue.dialogueConnections.Count; d++) //for each npc dialogue object of each npc
                 {
-                    if (!playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue && !playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isLocked) // check the dialogue object for if the player is responding
+                    if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput != null)
                     {
-                        playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); //if not add it to the player's current dialogue selection
+                        if (!playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue) // check the dialogue object for if the player is responding
+                        {
+                            playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); //if not add it to the player's current dialogue selection
+                        }
+                        else
+                        {
+                            playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); //otherwise remove it
+                        }
                     }
-                    else
+                    else // if the player has nothing to start with, let the npc say something first
                     {
-                        playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); //otherwise remove it
+                        if (playerQuestions[i].npc.npcDialogue.dialogueConnections[0].playerDialogueInput == null && playerQuestions[i].npc.npcDialogue.dialogueConnections[0].npcResponses[0].response.requiresResponse)
+                        {
+                            FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(playerQuestions[i].npc, playerQuestions[i].npc.npcDialogue.dialogueConnections[0].npcResponses[0].response);
+
+                            AddResponseOptions();
+                        }
                     }
 
                     //Debug.Log("Dialogue Option '" + playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.name + "' has been added to questions for '" + playerQuestions[i].npc.name + "'");
@@ -139,15 +151,18 @@ public class PlayerDialogue : MonoBehaviour
 
                 for (int d = 0; d < playerQuestions[i].npc.npcDialogue.dialogueConnections.Count; d++) //for each npc dialogue object of each npc
                 {
-                    if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue && !playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isLocked) // check the dialogue object if the player is responding
+                    if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput == null)
                     {
-                        if (FindObjectOfType<DialogueListSystem>().npcDialogue.playerResponses.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput)) //if they are responding check what dialogue it is a response to
+                        if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue) // check the dialogue object if the player is responding
                         {
-                            playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); // if it's the current dialogue add it to the player's current dialogue selection
-                        }
-                        else
-                        {
-                            playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+                            if (FindObjectOfType<DialogueListSystem>().npcDialogue.playerResponses.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput)) //if they are responding check what dialogue it is a response to
+                            {
+                                playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); // if it's the current dialogue add it to the player's current dialogue selection
+                            }
+                            else
+                            {
+                                playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+                            }
                         }
                     }
 

@@ -50,6 +50,23 @@ public class PlayerDialogueOption : ScriptableObject
                 }
             }
         }
+
+        CheckStatValues();
+    }
+
+    static int SortStatByValues(StatContainer.Stat s1, StatContainer.Stat s2)
+    {
+        return s2.statValue.CompareTo(s1.statValue);
+    }
+
+
+    public void CheckStatValues()
+    {
+
+        FindObjectOfType<PlayerInfoController>().playerStats.listOfStats.Sort(SortStatByValues);
+
+        FindObjectOfType<PlayerInfoController>().playerStats.highestStat = FindObjectOfType<PlayerInfoController>().playerStats.listOfStats[0];
+
     }
 
     //public NPCEmotions.NPCFeelings AffectEmotionValues(NPCEmotions.NPCFeelings npcEmotions)
