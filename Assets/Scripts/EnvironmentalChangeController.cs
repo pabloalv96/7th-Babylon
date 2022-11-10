@@ -18,6 +18,7 @@ public class EnvironmentalChangeController : MonoBehaviour
 
     public AudioSource backgroundAudioSource;
 
+    //public Color lightsColour;
     public List<Light> activeLightsList;
 
     public bool checkHighestStat;
@@ -105,18 +106,18 @@ public class EnvironmentalChangeController : MonoBehaviour
 
                         if (change.lightsList.Count > 0)
                         {
-                            foreach (Light light in activeLightsList)
+                            foreach (Light light in change.lightsList)
                             {
-                                light.enabled = false;
+                                light.color = change.lightsColour;
                             }
 
-                            activeLightsList.Clear();
+                            //activeLightsList.Clear();
 
-                            foreach(Light light in change.lightsList)
-                            {
-                                activeLightsList.Add(light);
-                                light.enabled = true;
-                            }
+                            //foreach(Light light in change.lightsList)
+                            //{
+                            //    activeLightsList.Add(light);
+                            //    light.enabled = true;
+                            //}
                         }
                     }
                 }
@@ -143,6 +144,8 @@ public struct EnvironmentalChanges
     public List<GameObject> props;
 
     public AudioClip backgroundAudio;
+
+    public Color lightsColour;
 
     public List<Light> lightsList;
 }

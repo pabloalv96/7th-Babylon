@@ -29,6 +29,10 @@ public class NPCInfo : ScriptableObject
                     {
                         return npcDialogue.dialogueConnections[i].npcResponses[d].response;
                     }
+                    else if (d + 1 >= npcDialogue.dialogueConnections[i].npcResponses.Count)
+                    {
+                        return npcDialogue.dialogueConnections[i].npcResponses[0].response;
+                    }
                 }
             }
         }
@@ -46,7 +50,7 @@ public class NPCInfo : ScriptableObject
             }
         }
 
-        return default;
+        return npcDialogue.nothingToSayDialogue;
     }
 
     //public NPCDialogueOption RespondBasedOnMood(PlayerDialogueOption playerDialogueInput)

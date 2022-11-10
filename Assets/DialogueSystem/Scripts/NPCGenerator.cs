@@ -14,6 +14,8 @@ public class NPCGenerator : MonoBehaviour
 
     public bool spawnRandomProfiles;
 
+    public bool spawnInSpecificPos;
+
     public int numToSpawn;
     public int numToSpawnPerProfile;
 

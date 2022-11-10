@@ -16,7 +16,7 @@ public class DialogueListSystem : MonoBehaviour
     [SerializeField] private GameObject listDialoguePanel;
 
     public bool inDialogue;
-    public bool playerIsSpeaking;
+    public bool playerIsLeading;
 
     public NPCInfo npc;
 
@@ -30,7 +30,7 @@ public class DialogueListSystem : MonoBehaviour
     public TextMeshProUGUI npcNameText;
     //public TextMeshProUGUI npcMoodText;
     [SerializeField] private TextMeshProUGUI npcDialogueText;
-    public TextMeshProUGUI playerDialogueText;
+    //public TextMeshProUGUI playerDialogueText;
 
     //public bool playerResponseLockedIn;
 
@@ -64,7 +64,7 @@ public class DialogueListSystem : MonoBehaviour
                     {
                         // select a random option if the player hasn't selected in time
                         selectedDialogueOption = listDialoguePanel.transform.GetChild(Random.Range(0, listDialoguePanel.transform.childCount)).GetComponent<DialogueListButton>().dialogueOption;
-                        playerDialogueText.text = selectedDialogueOption.dialogue;
+                        //playerDialogueText.text = selectedDialogueOption.dialogue;
 
                         LockInResponse();
                     }
@@ -105,7 +105,7 @@ public class DialogueListSystem : MonoBehaviour
 
             if (!npcDialogue.requiresResponse)
             {
-                playerIsSpeaking = false;
+                playerIsLeading = false;
             }
             else
             {
@@ -184,7 +184,7 @@ public class DialogueListSystem : MonoBehaviour
             leaveButton.GetComponentInChildren<TextMeshProUGUI>().text = playerDialogue.goodbyeDialogue[rand].dialogue;
             leaveButton.GetComponent<DialogueListButton>().dialogueOption = playerDialogue.goodbyeDialogue[rand];
 
-            if (!playerIsSpeaking)
+            if (!playerIsLeading)
             {
                 //CreateChangeTopicListOption();
                 changeTopicButton.SetActive(true);
@@ -206,100 +206,9 @@ public class DialogueListSystem : MonoBehaviour
 
     }
 
-    //private void CreateLeaveListOption()
-    //{
-    //    int rand = Random.Range(0, playerDialogue.goodbyeDialogue.Count);
-
-    //    for (int i = 0; i < playerDialogue.playerQuestions.Count; i++)
-    //    {
-    //        if (playerDialogue.playerQuestions[i].npc == npc)
-    //        {
-
-    //            for (int d = 0; d < playerDialogue.playerQuestions[i].questionsForNPC.Count; d++)
-    //            {
-    //                if (playerDialogue.playerQuestions[i].questionsForNPC[d].isGoodbyeOption)
-    //                {
-    //                    playerDialogue.playerQuestions[i].questionsForNPC[d].dialogue = playerDialogue.goodbyeDialogue[rand].dialogue;
-    //                }
-    //                else if (d + 1 == playerDialogue.playerQuestions[i].questionsForNPC.Count)
-    //                {
-    //                    GameObject leaveDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-    //                    leaveDialogue.GetComponentInChildren<TextMeshProUGUI>().text = playerDialogue.goodbyeDialogue[rand].dialogue;
-    //                    leaveDialogue.transform.SetParent(listDialoguePanel.transform);
-
-    //                    npcDialogue.playerResponses.Add(playerDialogue.goodbyeDialogue[rand]);
-
-    //                    leaveDialogue.transform.GetComponent<DialogueListButton>().dialogueOption = playerDialogue.goodbyeDialogue[rand];
-    //                }
-    //            }
-    //        }
-
-    //    }
-    //}
-
-    //private void CreateChangeTopicListOption()
-    //{
-    //    int rand = Random.Range(0, playerDialogue.changeTopicDialogue.Count);
-
-    //    for (int i = 0; i < playerDialogue.playerQuestions.Count; i++)
-    //    {
-    //        if (playerDialogue.playerQuestions[i].npc == npc)
-    //        {
-    //            for (int d = 0; d < playerDialogue.playerQuestions[i].questionsForNPC.Count; d++)
-    //            {
-    //                if (playerDialogue.playerQuestions[i].questionsForNPC[d].isGoodbyeOption)
-    //                {
-    //                    playerDialogue.playerQuestions[i].questionsForNPC[d].dialogue = playerDialogue.goodbyeDialogue[rand].dialogue;
-    //                }
-    //                else if (d + 1 == playerDialogue.playerQuestions[i].questionsForNPC.Count)
-    //                {
-    //                    GameObject changeTopicDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-    //                    changeTopicDialogue.GetComponentInChildren<TextMeshProUGUI>().text = playerDialogue.changeTopicDialogue[rand].dialogue;
-    //                    changeTopicDialogue.transform.SetParent(listDialoguePanel.transform);
-
-
-    //                    npcDialogue.playerResponses.Add(playerDialogue.changeTopicDialogue[rand]);
-
-    //                    changeTopicDialogue.transform.GetComponent<DialogueListButton>().dialogueOption = playerDialogue.changeTopicDialogue[rand];
-    //                }
-
-    //            }
-    //        }
-
-    //    }
-    //}
-
-    //private void CreateContinueListOption()
-    //{
-    //    for (int i = 0; i < playerDialogue.playerQuestions.Count; i++)
-    //    {
-    //        if (playerDialogue.playerQuestions[i].npc == npc)
-    //        {
-    //            for (int d = 0; d < playerDialogue.playerQuestions[i].questionsForNPC.Count; d++)
-    //            {
-    //                if (playerDialogue.playerQuestions[i].questionsForNPC[d] == playerDialogue.continueDialogue)
-    //                {
-    //                    return;
-    //                }
-    //                else if (d + 1 == playerDialogue.playerQuestions[i].questionsForNPC.Count)
-    //                {
-    //                    GameObject continueDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-    //                    continueDialogue.transform.SetParent(listDialoguePanel.transform);
-    //                    continueDialogue.GetComponentInChildren<TextMeshProUGUI>().text = playerDialogue.continueDialogue.dialogue;
-
-    //                    npcDialogue.playerResponses.Add(playerDialogue.continueDialogue);
-
-    //                    continueDialogue.transform.GetComponent<DialogueListButton>().dialogueOption = playerDialogue.continueDialogue;
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
-
-    //Lock in dialogue selection
     public void LockInResponse()
     {
-        playerDialogueText.text = selectedDialogueOption.dialogue;
+        //playerDialogueText.text = selectedDialogueOption.dialogue;
 
         responseTimer = responseTimerReset;
         responseTimerUI.value = responseTimer;
@@ -317,7 +226,7 @@ public class DialogueListSystem : MonoBehaviour
 
         if (playerDialogue.changeTopicDialogue.Contains(selectedDialogueOption) || npcDialogue.changeOfTopic)
         {
-            if (!playerIsSpeaking)
+            if (!playerIsLeading)
             {
                 ChangeTopic();
             }
@@ -334,8 +243,8 @@ public class DialogueListSystem : MonoBehaviour
         }
         else
         {
-            //npcDialogue = playerDialogue.questions.npc
-            //npcDialogue = npc.RespondBasedOnMood(selectedDialogueOption);
+            //npcDialogue = playerDialogue.questions.npc;
+            npcDialogue = npc.DefaultResponse(selectedDialogueOption);
         }
 
         SetNewDialogueText(npcDialogue);
@@ -437,7 +346,7 @@ public class DialogueListSystem : MonoBehaviour
         //npcDialogue = playerDialogue.questions;
         //playerDialogue.questions.dialogue = npcDialogue.dialogue;
 
-        playerIsSpeaking = true;
+        playerIsLeading = true;
 
         Debug.Log("Changing the topic");
     }

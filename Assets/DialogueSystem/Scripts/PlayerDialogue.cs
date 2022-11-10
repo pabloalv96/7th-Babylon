@@ -151,19 +151,29 @@ public class PlayerDialogue : MonoBehaviour
 
                 for (int d = 0; d < playerQuestions[i].npc.npcDialogue.dialogueConnections.Count; d++) //for each npc dialogue object of each npc
                 {
-                    if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput == null)
+                    if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput == null || playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue)
                     {
-                        if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue) // check the dialogue object if the player is responding
+                        if (FindObjectOfType<DialogueListSystem>().npcDialogue.playerResponses.Count > 0)
                         {
-                            if (FindObjectOfType<DialogueListSystem>().npcDialogue.playerResponses.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput)) //if they are responding check what dialogue it is a response to
+                            foreach (PlayerDialogueOption response in FindObjectOfType<DialogueListSystem>().npcDialogue.playerResponses)
                             {
-                                playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); // if it's the current dialogue add it to the player's current dialogue selection
-                            }
-                            else
-                            {
-                                playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+                                if (!playerQuestions[i].questionsForNPC.Contains(response))
+                                {
+                                    playerQuestions[i].questionsForNPC.Add(response);
+                                }
+
+                                //playerQuestions[i].questionsForNPC.Add(response);
+
                             }
                         }
+                        //if (FindObjectOfType<DialogueListSystem>().npcDialogue.playerResponses.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput)) //if they are responding check what dialogue it is a response to
+                        //{
+                        //    playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); // if it's the current dialogue add it to the player's current dialogue selection
+                        //}
+                        //else
+                        //{
+                        //    playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+                        //}
                     }
 
                     //Debug.Log("Dialogue Option '" + playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.name + "' has been added to questions for '" + playerQuestions[i].npc.name + "'");

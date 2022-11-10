@@ -260,21 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcInfo: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f, type: 2}
-  npcDialogue:
-    greetingDialogue:
-    - {fileID: 11400000, guid: 998e8f2627ebf2a41bdcfea970d9f6c8, type: 2}
-    goodbyeDialogue:
-    - {fileID: 11400000, guid: 15d4f5ff76de9b349a9c8148c0cee086, type: 2}
-    changeTopicDialogue:
-    - {fileID: 11400000, guid: 757d6f8079bc1384eb60e11df36ba286, type: 2}
-    dialogueConnections:
-    - playerDialogueInput: {fileID: 0}
-      npcResponses:
-      - requiredEmotion:
-          emotionName: 
-          emotionValue: 0
-          currentThreshold: 0
-        response: {fileID: 0}
+  head: {fileID: 4964476417997420285}
   isSpeakingToPlayer: 0
 --- !u!65 &4788526609074081617
 BoxCollider:

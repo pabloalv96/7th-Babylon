@@ -6,6 +6,8 @@ public class NPCBrain : MonoBehaviour
 {
     public NPCInfo npcInfo;
 
+    [SerializeField] private Transform head;
+
     //public NPCEmotions npcEmotions;
 
     //public NPCDialogue npcDialogue;
@@ -46,7 +48,7 @@ public class NPCBrain : MonoBehaviour
 
     public void SpeakingToPlayer()
     {
-        transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
+        //head.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
     }
 
 

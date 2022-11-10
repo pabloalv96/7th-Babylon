@@ -29,12 +29,27 @@ public class StartDialogue : MonoBehaviour
         {
             playerDialogue.AddDialogueOptions();
         }
+        //else if (npcInfo.npcDialogue.dialogueConnections[0].playerDialogueInput == null && npcInfo.npcDialogue.dialogueConnections[0].npcResponses[0].response.requiresResponse)
+        //{
+        //    NPCInitiatedDialogue(npcInfo, npcInfo.npcDialogue.dialogueConnections[0].npcResponses[0].response);
+
+        //    playerDialogue.AddResponseOptions();
+
+        //    return;
+        //}        //else if (npcInfo.npcDialogue.dialogueConnections[0].playerDialogueInput == null && npcInfo.npcDialogue.dialogueConnections[0].npcResponses[0].response.requiresResponse)
+        //{
+        //    NPCInitiatedDialogue(npcInfo, npcInfo.npcDialogue.dialogueConnections[0].npcResponses[0].response);
+
+        //    playerDialogue.AddResponseOptions();
+
+        //    return;
+        //}
 
         greetingDialogue.playerResponses = playerDialogue.SetPlayerDialogueBasedOnCurrentNPCAndDialogue(npcInfo, greetingDialogue).playerResponses;
         //dialogueSystem.ListDialogueOptions();
 
 
-        dialogueSystem.playerDialogueText.text = playerDialogue.greetingDialogue[Random.Range(0, playerDialogue.greetingDialogue.Count)].dialogue;
+        //dialogueSystem.playerDialogueText.text = playerDialogue.greetingDialogue[Random.Range(0, playerDialogue.greetingDialogue.Count)].dialogue;
 
         //Deactivate Player Controller
         dialogueSystem.playerMovement.enabled = false;
@@ -47,7 +62,7 @@ public class StartDialogue : MonoBehaviour
         Cursor.visible = true;
         dialogueSystem.BeginDialogue();
 
-        dialogueSystem.playerIsSpeaking = true;
+        dialogueSystem.playerIsLeading = true;
 
         dialogueSystem.SetNewDialogueText(greetingDialogue);
 
@@ -80,14 +95,14 @@ public class StartDialogue : MonoBehaviour
         dialogueSystem.playerMovement.enabled = false;
 
         //Lock Camera to NPC target
-        dialogueSystem.playerDialogueText.text = playerDialogue.continueDialogue.dialogue;
+        //dialogueSystem.playerDialogueText.text = playerDialogue.continueDialogue.dialogue;
 
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
 
         dialogueSystem.BeginDialogue();
 
-        dialogueSystem.playerIsSpeaking = false;
+        dialogueSystem.playerIsLeading = false;
 
         dialogueSystem.SetNewDialogueText(startingDialogue);
     }
