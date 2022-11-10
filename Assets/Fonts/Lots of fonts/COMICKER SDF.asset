@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-8746138251095380373
+--- !u!28 &-1027350911449521306
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,7 +47,7 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!21 &-8120743458602492394
+--- !u!21 &-147822429649934723
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -8746138251095380373}
+        m_Texture: {fileID: -1027350911449521306}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: COMICKER SDF
   m_EditorClassIdentifier: 
   hashCode: 0
-  material: {fileID: -8120743458602492394}
+  material: {fileID: -147822429649934723}
   materialHashCode: 0
   m_Version: 1.1.0
   m_SourceFontFileGUID: f83783b7bf5491d4eb049083ab532562
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: -8746138251095380373}
+  - {fileID: -1027350911449521306}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0

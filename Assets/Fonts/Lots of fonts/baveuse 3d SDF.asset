@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-7884917871297647865
+--- !u!28 &-6685491575225311987
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,7 +47,7 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!21 &-3951343158732273141
+--- !u!21 &-4966708941626400894
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -7884917871297647865}
+        m_Texture: {fileID: -6685491575225311987}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: baveuse 3d SDF
   m_EditorClassIdentifier: 
   hashCode: 0
-  material: {fileID: -3951343158732273141}
+  material: {fileID: -4966708941626400894}
   materialHashCode: 0
   m_Version: 1.1.0
   m_SourceFontFileGUID: 958ddcd16e8faed46ac469415ca32980
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: -7884917871297647865}
+  - {fileID: -6685491575225311987}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0

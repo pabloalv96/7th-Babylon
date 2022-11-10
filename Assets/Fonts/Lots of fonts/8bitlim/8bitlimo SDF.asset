@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-3314910731575273546
+--- !u!28 &-3500454573397954295
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 8bitlimo SDF
   m_EditorClassIdentifier: 
   hashCode: 0
-  material: {fileID: 4596086143721397031}
+  material: {fileID: 1395405322124888114}
   materialHashCode: 0
   m_Version: 1.1.0
   m_SourceFontFileGUID: 3d4f867db3383484584eb68393a95f58
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: -3314910731575273546}
+  - {fileID: -3500454573397954295}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
---- !u!21 &4596086143721397031
+--- !u!21 &1395405322124888114
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -3314910731575273546}
+        m_Texture: {fileID: -3500454573397954295}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:

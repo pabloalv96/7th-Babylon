@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.Rendering;
 
 //change textures, props, lighting, and audio based on sins
 public class EnvironmentalChangeController : MonoBehaviour
@@ -20,6 +21,8 @@ public class EnvironmentalChangeController : MonoBehaviour
 
     //public Color lightsColour;
     public List<Light> activeLightsList;
+
+    //public Volume processVolume;
 
     public bool checkHighestStat;
 
@@ -104,11 +107,12 @@ public class EnvironmentalChangeController : MonoBehaviour
                             }
                         }
 
-                        if (change.lightsList.Count > 0)
+                        if (change.changeLights)
                         {
-                            foreach (Light light in change.lightsList)
+                            foreach (Light light in FindObjectsOfType<Light>())
                             {
                                 light.color = change.lightsColour;
+                                light.intensity = change.lightIntensity;
                             }
 
                             //activeLightsList.Clear();
@@ -119,6 +123,11 @@ public class EnvironmentalChangeController : MonoBehaviour
                             //    light.enabled = true;
                             //}
                         }
+
+                        //if (change.changeColourFilter)
+                        //{
+
+                        //}
                     }
                 }
             }
@@ -145,7 +154,10 @@ public struct EnvironmentalChanges
 
     public AudioClip backgroundAudio;
 
+    public bool changeLights;
     public Color lightsColour;
+    public float lightIntensity;
 
-    public List<Light> lightsList;
+    //public bool changeColourFilter;
+    //public Color postProcessingColourFilter;
 }

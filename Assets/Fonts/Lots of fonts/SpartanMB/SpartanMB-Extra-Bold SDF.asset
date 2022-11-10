@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!21 &-7641873890516490344
+--- !u!21 &-8701891785135553871
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -4884830476161627393}
+        m_Texture: {fileID: -1341168625803604090}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -105,7 +105,7 @@ Material:
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_BuildTextureStacks: []
---- !u!28 &-4884830476161627393
+--- !u!28 &-1341168625803604090
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: SpartanMB-Extra-Bold SDF
   m_EditorClassIdentifier: 
   hashCode: 0
-  material: {fileID: -7641873890516490344}
+  material: {fileID: -8701891785135553871}
   materialHashCode: 0
   m_Version: 1.1.0
   m_SourceFontFileGUID: 8928ddf44c6f46a43a3555e86a110e6f
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GlyphTable: []
   m_CharacterTable: []
   m_AtlasTextures:
-  - {fileID: -4884830476161627393}
+  - {fileID: -1341168625803604090}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_ClearDynamicDataOnBuild: 0
