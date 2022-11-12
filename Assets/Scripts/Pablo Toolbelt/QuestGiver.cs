@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class QuestGiver : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Quests quest;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject player;
+    public GameObject questWindow;
+    public TextMeshProUGUI titleText;
+    public TextMeshProUGUI descriptionText;
+    public void OpenQuestWindow()
     {
-        
+        questWindow.SetActive(true);
+        titleText.text = quest.title;
+        descriptionText.text = quest.description;
     }
 }
