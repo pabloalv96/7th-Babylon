@@ -6,10 +6,13 @@ using System.Collections;
 public class DoorActivator : MonoBehaviour
 {
 
-        private Animator animator;
-        public AudioClip openSound;
-        public AudioClip closeSound;
-        private AudioSource source;
+    [HideInInspector] public Animator animator;
+    public AudioClip openSound;
+    public AudioClip closeSound;
+    [HideInInspector] public AudioSource source;
+
+    public bool isOpen = false;
+    public bool isLocked = false;
 
     void Awake()
     {
@@ -18,22 +21,47 @@ public class DoorActivator : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            animator.SetBool("Open", true);
-            source.PlayOneShot(openSound, 1);
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        animator.SetBool("Open", true);
+    //        source.PlayOneShot(openSound, 1);
 
+    //    }
+    //}
+
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        animator.SetBool("Open", false);
+    //        source.PlayOneShot(closeSound, 1);
+    //    }
+    //}
+
+    private void Update()
+    {
+        if (animator.GetBool("Open"))
+        {
+            isOpen = true;
+        }
+        else
+        {
+            isOpen = false;
         }
     }
-
-    void OnTriggerExit(Collider other)
+    public void OpenDoor()
     {
-        if (other.gameObject.tag == "Player")
-        {
-            animator.SetBool("Open", false);
-            source.PlayOneShot(closeSound, 1);
-        }
+        animator.SetBool("Open", true);
+        isOpen = true;
+        source.PlayOneShot(openSound, 1);
+    }
+
+    public void CloseDoor()
+    {
+        animator.SetBool("Open", false);
+        isOpen = false;
+        source.PlayOneShot(closeSound, 1);
     }
 }

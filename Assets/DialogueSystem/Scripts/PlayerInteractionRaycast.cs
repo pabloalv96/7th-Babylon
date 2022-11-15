@@ -18,6 +18,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     private bool isNPC;
     private bool isWorldDialogue;
+    private bool isDoor;
 
     //[SerializeField] private Inventory inventory;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
@@ -30,6 +31,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
     //[SerializeField] private AudioSource audioSource;
 
     //[SerializeField] private bool isItem;
+
+    [SerializeField] private DoorActivator doorActivator;
 
 
 
@@ -90,6 +93,17 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isNPC = false;
             }
 
+            if (hit.transform.GetComponent<DoorActivator>())
+            {
+                isDoor = true;
+                selectedObject = hit.transform.gameObject;
+                interactIndicator.SetActive(true);
+            }
+            else
+            {
+                isDoor = false;
+            }
+
             if (selectedObject != null && Input.GetKeyDown(selectInput))
             {
                 if (isNPC)
@@ -110,7 +124,30 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 //}
 
                 //StartCoroutine(CheckInventoryIndicator());
+
+                if (isDoor)
+                {
+                    doorActivator = selectedObject.GetComponent<DoorActivator>();
+                    if (!doorActivator.isLocked)
+                    {
+                        if (doorActivator.isOpen)
+                        {
+                            doorActivator.CloseDoor();
+                        }
+                        else
+                        {
+                            doorActivator.OpenDoor();
+                        }
+                    }
+                    else
+                    {
+                        //communicate locked door to player
+                        Debug.Log(selectedObject.name + " is locked");
+                    }
+                }
             }
+
+           
 
         }
         else
