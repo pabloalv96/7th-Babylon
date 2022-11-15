@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f8eed4d283fe49aaaf5b2d55ea18c, type: 3}
   m_Name: Continue Dialogue
   m_EditorClassIdentifier: 
-  dialogue: ".\t.\t.\t\n"
-  emotionsToAffectList: []
+  dialogue: '{Continue}'
   statsToEffectList: []
   isResponseToNPCDialogue: 0
   isGoodbyeOption: 0
@@ -23,7 +22,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: 
         m_Mode: 1
         m_Arguments:

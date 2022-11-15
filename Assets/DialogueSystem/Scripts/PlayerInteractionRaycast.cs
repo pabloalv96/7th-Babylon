@@ -33,6 +33,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
     //[SerializeField] private bool isItem;
 
     [SerializeField] private DoorActivator doorActivator;
+    [SerializeField] private NPCInfo narrator;
+    [SerializeField] private NPCDialogueOption lockedDoorDialogue;
 
 
 
@@ -142,7 +144,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
                     else
                     {
                         //communicate locked door to player
-                        Debug.Log(selectedObject.name + " is locked");
+                        //Debug.Log(selectedObject.name + " is locked");
+
+                        FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, lockedDoorDialogue);
                     }
                 }
             }
