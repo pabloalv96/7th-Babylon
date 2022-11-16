@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408254}
   - component: {fileID: 20540746}
+  - component: {fileID: -2226220380487502696}
   m_Layer: 0
   m_Name: FlowerpotCLay_LOD (2)
   m_TagString: Untagged
@@ -146,6 +147,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2325474}
   m_Enabled: 1
+--- !u!65 &-2226220380487502696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161460}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &167484
 GameObject:
   m_ObjectHideFlags: 0

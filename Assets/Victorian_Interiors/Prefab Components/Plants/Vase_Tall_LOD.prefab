@@ -260,6 +260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 408564}
   - component: {fileID: 20595456}
+  - component: {fileID: -6982112271458311191}
   m_Layer: 0
   m_Name: Vase_Tall_LOD
   m_TagString: Untagged
@@ -313,6 +314,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2376690}
   m_Enabled: 1
+--- !u!65 &-6982112271458311191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &141586
 GameObject:
   m_ObjectHideFlags: 0

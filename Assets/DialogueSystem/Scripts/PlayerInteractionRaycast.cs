@@ -14,7 +14,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     private StartDialogue initiateDialogue;
 
-    [SerializeField] private GameObject interactIndicator;
+    public GameObject interactIndicator;
 
     private bool isNPC;
     private bool isWorldDialogue;
@@ -202,15 +202,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
         //{
         //    selectedObject.GetComponent<ItemInWorld>().unlockNewDialogue.enabled = true;
         //}
-
         inventory.AddItemToInventory(selectedObject.GetComponent<ItemInWorld>().item);
-        if (inventory.inventory.Contains(selectedObject.GetComponent<ItemInWorld>().item))
-        {
-            Destroy(selectedObject);
-            selectedObject = null;
-            interactIndicator.SetActive(false);
-            //displayInventoryIndicator = true;
-        }
+
+
 
         //if (FindObjectOfType<PlayerInfoController>()) // progress collection quest if relevant
         //{

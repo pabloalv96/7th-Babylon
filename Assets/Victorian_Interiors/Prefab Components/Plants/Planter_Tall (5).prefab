@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417422}
   - component: {fileID: 20503236}
+  - component: {fileID: 8707618092558436717}
   m_Layer: 0
   m_Name: Planter_Tall (5)
   m_TagString: Untagged
@@ -146,6 +147,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2390098}
   m_Enabled: 1
+--- !u!65 &8707618092558436717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158954}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &170240
 GameObject:
   m_ObjectHideFlags: 0
