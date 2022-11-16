@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 5400000}
   - component: {fileID: 8200000}
   - component: {fileID: 8530029204760519967}
-  - component: {fileID: 2855499213626991067}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FPSController
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -309,35 +308,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats:
     listOfStats:
+    - statName: Lust
+      statValue: 5
     - statName: Greed
       statValue: 0
     - statName: Gluttony
       statValue: 0
-    - statName: Lust
-      statValue: 0
     highestStat:
-      statName: Greed
-      statValue: 0
+      statName: Lust
+      statValue: 5
     newStatName: New Stat
-  playerDialogue: {fileID: 0}
---- !u!114 &2855499213626991067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ced1c4ab5b7d4704bb3e6bbfd3051c60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerStats:
-    listOfStats: []
-    highestStat:
-      statName: New Stat
-      statValue: 0
-    newStatName: PlayerStat
   playerDialogue: {fileID: 0}
 --- !u!1 &100002
 GameObject:
@@ -352,7 +332,7 @@ GameObject:
   - component: {fileID: 8100000}
   - component: {fileID: 1484760443}
   - component: {fileID: 754110112}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -474,6 +454,11 @@ MonoBehaviour:
   reachDistance: 5
   selectedObject: {fileID: 0}
   interactIndicator: {fileID: 0}
+  inventory: {fileID: 0}
+  isItem: 0
+  doorActivator: {fileID: 0}
+  narrator: {fileID: 11400000, guid: 5714d22b24469b3478395fe452907447, type: 2}
+  lockedDoorDialogue: {fileID: 11400000, guid: 3ab8a655d6e285d48969bc9b791cafa1, type: 2}
 --- !u!1 &7035823631447016211
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +471,7 @@ GameObject:
   - component: {fileID: 6307816080170235636}
   - component: {fileID: 8697209597303494215}
   - component: {fileID: 1269541977284966882}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Too Close Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7035823631447016211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 0, z: 0.7}
+  m_LocalPosition: {x: 0, y: 0, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -523,7 +508,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7035823631447016211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -567,7 +552,7 @@ SphereCollider:
   m_GameObject: {fileID: 7035823631447016211}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

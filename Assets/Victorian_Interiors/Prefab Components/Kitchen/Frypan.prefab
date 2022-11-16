@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 20588170}
   - component: {fileID: 6580538}
   - component: {fileID: 5469698}
+  - component: {fileID: -4383233637310625018}
   m_Layer: 0
   m_Name: Frypan
   m_TagString: Untagged
@@ -93,6 +94,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4383233637310625018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872, type: 2}
+  hasDialogue: 0
+  unlockNewDialogue: {fileID: 0}
 --- !u!1 &117164
 GameObject:
   m_ObjectHideFlags: 0

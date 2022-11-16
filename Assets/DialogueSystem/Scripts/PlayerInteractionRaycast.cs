@@ -20,7 +20,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private bool isWorldDialogue;
     private bool isDoor;
 
-    //[SerializeField] private Inventory inventory;
+    [SerializeField] private Inventory inventory;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
 
     //[SerializeField] private float inventoryIndicatorDisplayTime = 7.5f;
@@ -30,7 +30,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     //[SerializeField] private AudioSource audioSource;
 
-    //[SerializeField] private bool isItem;
+    [SerializeField] private bool isItem;
 
     [SerializeField] private DoorActivator doorActivator;
     [SerializeField] private NPCInfo narrator;
@@ -59,17 +59,17 @@ public class PlayerInteractionRaycast : MonoBehaviour
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.magenta);
 
-            //if (hit.transform.GetComponent<ItemInWorld>())
-            //{
-            //    isItem = true;
-            //    selectedObject = hit.transform.gameObject;
-            //    Debug.Log("hit = " + selectedObject);
-            //    interactIndicator.SetActive(true);
-            //}
-            //else
-            //{
-            //    isItem = false;
-            //}
+            if (hit.transform.GetComponent<ItemInWorld>())
+            {
+                isItem = true;
+                selectedObject = hit.transform.gameObject;
+                Debug.Log("hit = " + selectedObject);
+                interactIndicator.SetActive(true);
+            }
+            else
+            {
+                isItem = false;
+            }
 
             if (hit.transform.GetComponent<DialogueInWorld>())
             {
@@ -120,10 +120,10 @@ public class PlayerInteractionRaycast : MonoBehaviour
                     Debug.Log("Hit dialogue in world game object");
                 }
 
-                //if (isItem)
-                //{
-                //    PickUpItem();
-                //}
+                if (isItem)
+                {
+                    PickUpItem();
+                }
 
                 //StartCoroutine(CheckInventoryIndicator());
 
@@ -189,44 +189,44 @@ public class PlayerInteractionRaycast : MonoBehaviour
         }
     }
 
-    //public void PickUpItem()
-    //{
-    //    //if (audioSource.isPlaying)
-    //    //{
-    //    //    audioSource.Stop();
+    public void PickUpItem()
+    {
+        //if (audioSource.isPlaying)
+        //{
+        //    audioSource.Stop();
 
-    //    //    audioSource.PlayOneShot(selectedObject.GetComponent<ItemInWorld>().itemCollectedAudio);
-    //    //}
+        //    audioSource.PlayOneShot(selectedObject.GetComponent<ItemInWorld>().itemCollectedAudio);
+        //}
 
-    //    if (selectedObject.GetComponent<ItemInWorld>().hasDialogue)
-    //    {
-    //        selectedObject.GetComponent<ItemInWorld>().unlockNewDialogue.enabled = true;
-    //    }
+        //if (selectedObject.GetComponent<ItemInWorld>().hasDialogue)
+        //{
+        //    selectedObject.GetComponent<ItemInWorld>().unlockNewDialogue.enabled = true;
+        //}
 
-    //    inventory.AddItemToInventory(selectedObject.GetComponent<ItemInWorld>().item);
-    //    if (inventory.inventory.Contains(selectedObject.GetComponent<ItemInWorld>().item))
-    //    {
-    //        Destroy(selectedObject);
-    //        selectedObject = null;
-    //        interactIndicator.SetActive(false);
-    //        //displayInventoryIndicator = true;
-    //    }
+        inventory.AddItemToInventory(selectedObject.GetComponent<ItemInWorld>().item);
+        if (inventory.inventory.Contains(selectedObject.GetComponent<ItemInWorld>().item))
+        {
+            Destroy(selectedObject);
+            selectedObject = null;
+            interactIndicator.SetActive(false);
+            //displayInventoryIndicator = true;
+        }
 
-    //    if (FindObjectOfType<PlayerInfoController>()) // progress collection quest if relevant
-    //    {
-    //        PlayerInfoController player = FindObjectOfType<PlayerInfoController>();
+        //if (FindObjectOfType<PlayerInfoController>()) // progress collection quest if relevant
+        //{
+        //    PlayerInfoController player = FindObjectOfType<PlayerInfoController>();
 
-    //        foreach (Quest quest in player.activeQuestList)
-    //        {
-    //            if (quest.questType == QuestType.Collection)
-    //            {
-    //                NumericalQuest numQuest = (NumericalQuest)quest;
+        //    foreach (Quest quest in player.activeQuestList)
+        //    {
+        //        if (quest.questType == QuestType.Collection)
+        //        {
+        //            NumericalQuest numQuest = (NumericalQuest)quest;
 
-    //                numQuest.SetCurrentAmount();
-    //            }
-    //        }
-    //    }
-    //}
+        //            numQuest.SetCurrentAmount();
+        //        }
+        //    }
+        //}
+    }
 
     //public IEnumerator CheckInventoryIndicator()
     //{
