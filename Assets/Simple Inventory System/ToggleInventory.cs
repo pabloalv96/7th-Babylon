@@ -24,10 +24,20 @@ public class ToggleInventory : MonoBehaviour
         if (inventoryPanel.activeSelf)
         {
             inventoryPanel.SetActive(false);
+
+            if (FindObjectOfType<Inventory>().inventoryPanel.activeSelf)
+            {
+                FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+            }
         }
         else
         {
             inventoryPanel.SetActive(true);
+
+            if (FindObjectOfType<Inventory>().inventoryPanel.activeSelf)
+            {
+                FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+            }
         }
     }
 }

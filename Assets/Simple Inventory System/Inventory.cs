@@ -1,23 +1,36 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
 using TMPro;
-using System;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour, IDragHandler
 {
-    //public UnityEvent onInventoryNumInput;
-
     public InventoryItem selectedItem;
 
-    [SerializeField] private KeyCode dropItemInput;
-    //[SerializeField] private KeyCode inspectItemInput;
-    [SerializeField] private KeyCode cancelSelectionInput;
+    // inventory inputs
+    [SerializeField] private KeyCode dropItemInput = KeyCode.Z;
+    //[SerializeField] private KeyCode inspectItemInput = KeyCode.V;
+    [SerializeField] private KeyCode cancelSelectionInput = KeyCode.X;
 
-    [SerializeField] private GameObject dropItemUI;
-    //[SerializeField] private GameObject inspectItemUI;
-    [SerializeField] private GameObject cancelSelectionUI;
+    [SerializeField] private GameObject dropItemUIPrompt;
+    [SerializeField] private GameObject cancelSelectionUIPrompt;
+
+    //inspect item variables
+    //[SerializeField] private GameObject inspectItemUIPrompt;
+    //[SerializeField] private GameObject inspectItemUIControls;
+    //public bool isInspectingItem;
+
+    [SerializeField] private GameObject inspectedItem;
+
+    [SerializeField] private Transform inspectBasePos;
+    [SerializeField] private float inspectRotationSpeed;
+    //[SerializeField] private Vector3 inspectInitalPos;
+    //[SerializeField] private Quaternion inspectedItemRotation;
+
+    //[SerializeField] private float inspectFarZoomDistance;
+    //[SerializeField] private float inspectCloseZoomDistance;
+    //[SerializeField] private float scrollSpeedScale;
+    //UnityEvent onInspectionZoom;
 
 
     [SerializeField] private Color selectedColour;
@@ -35,7 +48,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject inventoryItemUIPrefab;
 
     //Inventory UI Panel
-    [SerializeField] private GameObject inventoryPanel;
+    public GameObject inventoryPanel;
 
     private Transform player;
 
@@ -47,32 +60,34 @@ public class Inventory : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        dropItemUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dropItemInput.ToString();
-        cancelSelectionUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = cancelSelectionInput.ToString();
+        dropItemUIPrompt.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dropItemInput.ToString();
+        cancelSelectionUIPrompt.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = cancelSelectionInput.ToString();
+        //inspectItemUIPrompt.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inspectItemInput.ToString();
 
-        //if (onInventoryNumInput == null)
+        //if (onInspectionZoom == null)
         //{
-        //    onInventoryNumInput = new UnityEvent();
+        //    onInspectionZoom = new UnityEvent();
         //}
 
-        //onInventoryNumInput.AddListener(SelectInventoryItem);
+        //onInspectionZoom.AddListener(InspectionZoom);
     }
 
     private void Update()
     {
         SelectInventoryItem();
 
-        if (selectedItem != null)
+        if (selectedItem != null && inventoryPanel.activeSelf)
         {
             SetSelectedItemTextColour();
+            InspectItem();
 
             //enable drop object ui prompt
             //enable inspect UI prompt
             //Narrator text when inspecting?
 
-            dropItemUI.SetActive(true);
-            //inspectItemUI.SetActive(true);
-            cancelSelectionUI.SetActive(true);
+            dropItemUIPrompt.SetActive(true);
+            //inspectItemUIPrompt.SetActive(true);
+            cancelSelectionUIPrompt.SetActive(true);
 
             if (Input.GetKeyDown(dropItemInput))
             {
@@ -83,7 +98,13 @@ public class Inventory : MonoBehaviour
 
             //if (Input.GetKeyDown(inspectItemInput))
             //{
-            ////activate inspect item view
+            //    //activate inspect item view
+            //    isInspectingItem = true;
+            //}
+
+            //if (isInspectingItem)
+            //{
+            //    InspectItem();
             //}
 
             if (Input.GetKeyDown(cancelSelectionInput))
@@ -94,12 +115,10 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            dropItemUI.SetActive(false);
-            //inspectItemUI.SetActive(false);
-            cancelSelectionUI.SetActive(false);
-
-            
-
+            dropItemUIPrompt.SetActive(false);
+            //inspectItemUIPrompt.SetActive(false);
+            cancelSelectionUIPrompt.SetActive(false);
+            EndItemInspection();
         }
     }
 
@@ -192,6 +211,101 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    private void InspectItem()
+    {
+        if (selectedItem != null)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+
+            FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+
+            if (inspectedItem == null)
+            {
+                inspectedItem = Instantiate(selectedItem.prefab, inspectBasePos.position, Quaternion.identity);
+                //inspectedItem.transform.parent = inventoryPanel.transform;
+
+                inspectedItem.GetComponent<ItemInWorld>().enabled = false;
+                inspectedItem.GetComponent<Collider>().enabled = false;
+                //inspectInitalPos = inspectedItem.transform.position;
+
+                //inspectedItemRotation = Quaternion.Euler(inspectedItem.transform.localEulerAngles);
+
+                if (inspectedItem.GetComponent<Rigidbody>() && inspectedItem.GetComponent<Rigidbody>().useGravity != false)
+                {
+                    inspectedItem.GetComponent<Rigidbody>().useGravity = false;
+                }
+
+                //isInspectingItem = true;
+            }
+            //else if (selectedItem != inspectedItem)
+            //{
+            //    EndItemInspection();
+
+            //    InspectItem();
+            //}
+
+            //if (Input.mouseScrollDelta.y != 0)
+            //{
+            //    onInspectionZoom.Invoke();
+            //}
+
+            if (Input.GetKeyDown(cancelSelectionInput))
+            {
+                EndItemInspection();
+            }
+        }
+    }
+
+    private void EndItemInspection()
+    {
+
+        FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+
+        Destroy(inspectedItem);
+
+        inspectedItem = null;
+        //isInspectingItem = false;
+        //selectedItem = null;
+        //SetSelectedItemTextColour();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+    }
+
+    //private void InspectionZoom()
+    //{
+    //    if (Vector3.Distance(inspectedItem.transform.position, player.transform.position) < inspectCloseZoomDistance) // move towards player
+    //    {
+    //        //if (Input.mouseScrollDelta.y > 0)
+    //        //{
+    //        //    inspectedItem.transform.position = Vector3.MoveTowards(inspectedItem.transform.position, -Camera.main.transform.forward, inspectCloseZoomDistance);
+    //        inspectedItem.transform.position += player.transform.forward * Input.mouseScrollDelta.y * scrollSpeedScale * Time.deltaTime;
+
+    //        //}
+    //    }
+
+    //    if (Vector3.Distance(inspectedItem.transform.position, player.transform.position) > inspectFarZoomDistance) // move away from player
+    //    {
+    //        inspectedItem.transform.position += player.transform.forward * Input.mouseScrollDelta.y * scrollSpeedScale * Time.deltaTime;
+    //    }
+    //}
+    //private void InspectionRotate()
+    //{
+    //    float horizontal = Input.GetAxisRaw("Horizontal");
+    //    float vertical = Input.GetAxisRaw("Vertical");
+
+    //    Vector2 input = new Vector2(horizontal, vertical);
+
+    //    // normalize input if it exceeds 1 in combined length:
+    //    if (input.sqrMagnitude > 1)
+    //    {
+    //        input.Normalize();
+    //    }
+
+    //}
 
     private void SelectInventoryItem()
     {
@@ -298,4 +412,13 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (inventoryPanel.activeSelf)
+        {
+            Debug.Log("OnDrag");
+
+            inspectedItem.transform.eulerAngles += new Vector3(eventData.delta.x, eventData.delta.y);
+        }
+    }
 }
