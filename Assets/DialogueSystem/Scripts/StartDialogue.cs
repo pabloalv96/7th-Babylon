@@ -52,14 +52,13 @@ public class StartDialogue : MonoBehaviour
         //dialogueSystem.playerDialogueText.text = playerDialogue.greetingDialogue[Random.Range(0, playerDialogue.greetingDialogue.Count)].dialogue;
 
         //Deactivate Player Controller
-        dialogueSystem.playerMovement.enabled = false;
-        //dialogueSystem.playerCam.enabled = false;
+        FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
 
-        //Lock Camera to NPC target
 
 
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+        Debug.Log("Cursor Mode Confined");
         dialogueSystem.BeginDialogue();
 
         dialogueSystem.playerIsLeading = true;

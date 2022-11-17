@@ -76,41 +76,44 @@ public class Inventory : MonoBehaviour, IDragHandler
     {
         SelectInventoryItem();
 
-        if (selectedItem != null && inventoryPanel.activeSelf)
+        if (inventoryPanel.activeSelf)
         {
-            SetSelectedItemTextColour();
-            InspectItem();
-
-            //enable drop object ui prompt
-            //enable inspect UI prompt
-            //Narrator text when inspecting?
-
-            dropItemUIPrompt.SetActive(true);
-            //inspectItemUIPrompt.SetActive(true);
-            cancelSelectionUIPrompt.SetActive(true);
-
-            if (Input.GetKeyDown(dropItemInput))
+            if (selectedItem != null)
             {
-
-                DropItem(selectedItem);
-                
-            }
-
-            //if (Input.GetKeyDown(inspectItemInput))
-            //{
-            //    //activate inspect item view
-            //    isInspectingItem = true;
-            //}
-
-            //if (isInspectingItem)
-            //{
-            //    InspectItem();
-            //}
-
-            if (Input.GetKeyDown(cancelSelectionInput))
-            {
-                selectedItem = null;
                 SetSelectedItemTextColour();
+                InspectItem();
+
+                //enable drop object ui prompt
+                //enable inspect UI prompt
+                //Narrator text when inspecting?
+
+                dropItemUIPrompt.SetActive(true);
+                //inspectItemUIPrompt.SetActive(true);
+                cancelSelectionUIPrompt.SetActive(true);
+
+                if (Input.GetKeyDown(dropItemInput))
+                {
+
+                    DropItem(selectedItem);
+
+                }
+
+                //if (Input.GetKeyDown(inspectItemInput))
+                //{
+                //    //activate inspect item view
+                //    isInspectingItem = true;
+                //}
+
+                //if (isInspectingItem)
+                //{
+                //    InspectItem();
+                //}
+
+                if (Input.GetKeyDown(cancelSelectionInput))
+                {
+                    selectedItem = null;
+                    SetSelectedItemTextColour();
+                }
             }
         }
         else
@@ -118,7 +121,12 @@ public class Inventory : MonoBehaviour, IDragHandler
             dropItemUIPrompt.SetActive(false);
             //inspectItemUIPrompt.SetActive(false);
             cancelSelectionUIPrompt.SetActive(false);
-            EndItemInspection();
+            selectedItem = null;
+            SetSelectedItemTextColour();
+            if (inspectedItem != null)
+            {
+                EndItemInspection();
+            }
         }
     }
 
@@ -206,6 +214,7 @@ public class Inventory : MonoBehaviour, IDragHandler
                     }
 
                     selectedItem = null;
+                    EndItemInspection();
                     SetSelectedItemTextColour();
                 }
             }
@@ -260,8 +269,11 @@ public class Inventory : MonoBehaviour, IDragHandler
 
     private void EndItemInspection()
     {
-
-        FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+        if (!FindObjectOfType<DialogueListSystem>().inDialogue)
+        {
+            FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
 
         Destroy(inspectedItem);
 
@@ -270,8 +282,6 @@ public class Inventory : MonoBehaviour, IDragHandler
         //selectedItem = null;
         //SetSelectedItemTextColour();
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
 
     }
 

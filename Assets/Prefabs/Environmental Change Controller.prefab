@@ -48,24 +48,23 @@ MonoBehaviour:
   environmentalChanges:
   - statName: Greed
     environmentalChangesList:
-    - requiredValue: 25
+    - requiredValue: 24
       paintingTexture: {fileID: 2100000, guid: 8ba357e2a0debf3418044e8108893be6, type: 2}
-      props:
-      - {fileID: 6047049455727545963, guid: d3e62bf94eb88f74195c431497f9ea63, type: 3}
-      backgroundAudio: {fileID: 8300000, guid: 395fbe5f1d5c378458c717f548d105ca, type: 3}
-      lightsList:
-      - {fileID: 0}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 0.72199994, g: 0.6370588, b: 0, a: 1}
+      lightIntensity: 4
   - statName: Gluttony
     environmentalChangesList:
-    - requiredValue: 25
+    - requiredValue: 24
       paintingTexture: {fileID: 2100000, guid: 6319c82e0637b484d86757364a2b261b, type: 2}
-      props:
-      - {fileID: 1134910228137317242, guid: a56e7ace9f40f544782698887ab2ed64, type: 3}
-      backgroundAudio: {fileID: 8300000, guid: 255b8882c4000d847a2e2f2a7193f08f, type: 3}
-      lightsList:
-      - {fileID: 0}
-  propSpawnPoints:
-  - {fileID: 0}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 1, g: 0.38441053, b: 0, a: 1}
+      lightIntensity: 3
+  propSpawnPoints: []
   paintingObject: {fileID: 0}
   defaultPaintingMaterial: {fileID: 2100000, guid: 4fade621264e12d43a4d5008b7c200c7,
     type: 2}
