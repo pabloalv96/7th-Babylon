@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: 1.1 NPCGluttonyDialogue
+  m_EditorClassIdentifier: 
+  dialogue: It is said that they will allow you to eat as much as you want. Looks
+    like opulence is not a problem here.
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: fd9c949c0c2551a4eb5f3a0456388ca3, type: 2}
+  - {fileID: 11400000, guid: b9d887d68e2b05f4d914fdff3d8a7936, type: 2}
+  - {fileID: 11400000, guid: 715e6a0f9f9cc17439ee281a0de933be, type: 2}
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 1
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
