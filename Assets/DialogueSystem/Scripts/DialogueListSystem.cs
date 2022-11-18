@@ -15,6 +15,7 @@ public class DialogueListSystem : MonoBehaviour
     [SerializeField] private GameObject playerDialoguePrefab;
     [SerializeField] private GameObject listDialoguePanel;
 
+
     public bool inDialogue;
     public bool playerIsLeading;
 

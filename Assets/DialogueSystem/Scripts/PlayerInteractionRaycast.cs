@@ -18,7 +18,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     private bool isNPC;
     private bool isWorldDialogue;
-    private bool isDoor;
+    [HideInInspector] public bool isDoor;
 
     [SerializeField] private Inventory inventory;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;

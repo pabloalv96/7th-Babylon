@@ -21,24 +21,30 @@ public class DoorActivator : MonoBehaviour
 
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        animator.SetBool("Open", true);
-    //        source.PlayOneShot(openSound, 1);
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //animator.SetBool("Open", true);
+            //source.PlayOneShot(openSound, 1);
 
-    //    }
-    //}
+            FindObjectOfType<PlayerInteractionRaycast>().isDoor = true;
+            FindObjectOfType<PlayerInteractionRaycast>().interactIndicator.SetActive(true);
 
-    //void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        animator.SetBool("Open", false);
-    //        source.PlayOneShot(closeSound, 1);
-    //    }
-    //}
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            animator.SetBool("Open", false);
+            source.PlayOneShot(closeSound, 1);
+
+            FindObjectOfType<PlayerInteractionRaycast>().isDoor = false;
+            FindObjectOfType<PlayerInteractionRaycast>().interactIndicator.SetActive(false);
+        }
+    }
 
     private void Update()
     {

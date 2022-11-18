@@ -34,7 +34,7 @@ public class ToggleInventory : MonoBehaviour
         {
             inventoryPanel.SetActive(true);
 
-            if (FindObjectOfType<Inventory>().inventoryPanel.activeSelf)
+            if (FindObjectOfType<Inventory>().inventoryPanel.activeSelf && FindObjectOfType<Inventory>().selectedItem != null)
             {
                 FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
             }
