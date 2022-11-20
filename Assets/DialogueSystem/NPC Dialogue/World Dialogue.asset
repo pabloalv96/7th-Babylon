@@ -15,6 +15,7 @@ MonoBehaviour:
   dialogue: 'Tell me...
 
     what is your greatest desire?'
+  toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
   playerResponses:
@@ -23,7 +24,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aa557ca25bac5db45a35ae43eaf641d3, type: 2}
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 0
+  playerCanChangeTopic: 1
+  playerCanLeaveDialogue: 1
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []

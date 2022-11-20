@@ -866,6 +866,8 @@ MonoBehaviour:
   continueButton: {fileID: 6758042360173045155}
   leaveButton: {fileID: 2804826853385250308}
   changeTopicButton: {fileID: 661355053462388057}
+  responseTimerActive: 0
+  responseTimer: 5
   responseTimerUI: {fileID: 810313523562208319}
   playerDialogue: {fileID: 8556563642233164666}
   dialogueUI: {fileID: 810313522929247309}
@@ -1062,7 +1064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: -12.8}
+  m_AnchoredPosition: {x: 0.000030517578, y: -12.799957}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &810313523562208319

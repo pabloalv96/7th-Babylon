@@ -15,7 +15,6 @@ public class DialogueListSystem : MonoBehaviour
     [SerializeField] private GameObject playerDialoguePrefab;
     [SerializeField] private GameObject listDialoguePanel;
 
-
     public bool inDialogue;
     public bool playerIsLeading;
 
@@ -33,14 +32,16 @@ public class DialogueListSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI npcDialogueText;
     //public TextMeshProUGUI playerDialogueText;
 
+    //public GameObject npcSubtitlePanel;
+
     //public bool playerResponseLockedIn;
 
     public GameObject continueButton, leaveButton, changeTopicButton;
 
 
     //Response Timer Variables
-    private bool responseTimerActive;
-    private float responseTimer = 5f;
+    [SerializeField] private bool responseTimerActive;
+    [SerializeField] private float responseTimer = 5f;
     private float responseTimerReset;
 
     [SerializeField] private Slider responseTimerUI;   // if true the timer will automatically start during a time-limited response and pick a random option if the player doesn't begin viewing the dialogue options
@@ -80,11 +81,31 @@ public class DialogueListSystem : MonoBehaviour
             //{
             //    CreateLeaveListOption();
             //}
+
+        }
+        else if (npcDialogue == null || !responseTimerActive || !npcDialogue.toOtherNPC)
+        {
+            LeaveDialogue();
             
         }
         else
         {
-            LeaveDialogue();
+            if (responseTimerActive && npcDialogue.toOtherNPC)
+            {
+                responseTimer -= Time.deltaTime;
+                responseTimerUI.value = responseTimer;
+
+                if (responseTimer <= 0f && npcDialogue.continuedDialogue != null)
+                {
+                    LockInResponse();
+                }
+            }
+            else
+            {
+                LeaveDialogue();
+            }
+
+
         }
     }
 
@@ -92,7 +113,7 @@ public class DialogueListSystem : MonoBehaviour
     // Update UI Dialogue Text
     public void SetNewDialogueText(NPCDialogueOption npcDialogueOption)
     {
-        if (inDialogue)
+        if (inDialogue || npcDialogueOption.toOtherNPC)
         {
             npcDialogueText.text = npcDialogueOption.dialogue;
             npcDialogue = npcDialogueOption;
@@ -104,7 +125,7 @@ public class DialogueListSystem : MonoBehaviour
 
             DestroyOldDialogueOptions();
 
-            if (!npcDialogue.requiresResponse)
+            if (!npcDialogue.requiresResponse || npcDialogue.toOtherNPC)
             {
                 playerIsLeading = false;
             }
@@ -132,7 +153,10 @@ public class DialogueListSystem : MonoBehaviour
 
             SetResponseTimer();
 
-            CreateDialogueOptions(npcDialogue);
+            if (inDialogue)
+            {
+                CreateDialogueOptions(npcDialogue);
+            }
         }
     }
 
@@ -151,47 +175,62 @@ public class DialogueListSystem : MonoBehaviour
     {
         DestroyOldDialogueOptions();
 
-        if (npcDialogue.requiresResponse)
+        if (!npcDialogue.toOtherNPC)
         {
-            foreach (PlayerDialogueOption dialogueOption in npcDialogueOption.playerResponses)
+
+            if (npcDialogue.requiresResponse)
             {
-                if (dialogueOption == playerDialogue.continueDialogue)
+                foreach (PlayerDialogueOption dialogueOption in npcDialogueOption.playerResponses)
                 {
-                    return;
+                    if (dialogueOption == playerDialogue.continueDialogue)
+                    {
+                        return;
+                    }
+
+                    GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
+                    newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
+                    newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
+                    newDialogue.transform.SetParent(listDialoguePanel.transform);
                 }
 
-                GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-                newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
-                newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
-                newDialogue.transform.SetParent(listDialoguePanel.transform);
+                continueButton.SetActive(false);
+            }
+            else
+            {
+                //CreateContinueListOption();
+
+                continueButton.SetActive(true);
+                continueButton.GetComponentInChildren<TextMeshProUGUI>().text = continueButton.GetComponent<DialogueListButton>().dialogueOption.dialogue;
+
             }
 
-            continueButton.SetActive(false);
-        }
-        else
-        {
-            //CreateContinueListOption();
-
-            continueButton.SetActive(true);
-            continueButton.GetComponentInChildren<TextMeshProUGUI>().text = continueButton.GetComponent<DialogueListButton>().dialogueOption.dialogue;
-
-        }
-
-        if (npcDialogueOption.playerCanChangeTopic)
-        {
-            //CreateLeaveListOption();
-            leaveButton.SetActive(true);
-            int rand = Random.Range(0, playerDialogue.goodbyeDialogue.Count);
-            leaveButton.GetComponentInChildren<TextMeshProUGUI>().text = playerDialogue.goodbyeDialogue[rand].dialogue;
-            leaveButton.GetComponent<DialogueListButton>().dialogueOption = playerDialogue.goodbyeDialogue[rand];
-
-            if (!playerIsLeading)
+            if (npcDialogueOption.playerCanLeaveDialogue)
             {
-                //CreateChangeTopicListOption();
-                changeTopicButton.SetActive(true);
-                int rand2 = Random.Range(0, playerDialogue.changeTopicDialogue.Count);
-                changeTopicButton.GetComponentInChildren<TextMeshProUGUI>().text = playerDialogue.changeTopicDialogue[rand2].dialogue;
-                changeTopicButton.GetComponent<DialogueListButton>().dialogueOption = playerDialogue.changeTopicDialogue[rand2];
+                //CreateLeaveListOption();
+                leaveButton.SetActive(true);
+                int rand = Random.Range(0, playerDialogue.goodbyeDialogue.Count);
+                leaveButton.GetComponentInChildren<TextMeshProUGUI>().text = playerDialogue.goodbyeDialogue[rand].dialogue;
+                leaveButton.GetComponent<DialogueListButton>().dialogueOption = playerDialogue.goodbyeDialogue[rand];
+            }
+            else
+            {
+                leaveButton.SetActive(false);
+            }
+
+            if (npcDialogueOption.playerCanChangeTopic)
+            {
+                if (!playerIsLeading)
+                {
+                    //CreateChangeTopicListOption();
+                    changeTopicButton.SetActive(true);
+                    int rand2 = Random.Range(0, playerDialogue.changeTopicDialogue.Count);
+                    changeTopicButton.GetComponentInChildren<TextMeshProUGUI>().text = playerDialogue.changeTopicDialogue[rand2].dialogue;
+                    changeTopicButton.GetComponent<DialogueListButton>().dialogueOption = playerDialogue.changeTopicDialogue[rand2];
+                }
+                else
+                {
+                    changeTopicButton.SetActive(false);
+                }
             }
             else
             {
@@ -200,9 +239,7 @@ public class DialogueListSystem : MonoBehaviour
         }
         else
         {
-            leaveButton.SetActive(false);
-            changeTopicButton.SetActive(false);
-
+            listDialoguePanel.SetActive(false);
         }
 
     }
@@ -216,6 +253,8 @@ public class DialogueListSystem : MonoBehaviour
         responseTimerActive = false;
 
         //selectedDialogueOption.AffectEmotionValues();
+        if (inDialogue)
+        { 
         if (selectedDialogueOption.statsToEffectList.Count > 0)
         {
             selectedDialogueOption.AffectStatValues();
@@ -240,10 +279,20 @@ public class DialogueListSystem : MonoBehaviour
         {
             LeaveDialogue();
         }
+        }
 
         if (!npcDialogue.requiresResponse)
         {
             npcDialogue = npcDialogue.continuedDialogue;
+
+            if (npcDialogue.toOtherNPC)
+            {
+                listDialoguePanel.SetActive(false);
+            }
+            else if (!listDialoguePanel.activeSelf)
+            {
+                listDialoguePanel.SetActive(true);
+            }
         }
         else
         {
@@ -269,7 +318,6 @@ public class DialogueListSystem : MonoBehaviour
         }
         
     }
-
 
     public void InvokePlayerConditionalEvents()
     {
@@ -312,10 +360,20 @@ public class DialogueListSystem : MonoBehaviour
     //Initiate Dialogue
     public void BeginDialogue()
     {
-        inDialogue = true;
-        dialogueUI.SetActive(true);
+        if (npcDialogue != null && !npcDialogue.toOtherNPC)
+        {
+            //inDialogue = true;
+            dialogueUI.SetActive(true);
 
-        
+        }
+        else if (npcDialogue != null && npcDialogue.toOtherNPC)
+        {
+            //inDialogue = false;
+            dialogueUI.SetActive(true);
+            listDialoguePanel.SetActive(false);
+        }
+
+
 
     }
 

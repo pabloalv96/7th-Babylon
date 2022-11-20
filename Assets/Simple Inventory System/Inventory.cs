@@ -148,7 +148,7 @@ public class Inventory : MonoBehaviour, IDragHandler
 
                         Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
                         FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
-                        FindObjectOfType<PlayerInteractionRaycast>().interactIndicator.SetActive(false);
+                        FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
                     }
                     else
                     {
@@ -173,7 +173,7 @@ public class Inventory : MonoBehaviour, IDragHandler
 
                 Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
                 FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
-                FindObjectOfType<PlayerInteractionRaycast>().interactIndicator.SetActive(false);
+                FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
             }
             else
             {

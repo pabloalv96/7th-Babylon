@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: Well, I may need some help with that, maybe you can guard the door of
     one of the rooms while I change or more.
+  toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
   playerResponses:
@@ -22,7 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 302e9e72be1de2a4e8de18ba52dcf966, type: 2}
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []

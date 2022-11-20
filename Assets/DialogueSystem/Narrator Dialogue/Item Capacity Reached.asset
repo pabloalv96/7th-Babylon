@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Item Capacity Reached
   m_EditorClassIdentifier: 
   dialogue: You're already carrying enough of those.
+  toOtherNPC: 1
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
-  limitedTime: 0
-  timeLimit: 0
+  limitedTime: 1
+  timeLimit: 3
   playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []

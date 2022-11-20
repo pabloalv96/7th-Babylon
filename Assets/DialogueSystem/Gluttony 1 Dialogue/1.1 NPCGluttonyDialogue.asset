@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: It is said that they will allow you to eat as much as you want. Looks
     like opulence is not a problem here.
+  toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
   playerResponses:
@@ -22,7 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 715e6a0f9f9cc17439ee281a0de933be, type: 2}
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []

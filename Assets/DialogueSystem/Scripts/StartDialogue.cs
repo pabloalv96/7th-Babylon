@@ -17,6 +17,8 @@ public class StartDialogue : MonoBehaviour
         //Set NPC
         //Set greeting text
         //Set player options
+        dialogueSystem.inDialogue = true;
+
         dialogueSystem.enabled = true;
 
         dialogueSystem.npc = npcInfo;
@@ -59,51 +61,84 @@ public class StartDialogue : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         Debug.Log("Cursor Mode Confined");
-        dialogueSystem.BeginDialogue();
 
         dialogueSystem.playerIsLeading = true;
 
         dialogueSystem.SetNewDialogueText(greetingDialogue);
+        dialogueSystem.BeginDialogue();
+
 
     }
 
     public void NPCInitiatedDialogue(NPCInfo npc, NPCDialogueOption startingDialogue)
     {
-        //Set NPC
-        //Set greeting text
-        //Set player options
+        if (startingDialogue.toOtherNPC)
+        {
+            BeginSubtitleSequence(npc, startingDialogue);
+        }
+        else
+        {
+            //Set NPC
+            //Set greeting text
+            //Set player options
+            dialogueSystem.inDialogue = true;
+
+            dialogueSystem.enabled = true;
+
+
+
+            dialogueSystem.npc = npc;
+
+            //dialogueSystem.npc.npcEmotions.SetMood();
+            dialogueSystem.npcNameText.text = npc.npcName;
+
+            //if (npc.npcDialogue.dialogueConnections.Count > 0)
+            //{
+            //    playerDialogue.AddResponseOptions();
+            //}
+
+            //startingDialogue.playerResponses = playerDialogue.SetPlayerDialogueBasedOnCurrentNPCAndDialogue(npc, startingDialogue).playerResponses;
+
+            //playerDialogue.AddResponseOptions();
+
+            dialogueSystem.playerMovement.enabled = false;
+
+            //Lock Camera to NPC target
+            //dialogueSystem.playerDialogueText.text = playerDialogue.continueDialogue.dialogue;
+
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+
+            
+
+            dialogueSystem.playerIsLeading = false;
+
+            dialogueSystem.SetNewDialogueText(startingDialogue);
+            dialogueSystem.BeginDialogue();
+        }
+        
+    }
+
+    public void BeginSubtitleSequence(NPCInfo npc, NPCDialogueOption startingDialogue)
+    {
         dialogueSystem.enabled = true;
 
-        dialogueSystem.inDialogue = true;
-        
+        dialogueSystem.SetNewDialogueText(startingDialogue);
+
+        dialogueSystem.inDialogue = false;
 
         dialogueSystem.npc = npc;
 
-        //dialogueSystem.npc.npcEmotions.SetMood();
-        dialogueSystem.npcNameText.text = npc.npcName + ":";
+        dialogueSystem.npcNameText.text = npc.npcName;
 
-        //if (npc.npcDialogue.dialogueConnections.Count > 0)
-        //{
-        //    playerDialogue.AddResponseOptions();
-        //}
+        dialogueSystem.playerMovement.enabled = true;
 
-        //startingDialogue.playerResponses = playerDialogue.SetPlayerDialogueBasedOnCurrentNPCAndDialogue(npc, startingDialogue).playerResponses;
 
-        //playerDialogue.AddResponseOptions();
-
-        dialogueSystem.playerMovement.enabled = false;
-
-        //Lock Camera to NPC target
-        //dialogueSystem.playerDialogueText.text = playerDialogue.continueDialogue.dialogue;
-
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = true;
 
         dialogueSystem.BeginDialogue();
 
-        dialogueSystem.playerIsLeading = false;
-
-        dialogueSystem.SetNewDialogueText(startingDialogue);
     }
 
     public void EnterDialogueWithRandomNPC()

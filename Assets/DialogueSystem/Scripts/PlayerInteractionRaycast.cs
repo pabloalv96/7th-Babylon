@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PlayerInteractionRaycast : MonoBehaviour
@@ -14,7 +15,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     private StartDialogue initiateDialogue;
 
-    public GameObject interactIndicator;
+    public GameObject interactPromptIndicator;
+    public Image interactionAimIndicator;
 
     private bool isNPC;
     private bool isWorldDialogue;
@@ -42,7 +44,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
     {
         initiateDialogue = FindObjectOfType<StartDialogue>();
 
-        interactIndicator.SetActive(false);
+        interactPromptIndicator.SetActive(false);
 
         //checkInventoryIndicator.text = "New Item! Press '" + selectInput + "' to check your inventory";
 
@@ -64,7 +66,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isItem = true;
                 selectedObject = hit.transform.gameObject;
                 Debug.Log("hit = " + selectedObject);
-                interactIndicator.SetActive(true);
+                interactPromptIndicator.SetActive(true);
+                interactionAimIndicator.color = Color.red;
             }
             else
             {
@@ -74,7 +77,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
             if (hit.transform.GetComponent<DialogueInWorld>())
             {
                 selectedObject = hit.transform.gameObject;
-                interactIndicator.SetActive(true);
+                interactPromptIndicator.SetActive(true);
+                interactionAimIndicator.color = Color.red;
                 isWorldDialogue = true;
             }
             else
@@ -87,8 +91,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isNPC = true;
                 selectedObject = hit.transform.gameObject;
                 //Debug.Log("hit = " + selectedObject);
-                interactIndicator.SetActive(true);
-                
+                interactPromptIndicator.SetActive(true);
+                interactionAimIndicator.color = Color.red;
+
             }
             else
             {
@@ -99,7 +104,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
             {
                 isDoor = true;
                 selectedObject = hit.transform.gameObject;
-                interactIndicator.SetActive(true);
+                interactPromptIndicator.SetActive(true);
+                interactionAimIndicator.color = Color.red;
             }
             else
             {
@@ -159,10 +165,11 @@ public class PlayerInteractionRaycast : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             //Debug.Log("Did not Hit");
             selectedObject = null;
-            interactIndicator.SetActive(false);
+            interactPromptIndicator.SetActive(false);
+                interactionAimIndicator.color = Color.white;
         }
 
-        
+
     }
 
     public void SelectNPC()

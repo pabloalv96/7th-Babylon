@@ -14,42 +14,12 @@ public class NPCBrain : MonoBehaviour
 
     public bool isSpeakingToPlayer;
 
-
-    public void Start()
-    {
-        
-    }
-
-    //[System.Serializable]
-    //public struct NPCInfoSerialized
-    //{
-    //    public NPCInfo npcInfo;
-        
-    //    public string npcProfileID;
-    //    public string npcName;
-    //    public string npcGender;
-
-    //    public NPCEmotions npcEmotions;
-
-    //    public NPCDialogue npcDialogue;
-    //}
-
-    //public NPCInfoSerialized serializedNPCInfo;
-
-    //public void SerializeNPCInfo(NPCInfo npc)
-    //{
-    //    serializedNPCInfo.npcInfo = npc;
-    //    serializedNPCInfo.npcProfileID = npc.npcProfileID;
-    //    serializedNPCInfo.npcName = npc.npcName;
-    //    serializedNPCInfo.npcGender = npc.npcGender;
-    //    serializedNPCInfo.npcEmotions = npc.npcEmotions;
-    //    serializedNPCInfo.npcDialogue = npc.npcDialogue;
-    //}
-
     public void SpeakingToPlayer()
     {
-        //head.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
+        if (FindObjectOfType<DialogueListSystem>().inDialogue && FindObjectOfType<DialogueListSystem>().npc == npcInfo)
+        {
+            transform.LookAt(Camera.main.transform);
+        }
     }
-
 
 }

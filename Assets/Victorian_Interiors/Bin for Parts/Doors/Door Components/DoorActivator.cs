@@ -29,7 +29,7 @@ public class DoorActivator : MonoBehaviour
             //source.PlayOneShot(openSound, 1);
 
             FindObjectOfType<PlayerInteractionRaycast>().isDoor = true;
-            FindObjectOfType<PlayerInteractionRaycast>().interactIndicator.SetActive(true);
+            FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(true);
 
         }
     }
@@ -42,7 +42,7 @@ public class DoorActivator : MonoBehaviour
             source.PlayOneShot(closeSound, 1);
 
             FindObjectOfType<PlayerInteractionRaycast>().isDoor = false;
-            FindObjectOfType<PlayerInteractionRaycast>().interactIndicator.SetActive(false);
+            FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
         }
     }
 
@@ -69,5 +69,15 @@ public class DoorActivator : MonoBehaviour
         animator.SetBool("Open", false);
         isOpen = false;
         source.PlayOneShot(closeSound, 1);
+    }
+
+    public void LockDoor()
+    {
+        isLocked = true;
+    }
+
+    public void UnlockDoor()
+    {
+        isLocked = false;
     }
 }

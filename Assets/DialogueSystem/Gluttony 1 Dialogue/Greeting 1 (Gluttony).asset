@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Greeting 1 (Gluttony)
   m_EditorClassIdentifier: 
   dialogue: Good evening, Sir. What can I do for you?
+  toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 0fb77adb1c6c3ab419fa88779c73dd06, type: 2}
   playerResponses:
@@ -21,7 +22,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 715e6a0f9f9cc17439ee281a0de933be, type: 2}
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
