@@ -224,6 +224,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &98364607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98364609}
+  - component: {fileID: 98364608}
+  m_Layer: 0
+  m_Name: Quest Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &98364608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98364607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eca9687f00e93346a00295090f41689, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeQuestList: []
+  completedQuestList: []
+  missedQuestList: []
+  narrator: {fileID: 11400000, guid: 5714d22b24469b3478395fe452907447, type: 2}
+--- !u!4 &98364609
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98364607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 796.43744, y: 392.98273, z: 3.6071544}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &124938068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1561,7 +1609,7 @@ PrefabInstance:
     - target: {fileID: 741107121, guid: 1d3b1a1513de66247974634911345b98, type: 3}
       propertyPath: npcInfo
       value: 
-      objectReference: {fileID: 11400000, guid: 462db402b51558a4f8b0fa58b8d864c2,
+      objectReference: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d3b1a1513de66247974634911345b98, type: 3}
@@ -2131,6 +2179,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1060246247, guid: aa0ee347b0721b64796c9d315557d770, type: 3}
+      propertyPath: playerQuestions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 539026668768957450, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: m_SizeDelta.x

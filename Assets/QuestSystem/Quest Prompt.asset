@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: Doorman Greeting
+  m_Name: Quest Prompt
   m_EditorClassIdentifier: 
-  dialogue: Greetings and Welcome to the world-class 7th Babylon Hotel!
+  dialogue: Collect an item for me
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: bc582b1b6441e72439d4ccadfe3879f1, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 0
+  playerCanLeaveDialogue: 1
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
   isQuestPrompt: 0
-  relatedQuest: {fileID: 0}
+  relatedQuest: {fileID: 11400000, guid: 4ed562224ea071743b7478cb18db8291, type: 2}

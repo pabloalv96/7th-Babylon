@@ -17,7 +17,7 @@ MonoBehaviour:
   npcProfileID: 001
   npcDialogue:
     greetingDialogue:
-    - {fileID: 11400000, guid: 8bac0be45908fad4eb9795d14f9ab562, type: 2}
+    - {fileID: 11400000, guid: 998e8f2627ebf2a41bdcfea970d9f6c8, type: 2}
     goodbyeDialogue:
     - {fileID: 11400000, guid: 15d4f5ff76de9b349a9c8148c0cee086, type: 2}
     changeTopicDialogue:
@@ -25,21 +25,14 @@ MonoBehaviour:
     nothingToSayDialogue: {fileID: 11400000, guid: 3edff59e03006c545860fcea1cf538dd,
       type: 2}
     dialogueConnections:
-    - playerDialogueInput: {fileID: 11400000, guid: f46144293901d0f4ba32d33905ed8f95,
+    - playerDialogueInput: {fileID: 11400000, guid: 9db214d8ab969f54aa6ecf9c74286022,
         type: 2}
       npcResponses:
       - requiredStat:
           statName: 
           statValue: 0
-        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}
-    - playerDialogueInput: {fileID: 11400000, guid: 6b73d08102b3c5a439d7d6a63085f613,
-        type: 2}
-      npcResponses:
-      - requiredStat:
-          statName: 
-          statValue: 0
-        response: {fileID: 11400000, guid: 8137b0d0d011a2b4a85c0d0fc915d09e, type: 2}
-    - playerDialogueInput: {fileID: 11400000, guid: aa557ca25bac5db45a35ae43eaf641d3,
+        response: {fileID: 11400000, guid: bc582b1b6441e72439d4ccadfe3879f1, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 2a4d40a66f5ad894b92cbf7b41c5db3b,
         type: 2}
       npcResponses:
       - requiredStat:

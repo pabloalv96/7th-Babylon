@@ -12,13 +12,15 @@ public class OJQuest : ScriptableObject
 {
     [HideInInspector] public QuestManager questManager;
     [HideInInspector] public PlayerDialogue playerDialogue;
+    [HideInInspector] public EnvironmentalChangeController environmentalChanges;
+
+    public bool questStarted, questEnded;
 
     private void OnEnable()
     {
          questManager = FindObjectOfType<QuestManager>();
          playerDialogue = FindObjectOfType<PlayerDialogue>();
-
-
+         environmentalChanges = FindObjectOfType<EnvironmentalChangeController>();
     }
 
     public string questID;
@@ -45,28 +47,34 @@ public class OJQuestObjective
 {
     public OJQuestType questType;
 
-    public List<ItemInWorld> questItems;
+    public List<InventoryItem> questItems;
     public List<Collider> questLocationTriggers;
-    public List<PlayerDialogueOption> questDialogueOptions;
+    public List<OJQuestDialogue> questDialogueOptions;
 
+}
+
+[System.Serializable]
+public class OJQuestDialogue
+{
+    public PlayerDialogueOption questDialogueOption;
+    public NPCInfo dialogueNPCRecipient;
 }
 
 [System.Serializable]
 public class OJQuestOutcome
 {
     // lock & unlock dialogue
-    public UnlockNewDialogue newDialogue;
+    public UnlockNewDialogue unlockDialogue;
 
     public void UnlockDialogue(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueToUnlock)
     {
 
-        newDialogue.UnlockDialogueForSpecificNPC(playerDialogue, npc, dialogueToUnlock);
+        unlockDialogue.UnlockDialogueForSpecificNPC(playerDialogue, npc, dialogueToUnlock);
     }
 
     public void LockDialogue(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueToLock)
     {
-        //newDialogue.UnlockDialogueForSpecificNPC(playerDialogue, npc, dialogueToLock);
-
+        unlockDialogue.RemoveDialogueForSpecificNPC(playerDialogue, npc, dialogueToLock);
     }
 
     // add & remove quests
@@ -74,7 +82,7 @@ public class OJQuestOutcome
     public List<OJQuest> questsToLock;
 
     // cause environmental effects
-    public EnvironmentalChangeController environmentalChangeController;
+    public List<EnvironmentalChanges> environmentalChanges;
 
 }
 

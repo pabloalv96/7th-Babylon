@@ -27,4 +27,14 @@ public class UnlockNewDialogue
         playerDialogue.AddQuestionForSpecificNPC(dialogueOption, npc);
         playerDialogue.AddDialogueOptions();
     }
+
+    public void RemoveDialogueForAll(PlayerDialogue playerDialogue, PlayerDialogueOption dialogueOption)
+    {
+        //remove dialogue option for all npcs
+    }
+
+    public void RemoveDialogueForSpecificNPC(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueOption)
+    {
+        //remove dialogue option for specific npcs
+    }
 }

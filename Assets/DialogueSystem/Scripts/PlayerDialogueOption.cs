@@ -23,6 +23,9 @@ public class PlayerDialogueOption : ScriptableObject
 
     public List<UnityEvent> conditionalEvents;
 
+    public bool isQuestDialogue;
+    public OJQuest relatedQuest;
+
     //public void AffectEmotionValues()
     //{
     //    foreach (NPCMood.Emotion emotionToAffect in emotionsToAffectList)

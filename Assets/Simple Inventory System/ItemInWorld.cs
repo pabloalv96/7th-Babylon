@@ -7,6 +7,11 @@ using UnityEngine;
 public class ItemInWorld : MonoBehaviour
 {
     public InventoryItem item;
+
+    public List<ItemInteraction> itemInteractions;
+
+    //public bool isQuestItem;
+
     //public AudioClip itemCollectedAudio;
 
     //public bool hasDialogue;
@@ -16,5 +21,14 @@ public class ItemInWorld : MonoBehaviour
     //{
     //    unlockNewDialogue.enabled = false;
     //}
+
+    [System.Serializable]
+    public class ItemInteraction
+    {
+        public OJQuestInteraction interactableObject; // change to environment interaction
+
+        public PlayerDialogueOption interactionDialogue;
+
+    }
 
 }

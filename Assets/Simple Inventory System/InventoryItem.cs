@@ -13,4 +13,9 @@ public class InventoryItem : ScriptableObject
     public int numCarried;
     public int maxNumCarried;
 
+    public bool canCollect;
+    public bool isQuestItem;
+    public OJQuest relatedQuest;
+
+
 }

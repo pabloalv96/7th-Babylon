@@ -156,9 +156,6 @@ public class PlayerInteractionRaycast : MonoBehaviour
                     }
                 }
             }
-
-           
-
         }
         else
         {
@@ -166,7 +163,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
             //Debug.Log("Did not Hit");
             selectedObject = null;
             interactPromptIndicator.SetActive(false);
-                interactionAimIndicator.color = Color.white;
+            interactionAimIndicator.color = Color.white;
         }
 
 
@@ -198,6 +195,15 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     public void PickUpItem()
     {
+
+        inventory.AddItemToInventory(selectedObject.GetComponent<ItemInWorld>().item);
+
+        if (selectedObject.GetComponent<ItemInWorld>().item.isQuestItem)
+        {
+            FindObjectOfType<QuestManager>().EndQuest(selectedObject.GetComponent<ItemInWorld>().item.relatedQuest);
+        }
+
+
         //if (audioSource.isPlaying)
         //{
         //    audioSource.Stop();
@@ -209,9 +215,6 @@ public class PlayerInteractionRaycast : MonoBehaviour
         //{
         //    selectedObject.GetComponent<ItemInWorld>().unlockNewDialogue.enabled = true;
         //}
-        inventory.AddItemToInventory(selectedObject.GetComponent<ItemInWorld>().item);
-
-
 
         //if (FindObjectOfType<PlayerInfoController>()) // progress collection quest if relevant
         //{

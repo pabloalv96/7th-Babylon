@@ -123,6 +123,11 @@ public class DialogueListSystem : MonoBehaviour
                 InvokeNPCConditonalEvents();
             }
 
+            if (npcDialogue.isQuestPrompt)
+            {
+                FindObjectOfType<QuestManager>().StartQuest(npcDialogue.relatedQuest);
+            }
+
             DestroyOldDialogueOptions();
 
             if (!npcDialogue.requiresResponse || npcDialogue.toOtherNPC)
@@ -131,7 +136,7 @@ public class DialogueListSystem : MonoBehaviour
             }
             else
             {
-                if (npcDialogue.playerResponses.Count <= 0)
+                if (npcDialogue.playerResponses.Count == 0)
                 {
                     for (int i = 0; i < playerDialogue.playerQuestions.Count; i++)
                     {
@@ -254,31 +259,36 @@ public class DialogueListSystem : MonoBehaviour
 
         //selectedDialogueOption.AffectEmotionValues();
         if (inDialogue)
-        { 
-        if (selectedDialogueOption.statsToEffectList.Count > 0)
         {
-            selectedDialogueOption.AffectStatValues();
-        }
-        //npc.npcEmotions.SetMood();
-
-
-        if (selectedDialogueOption.conditionalEvents.Count > 0)
-        {
-            InvokePlayerConditionalEvents();
-        }
-
-        if (playerDialogue.changeTopicDialogue.Contains(selectedDialogueOption) || npcDialogue.changeOfTopic)
-        {
-            if (!playerIsLeading)
+            if (selectedDialogueOption.statsToEffectList.Count > 0)
             {
-                ChangeTopic();
+                selectedDialogueOption.AffectStatValues();
             }
-        }
+            //npc.npcEmotions.SetMood();
 
-        if (selectedDialogueOption.isGoodbyeOption || npcDialogue.endOfConversation)
-        {
-            LeaveDialogue();
-        }
+            if (selectedDialogueOption.isQuestDialogue)
+            {
+                FindObjectOfType<QuestManager>().EndQuest(selectedDialogueOption.relatedQuest);
+            }
+
+
+            if (selectedDialogueOption.conditionalEvents.Count > 0)
+            {
+                InvokePlayerConditionalEvents();
+            }
+
+            if (playerDialogue.changeTopicDialogue.Contains(selectedDialogueOption) || npcDialogue.changeOfTopic)
+            {
+                if (!playerIsLeading)
+                {
+                    ChangeTopic();
+                }
+            }
+
+            if (selectedDialogueOption.isGoodbyeOption || npcDialogue.endOfConversation)
+            {
+                LeaveDialogue();
+            }
         }
 
         if (!npcDialogue.requiresResponse)
