@@ -84,6 +84,10 @@ public class PlayerDialogue : MonoBehaviour
         {
             if (playerQuestions[i].npc == npc)
             {
+                if (newDialogueOption.isLocked)
+                {
+                    newDialogueOption.isLocked = false;
+                }
                 playerQuestions[i].questionsForNPC.Add(newDialogueOption);
             }
         }
@@ -181,6 +185,7 @@ public class PlayerDialogue : MonoBehaviour
         foreach (PlayerQuestions question in playerQuestions)
         {
             question.questionsForNPC.Remove(dialogueOption);
+            dialogueOption.isLocked = true;
         }
     }
 
@@ -191,6 +196,7 @@ public class PlayerDialogue : MonoBehaviour
             if (playerQuestions[i].npc == npc)
             {
                 playerQuestions[i].questionsForNPC.Remove(dialogueOption);
+                dialogueOption.isLocked = true;
             }
         }
     }

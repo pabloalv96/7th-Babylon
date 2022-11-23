@@ -5,7 +5,11 @@ using TMPro;
 
 public class QuestManager : MonoBehaviour
 {
-   // public TextMeshProUGUI questUIPrefab;
+    public TextMeshProUGUI questUIPrefab;
+
+    public List<TextMeshProUGUI> activeQuestUiList;
+
+    public GameObject activeQuestUIParent;
 
     public List<OJQuest> activeQuestList;
 
@@ -27,6 +31,11 @@ public class QuestManager : MonoBehaviour
                 ActivateQuestInteractions(quest);
 
                 activeQuestList.Add(quest);
+
+                TextMeshProUGUI questUIText = Instantiate(questUIPrefab, activeQuestUIParent.transform);
+                questUIText.text = quest.questDescription;
+
+                activeQuestUiList.Add(questUIText);
             }
 
             
@@ -35,6 +44,44 @@ public class QuestManager : MonoBehaviour
         }
 
         // create quest UI
+    }
+
+    public void RemoveInactiveQuestUI()
+    {
+
+        for (int q = 0; q < activeQuestUiList.Count; q++)
+        {
+            foreach (OJQuest completedQuest in completedQuestList)
+            {
+                if (activeQuestUiList[q].text == completedQuest.questDescription)
+                {
+                    Destroy(activeQuestUiList[q].gameObject);
+                    activeQuestUiList.Remove(activeQuestUiList[q]);
+
+                }
+            }
+            foreach (OJQuest missedQuest in missedQuestList)
+            {
+                if (activeQuestUiList[q].text == missedQuest.questDescription)
+                {
+                    Destroy(activeQuestUiList[q].gameObject);
+                    activeQuestUiList.Remove(activeQuestUiList[q]);
+
+                }
+            }
+        }
+
+        //for (int i = 0; i < activeQuestList.Count; i++)
+        //{
+        //    for (int q = 0; q < activeQuestUiList.Count; q++)
+        //    {
+        //        if (activeQuestList[i].questDescription == activeQuestUiList[q].text)
+        //        {
+
+
+        //        }
+        //    }
+        //}
     }
 
     public void ActivateQuestInteractions(OJQuest quest)
@@ -210,15 +257,18 @@ public class QuestManager : MonoBehaviour
             {
                 foreach(OJQuest nextQuest in quest.outcome.questsToUnlock)
                 {
-                    activeQuestList.Add(nextQuest);
+                    //activeQuestList.Add(nextQuest);
                     StartQuest(nextQuest);
                 }
             }
 
             DeactivateOldQuestInteractions();
 
+            RemoveInactiveQuestUI();
+
             quest.questEnded = true;
 
         }
+
     }
 }

@@ -123,6 +123,7 @@ public class DialogueListSystem : MonoBehaviour
     {
         if (inDialogue || npcDialogueOption.toOtherNPC)
         {
+            
             npcDialogueText.text = npcDialogueOption.dialogue;
             npcDialogue = npcDialogueOption;
 
@@ -312,6 +313,11 @@ public class DialogueListSystem : MonoBehaviour
         {
             //npcDialogue = playerDialogue.questions.npc;
             npcDialogue = npc.DefaultResponse(selectedDialogueOption);
+        }
+
+        if (!npcDialogue.isRepeatable)
+        {
+            playerDialogue.RemoveDialogueForSpecificNPC(selectedDialogueOption, npc);
         }
 
         SetNewDialogueText(npcDialogue);

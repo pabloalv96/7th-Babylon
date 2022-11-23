@@ -10,24 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Collect Item Quest
+  m_Name: Location Trigger Quesr
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
   questStarted: 0
   questEnded: 0
-  questID: 000
-  questDescription: Collect an item
+  questID: 
+  questDescription: Enter the trigger area
   objective:
-    questType: 0
-    questItems:
-    - {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872, type: 2}
-    - {fileID: 11400000, guid: 4f93ff0518ebee44ca81c2dc5ae1ef35, type: 2}
-    questLocationTriggers: []
+    questType: 1
+    questItems: []
+    questLocationTriggers:
+    - {fileID: 0}
     questDialogueOptions: []
   outcome:
-    questsToUnlock:
-    - {fileID: 11400000, guid: 8e5accb5920efcf4198100bfdc8fed69, type: 2}
+    questsToUnlock: []
     questsToLock: []
     environmentalChanges: []

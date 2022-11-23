@@ -27,7 +27,9 @@ public class NPCDialogueOption : ScriptableObject
                                              //**unless there is a time limit
 
     public bool playerCanLeaveDialogue = true;//if true the player will be able to leave the dialogue
-                                       //**unless there is a time limit
+                                              //**unless there is a time limit
+
+    public bool isRepeatable = true;
 
     public bool endOfConversation;
     public bool changeOfTopic; // forced topic change by NPC
