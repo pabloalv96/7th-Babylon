@@ -35,8 +35,6 @@ public class OJQuest : ScriptableObject
     // subsiquent objectives
     // sin affects & environmental changes
 
-
-
 }
 
 [System.Serializable]
@@ -64,18 +62,19 @@ public class OJQuestDialogue
 public class OJQuestOutcome
 {
     // lock & unlock dialogue
-    public UnlockNewDialogue unlockDialogue;
+    //public UnlockNewDialogue unlockDialogue;
 
-    public void UnlockDialogue(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueToUnlock)
-    {
+    //public void UnlockDialogue(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueToUnlock)
+    //{
 
-        unlockDialogue.UnlockDialogueForSpecificNPC(playerDialogue, npc, dialogueToUnlock);
-    }
+    //    //unlockDialogue.UnlockDialogueForSpecificNPC(playerDialogue, npc, dialogueToUnlock);
+    //    playerDialogue.
+    //}
 
-    public void LockDialogue(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueToLock)
-    {
-        unlockDialogue.RemoveDialogueForSpecificNPC(playerDialogue, npc, dialogueToLock);
-    }
+    //public void LockDialogue(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueToLock)
+    //{
+    //    //unlockDialogue.RemoveDialogueForSpecificNPC(playerDialogue, npc, dialogueToLock);
+    //}
 
     // add & remove quests
     public List<OJQuest> questsToUnlock;

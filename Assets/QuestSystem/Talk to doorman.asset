@@ -15,10 +15,10 @@ MonoBehaviour:
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
-  questStarted: 0
-  questEnded: 0
-  questID: 
-  questDescription: 
+  questStarted: 1
+  questEnded: 1
+  questID: 001
+  questDescription: Talk to the Doorman
   objective:
     questType: 2
     questItems: []
@@ -29,9 +29,6 @@ MonoBehaviour:
       dialogueNPCRecipient: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
         type: 2}
   outcome:
-    unlockDialogue:
-      dialogueToUnlock: []
-      dialogueToLock: []
     questsToUnlock: []
     questsToLock: []
     environmentalChanges: []

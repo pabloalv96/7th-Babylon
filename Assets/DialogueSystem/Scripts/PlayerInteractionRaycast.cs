@@ -195,13 +195,14 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     public void PickUpItem()
     {
-
-        inventory.AddItemToInventory(selectedObject.GetComponent<ItemInWorld>().item);
-
         if (selectedObject.GetComponent<ItemInWorld>().item.isQuestItem)
         {
             FindObjectOfType<QuestManager>().EndQuest(selectedObject.GetComponent<ItemInWorld>().item.relatedQuest);
         }
+
+        inventory.AddItemToInventory(selectedObject.GetComponent<ItemInWorld>().item);
+
+        
 
 
         //if (audioSource.isPlaying)

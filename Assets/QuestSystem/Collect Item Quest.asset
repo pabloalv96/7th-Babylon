@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: New OJ Quest
+  m_Name: Collect Item Quest
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
-  questStarted: 0
-  questEnded: 0
+  questStarted: 1
+  questEnded: 1
   questID: 000
   questDescription: Collect an item
   objective:
@@ -27,9 +27,6 @@ MonoBehaviour:
     questLocationTriggers: []
     questDialogueOptions: []
   outcome:
-    unlockDialogue:
-      dialogueToUnlock: []
-      dialogueToLock: []
     questsToUnlock:
     - {fileID: 11400000, guid: 8e5accb5920efcf4198100bfdc8fed69, type: 2}
     questsToLock: []

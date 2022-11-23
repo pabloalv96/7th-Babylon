@@ -450,7 +450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &508549904
 Transform:
   m_ObjectHideFlags: 0
@@ -1602,6 +1602,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 741107117, guid: 1d3b1a1513de66247974634911345b98, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 741107121, guid: 1d3b1a1513de66247974634911345b98, type: 3}
       propertyPath: head
       value: 
@@ -2181,6 +2185,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1060246247, guid: aa0ee347b0721b64796c9d315557d770, type: 3}
       propertyPath: playerQuestions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060246247, guid: aa0ee347b0721b64796c9d315557d770, type: 3}
+      propertyPath: playerQuestions.Array.data[0].npc
+      value: 
+      objectReference: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
+        type: 2}
+    - target: {fileID: 1060246247, guid: aa0ee347b0721b64796c9d315557d770, type: 3}
+      propertyPath: playerQuestions.Array.data[0].questionsForNPC.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 539026668768957450, guid: aa0ee347b0721b64796c9d315557d770,

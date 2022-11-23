@@ -51,6 +51,11 @@ public class DialogueListSystem : MonoBehaviour
 
     [SerializeField] private GameObject dialogueUI;
 
+    private void Start()
+    {
+        AddNPCsToPlayerDialogue();
+    }
+
     private void Update()
     {
         if (inDialogue)
@@ -85,6 +90,7 @@ public class DialogueListSystem : MonoBehaviour
         }
         else if (npcDialogue == null || !responseTimerActive || !npcDialogue.toOtherNPC)
         {
+            Debug.Log("No Dialogue. Ending Conversation.");
             LeaveDialogue();
             
         }
@@ -102,6 +108,8 @@ public class DialogueListSystem : MonoBehaviour
             }
             else
             {
+                Debug.Log("No Dialogue. Ending Conversation.");
+
                 LeaveDialogue();
             }
 
@@ -136,7 +144,7 @@ public class DialogueListSystem : MonoBehaviour
             }
             else
             {
-                if (npcDialogue.playerResponses.Count == 0)
+                if (npcDialogue.playerResponses.Count <= 0)
                 {
                     for (int i = 0; i < playerDialogue.playerQuestions.Count; i++)
                     {
@@ -146,14 +154,10 @@ public class DialogueListSystem : MonoBehaviour
                             {
                                 npcDialogue.playerResponses = playerDialogue.SetPlayerDialogueBasedOnCurrentNPCAndDialogue(npc, npcDialogue).playerResponses;
                             }
-                            else
-                            {
-                                npcDialogue = npc.npcDialogue.nothingToSayDialogue;
-                                npcDialogueText.text = npcDialogue.dialogue;
-                            }
                         }
                     }
                 }
+
             }
 
             SetResponseTimer();
@@ -422,4 +426,32 @@ public class DialogueListSystem : MonoBehaviour
 
         Debug.Log("Changing the topic");
     }
+    public void AddNPCsToPlayerDialogue()
+    {
+        List<NPCInfo> npcInfoList = new List<NPCInfo>();
+
+        foreach(NPCBrain npc in FindObjectsOfType<NPCBrain>())
+        {
+            npcInfoList.Add(npc.npcInfo);
+        }
+        // playerDialogue.playerQuestions.Clear();
+
+        for (int i = 0; i < npcInfoList.Count; i++)
+        {
+            // Add random NPC's & Questions to new list
+            PlayerDialogue.PlayerQuestions newPlayerQuestions = new PlayerDialogue.PlayerQuestions();
+
+            newPlayerQuestions.npc = npcInfoList[i];
+
+            //Debug.Log("Generating questions for: " + npcInfoList[i].npcName);
+
+
+            playerDialogue.playerQuestions.Add(newPlayerQuestions);
+
+
+        }
+
+        //playerDialogue.AddDialogueOptions();
+    }
+
 }

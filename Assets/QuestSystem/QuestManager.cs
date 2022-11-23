@@ -80,7 +80,7 @@ public class QuestManager : MonoBehaviour
             case OJQuestType.dialogueBased:
                 foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
                 {
-                    quest.outcome.unlockDialogue.UnlockDialogueForSpecificNPC(FindObjectOfType<PlayerDialogue>(), questDialogue.dialogueNPCRecipient, questDialogue.questDialogueOption);
+                    FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
                 }
                 Debug.Log("Quest Dialogue Activated");
                 break;
@@ -153,7 +153,7 @@ public class QuestManager : MonoBehaviour
                     case OJQuestType.dialogueBased:
                         foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
                         {
-                            quest.outcome.unlockDialogue.UnlockDialogueForSpecificNPC(FindObjectOfType<PlayerDialogue>(), questDialogue.dialogueNPCRecipient, questDialogue.questDialogueOption);
+                            FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
                         }
                         break;
                 }
@@ -182,7 +182,8 @@ public class QuestManager : MonoBehaviour
                 case OJQuestType.dialogueBased:
                     foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
                     {
-                        quest.outcome.unlockDialogue.RemoveDialogueForSpecificNPC(FindObjectOfType<PlayerDialogue>(), questDialogue.dialogueNPCRecipient, questDialogue.questDialogueOption);
+                        FindObjectOfType<PlayerDialogue>().RemoveDialogueForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                        //quest.outcome.unlockDialogue.RemoveDialogueForSpecificNPC(FindObjectOfType<PlayerDialogue>(), questDialogue.dialogueNPCRecipient, questDialogue.questDialogueOption);
                     }
                     break;
             }
