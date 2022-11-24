@@ -452,9 +452,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectInput: 101
-  reachDistance: 5
+  reachDistance: 2
   selectedObject: {fileID: 0}
-  interactIndicator: {fileID: 0}
+  interactPromptIndicator: {fileID: 0}
+  interactionAimIndicator: {fileID: 0}
+  isDoor: 0
   inventory: {fileID: 0}
   isItem: 0
   doorActivator: {fileID: 0}

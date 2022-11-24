@@ -23780,6 +23780,7 @@ GameObject:
   - component: {fileID: 1245784222}
   - component: {fileID: 1245784221}
   - component: {fileID: 1245784220}
+  - component: {fileID: 7433586240552030253}
   - component: {fileID: 1245784219}
   - component: {fileID: 1245784218}
   - component: {fileID: 1245784217}
@@ -23987,6 +23988,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &7433586240552030253
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245784215}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010556789, y: 0.005, z: 0.024713855}
+  m_Center: {x: 0.007, y: 0.0015, z: 0.014}
 --- !u!65 &1245784219
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24030,7 +24044,7 @@ MonoBehaviour:
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
   source: {fileID: 0}
   isOpen: 0
-  isLocked: 1
+  isLocked: 0
 --- !u!1 &1381871131
 GameObject:
   m_ObjectHideFlags: 0
@@ -24588,7 +24602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11440336, guid: 3d23871042855f847b01d3124f3728dd, type: 3}
       propertyPath: isLocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d23871042855f847b01d3124f3728dd, type: 3}
@@ -24651,7 +24665,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11440336, guid: 3d23871042855f847b01d3124f3728dd, type: 3}
       propertyPath: isLocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13528236, guid: 3d23871042855f847b01d3124f3728dd, type: 3}
       propertyPath: m_Radius
@@ -25154,7 +25168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11440336, guid: 3d23871042855f847b01d3124f3728dd, type: 3}
       propertyPath: isLocked
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 13528236, guid: 3d23871042855f847b01d3124f3728dd, type: 3}
       propertyPath: m_Enabled
