@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -10,7 +12,7 @@ using UnityEditor;
 [CreateAssetMenu(menuName = "QuestSystem/Quest")]
 public class OJQuest : ScriptableObject
 {
-    [HideInInspector] public QuestManager questManager;
+    [HideInInspector] public OJQuestManager questManager;
     [HideInInspector] public PlayerDialogue playerDialogue;
     [HideInInspector] public EnvironmentalChangeController environmentalChanges;
 
@@ -18,7 +20,7 @@ public class OJQuest : ScriptableObject
 
     private void OnEnable()
     {
-         questManager = FindObjectOfType<QuestManager>();
+         questManager = FindObjectOfType<OJQuestManager>();
          playerDialogue = FindObjectOfType<PlayerDialogue>();
          environmentalChanges = FindObjectOfType<EnvironmentalChangeController>();
     }
@@ -81,9 +83,10 @@ public class OJQuestOutcome
     public List<OJQuest> questsToLock;
 
     // cause environmental effects
-    public List<EnvironmentalChanges> environmentalChanges;
+    public List<StatContainer.Stat> statsToEffectList;
 
 }
+
 
 //[CustomEditor(typeof(OJQuest))]
 //public class OJQuestObjectiveEditor : Editor
@@ -93,22 +96,39 @@ public class OJQuestOutcome
 //    {
 //        base.OnInspectorGUI();
 
-//        OJQuest quest = (OJQuest)target;
-//        if (quest == null) return;
+//        //OJQuest quest = (OJQuest)target;
+//        //if (quest == null) return;
 
-//        questObjective = quest.objective;
+//        //questObjective = quest.objective;
 
-//        switch (questObjective.questType)
+//        //switch (questObjective.questType)
+//        //{
+//        //    case OJQuestType.itemBased:
+//        //        break;
+//        //    case OJQuestType.locationBased:
+//        //        break;
+//        //    case OJQuestType.dialogueBased:
+//        //        break;
+//        //}
+
+//        if (Application.isPlaying && Application.isEditor)
 //        {
-//            case OJQuestType.itemBased:
-//                break;
-//            case OJQuestType.locationBased:
-//                break;
-//            case OJQuestType.dialogueBased:
-//                break;
+//            DirectoryInfo dir = new DirectoryInfo("Assets/QuestSystem/Quests");
+//            FileInfo[] info = dir.GetFiles("*.asset");
+
+//            foreach(FileInfo f in info)
+//            {
+//                if (f.)
+//            }
+
+//            //string[] files = System.IO.Directory.GetFiles("Assets/QuestSystem/Quests");
+//            //foreach (string file in files)
+//            //{
+//            //    //Do work on the files here
+//            //    if (file.GetType())
+//            //}
+
 //        }
 
-
-        
 //    }
 //}

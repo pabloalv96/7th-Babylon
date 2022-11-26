@@ -719,7 +719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &440350
 Transform:
   m_ObjectHideFlags: 0
@@ -1380,7 +1380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481226
 Transform:
   m_ObjectHideFlags: 0
@@ -1805,8 +1805,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  openDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 8f7cdcefb7a2500499366ebcacb4c28e, type: 3}
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
+  source: {fileID: 0}
+  isOpen: 0
+  isLocked: 0
+  keysList: []
+  chosenKey:
+    keyItem: {fileID: 0}
+    statsToEffectList: []
 --- !u!1 &184652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &406856
 Transform:
   m_ObjectHideFlags: 0
@@ -2255,4 +2269,4 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2313302}
-  m_Enabled: 1
+  m_Enabled: 0

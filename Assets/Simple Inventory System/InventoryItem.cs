@@ -17,5 +17,6 @@ public class InventoryItem : ScriptableObject
     public bool isQuestItem;
     public OJQuest relatedQuest;
 
+    public List<StatContainer.Stat> statsToEffectList;
 
 }

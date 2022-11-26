@@ -108,7 +108,7 @@ public class PlayerDialogue : MonoBehaviour
                     {
                         if (!playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue) // check the dialogue object for if the player is responding or is for a quest
                         {
-                            if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isQuestDialogue && FindObjectOfType<QuestManager>().activeQuestList.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest))
+                            if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isQuestDialogue && FindObjectOfType<OJQuestManager>().activeQuestList.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest))
                             {
                                 playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); //if not add it to the player's current dialogue selection
                             }
@@ -117,7 +117,7 @@ public class PlayerDialogue : MonoBehaviour
                                 playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); //if not add it to the player's current dialogue selection
 
                             }
-                            else if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isQuestDialogue && !FindObjectOfType<QuestManager>().activeQuestList.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest))
+                            else if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isQuestDialogue && !FindObjectOfType<OJQuestManager>().activeQuestList.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest))
                             {
                                 if (playerQuestions[i].npc.npcDialogue.dialogueConnections[0].playerDialogueInput == null && playerQuestions[i].npc.npcDialogue.dialogueConnections[0].npcResponses[0].response.requiresResponse)
                                 {

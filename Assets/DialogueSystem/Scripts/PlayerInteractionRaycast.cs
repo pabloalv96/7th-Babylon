@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -21,6 +22,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private bool isNPC;
     private bool isWorldDialogue;
     [HideInInspector] public bool isDoor;
+    private bool isItem;
+    private bool isInteraction;
 
     [SerializeField] private Inventory inventory;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
@@ -32,11 +35,14 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     //[SerializeField] private AudioSource audioSource;
 
-    [SerializeField] private bool isItem;
-
     [SerializeField] private DoorActivator doorActivator;
+    [SerializeField] private OJQuestInteraction interaction;
     [SerializeField] private NPCInfo narrator;
     [SerializeField] private NPCDialogueOption lockedDoorDialogue;
+    [SerializeField] private NPCDialogueOption unlockDoorDialogue;
+    [SerializeField] private NPCDialogueOption interactDialogueOption;
+
+    public LayerMask uiLayer;
 
 
 
@@ -57,7 +63,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, reachDistance) && !initiateDialogue.dialogueSystem.enabled) //Camera.main.transform.position, Camera.main.transform.forward
+        if (Physics.Raycast(ray, out hit, reachDistance, ~uiLayer) && !initiateDialogue.dialogueSystem.enabled) //Camera.main.transform.position, Camera.main.transform.forward
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.magenta);
 
@@ -112,6 +118,18 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isDoor = false;
             }
 
+            if (hit.transform.GetComponent<OJQuestInteraction>())
+            {
+                isInteraction = true;
+                selectedObject = hit.transform.gameObject;
+                interactPromptIndicator.SetActive(true);
+                interactionAimIndicator.color = Color.red;
+            }
+            else
+            {
+                isInteraction = false;
+            }
+
             if (selectedObject != null && Input.GetKeyDown(selectInput))
             {
                 if (isNPC)
@@ -150,9 +168,89 @@ public class PlayerInteractionRaycast : MonoBehaviour
                     else
                     {
                         //communicate locked door to player
-                        //Debug.Log(selectedObject.name + " is locked");
+                        //hint player about key
 
-                        FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, lockedDoorDialogue);
+                        if(doorActivator.CheckKeysInInventory())
+                        {
+
+                            unlockDoorDialogue.playerResponses.Clear();
+
+                            foreach(DoorKey key in doorActivator.keysList)
+                            {
+                                for (int i = 0; i < inventory.inventory.Count; i++)
+                                {
+                                    if (inventory.inventory[i] == key.keyItem)
+                                    {
+                                        PlayerDialogueOption newUnlockDialogue = new PlayerDialogueOption();
+
+                                        newUnlockDialogue.isResponseToNPCDialogue = true;
+                                        newUnlockDialogue.isGoodbyeOption = true;
+                                        newUnlockDialogue.dialogue = "Unlock the door with " + key.keyItem.itemName;
+
+                                        newUnlockDialogue.conditionalEvents = new List<UnityEvent>();
+
+                                        newUnlockDialogue.conditionalEvents.Add(doorActivator.unlockDoorEvent);
+
+                                        newUnlockDialogue.conditionalEvents.Add(doorActivator.openDoorEvent);
+
+                                        newUnlockDialogue.statsToEffectList = key.statsToEffectList;
+
+                                        unlockDoorDialogue.playerResponses.Add(newUnlockDialogue);
+
+                                        
+
+                                    }
+                                }
+                            }
+
+                            FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, unlockDoorDialogue);
+
+                        }
+                        else
+                        {
+                            FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, lockedDoorDialogue);
+
+                        }
+
+                    }
+                }
+
+                if (isInteraction)
+                {
+                    interaction = selectedObject.GetComponent<OJQuestInteraction>();
+
+                    if (interaction.CheckItemsnInventory())
+                    {
+                        interactDialogueOption.playerResponses.Clear();
+
+                        foreach (EnvironmentalItemInteraction itemInteraction in interaction.itemInteractionsList)
+                        {
+                            for (int i = 0; i < inventory.inventory.Count; i++)
+                            {
+                                if (inventory.inventory[i] == itemInteraction.item)
+                                {
+                                    PlayerDialogueOption interactionDialogue = new PlayerDialogueOption();
+
+                                    interactionDialogue.isResponseToNPCDialogue = true;
+                                    interactionDialogue.isGoodbyeOption = true;
+                                    interactionDialogue.dialogue = "Use " + itemInteraction.item.itemName + " on " + interaction.interactionObjectName;
+
+                                    interactionDialogue.conditionalEvents = new List<UnityEvent>();
+
+                                    foreach (UnityEvent itemEvent in itemInteraction.itemInteractionEvents)
+                                    {
+                                        interactionDialogue.conditionalEvents.Add(itemEvent);
+                                    }
+
+                                    interactionDialogue.statsToEffectList = itemInteraction.statsToEffectList;
+
+                                    interactDialogueOption.playerResponses.Add(interactionDialogue);
+                                }
+                            }
+                        }
+
+                        FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, interactDialogueOption);
+
                     }
                 }
             }
@@ -197,7 +295,12 @@ public class PlayerInteractionRaycast : MonoBehaviour
     {
         if (selectedObject.GetComponent<ItemInWorld>().item.isQuestItem)
         {
-            FindObjectOfType<QuestManager>().EndQuest(selectedObject.GetComponent<ItemInWorld>().item.relatedQuest);
+            FindObjectOfType<OJQuestManager>().EndQuest(selectedObject.GetComponent<ItemInWorld>().item.relatedQuest);
+        }
+
+        if (selectedObject.GetComponent<ItemInWorld>().item.statsToEffectList.Count > 0)
+        {
+            FindObjectOfType<PlayerInfoController>().AffectStatValues(selectedObject.GetComponent<ItemInWorld>().item.statsToEffectList);
         }
 
         inventory.AddItemToInventory(selectedObject.GetComponent<ItemInWorld>().item);

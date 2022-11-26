@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 168476, guid: 04944268b33833143abb7058abe11686, type: 3}
   itemName: Glass Cup
-  numCarried: 0
+  numCarried: 1
   maxNumCarried: 4
+  canCollect: 0
+  isQuestItem: 0
+  relatedQuest: {fileID: 0}
+  statsToEffectList:
+  - statName: Lust
+    statValue: 30
