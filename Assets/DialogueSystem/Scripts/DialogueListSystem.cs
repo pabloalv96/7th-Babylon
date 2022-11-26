@@ -134,7 +134,7 @@ public class DialogueListSystem : MonoBehaviour
 
             if (npcDialogue.isQuestPrompt)
             {
-                FindObjectOfType<QuestManager>().StartQuest(npcDialogue.relatedQuest);
+                FindObjectOfType<OJQuestManager>().StartQuest(npcDialogue.relatedQuest);
             }
 
             DestroyOldDialogueOptions();
@@ -269,13 +269,14 @@ public class DialogueListSystem : MonoBehaviour
         {
             if (selectedDialogueOption.statsToEffectList.Count > 0)
             {
-                selectedDialogueOption.AffectStatValues();
+                //selectedDialogueOption.AffectStatValues();
+                FindObjectOfType<PlayerInfoController>().AffectStatValues(selectedDialogueOption.statsToEffectList);
             }
             //npc.npcEmotions.SetMood();
 
             if (selectedDialogueOption.isQuestDialogue)
             {
-                FindObjectOfType<QuestManager>().EndQuest(selectedDialogueOption.relatedQuest);
+                FindObjectOfType<OJQuestManager>().EndQuest(selectedDialogueOption.relatedQuest);
             }
 
 

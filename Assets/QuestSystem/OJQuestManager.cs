@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class QuestManager : MonoBehaviour
+public class OJQuestManager : MonoBehaviour
 {
     public TextMeshProUGUI questUIPrefab;
 
@@ -17,6 +17,8 @@ public class QuestManager : MonoBehaviour
     public List<OJQuest> missedQuestList;
 
     public NPCInfo narrator;
+
+
 
     // track currently active quests
     // lock quests that are completed or no longer available
@@ -102,18 +104,18 @@ public class QuestManager : MonoBehaviour
                     }
                 }
 
-                foreach (InventoryItem inventoryItem in FindObjectOfType<Inventory>().inventory)
-                {
-                    foreach (ItemInWorld.ItemInteraction interaction in inventoryItem.prefab.GetComponent<ItemInWorld>().itemInteractions)
-                    {
-                        if (inventoryItem.isQuestItem && !interaction.interactableObject.questInteractionDialogue.Contains(interaction.interactionDialogue))
-                        {
+                //foreach (InventoryItem inventoryItem in FindObjectOfType<Inventory>().inventory)
+                //{
+                //    foreach (ItemInWorld.ItemInteraction interaction in inventoryItem.prefab.GetComponent<ItemInWorld>().itemInteractions)
+                //    {
+                //        if (inventoryItem.isQuestItem && !interaction.interactableObject.questInteractionDialogue.Contains(interaction.interactionDialogue))
+                //        {
 
-                            interaction.interactableObject.questInteractionDialogue.Add(interaction.interactionDialogue);
-                        }
-                        //FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(interaction.interactionDialogue, narrator);
-                    }
-                }
+                //            interaction.interactableObject.questInteractionDialogue.Add(interaction.interactionDialogue);
+                //        }
+                //        //FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(interaction.interactionDialogue, narrator);
+                //    }
+                //}
 
                 Debug.Log("Quest Items Activated");
                 break;
@@ -177,24 +179,24 @@ public class QuestManager : MonoBehaviour
                             }
                         }
 
-                        foreach (InventoryItem inventoryItem in FindObjectOfType<Inventory>().inventory)
-                        {
-                            foreach (ItemInWorld.ItemInteraction interaction in inventoryItem.prefab.GetComponent<ItemInWorld>().itemInteractions)
-                            {
-                                if (!inventoryItem.isQuestItem && interaction.interactableObject.questInteractionDialogue.Contains(interaction.interactionDialogue))
-                                {
-                                    interaction.interactableObject.questInteractionDialogue.Remove(interaction.interactionDialogue);
-                                }
-                                //FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(interaction.interactionDialogue, narrator);
-                            }
-                        }
+                        //foreach (InventoryItem inventoryItem in FindObjectOfType<Inventory>().inventory)
+                        //{
+                        //    foreach (ItemInWorld.ItemInteraction interaction in inventoryItem.prefab.GetComponent<ItemInWorld>().itemInteractions)
+                        //    {
+                        //        if (!inventoryItem.isQuestItem && interaction.interactableObject.questInteractionDialogue.Contains(interaction.interactionDialogue))
+                        //        {
+                        //            interaction.interactableObject.questInteractionDialogue.Remove(interaction.interactionDialogue);
+                        //        }
+                        //        //FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(interaction.interactionDialogue, narrator);
+                        //    }
+                        //}
                         break;
 
-                    case OJQuestType.locationBased:
-                        foreach (Collider trigger in quest.objective.questLocationTriggers)
-                        {
-                            trigger.enabled = true;
-                        }
+                    case OJQuestType.locationBased: // needs a monobehaviour to store colliders per location quest
+                        //foreach (Collider trigger in quest.objective.questLocationTriggers)
+                        //{
+                        //    trigger.enabled = true;
+                        //}
                         break;
 
                     case OJQuestType.dialogueBased:
@@ -220,11 +222,11 @@ public class QuestManager : MonoBehaviour
                 case OJQuestType.itemBased:
 
                     break;
-                case OJQuestType.locationBased:
-                    foreach (Collider trigger in quest.objective.questLocationTriggers)
-                    {
-                        trigger.enabled = false;
-                    }
+                case OJQuestType.locationBased: // needs a monobehaviour to store colliders per location quest
+                    //foreach (Collider trigger in quest.objective.questLocationTriggers)
+                    //{
+                    //    trigger.enabled = false;
+                    //}
                     break;
                 case OJQuestType.dialogueBased:
                     foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
@@ -243,6 +245,8 @@ public class QuestManager : MonoBehaviour
             if (!missedQuestList.Contains(quest) && !completedQuestList.Contains(quest))
             {
                 completedQuestList.Add(quest);
+
+                FindObjectOfType<PlayerInfoController>().AffectStatValues(quest.outcome.statsToEffectList);
 
                 foreach (OJQuest missedQuest in quest.outcome.questsToLock)
                 {

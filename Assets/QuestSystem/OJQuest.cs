@@ -12,7 +12,7 @@ using UnityEditor;
 [CreateAssetMenu(menuName = "QuestSystem/Quest")]
 public class OJQuest : ScriptableObject
 {
-    [HideInInspector] public QuestManager questManager;
+    [HideInInspector] public OJQuestManager questManager;
     [HideInInspector] public PlayerDialogue playerDialogue;
     [HideInInspector] public EnvironmentalChangeController environmentalChanges;
 
@@ -20,7 +20,7 @@ public class OJQuest : ScriptableObject
 
     private void OnEnable()
     {
-         questManager = FindObjectOfType<QuestManager>();
+         questManager = FindObjectOfType<OJQuestManager>();
          playerDialogue = FindObjectOfType<PlayerDialogue>();
          environmentalChanges = FindObjectOfType<EnvironmentalChangeController>();
     }
@@ -83,7 +83,7 @@ public class OJQuestOutcome
     public List<OJQuest> questsToLock;
 
     // cause environmental effects
-    public List<EnvironmentalChanges> environmentalChanges;
+    public List<StatContainer.Stat> statsToEffectList;
 
 }
 
