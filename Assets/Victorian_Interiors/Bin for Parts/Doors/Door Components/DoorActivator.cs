@@ -1,10 +1,14 @@
 ﻿
-
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class DoorActivator : MonoBehaviour
 {
+    public UnityEvent unlockDoorEvent;
+    public UnityEvent openDoorEvent;
 
     [HideInInspector] public Animator animator;
     public AudioClip openSound;
@@ -14,10 +18,26 @@ public class DoorActivator : MonoBehaviour
     public bool isOpen = false;
     public bool isLocked = false;
 
+    public List<InventoryItem> keysList;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
+
+        if (unlockDoorEvent == null)
+        {
+            unlockDoorEvent = new UnityEvent();
+        }
+        unlockDoorEvent.AddListener(UnlockDoor); 
+        
+        if (openDoorEvent == null)
+        {
+            openDoorEvent = new UnityEvent();
+        }
+        openDoorEvent.AddListener(OpenDoor);
+
+
 
     }
 
@@ -74,6 +94,23 @@ public class DoorActivator : MonoBehaviour
     public void LockDoor()
     {
         isLocked = true;
+    }
+
+    public bool CheckKeysInInventory()
+    {
+        // create dialogue option for each applicable key in inventory
+        foreach (InventoryItem item in FindObjectOfType<Inventory>().inventory)
+        {
+            for (int i = 0; i < keysList.Count; i++)
+            {
+                if (keysList[i] == item)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     public void UnlockDoor()

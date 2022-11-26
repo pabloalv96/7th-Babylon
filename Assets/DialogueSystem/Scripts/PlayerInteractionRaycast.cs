@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -21,6 +22,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private bool isNPC;
     private bool isWorldDialogue;
     [HideInInspector] public bool isDoor;
+    private bool isItem;
 
     [SerializeField] private Inventory inventory;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
@@ -32,11 +34,12 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     //[SerializeField] private AudioSource audioSource;
 
-    [SerializeField] private bool isItem;
-
     [SerializeField] private DoorActivator doorActivator;
     [SerializeField] private NPCInfo narrator;
     [SerializeField] private NPCDialogueOption lockedDoorDialogue;
+    [SerializeField] private NPCDialogueOption unlockDoorDialogue;
+
+    public LayerMask uiLayer;
 
 
 
@@ -57,7 +60,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, reachDistance) && !initiateDialogue.dialogueSystem.enabled) //Camera.main.transform.position, Camera.main.transform.forward
+        if (Physics.Raycast(ray, out hit, reachDistance, ~uiLayer) && !initiateDialogue.dialogueSystem.enabled) //Camera.main.transform.position, Camera.main.transform.forward
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.magenta);
 
@@ -150,9 +153,48 @@ public class PlayerInteractionRaycast : MonoBehaviour
                     else
                     {
                         //communicate locked door to player
-                        //Debug.Log(selectedObject.name + " is locked");
+                        //hint player about key
 
-                        FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, lockedDoorDialogue);
+                        if(doorActivator.CheckKeysInInventory())
+                        {
+
+                            unlockDoorDialogue.playerResponses.Clear();
+
+                            foreach(InventoryItem key in doorActivator.keysList)
+                            {
+                                for (int i = 0; i < inventory.inventory.Count; i++)
+                                {
+                                    if (inventory.inventory[i] == key)
+                                    {
+                                        PlayerDialogueOption newUnlockDialogue = new PlayerDialogueOption();
+
+                                        newUnlockDialogue.isResponseToNPCDialogue = true;
+                                        newUnlockDialogue.isGoodbyeOption = true;
+                                        newUnlockDialogue.dialogue = "Unlock the door with " + key.itemName;
+
+                                        newUnlockDialogue.conditionalEvents = new List<UnityEvent>();
+
+                                        newUnlockDialogue.conditionalEvents.Add(doorActivator.unlockDoorEvent);
+
+                                        newUnlockDialogue.conditionalEvents.Add(doorActivator.openDoorEvent);
+
+                                        unlockDoorDialogue.playerResponses.Add(newUnlockDialogue);
+
+                                        
+
+                                    }
+                                }
+                            }
+
+                            FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, unlockDoorDialogue);
+
+                        }
+                        else
+                        {
+                            FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, lockedDoorDialogue);
+
+                        }
+
                     }
                 }
             }

@@ -30,6 +30,7 @@ public class NPCDialogueOption : ScriptableObject
                                               //**unless there is a time limit
 
     public bool isRepeatable = true;
+    public bool hasBeenSeen = false;
 
     public bool endOfConversation;
     public bool changeOfTopic; // forced topic change by NPC

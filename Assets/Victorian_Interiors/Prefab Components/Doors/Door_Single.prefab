@@ -193,7 +193,6 @@ GameObject:
   - component: {fileID: 3356826}
   - component: {fileID: 2334280}
   - component: {fileID: 9575186}
-  - component: {fileID: 13528236}
   - component: {fileID: 8266314}
   - component: {fileID: 6519262}
   - component: {fileID: 6505508}
@@ -294,19 +293,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &13528236
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197776}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.03
-  m_Center: {x: 0.006903995, y: 0.0013173325, z: 0.01858345}
 --- !u!82 &8266314
 AudioSource:
   m_ObjectHideFlags: 0
@@ -441,12 +427,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
   animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 8f7cdcefb7a2500499366ebcacb4c28e, type: 3}
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
   source: {fileID: 0}
   isOpen: 0
   isLocked: 0
+  keysList: []
 --- !u!65 &2697636250890352977
 BoxCollider:
   m_ObjectHideFlags: 0

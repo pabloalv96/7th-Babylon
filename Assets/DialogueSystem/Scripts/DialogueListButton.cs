@@ -20,9 +20,10 @@ public class DialogueListButton : MonoBehaviour
 
         if (dialogueOption.isGoodbyeOption)
         {
+            dialogueSystem.InvokePlayerConditionalEvents();
             dialogueSystem.LeaveDialogue();
         }
-        
+
         if (dialogueOption.isChangeTopicOption)
         {
             dialogueSystem.ChangeTopic();
