@@ -330,12 +330,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
   animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 1c8d62081c544fa4689c05e3e42baa62, type: 3}
   closeSound: {fileID: 8300000, guid: 373fbe4790323c04b9bd759127a791b3, type: 3}
   source: {fileID: 0}
   isOpen: 0
   isLocked: 0
+  keysList: []
 --- !u!65 &8670141913119968343
 BoxCollider:
   m_ObjectHideFlags: 0

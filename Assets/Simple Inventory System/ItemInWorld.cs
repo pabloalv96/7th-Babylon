@@ -8,7 +8,7 @@ public class ItemInWorld : MonoBehaviour
 {
     public InventoryItem item;
 
-    public List<ItemInteraction> itemInteractions;
+    //public List<ItemInteraction> itemInteractions;
 
     //public bool isQuestItem;
 
@@ -22,13 +22,13 @@ public class ItemInWorld : MonoBehaviour
     //    unlockNewDialogue.enabled = false;
     //}
 
-    [System.Serializable]
-    public class ItemInteraction
-    {
-        public OJQuestInteraction interactableObject; // change to environment interaction
+    //[System.Serializable]
+    //public class ItemInteraction
+    //{
+    //    public OJQuestInteraction interactableObject; // change to environment interaction
 
-        public PlayerDialogueOption interactionDialogue;
+    //    public PlayerDialogueOption interactionDialogue;
 
-    }
+    //}
 
 }

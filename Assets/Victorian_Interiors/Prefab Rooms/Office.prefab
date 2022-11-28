@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &476368
 Transform:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &469352
 Transform:
   m_ObjectHideFlags: 0
@@ -746,7 +746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &461208
 Transform:
   m_ObjectHideFlags: 0
@@ -5774,7 +5774,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2399422}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &108246
 GameObject:
   m_ObjectHideFlags: 0
@@ -5838,7 +5838,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2369946}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!65 &6596420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5926,7 +5926,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2314760}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &108732
 GameObject:
   m_ObjectHideFlags: 0
@@ -6229,7 +6229,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2388254}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &110952
 GameObject:
   m_ObjectHideFlags: 0
@@ -6598,7 +6598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &418118
 Transform:
   m_ObjectHideFlags: 0
@@ -6908,7 +6908,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2377660}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &114150
 GameObject:
   m_ObjectHideFlags: 0
@@ -7156,7 +7156,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2331826}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!65 &6577220
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7976,7 +7976,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2321048}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &127252
 GameObject:
   m_ObjectHideFlags: 0
@@ -8487,8 +8487,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  openDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 8f7cdcefb7a2500499366ebcacb4c28e, type: 3}
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
+  source: {fileID: 0}
+  isOpen: 0
+  isLocked: 0
+  keysList: []
+  chosenKey:
+    keyItem: {fileID: 0}
+    statsToEffectList: []
 --- !u!1 &129464
 GameObject:
   m_ObjectHideFlags: 0
@@ -8904,7 +8918,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2382468}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &131674
 GameObject:
   m_ObjectHideFlags: 0
@@ -8922,7 +8936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &452550
 Transform:
   m_ObjectHideFlags: 0
@@ -9271,7 +9285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &431486
 Transform:
   m_ObjectHideFlags: 0
@@ -9471,7 +9485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &449308
 Transform:
   m_ObjectHideFlags: 0
@@ -9682,7 +9696,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2350266}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &135980
 GameObject:
   m_ObjectHideFlags: 0
@@ -9967,7 +9981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &413198
 Transform:
   m_ObjectHideFlags: 0
@@ -10050,7 +10064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481574
 Transform:
   m_ObjectHideFlags: 0
@@ -10345,7 +10359,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2316776}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &141262
 GameObject:
   m_ObjectHideFlags: 0
@@ -20097,7 +20111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &461970
 Transform:
   m_ObjectHideFlags: 0
@@ -20180,7 +20194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &464192
 Transform:
   m_ObjectHideFlags: 0
@@ -25613,7 +25627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &410954
 Transform:
   m_ObjectHideFlags: 0
@@ -26229,7 +26243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &487650
 Transform:
   m_ObjectHideFlags: 0
@@ -26406,7 +26420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &465988
 Transform:
   m_ObjectHideFlags: 0
@@ -27098,7 +27112,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2329440}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &160554
 GameObject:
   m_ObjectHideFlags: 0
@@ -27359,7 +27373,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2328742}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &162548
 GameObject:
   m_ObjectHideFlags: 0
@@ -27422,7 +27436,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2382918}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &162584
 GameObject:
   m_ObjectHideFlags: 0
@@ -28199,7 +28213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &449906
 Transform:
   m_ObjectHideFlags: 0
@@ -28410,7 +28424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &447392
 Transform:
   m_ObjectHideFlags: 0
@@ -28652,7 +28666,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2344920}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &168624
 GameObject:
   m_ObjectHideFlags: 0
@@ -29696,7 +29710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &460926
 Transform:
   m_ObjectHideFlags: 0
@@ -29879,7 +29893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &415998
 Transform:
   m_ObjectHideFlags: 0
@@ -30272,7 +30286,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2334302}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &179126
 GameObject:
   m_ObjectHideFlags: 0
@@ -30290,7 +30304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &457668
 Transform:
   m_ObjectHideFlags: 0
@@ -30637,7 +30651,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &497468
 Transform:
   m_ObjectHideFlags: 0
@@ -30903,7 +30917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &423938
 Transform:
   m_ObjectHideFlags: 0
@@ -31614,7 +31628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &465572
 Transform:
   m_ObjectHideFlags: 0
@@ -32115,7 +32129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &441766
 Transform:
   m_ObjectHideFlags: 0
@@ -32198,7 +32212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &466620
 Transform:
   m_ObjectHideFlags: 0
@@ -32320,7 +32334,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2305392}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &191878
 GameObject:
   m_ObjectHideFlags: 0
@@ -32504,7 +32518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &414004
 Transform:
   m_ObjectHideFlags: 0
@@ -32597,7 +32611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &456762
 Transform:
   m_ObjectHideFlags: 0
@@ -32763,7 +32777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &459650
 Transform:
   m_ObjectHideFlags: 0
@@ -33162,7 +33176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &455622
 Transform:
   m_ObjectHideFlags: 0
@@ -33567,7 +33581,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2313808}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &198014
 GameObject:
   m_ObjectHideFlags: 0
@@ -33668,7 +33682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &413572
 Transform:
   m_ObjectHideFlags: 0
@@ -33835,7 +33849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &462280
 Transform:
   m_ObjectHideFlags: 0
@@ -34102,7 +34116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &426178
 Transform:
   m_ObjectHideFlags: 0
@@ -34185,7 +34199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &433596
 Transform:
   m_ObjectHideFlags: 0
@@ -34351,8 +34365,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  openDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 96c357bd383ac514bba1260e24923969, type: 3}
   closeSound: {fileID: 8300000, guid: 96c357bd383ac514bba1260e24923969, type: 3}
+  source: {fileID: 0}
+  isOpen: 0
+  isLocked: 0
+  keysList: []
+  chosenKey:
+    keyItem: {fileID: 0}
+    statsToEffectList: []
 --- !u!135 &652700448
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -34614,6 +34642,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 197524, guid: 230525b0d888ab84782e19f81d1fb1ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 197524, guid: 230525b0d888ab84782e19f81d1fb1ba, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -34659,6 +34691,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 419872, guid: 230525b0d888ab84782e19f81d1fb1ba, type: 3}
       propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20588382, guid: 230525b0d888ab84782e19f81d1fb1ba, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

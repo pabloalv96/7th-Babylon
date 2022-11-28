@@ -121,7 +121,7 @@ public class DialogueListSystem : MonoBehaviour
     // Update UI Dialogue Text
     public void SetNewDialogueText(NPCDialogueOption npcDialogueOption)
     {
-        if (inDialogue || npcDialogueOption.toOtherNPC)
+        if ((inDialogue || npcDialogueOption.toOtherNPC) && (npcDialogueOption.isRepeatable || !npcDialogueOption.isRepeatable && !npcDialogueOption.hasBeenSeen))
         {
             
             npcDialogueText.text = npcDialogueOption.dialogue;
@@ -134,7 +134,7 @@ public class DialogueListSystem : MonoBehaviour
 
             if (npcDialogue.isQuestPrompt)
             {
-                FindObjectOfType<QuestManager>().StartQuest(npcDialogue.relatedQuest);
+                FindObjectOfType<OJQuestManager>().StartQuest(npcDialogue.relatedQuest);
             }
 
             DestroyOldDialogueOptions();
@@ -158,7 +158,6 @@ public class DialogueListSystem : MonoBehaviour
                         }
                     }
                 }
-
             }
 
             SetResponseTimer();
@@ -197,10 +196,13 @@ public class DialogueListSystem : MonoBehaviour
                         return;
                     }
 
-                    GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-                    newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
-                    newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
-                    newDialogue.transform.SetParent(listDialoguePanel.transform);
+                    if (!dialogueOption.isLocked)
+                    {
+                        GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
+                        newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
+                        newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
+                        newDialogue.transform.SetParent(listDialoguePanel.transform);
+                    }
                 }
 
                 continueButton.SetActive(false);
@@ -267,13 +269,14 @@ public class DialogueListSystem : MonoBehaviour
         {
             if (selectedDialogueOption.statsToEffectList.Count > 0)
             {
-                selectedDialogueOption.AffectStatValues();
+                //selectedDialogueOption.AffectStatValues();
+                FindObjectOfType<PlayerInfoController>().AffectStatValues(selectedDialogueOption.statsToEffectList);
             }
             //npc.npcEmotions.SetMood();
 
             if (selectedDialogueOption.isQuestDialogue)
             {
-                FindObjectOfType<QuestManager>().EndQuest(selectedDialogueOption.relatedQuest);
+                FindObjectOfType<OJQuestManager>().EndQuest(selectedDialogueOption.relatedQuest);
             }
 
 
@@ -315,10 +318,11 @@ public class DialogueListSystem : MonoBehaviour
             npcDialogue = npc.DefaultResponse(selectedDialogueOption);
         }
 
-        if (!npcDialogue.isRepeatable)
-        {
-            playerDialogue.RemoveDialogueForSpecificNPC(selectedDialogueOption, npc);
-        }
+        //if (!npcDialogue.isRepeatable)
+        //{
+        //    playerDialogue.RemoveDialogueForSpecificNPC(selectedDialogueOption, npc);
+        //    //npcDialogue.hasBeenSeen = true;
+        //}
 
         SetNewDialogueText(npcDialogue);
 
@@ -364,6 +368,8 @@ public class DialogueListSystem : MonoBehaviour
             responseTimerUI.value = responseTimer;
 
             responseTimerActive = true;
+            responseTimerUI.gameObject.SetActive(true);
+
 
         }
         else
@@ -373,6 +379,7 @@ public class DialogueListSystem : MonoBehaviour
             responseTimerUI.value = responseTimer;
 
             responseTimerActive = false;
+            responseTimerUI.gameObject.SetActive(false);
 
         }
     }

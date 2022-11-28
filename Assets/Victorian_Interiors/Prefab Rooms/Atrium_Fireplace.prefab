@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 403920}
   - component: {fileID: 10897886}
+  - component: {fileID: 679530381701667762}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -94,6 +95,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &679530381701667762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &100084
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +257,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2370090}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &101832
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,8 +648,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  openDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 8f7cdcefb7a2500499366ebcacb4c28e, type: 3}
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
+  source: {fileID: 0}
+  isOpen: 0
+  isLocked: 0
+  keysList: []
+  chosenKey:
+    keyItem: {fileID: 0}
+    statsToEffectList: []
 --- !u!1 &102128
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450254}
   - component: {fileID: 10824084}
+  - component: {fileID: 8420470408455284728}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -889,6 +925,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &8420470408455284728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &103194
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,7 +1045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &447390
 Transform:
   m_ObjectHideFlags: 0
@@ -1073,7 +1129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &484072
 Transform:
   m_ObjectHideFlags: 0
@@ -1158,7 +1214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &467162
 Transform:
   m_ObjectHideFlags: 0
@@ -1242,7 +1298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &463196
 Transform:
   m_ObjectHideFlags: 0
@@ -1459,7 +1515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &498018
 Transform:
   m_ObjectHideFlags: 0
@@ -1840,7 +1896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &447080
 Transform:
   m_ObjectHideFlags: 0
@@ -6795,7 +6851,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2390220}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &108564
 GameObject:
   m_ObjectHideFlags: 0
@@ -6976,7 +7032,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2300042}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &110064
 GameObject:
   m_ObjectHideFlags: 0
@@ -7038,7 +7094,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2348178}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &110076
 GameObject:
   m_ObjectHideFlags: 0
@@ -7331,7 +7387,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2336442}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &111828
 GameObject:
   m_ObjectHideFlags: 0
@@ -7342,6 +7398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 484240}
   - component: {fileID: 10876366}
+  - component: {fileID: 5557830236941182738}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -7426,6 +7483,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5557830236941182738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &112004
 GameObject:
   m_ObjectHideFlags: 0
@@ -7576,7 +7653,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2366046}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!54 &5452168
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7722,7 +7799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &416450
 Transform:
   m_ObjectHideFlags: 0
@@ -7935,7 +8012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &401564
 Transform:
   m_ObjectHideFlags: 0
@@ -8019,7 +8096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400018
 Transform:
   m_ObjectHideFlags: 0
@@ -8188,7 +8265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &411864
 Transform:
   m_ObjectHideFlags: 0
@@ -8317,7 +8394,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &413622
 Transform:
   m_ObjectHideFlags: 0
@@ -8400,7 +8477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &416680
 Transform:
   m_ObjectHideFlags: 0
@@ -8528,7 +8605,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2372958}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &118534
 GameObject:
   m_ObjectHideFlags: 0
@@ -8643,7 +8720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &449246
 Transform:
   m_ObjectHideFlags: 0
@@ -8810,7 +8887,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2334876}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &119656
 GameObject:
   m_ObjectHideFlags: 0
@@ -8828,7 +8905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &401860
 Transform:
   m_ObjectHideFlags: 0
@@ -8913,7 +8990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &454906
 Transform:
   m_ObjectHideFlags: 0
@@ -9137,7 +9214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &427474
 Transform:
   m_ObjectHideFlags: 0
@@ -9269,7 +9346,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2393426}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &123078
 GameObject:
   m_ObjectHideFlags: 0
@@ -9426,7 +9503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &478194
 Transform:
   m_ObjectHideFlags: 0
@@ -9724,7 +9801,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2367062}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &125036
 GameObject:
   m_ObjectHideFlags: 0
@@ -10032,7 +10109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &425480
 Transform:
   m_ObjectHideFlags: 0
@@ -10341,7 +10418,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2364544}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &126742
 GameObject:
   m_ObjectHideFlags: 0
@@ -10442,7 +10519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &426834
 Transform:
   m_ObjectHideFlags: 0
@@ -10525,7 +10602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &420440
 Transform:
   m_ObjectHideFlags: 0
@@ -11220,8 +11297,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  openDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 8f7cdcefb7a2500499366ebcacb4c28e, type: 3}
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
+  source: {fileID: 0}
+  isOpen: 0
+  isLocked: 0
+  keysList: []
+  chosenKey:
+    keyItem: {fileID: 0}
+    statsToEffectList: []
 --- !u!1 &127272
 GameObject:
   m_ObjectHideFlags: 0
@@ -11581,7 +11672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &405510
 Transform:
   m_ObjectHideFlags: 0
@@ -11657,6 +11748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402078}
   - component: {fileID: 10836358}
+  - component: {fileID: 4339151557007552533}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -11741,6 +11833,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &4339151557007552533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &129086
 GameObject:
   m_ObjectHideFlags: 0
@@ -11842,7 +11954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &472886
 Transform:
   m_ObjectHideFlags: 0
@@ -11969,7 +12081,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2303074}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &130932
 GameObject:
   m_ObjectHideFlags: 0
@@ -12257,7 +12369,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &461298
 Transform:
   m_ObjectHideFlags: 0
@@ -12704,7 +12816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &475724
 Transform:
   m_ObjectHideFlags: 0
@@ -12780,6 +12892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 436280}
   - component: {fileID: 10838314}
+  - component: {fileID: 6435801045771872418}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -12864,6 +12977,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6435801045771872418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &134438
 GameObject:
   m_ObjectHideFlags: 0
@@ -12881,7 +13014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &430258
 Transform:
   m_ObjectHideFlags: 0
@@ -13235,7 +13368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &417006
 Transform:
   m_ObjectHideFlags: 0
@@ -13405,7 +13538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &466816
 Transform:
   m_ObjectHideFlags: 0
@@ -13490,7 +13623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &474096
 Transform:
   m_ObjectHideFlags: 0
@@ -13658,6 +13791,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469638}
   - component: {fileID: 10888008}
+  - component: {fileID: 1597664897086995288}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -13742,6 +13876,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1597664897086995288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &137516
 GameObject:
   m_ObjectHideFlags: 0
@@ -14359,7 +14513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400028
 Transform:
   m_ObjectHideFlags: 0
@@ -14444,7 +14598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &470486
 Transform:
   m_ObjectHideFlags: 0
@@ -14579,7 +14733,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2397350}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!82 &8218774
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15054,7 +15208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &456458
 Transform:
   m_ObjectHideFlags: 0
@@ -15139,7 +15293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &413560
 Transform:
   m_ObjectHideFlags: 0
@@ -15222,7 +15376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &405646
 Transform:
   m_ObjectHideFlags: 0
@@ -15305,7 +15459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &448744
 Transform:
   m_ObjectHideFlags: 0
@@ -15432,7 +15586,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2331092}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &142098
 GameObject:
   m_ObjectHideFlags: 0
@@ -15500,7 +15654,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2388872}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &142636
 GameObject:
   m_ObjectHideFlags: 0
@@ -15685,7 +15839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &488244
 Transform:
   m_ObjectHideFlags: 0
@@ -15770,7 +15924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &484136
 Transform:
   m_ObjectHideFlags: 0
@@ -16055,7 +16209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &458460
 Transform:
   m_ObjectHideFlags: 0
@@ -16502,7 +16656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &467416
 Transform:
   m_ObjectHideFlags: 0
@@ -16668,7 +16822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &485384
 Transform:
   m_ObjectHideFlags: 0
@@ -16752,7 +16906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &431726
 Transform:
   m_ObjectHideFlags: 0
@@ -17103,7 +17257,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2361536}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &150238
 GameObject:
   m_ObjectHideFlags: 0
@@ -17420,7 +17574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &440938
 Transform:
   m_ObjectHideFlags: 0
@@ -17579,6 +17733,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487278}
   - component: {fileID: 10874656}
+  - component: {fileID: 928013809822573048}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -17663,6 +17818,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &928013809822573048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &153716
 GameObject:
   m_ObjectHideFlags: 0
@@ -17763,7 +17938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &455750
 Transform:
   m_ObjectHideFlags: 0
@@ -17945,7 +18120,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &405600
 Transform:
   m_ObjectHideFlags: 0
@@ -18080,7 +18255,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2371522}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &155064
 GameObject:
   m_ObjectHideFlags: 0
@@ -18098,7 +18273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &404878
 Transform:
   m_ObjectHideFlags: 0
@@ -18181,7 +18356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &432112
 Transform:
   m_ObjectHideFlags: 0
@@ -18343,6 +18518,7 @@ GameObject:
   - component: {fileID: 470382}
   - component: {fileID: 10842498}
   - component: {fileID: 9598664}
+  - component: {fileID: 1927431898254781427}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -18447,6 +18623,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1927431898254781427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &158096
 GameObject:
   m_ObjectHideFlags: 0
@@ -18548,7 +18744,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &466334
 Transform:
   m_ObjectHideFlags: 0
@@ -19084,7 +19280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &472838
 Transform:
   m_ObjectHideFlags: 0
@@ -19335,6 +19531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442272}
   - component: {fileID: 10882388}
+  - component: {fileID: 2992553332765209677}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -19419,6 +19616,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2992553332765209677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &162780
 GameObject:
   m_ObjectHideFlags: 0
@@ -19594,7 +19811,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2314736}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &164026
 GameObject:
   m_ObjectHideFlags: 0
@@ -19605,6 +19822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 436748}
   - component: {fileID: 10847504}
+  - component: {fileID: 1944692741635482488}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -19689,6 +19907,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1944692741635482488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &164476
 GameObject:
   m_ObjectHideFlags: 0
@@ -19706,7 +19944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &457064
 Transform:
   m_ObjectHideFlags: 0
@@ -19877,7 +20115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &491966
 Transform:
   m_ObjectHideFlags: 0
@@ -20125,6 +20363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486134}
   - component: {fileID: 10822176}
+  - component: {fileID: 5720993265132340889}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -20209,6 +20448,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5720993265132340889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &167652
 GameObject:
   m_ObjectHideFlags: 0
@@ -20537,7 +20796,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2316912}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!54 &5449992
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -20584,7 +20843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &406568
 Transform:
   m_ObjectHideFlags: 0
@@ -21375,7 +21634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &477048
 Transform:
   m_ObjectHideFlags: 0
@@ -21542,7 +21801,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &413366
 Transform:
   m_ObjectHideFlags: 0
@@ -21626,7 +21885,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &472822
 Transform:
   m_ObjectHideFlags: 0
@@ -21909,7 +22168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &474052
 Transform:
   m_ObjectHideFlags: 0
@@ -22228,7 +22487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &412158
 Transform:
   m_ObjectHideFlags: 0
@@ -22568,7 +22827,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2305758}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &178128
 GameObject:
   m_ObjectHideFlags: 0
@@ -22818,7 +23077,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2374660}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &179358
 GameObject:
   m_ObjectHideFlags: 0
@@ -22886,7 +23145,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2393712}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &180010
 GameObject:
   m_ObjectHideFlags: 0
@@ -22949,7 +23208,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2323688}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &180254
 GameObject:
   m_ObjectHideFlags: 0
@@ -23132,8 +23391,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  openDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 8f7cdcefb7a2500499366ebcacb4c28e, type: 3}
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
+  source: {fileID: 0}
+  isOpen: 0
+  isLocked: 0
+  keysList: []
+  chosenKey:
+    keyItem: {fileID: 0}
+    statsToEffectList: []
 --- !u!1 &180550
 GameObject:
   m_ObjectHideFlags: 0
@@ -23196,7 +23469,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2301804}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &180566
 GameObject:
   m_ObjectHideFlags: 0
@@ -23259,7 +23532,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2397120}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &180572
 GameObject:
   m_ObjectHideFlags: 0
@@ -23277,7 +23550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &449308
 Transform:
   m_ObjectHideFlags: 0
@@ -23360,7 +23633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &447380
 Transform:
   m_ObjectHideFlags: 0
@@ -23488,7 +23761,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2335928}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &181168
 GameObject:
   m_ObjectHideFlags: 0
@@ -23591,7 +23864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &480406
 Transform:
   m_ObjectHideFlags: 0
@@ -23675,7 +23948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &437564
 Transform:
   m_ObjectHideFlags: 0
@@ -23762,7 +24035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &445830
 Transform:
   m_ObjectHideFlags: 0
@@ -23878,7 +24151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &423954
 Transform:
   m_ObjectHideFlags: 0
@@ -24129,7 +24402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &415340
 Transform:
   m_ObjectHideFlags: 0
@@ -24246,7 +24519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &413918
 Transform:
   m_ObjectHideFlags: 0
@@ -24379,7 +24652,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2361290}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &185694
 GameObject:
   m_ObjectHideFlags: 0
@@ -24495,7 +24768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &432680
 Transform:
   m_ObjectHideFlags: 0
@@ -24622,7 +24895,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2306314}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &186148
 GameObject:
   m_ObjectHideFlags: 0
@@ -24741,7 +25014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &490212
 Transform:
   m_ObjectHideFlags: 0
@@ -24825,7 +25098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &451104
 Transform:
   m_ObjectHideFlags: 0
@@ -25074,8 +25347,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  openDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 1c8d62081c544fa4689c05e3e42baa62, type: 3}
   closeSound: {fileID: 8300000, guid: 373fbe4790323c04b9bd759127a791b3, type: 3}
+  source: {fileID: 0}
+  isOpen: 0
+  isLocked: 0
+  keysList: []
+  chosenKey:
+    keyItem: {fileID: 0}
+    statsToEffectList: []
 --- !u!1 &187060
 GameObject:
   m_ObjectHideFlags: 0
@@ -25086,6 +25373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 471756}
   - component: {fileID: 10809164}
+  - component: {fileID: 1773513400371604831}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -25170,6 +25458,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1773513400371604831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &187332
 GameObject:
   m_ObjectHideFlags: 0
@@ -25220,7 +25528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &418326
 Transform:
   m_ObjectHideFlags: 0
@@ -25522,7 +25830,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &427788
 Transform:
   m_ObjectHideFlags: 0
@@ -25605,7 +25913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &450414
 Transform:
   m_ObjectHideFlags: 0
@@ -25858,7 +26166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &476496
 Transform:
   m_ObjectHideFlags: 0
@@ -26073,7 +26381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &426158
 Transform:
   m_ObjectHideFlags: 0
@@ -26202,7 +26510,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2322430}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &191800
 GameObject:
   m_ObjectHideFlags: 0
@@ -26220,7 +26528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &415540
 Transform:
   m_ObjectHideFlags: 0
@@ -26362,6 +26670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 473672}
   - component: {fileID: 10826996}
+  - component: {fileID: 6117517531181287927}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -26446,6 +26755,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &6117517531181287927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &192584
 GameObject:
   m_ObjectHideFlags: 0
@@ -26607,7 +26936,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2332192}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!65 &6547314
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27075,7 +27404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &423412
 Transform:
   m_ObjectHideFlags: 0
@@ -27442,7 +27771,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2375866}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &195106
 GameObject:
   m_ObjectHideFlags: 0
@@ -27460,7 +27789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &437432
 Transform:
   m_ObjectHideFlags: 0
@@ -27772,6 +28101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450956}
   - component: {fileID: 10814580}
+  - component: {fileID: 2722136860876435896}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -27856,6 +28186,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2722136860876435896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &197392
 GameObject:
   m_ObjectHideFlags: 0
@@ -28055,7 +28405,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2315836}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &197758
 GameObject:
   m_ObjectHideFlags: 0
@@ -28148,7 +28498,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2391196}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!1 &198754
 GameObject:
   m_ObjectHideFlags: 0
@@ -28166,7 +28516,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &461466
 Transform:
   m_ObjectHideFlags: 0
@@ -28332,7 +28682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &425416
 Transform:
   m_ObjectHideFlags: 0

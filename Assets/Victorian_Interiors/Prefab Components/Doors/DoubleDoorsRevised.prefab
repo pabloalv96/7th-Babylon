@@ -700,7 +700,6 @@ GameObject:
   m_Component:
   - component: {fileID: 405858}
   - component: {fileID: 9591846}
-  - component: {fileID: 13513986}
   - component: {fileID: 8221840}
   - component: {fileID: 11441740}
   - component: {fileID: 1201556800887885509}
@@ -752,19 +751,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &13513986
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172192}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: -1.49, y: 0.24, z: 1.05}
 --- !u!82 &8221840
 AudioSource:
   m_ObjectHideFlags: 0
@@ -873,12 +859,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1041f59639fbdf4e81d988ef9528f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlockDoorEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11441740}
+        m_TargetAssemblyTypeName: DoorActivator, Assembly-CSharp
+        m_MethodName: UnlockDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 8f7cdcefb7a2500499366ebcacb4c28e, type: 3}
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
   source: {fileID: 0}
   isOpen: 0
   isLocked: 0
+  keysList: []
 --- !u!65 &1201556800887885509
 BoxCollider:
   m_ObjectHideFlags: 0

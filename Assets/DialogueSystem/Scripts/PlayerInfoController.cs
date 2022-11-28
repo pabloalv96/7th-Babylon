@@ -9,16 +9,47 @@ public class PlayerInfoController : MonoBehaviour
 
     public PlayerDialogue playerDialogue;
 
-    public float AffectStatalues(StatContainer.Stat stat)
-    {
-        for (int i = 0; i < playerStats.listOfStats.Count; i++)
-        {
-            if (playerStats.listOfStats[i].statName == stat.statName)
-                playerStats.listOfStats[i].statValue += stat.statValue;
+    //public float AffectStatalues(StatContainer.Stat stat)
+    //{
+    //    for (int i = 0; i < playerStats.listOfStats.Count; i++)
+    //    {
+    //        if (playerStats.listOfStats[i].statName == stat.statName)
+    //            playerStats.listOfStats[i].statValue += stat.statValue;
 
+    //    }
+
+    //    return stat.statValue;
+    //}
+
+    public void AffectStatValues(List<StatContainer.Stat> statsToEffectList)
+    {
+        foreach (StatContainer.Stat statToEffect in statsToEffectList)
+        {
+            foreach (StatContainer.Stat stat in FindObjectOfType<PlayerInfoController>().playerStats.listOfStats)
+            {
+                if (stat.statName == statToEffect.statName)
+                {
+                    stat.statValue += statToEffect.statValue;
+                }
+            }
         }
 
-        return stat.statValue;
+        CheckStatValues();
+    }
+
+    static int SortStatByValues(StatContainer.Stat s1, StatContainer.Stat s2)
+    {
+        return s2.statValue.CompareTo(s1.statValue);
+    }
+
+
+    public void CheckStatValues()
+    {
+
+        FindObjectOfType<PlayerInfoController>().playerStats.listOfStats.Sort(SortStatByValues);
+
+        FindObjectOfType<PlayerInfoController>().playerStats.highestStat = FindObjectOfType<PlayerInfoController>().playerStats.listOfStats[0];
+
     }
 
     //static int SortStatByValues(StatContainer.Stat s1, StatContainer.Stat s2)
