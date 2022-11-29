@@ -10,22 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Location Trigger Quesr
+  m_Name: Talk to Doorman 2
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
   questStarted: 0
   questEnded: 0
-  questID: 
-  questDescription: Enter the trigger area
+  questID: talk to doorman 2
+  questDescription: Talk to the doorman
   objective:
-    questType: 1
+    questType: 2
     questItems: []
-    questLocationTriggers:
-    - {fileID: 0}
-    questDialogueOptions: []
+    questDialogueOptions:
+    - questDialogueOption: {fileID: 11400000, guid: 25eb2f229690944498d9d99d2a843253,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
+        type: 2}
+    - questDialogueOption: {fileID: 11400000, guid: 1b6304ea02a3b334d9c146c9da1a3678,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
+        type: 2}
   outcome:
     questsToUnlock: []
     questsToLock: []
-    environmentalChanges: []
+    statsToEffectList: []

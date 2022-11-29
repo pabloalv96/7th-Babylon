@@ -18,10 +18,23 @@ public class OJQuestManager : MonoBehaviour
 
     public NPCInfo narrator;
 
-
+    public List<Collider> questColliders;
 
     // track currently active quests
     // lock quests that are completed or no longer available
+
+    private void Awake()
+    {
+        questColliders = new List<Collider>();
+
+        foreach(OJQuestInteraction questInScene in FindObjectsOfType<OJQuestInteraction>())
+        {
+            if (questInScene.GetComponent<Collider>() && questInScene.GetComponent<Collider>().isTrigger)
+            {
+                questColliders.Add(questInScene.GetComponent<Collider>());
+            }
+        }
+    }
 
     public void StartQuest(OJQuest quest)
     {
@@ -120,9 +133,15 @@ public class OJQuestManager : MonoBehaviour
                 Debug.Log("Quest Items Activated");
                 break;
             case OJQuestType.locationBased:
-                foreach (Collider trigger in quest.objective.questLocationTriggers)
+                foreach (Collider trigger in questColliders)
                 {
-                    trigger.enabled = true;
+                    foreach (OJQuest triggerQuest in trigger.GetComponent<OJQuestInteraction>().relatedQuests)
+                    {
+                        if (activeQuestList.Contains(triggerQuest) && !trigger.enabled)
+                        {
+                            trigger.enabled = true;
+                        }
+                    }
                 }
                 Debug.Log("Quest Triggers Activated");
                 break;
@@ -193,10 +212,17 @@ public class OJQuestManager : MonoBehaviour
                         break;
 
                     case OJQuestType.locationBased: // needs a monobehaviour to store colliders per location quest
-                        //foreach (Collider trigger in quest.objective.questLocationTriggers)
-                        //{
-                        //    trigger.enabled = true;
-                        //}
+                        foreach (Collider trigger in questColliders)
+                        {
+                            foreach (OJQuest triggerQuest in trigger.GetComponent<OJQuestInteraction>().relatedQuests)
+                            {
+                                if ((completedQuestList.Contains(triggerQuest) || missedQuestList.Contains(triggerQuest)) && !activeQuestList.Contains(triggerQuest) && trigger.enabled)
+                                {
+                                    trigger.enabled = false;
+                                }
+                            }
+                            
+                        }
                         break;
 
                     case OJQuestType.dialogueBased:

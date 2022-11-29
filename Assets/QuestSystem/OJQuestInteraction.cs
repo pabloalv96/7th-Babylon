@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public class OJQuestInteraction : MonoBehaviour
 {
-    //private OJQuestManager questManager;
-    //public OJQuest quest;
+    private OJQuestManager questManager;
+    public List<OJQuest> relatedQuests;
 
     public string interactionObjectName;
 
@@ -16,19 +16,22 @@ public class OJQuestInteraction : MonoBehaviour
 
     private void Start()
     {
-        //questManager = FindObjectOfType<OJQuestManager>();
+        questManager = FindObjectOfType<OJQuestManager>();
 
         //questInteractionDialogue = new List<PlayerDialogueOption>();
 
     }
 
-    //public void OnTriggerEnter(Collider other)
-    //{
-    //    if (questManager.activeQuestList.Contains(quest))
-    //    {
-    //        questManager.EndQuest(quest);
-    //    }
-    //}
+    public void OnTriggerEnter(Collider other)
+    {
+        foreach (OJQuest quest in relatedQuests)
+        {
+            if (questManager.activeQuestList.Contains(quest))
+            {
+                questManager.EndQuest(quest);
+            }
+        }
+    }
 
     //add dialogue options for each item interaction
     public bool CheckItemsnInventory()

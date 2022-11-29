@@ -40,8 +40,8 @@ public class DialogueListSystem : MonoBehaviour
 
 
     //Response Timer Variables
-    [SerializeField] private bool responseTimerActive;
-    [SerializeField] private float responseTimer = 5f;
+    public bool responseTimerActive;
+    public float responseTimer = 5f;
     private float responseTimerReset;
 
     [SerializeField] private Slider responseTimerUI;   // if true the timer will automatically start during a time-limited response and pick a random option if the player doesn't begin viewing the dialogue options

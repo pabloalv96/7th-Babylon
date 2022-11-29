@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC Item collected dialogue response
+  m_Name: idklol
   m_EditorClassIdentifier: 
-  dialogue: 'On second thought, I don''t actually need it... or want it...
-
-    You
-    know what why don''t you jsut hold onto it for now.'
+  dialogue: If I'm completely honest.. I thought it would be funny
   toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
-  playerResponses: []
+  playerResponses:
+  - {fileID: 11400000, guid: 0e887a9881bcdbb48833eebd5c8239e0, type: 2}
+  - {fileID: 11400000, guid: 47c15d82621e5da4bb1c992de9243b25, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 1
+  playerCanLeaveDialogue: 0
   isRepeatable: 0
+  hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []

@@ -453,15 +453,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectInput: 101
   reachDistance: 2
+  selectionSize: 0.2
   selectedObject: {fileID: 0}
   interactPromptIndicator: {fileID: 0}
   interactionAimIndicator: {fileID: 0}
   isDoor: 0
   inventory: {fileID: 0}
-  isItem: 0
-  doorActivator: {fileID: 0}
   narrator: {fileID: 11400000, guid: 5714d22b24469b3478395fe452907447, type: 2}
   lockedDoorDialogue: {fileID: 11400000, guid: 3ab8a655d6e285d48969bc9b791cafa1, type: 2}
+  unlockDoorDialogue: {fileID: 11400000, guid: 5c335b473563b6c489ce17847281945a, type: 2}
+  interactDialogueOption: {fileID: 11400000, guid: 54a3a6c59c26f4545bce7ddd1807f446,
+    type: 2}
+  uiLayer:
+    serializedVersion: 2
+    m_Bits: 32
+  interactionPromptText: {fileID: 0}
 --- !u!1 &34534509
 GameObject:
   m_ObjectHideFlags: 0

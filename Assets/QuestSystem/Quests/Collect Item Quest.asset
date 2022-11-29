@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Talk to doorman
+  m_Name: Collect Item Quest
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
-  questStarted: 1
+  questStarted: 0
   questEnded: 0
-  questID: 001
-  questDescription: Talk to the Doorman
+  questID: 000
+  questDescription: Collect an item
   objective:
-    questType: 2
-    questItems: []
-    questLocationTriggers: []
-    questDialogueOptions:
-    - questDialogueOption: {fileID: 11400000, guid: 2a4d40a66f5ad894b92cbf7b41c5db3b,
-        type: 2}
-      dialogueNPCRecipient: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
-        type: 2}
+    questType: 0
+    questItems:
+    - {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872, type: 2}
+    - {fileID: 11400000, guid: 4f93ff0518ebee44ca81c2dc5ae1ef35, type: 2}
+    questDialogueOptions: []
   outcome:
-    questsToUnlock: []
+    questsToUnlock:
+    - {fileID: 11400000, guid: 8e5accb5920efcf4198100bfdc8fed69, type: 2}
     questsToLock: []
-    statsToEffectList: []
+    statsToEffectList:
+    - statName: Greed
+      statValue: 25

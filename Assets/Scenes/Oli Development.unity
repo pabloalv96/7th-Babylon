@@ -875,6 +875,18 @@ Transform:
   m_Father: {fileID: 96171667}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &855936005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+    type: 3}
+  m_PrefabInstance: {fileID: 8556563643081324997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1011653341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1116,6 +1128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fffbab4418585404ab1868d82c750b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  relatedQuests: []
   interactionObjectName: Vase
   itemInteractionsList:
   - item: {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872, type: 2}
@@ -1483,6 +1496,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
         type: 2}
+    - target: {fileID: 741107122, guid: 1d3b1a1513de66247974634911345b98, type: 3}
+      propertyPath: m_Size.z
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 741107122, guid: 1d3b1a1513de66247974634911345b98, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d3b1a1513de66247974634911345b98, type: 3}
 --- !u!1 &1901651017
@@ -1497,13 +1518,14 @@ GameObject:
   - component: {fileID: 1901651020}
   - component: {fileID: 1901651019}
   - component: {fileID: 1901651018}
+  - component: {fileID: 1901651022}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Location Quest Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1901651018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1537,7 +1559,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 1fc280f473c2e174c976e2bceeb39096, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1582,6 +1604,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1901651022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901651017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffbab4418585404ab1868d82c750b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedQuests:
+  - {fileID: 11400000, guid: 4953c2d04a4b69645905de37d0131fab, type: 2}
+  interactionObjectName: Location Trigger
+  itemInteractionsList: []
 --- !u!1 &1952397983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,23 +2029,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1775641983}
     - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: uiLayer.m_Bits
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: interactIndicator
+      propertyPath: interactionPromptText
       value: 
-      objectReference: {fileID: 271550772}
-    - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: unlockDoorDialogue
-      value: 
-      objectReference: {fileID: 11400000, guid: 5c335b473563b6c489ce17847281945a,
-        type: 2}
-    - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: interactDialogueOption
-      value: 
-      objectReference: {fileID: 11400000, guid: 54a3a6c59c26f4545bce7ddd1807f446,
-        type: 2}
+      objectReference: {fileID: 855936005}
     - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: interactPromptIndicator
       value: 
@@ -2238,10 +2262,60 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6204153003414429201, guid: aa0ee347b0721b64796c9d315557d770,
+    - target: {fileID: 1677337861947219074, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
-      propertyPath: m_Layer
-      value: 5
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677337861947219074, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073009043975997407, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073009043975997407, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873986286560314488, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4873986286560314488, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336823761868789752, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336823761868789752, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336823761868789752, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336823761868789752, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5336823761868789752, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6266611982947901881, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
@@ -2253,6 +2327,78 @@ PrefabInstance:
       propertyPath: inspectBasePos
       value: 
       objectReference: {fileID: 34534510}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_text
+      value: Talk to The Doorman
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 79af01579d200da4e9f5e15a660d3864,
+        type: 2}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7485835214946039675, guid: 79af01579d200da4e9f5e15a660d3864,
+        type: 2}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441902, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441902, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441902, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563641795441902, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8556563642089549541, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: m_SizeDelta.x

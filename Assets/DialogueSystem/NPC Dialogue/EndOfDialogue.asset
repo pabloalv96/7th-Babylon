@@ -13,12 +13,18 @@ MonoBehaviour:
   m_Name: EndOfDialogue
   m_EditorClassIdentifier: 
   dialogue: 
+  toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 0}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
   endOfConversation: 1
   changeOfTopic: 0
   conditionalEvents: []
+  isQuestPrompt: 0
+  relatedQuest: {fileID: 0}

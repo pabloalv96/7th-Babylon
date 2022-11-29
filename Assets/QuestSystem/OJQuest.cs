@@ -48,7 +48,7 @@ public class OJQuestObjective
     public OJQuestType questType;
 
     public List<InventoryItem> questItems;
-    public List<Collider> questLocationTriggers;
+    //public List<Collider> questLocationTriggers;
     public List<OJQuestDialogue> questDialogueOptions;
 
 }
