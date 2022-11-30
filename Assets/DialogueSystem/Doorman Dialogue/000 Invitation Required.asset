@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: 000 Invitation Required
+  m_EditorClassIdentifier: 
+  dialogue: Before we go any further, we are hosting a private function tonight so
+    I'm going to need to see your invitation
+  toOtherNPC: 0
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: 16bf7f6311c551a49b907c0e367233ba, type: 2}
+  playerResponses: []
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 1
+  hasBeenSeen: 0
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
+  isQuestPrompt: 0
+  relatedQuest: {fileID: 0}

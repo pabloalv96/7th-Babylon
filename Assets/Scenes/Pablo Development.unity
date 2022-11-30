@@ -2704,6 +2704,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 631b072a88243ca4c99acaa4414cd28f, type: 3}
+--- !u!114 &422656363 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8556563641795441901, guid: aa0ee347b0721b64796c9d315557d770,
+    type: 3}
+  m_PrefabInstance: {fileID: 8556563643081324997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &429421603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3163,7 +3175,54 @@ PrefabInstance:
     - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
         type: 3}
       propertyPath: isLocked
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.data[0].keyItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f93ff0518ebee44ca81c2dc5ae1ef35,
+        type: 2}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.data[1].keyItem
+      value: 
+      objectReference: {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872,
+        type: 2}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.data[0].statsToEffectList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.data[1].statsToEffectList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.data[0].statsToEffectList.Array.data[0].statName
+      value: Lust
+      objectReference: {fileID: 0}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.data[1].statsToEffectList.Array.data[0].statName
+      value: Gluttony
+      objectReference: {fileID: 0}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.data[0].statsToEffectList.Array.data[0].statValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 884199708356744484, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
+        type: 3}
+      propertyPath: keysList.Array.data[1].statsToEffectList.Array.data[0].statValue
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 884199708366938362, guid: 8e91d787a5e68f64e807b0d6a94a4cb7,
         type: 3}
@@ -13126,6 +13185,10 @@ PrefabInstance:
       propertyPath: interactIndicator
       value: 
       objectReference: {fileID: 271550772}
+    - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: interactionPromptText
+      value: 
+      objectReference: {fileID: 422656363}
     - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: interactPromptIndicator
       value: 

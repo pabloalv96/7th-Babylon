@@ -1,22 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class BWomanCustomise : MonoBehaviour {
-	private int hairCol;
-	private int hairTyp;
-	private int faceTyp;
-	private int eyeCol;
-	private int topCol;
-	private int btmCol;
-	private int skinTyp;
-	private int topTyp;
-	private int btmTyp;
-	private int jacketCol;
-	private int shirtCol;
-	private int skirtCol;
-	private int pantsCol;
-	private int shoesCol;
+	[HideInInspector] public int hairCol;
+	[HideInInspector] public int hairTyp;
+	[HideInInspector] public int faceTyp;
+	[HideInInspector] public int eyeCol;
+	[HideInInspector] public int topCol;
+	[HideInInspector] public int btmCol;
+	[HideInInspector] public int skinTyp;
+	[HideInInspector] public int topTyp;
+	[HideInInspector] public int btmTyp;
+	[HideInInspector] public int jacketCol;
+	[HideInInspector] public int shirtCol;
+	[HideInInspector] public int skirtCol;
+	[HideInInspector] public int pantsCol;
+	[HideInInspector] public int shoesCol;
 
 	private BWomanMaterialsList materialsList;
 
@@ -435,3 +436,53 @@ public class BWomanCustomise : MonoBehaviour {
 
 	}
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(BWomanCustomise))]
+public class BWomanInspectorEditor : Editor
+{
+	private int hairCol;
+	private int hairTyp;
+	private int faceTyp;
+	private int eyeCol;
+	private int topCol;
+	private int btmCol;
+	private int skinTyp;
+	private int topTyp;
+	private int btmTyp;
+	private int jacketCol;
+	private int shirtCol;
+	private int skirtCol;
+	private int pantsCol;
+	private int shoesCol;
+	public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+		BWomanCustomise bWomanCustomise = (BWomanCustomise)target;
+		if (bWomanCustomise == null) return;
+
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button("Randomise Elements"))
+		{
+
+			hairCol = Random.Range(0, 4);
+			eyeCol = Random.Range(0, 5);
+			hairTyp = Random.Range(0, 4);
+			faceTyp = Random.Range(0, 4);
+			btmTyp = Random.Range(0, 1);
+			topTyp = Random.Range(0, 1);
+			skinTyp = Random.Range(0, 5);
+			jacketCol = Random.Range(0, 5);
+			shirtCol = Random.Range(0, 5);
+			skirtCol = Random.Range(0, 5);
+			pantsCol = Random.Range(0, 5);
+			shoesCol = Random.Range(0, 5);
+			bWomanCustomise.charCustomize(faceTyp, eyeCol, topTyp, btmTyp, hairTyp, hairCol, skinTyp, jacketCol, shirtCol, skirtCol, pantsCol, shoesCol);
+
+		}
+		GUILayout.EndHorizontal();
+
+	}
+}
+#endif

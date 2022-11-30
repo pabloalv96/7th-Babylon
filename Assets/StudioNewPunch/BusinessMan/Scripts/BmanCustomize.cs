@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class BmanCustomize : MonoBehaviour
 {
@@ -608,3 +609,64 @@ public class BmanCustomize : MonoBehaviour
 	}
 
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(BmanCustomize))]
+public class BManInspectorEditor : Editor
+{
+	private int faceT;
+	private int skinT;
+	private int eyeC;
+	private int hairT;
+	private int hairC;
+	private int glassesT;
+	private int jacketT;
+	private int waistcoatT;
+	private int handkerchiefT;
+	private int tieT;
+	private int beltT;
+	private int jacketC;
+	private int shirtC;
+	private int waistcoatC;
+	private int tieC;
+	private int pantsC;
+	private int shoesC;
+	private int handkerchiefC;
+	public override void OnInspectorGUI()
+	{
+		base.OnInspectorGUI();
+
+		BmanCustomize bManCustomise = (BmanCustomize)target;
+		if (bManCustomise == null) return;
+
+		GUILayout.BeginHorizontal();
+		if (GUILayout.Button("Randomise Elements"))
+		{
+			hairC = Random.Range(0, 4);
+			eyeC = Random.Range(0, 5);
+			glassesT = Random.Range(0, 2);
+			hairT = Random.Range(0, 8);
+			faceT = Random.Range(0, 4);
+			skinT = Random.Range(0, 4);
+			jacketT = Random.Range(0, 2);
+			waistcoatT = Random.Range(0, 1);
+			tieT = Random.Range(0, 2);
+			handkerchiefT = Random.Range(0, 1);
+			jacketC = Random.Range(0, 9);
+			shirtC = Random.Range(0, 7);
+			waistcoatC = Random.Range(0, 9);
+			tieC = Random.Range(0, 9);
+			pantsC = Random.Range(0, 9);
+			shoesC = Random.Range(0, 3);
+			handkerchiefC = Random.Range(0, 5);
+			beltT = Random.Range(0, 1);
+			
+			bManCustomise.charCustomize(faceT, skinT, eyeC, glassesT, hairT, hairC, jacketT, waistcoatT, tieT, beltT, handkerchiefT, jacketC, shirtC, waistcoatC, tieC, pantsC, shoesC, handkerchiefC);
+
+
+		}
+		GUILayout.EndHorizontal();
+
+	}
+}
+#endif

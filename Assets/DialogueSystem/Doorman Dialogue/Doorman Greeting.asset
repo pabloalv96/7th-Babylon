@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: Doorman Greeting
   m_EditorClassIdentifier: 
-  dialogue: Greetings and Welcome to the world-class 7th Babylon Hotel!
+  dialogue: Greetings and welcome to the world-class 7th Babylon Hotel!
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: bc582b1b6441e72439d4ccadfe3879f1, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 25106783b318e3746b2ed581148104bb, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
+  isRepeatable: 1
+  hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []

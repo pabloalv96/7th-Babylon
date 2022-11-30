@@ -17,7 +17,7 @@ MonoBehaviour:
   npcProfileID: 001
   npcDialogue:
     greetingDialogue:
-    - {fileID: 11400000, guid: 998e8f2627ebf2a41bdcfea970d9f6c8, type: 2}
+    - {fileID: 11400000, guid: 8bac0be45908fad4eb9795d14f9ab562, type: 2}
     goodbyeDialogue:
     - {fileID: 11400000, guid: 15d4f5ff76de9b349a9c8148c0cee086, type: 2}
     changeTopicDialogue:
@@ -25,45 +25,10 @@ MonoBehaviour:
     nothingToSayDialogue: {fileID: 11400000, guid: 3edff59e03006c545860fcea1cf538dd,
       type: 2}
     dialogueConnections:
-    - playerDialogueInput: {fileID: 11400000, guid: 9db214d8ab969f54aa6ecf9c74286022,
+    - playerDialogueInput: {fileID: 11400000, guid: 6353126631fc98541825fef61ad01e67,
         type: 2}
       npcResponses:
       - requiredStat:
           statName: 
           statValue: 0
-        response: {fileID: 11400000, guid: bc582b1b6441e72439d4ccadfe3879f1, type: 2}
-    - playerDialogueInput: {fileID: 11400000, guid: 2a4d40a66f5ad894b92cbf7b41c5db3b,
-        type: 2}
-      npcResponses:
-      - requiredStat:
-          statName: 
-          statValue: 0
-        response: {fileID: 11400000, guid: b94864a8585f71543a6c2fca7b058079, type: 2}
-    - playerDialogueInput: {fileID: 11400000, guid: 25eb2f229690944498d9d99d2a843253,
-        type: 2}
-      npcResponses:
-      - requiredStat:
-          statName: 
-          statValue: 0
-        response: {fileID: 11400000, guid: 2ef38847931512c42b3990079986dfbc, type: 2}
-    - playerDialogueInput: {fileID: 11400000, guid: 1b6304ea02a3b334d9c146c9da1a3678,
-        type: 2}
-      npcResponses:
-      - requiredStat:
-          statName: 
-          statValue: 0
-        response: {fileID: 11400000, guid: faaa92936cc4a064d990fa1d9be13db8, type: 2}
-    - playerDialogueInput: {fileID: 11400000, guid: 0e887a9881bcdbb48833eebd5c8239e0,
-        type: 2}
-      npcResponses:
-      - requiredStat:
-          statName: 
-          statValue: 0
-        response: {fileID: 11400000, guid: dd054690a27bc7f4083c2abdf7189ecf, type: 2}
-    - playerDialogueInput: {fileID: 11400000, guid: 47c15d82621e5da4bb1c992de9243b25,
-        type: 2}
-      npcResponses:
-      - requiredStat:
-          statName: 
-          statValue: 0
-        response: {fileID: 11400000, guid: c82e8ab2c45c86444af379215b472d70, type: 2}
+        response: {fileID: 11400000, guid: d04bfb98a3948484b9b671f53340ca25, type: 2}

@@ -404,7 +404,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 //Debug.Log("hit = " + selectedObject);
                 interactPromptIndicator.SetActive(true);
                 interactionAimIndicator.color = Color.red;
-                interactionPromptText.text = "Talk to " + selectedObject.GetComponent<NPCBrain>().npcInfo.npcName;
+                interactionPromptText.text = "Talk";
 
             }
             else
