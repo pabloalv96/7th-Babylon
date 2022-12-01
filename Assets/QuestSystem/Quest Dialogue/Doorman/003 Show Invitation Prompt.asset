@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 005 find a souvenir
+  m_Name: 003 Show Invitation Prompt
   m_EditorClassIdentifier: 
-  dialogue: Now, as with all the guests, please find a souvenir from the lobby.
+  dialogue: May I check it?
   toOtherNPC: 0
-  requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 7b3c1a6a75f314542a9b5b8010f1b2d9, type: 2}
-  playerResponses: []
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: 4e581fc7e51d4fc47a08ac4867b79995, type: 2}
+  - {fileID: 11400000, guid: 2081c4a089b976e46bea64ae98aa3bbf, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
@@ -26,7 +28,7 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuest: {fileID: 11400000, guid: 86b80fee8acea544682c1b2ae630a7bd, type: 2}
+  relatedQuest: {fileID: 0}
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}

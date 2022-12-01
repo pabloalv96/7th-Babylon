@@ -144,22 +144,52 @@ public class OJQuestManager : MonoBehaviour
                 }
                 Debug.Log("Quest Triggers Activated");
                 break;
+
             case OJQuestType.dialogueBased:
                 if (quest.objective.isItemDialogue)
                 {
                     foreach (InventoryItem item in quest.objective.questItems)
                     {
-                        OJQuestDialogue questDialogue = new OJQuestDialogue();
+                        for (int i = 0; i < FindObjectOfType<Inventory>().inventory.Count; i++)
+                        {
+                            if (FindObjectOfType<Inventory>().inventory[i] == item)
+                            {
+                                OJQuestDialogue questDialogue = new OJQuestDialogue();
 
-                        questDialogue.questDialogueOption.dialogue = quest.objective.questDialogueOptions[0].questDialogueOption.dialogue + " \n { Give " + item.itemName + " }";
+                                //questDialogue.questDialogueOption.dialogue = quest.objective.questDialogueOptions[0].questDialogueOption.dialogue + " \n { Give " + item.itemName + " }";
+                                questDialogue.questDialogueOption.dialogue = "{ Give " + item.itemName + " }";
 
-                        FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                                FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                            }
+                        }
                     }
-                }
+                                //if (CheckItemsInInventory(quest))
+                                //{
+                                //    Debug.Log("quest items in inventory");
+                                //    foreach (InventoryItem item in quest.objective.questItems)
+                                //    {
+
+                                //        OJQuestDialogue questDialogue = new OJQuestDialogue();
+
+                                //        //questDialogue.questDialogueOption.dialogue = quest.objective.questDialogueOptions[0].questDialogueOption.dialogue + " \n { Give " + item.itemName + " }";
+                                //        questDialogue.questDialogueOption.dialogue = "{ Give " + item.itemName + " }";
+
+                                //        FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                                //    }
+                                //}
+                                //else
+                                //{
+                                //    Debug.Log("NO quest items in inventory");
+
+                                //}
+
+                            }
                 else
                 {
                     foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
                     {
+                        Debug.Log(questDialogue.questDialogueOption.name);
+                        Debug.Log(questDialogue.dialogueNPCRecipient);
                         FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
                     }
                 }
@@ -191,6 +221,26 @@ public class OJQuestManager : MonoBehaviour
     //            break;
     //    }
     //}
+
+    public bool CheckItemsInInventory(OJQuest quest)
+    {
+        if (quest.objective.questType == OJQuestType.dialogueBased && quest.objective.isItemDialogue)
+        {
+            // create dialogue option for each applicable key in inventory
+            foreach (InventoryItem item in FindObjectOfType<Inventory>().inventory)
+            {
+                for (int i = 0; i < quest.objective.questItems.Count; i++)
+                {
+                    if (quest.objective.questItems[i] == item)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
 
     public void DeactivateOldQuestInteractions()
     {

@@ -130,8 +130,6 @@ public class Inventory : MonoBehaviour, IDragHandler
         }
     }
 
-    
-
     public void AddItemToInventory(InventoryItem item)
     {
         //if item is already in inventory increase num carried (in 'InventoryItem' scriptable object)
@@ -146,9 +144,12 @@ public class Inventory : MonoBehaviour, IDragHandler
                         inventory[i].numCarried += 1;
                         inventoryListUI[i].text = item.itemName + " x " + item.numCarried;
 
-                        Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
-                        FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
-                        FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
+                        if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<ItemInWorld>())
+                        {
+                            Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
+                            FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
+                            FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
+                        }
                     }
                     else if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject == item.prefab)
                     {
@@ -171,7 +172,7 @@ public class Inventory : MonoBehaviour, IDragHandler
                 newItemNumText.text = inventory.Count.ToString();
                 inventoryListUI.Add(newItemText);
 
-                if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject == item.prefab)
+                if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<ItemInWorld>())
                 {
                     Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
                     FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;

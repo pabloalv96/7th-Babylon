@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 004 all in order
+  m_Name: 001 Open Inventory Prompt
   m_EditorClassIdentifier: 
-  dialogue: All seems to be in order
+  dialogue: '... so I''m going to need to see your invitation
+
+'
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: c0b600cb31927bc4995ee8e67d744e23, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 7b2369c373772d54a91a5fe7ef66d98c, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
@@ -26,9 +28,7 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  isQuestPrompt: 0
-  relatedQuest: {fileID: 0}
-  giveItems: 0
+  relatedQuest: {fileID: 11400000, guid: a431679213d9f6d49b4d08de2a0d6cdb, type: 2}
   itemsToGive: []
-  takeItems: 0
   itemsToTake: []
+  newStartingDialogue: {fileID: 0}

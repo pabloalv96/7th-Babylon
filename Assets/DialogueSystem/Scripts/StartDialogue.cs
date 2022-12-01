@@ -31,10 +31,13 @@ public class StartDialogue : MonoBehaviour
             NPCBrain currentNPC = FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>();
 
             List<NPCDialogueOption> usedDialogue = new List<NPCDialogueOption>();
+            List<PlayerDialogueOption> playerDialogueChoices = new List<PlayerDialogueOption>();
 
             foreach (NPCBrain.DialogueMemory dialogueMemory in currentNPC.dialogueMemories)
             {
                 usedDialogue.Add(dialogueMemory.npcUsedDialogue);
+
+                playerDialogueChoices.Add(dialogueMemory.playerResponse);
             }
 
             if (currentNPC.startingDialogue != null && !usedDialogue.Contains(currentNPC.startingDialogue))

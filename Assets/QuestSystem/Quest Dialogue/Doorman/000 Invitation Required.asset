@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 002 Open Inventory Prompt
+  m_Name: 000 Invitation Required
   m_EditorClassIdentifier: 
-  dialogue: Kindly press 'Q' to open your inventory
-  toOtherNPC: 1
+  dialogue: "Before we go any further, \nwe are hosting a private function tonight..."
+  toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 9c86542181b9bb14faf3ee88452f39a1, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 16bf7f6311c551a49b907c0e367233ba, type: 2}
   playerResponses: []
-  limitedTime: 1
-  timeLimit: 10
+  limitedTime: 0
+  timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
   isRepeatable: 0
@@ -26,9 +26,8 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  isQuestPrompt: 0
   relatedQuest: {fileID: 0}
-  giveItems: 0
-  itemsToGive: []
-  takeItems: 0
+  itemsToGive:
+  - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
   itemsToTake: []
+  newStartingDialogue: {fileID: 0}

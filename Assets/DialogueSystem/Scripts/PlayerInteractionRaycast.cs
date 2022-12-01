@@ -435,7 +435,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isDoor = false;
             }
 
-            if (hit.transform.GetComponent<OJQuestTrigger>())
+            if (hit.transform.GetComponent<OJQuestTrigger>() && !hit.transform.GetComponent<Collider>().isTrigger)
             {
                 isInteraction = true;
                 selectedObject = hit.transform.gameObject;

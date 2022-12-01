@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 000 Invitation Required
+  m_Name: 007 all in order
   m_EditorClassIdentifier: 
-  dialogue: "Before we go any further, \nwe are hosting a private function tonight..."
+  dialogue: Well.. it seems to all be valid. unfortunatelty..
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 16bf7f6311c551a49b907c0e367233ba, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
@@ -26,10 +26,7 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  isQuestPrompt: 0
   relatedQuest: {fileID: 0}
-  giveItems: 1
-  itemsToGive:
-  - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
-  takeItems: 0
+  itemsToGive: []
   itemsToTake: []
+  newStartingDialogue: {fileID: 0}

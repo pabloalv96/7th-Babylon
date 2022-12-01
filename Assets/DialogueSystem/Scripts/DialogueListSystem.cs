@@ -134,7 +134,14 @@ public class DialogueListSystem : MonoBehaviour
 
             if (npcDialogue.relatedQuest != null)
             {
-                FindObjectOfType<OJQuestManager>().StartQuest(npcDialogue.relatedQuest);
+                if (!npcDialogue.relatedQuest.questStarted)
+                {
+                    FindObjectOfType<OJQuestManager>().StartQuest(npcDialogue.relatedQuest);
+                }
+                else if (!npcDialogue.relatedQuest.questEnded)
+                {
+                    FindObjectOfType<OJQuestManager>().EndQuest(npcDialogue.relatedQuest);
+                }
             }
 
             if (npcDialogue.newStartingDialogue != null)

@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c30f8eed4d283fe49aaaf5b2d55ea18c, type: 3}
-  m_Name: Q000 Invitation Quest
+  m_Name: 005 I wont
   m_EditorClassIdentifier: 
-  dialogue: Is this the invitation?
-  statsToEffectList: []
-  isResponseToNPCDialogue: 0
+  dialogue: I refuse to give it to you. It's mine.
+  statsToEffectList:
+  - statName: Greed
+    statValue: 5
+  isResponseToNPCDialogue: 1
   isGoodbyeOption: 0
   isChangeTopicOption: 0
   isLocked: 0
   conditionalEvents: []
   relatedQuest: {fileID: 0}
-  itemsToGive:
-  - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
+  itemsToGive: []
   itemsToRecieve: []

@@ -88,6 +88,12 @@ public class PlayerDialogue : MonoBehaviour
                 {
                     newDialogueOption.isLocked = false;
                 }
+
+                if (playerQuestions[i].questionsForNPC == null)
+                {
+                    playerQuestions[i].questionsForNPC = new List<PlayerDialogueOption>();
+                }
+
                 playerQuestions[i].questionsForNPC.Add(newDialogueOption);
             }
         }

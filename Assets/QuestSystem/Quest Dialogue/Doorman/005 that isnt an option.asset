@@ -10,27 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 001 Open Inventory Prompt
+  m_Name: 005 that isnt an option
   m_EditorClassIdentifier: 
-  dialogue: '... so I''m going to need to see your invitation
-
-'
+  dialogue: That's not an option.
   toOtherNPC: 0
-  requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 7b2369c373772d54a91a5fe7ef66d98c, type: 2}
-  playerResponses: []
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: df13f052833f2ba4f9b6c030037bb63b, type: 2}
+  - {fileID: 11400000, guid: 9b09510b1a2669840912aaf6b9f2572c, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 0
+  isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  isQuestPrompt: 0
-  relatedQuest: {fileID: 11400000, guid: a431679213d9f6d49b4d08de2a0d6cdb, type: 2}
-  giveItems: 0
+  relatedQuest: {fileID: 0}
   itemsToGive: []
-  takeItems: 0
   itemsToTake: []
+  newStartingDialogue: {fileID: 0}
