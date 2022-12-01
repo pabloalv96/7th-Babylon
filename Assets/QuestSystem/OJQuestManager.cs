@@ -27,7 +27,7 @@ public class OJQuestManager : MonoBehaviour
     {
         questColliders = new List<Collider>();
 
-        foreach(OJQuestInteraction questInScene in FindObjectsOfType<OJQuestInteraction>())
+        foreach(OJQuestTrigger questInScene in FindObjectsOfType<OJQuestTrigger>())
         {
             if (questInScene.GetComponent<Collider>() && questInScene.GetComponent<Collider>().isTrigger)
             {
@@ -123,7 +123,6 @@ public class OJQuestManager : MonoBehaviour
                 //    {
                 //        if (inventoryItem.isQuestItem && !interaction.interactableObject.questInteractionDialogue.Contains(interaction.interactionDialogue))
                 //        {
-
                 //            interaction.interactableObject.questInteractionDialogue.Add(interaction.interactionDialogue);
                 //        }
                 //        //FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(interaction.interactionDialogue, narrator);
@@ -135,7 +134,7 @@ public class OJQuestManager : MonoBehaviour
             case OJQuestType.locationBased:
                 foreach (Collider trigger in questColliders)
                 {
-                    foreach (OJQuest triggerQuest in trigger.GetComponent<OJQuestInteraction>().relatedQuests)
+                    foreach (OJQuest triggerQuest in trigger.GetComponent<OJQuestTrigger>().relatedQuests)
                     {
                         if (activeQuestList.Contains(triggerQuest) && !trigger.enabled)
                         {
@@ -146,9 +145,23 @@ public class OJQuestManager : MonoBehaviour
                 Debug.Log("Quest Triggers Activated");
                 break;
             case OJQuestType.dialogueBased:
-                foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                if (quest.objective.isItemDialogue)
                 {
-                    FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                    foreach (InventoryItem item in quest.objective.questItems)
+                    {
+                        OJQuestDialogue questDialogue = new OJQuestDialogue();
+
+                        questDialogue.questDialogueOption.dialogue = quest.objective.questDialogueOptions[0].questDialogueOption.dialogue + " \n { Give " + item.itemName + " }";
+
+                        FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                    }
+                }
+                else
+                {
+                    foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                    {
+                        FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                    }
                 }
                 Debug.Log("Quest Dialogue Activated");
                 break;
@@ -214,7 +227,7 @@ public class OJQuestManager : MonoBehaviour
                     case OJQuestType.locationBased: // needs a monobehaviour to store colliders per location quest
                         foreach (Collider trigger in questColliders)
                         {
-                            foreach (OJQuest triggerQuest in trigger.GetComponent<OJQuestInteraction>().relatedQuests)
+                            foreach (OJQuest triggerQuest in trigger.GetComponent<OJQuestTrigger>().relatedQuests)
                             {
                                 if ((completedQuestList.Contains(triggerQuest) || missedQuestList.Contains(triggerQuest)) && !activeQuestList.Contains(triggerQuest) && trigger.enabled)
                                 {

@@ -11,6 +11,9 @@ public class NPCDialogueOption : ScriptableObject
     [TextArea(3, 10)]
     public string dialogue; // set dialogue text
 
+    //public bool isNPCInitatied;
+    //public NPCDialogueOption npcInitatiedDialogue;
+    
     public bool toOtherNPC = false;
 
     public bool requiresResponse = true;   // Set to false to disable player dialogue selection
@@ -37,8 +40,16 @@ public class NPCDialogueOption : ScriptableObject
 
     public List<UnityEvent> conditionalEvents;
 
-    public bool isQuestPrompt;
+    //public bool isQuestPrompt;
     public OJQuest relatedQuest;
+
+    //public bool giveItems;
+    public List<InventoryItem> itemsToGive;
+
+    //public bool takeItems;
+    public List<InventoryItem> itemsToTake;
+
+    public NPCDialogueOption newStartingDialogue;
 
 
 }
@@ -77,7 +88,7 @@ public class NPCDialogueOption : ScriptableObject
 
 //        if (dialogueOption.limitedTime)
 //        {
-            
+
 //        }
 
 //    }

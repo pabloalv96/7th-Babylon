@@ -132,9 +132,28 @@ public class DialogueListSystem : MonoBehaviour
                 InvokeNPCConditonalEvents();
             }
 
-            if (npcDialogue.isQuestPrompt)
+            if (npcDialogue.relatedQuest != null)
             {
                 FindObjectOfType<OJQuestManager>().StartQuest(npcDialogue.relatedQuest);
+            }
+
+            if (npcDialogue.newStartingDialogue != null)
+            {
+                if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>() && FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
+                {
+                    FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>().startingDialogue = npcDialogue.newStartingDialogue;
+                }
+
+            }
+
+            if (npcDialogue.itemsToGive.Count > 0)
+            {
+                AddItemBasedOnNPCDialogue();
+            }
+
+            if (npcDialogue.itemsToTake.Count > 0)
+            {
+                RemoveItemBasedOnNPCDialogue();
             }
 
             DestroyOldDialogueOptions();
@@ -267,6 +286,8 @@ public class DialogueListSystem : MonoBehaviour
         //selectedDialogueOption.AffectEmotionValues();
         if (inDialogue)
         {
+            RememberDialogueChoices();
+
             if (selectedDialogueOption.statsToEffectList.Count > 0)
             {
                 //selectedDialogueOption.AffectStatValues();
@@ -274,9 +295,20 @@ public class DialogueListSystem : MonoBehaviour
             }
             //npc.npcEmotions.SetMood();
 
-            if (selectedDialogueOption.isQuestDialogue)
+            if (selectedDialogueOption.relatedQuest != null)
             {
+
                 FindObjectOfType<OJQuestManager>().EndQuest(selectedDialogueOption.relatedQuest);
+            }
+
+            if (selectedDialogueOption.itemsToRecieve.Count > 0)
+            {
+                AddItemBasedOnPlayerDialogue();
+            }
+
+            if (selectedDialogueOption.itemsToGive.Count > 0)
+            {
+                RemoveItemBasedOnPlayerDialogue();
             }
 
 
@@ -298,6 +330,7 @@ public class DialogueListSystem : MonoBehaviour
                 LeaveDialogue();
             }
         }
+
 
         if (!npcDialogue.requiresResponse)
         {
@@ -467,4 +500,57 @@ public class DialogueListSystem : MonoBehaviour
         //playerDialogue.AddDialogueOptions();
     }
 
+    public void AddItemBasedOnPlayerDialogue()
+    {
+        foreach(InventoryItem item in selectedDialogueOption.itemsToGive)
+        {
+            FindObjectOfType<Inventory>().AddItemToInventory(item);
+        }
+    }
+
+    public void RemoveItemBasedOnPlayerDialogue()
+    {
+        foreach(InventoryItem item in selectedDialogueOption.itemsToRecieve)
+        {
+            FindObjectOfType<Inventory>().RemoveItemFromInventory(item);
+        }
+    } 
+    
+    public void AddItemBasedOnNPCDialogue()
+    {
+        foreach(InventoryItem item in npcDialogue.itemsToGive)
+        {
+            FindObjectOfType<Inventory>().AddItemToInventory(item);
+        }
+    }
+
+    public void RemoveItemBasedOnNPCDialogue()
+    {
+        foreach(InventoryItem item in npcDialogue.itemsToTake)
+        {
+            FindObjectOfType<Inventory>().RemoveItemFromInventory(item);
+        }
+    }
+
+    public void RememberDialogueChoices()
+    {
+        if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>() && FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
+        {
+            NPCBrain currentNPC = FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>();
+
+            NPCBrain.DialogueMemory dialogueMemory = new NPCBrain.DialogueMemory();
+
+            dialogueMemory.npcUsedDialogue = npcDialogue;
+
+            dialogueMemory.playerResponse = selectedDialogueOption;
+
+            currentNPC.dialogueMemories.Add(dialogueMemory);
+        }
+    }
+
+    public void ResetDialogueVariables()
+    {
+        //reset whether dialogue has been seen by player;
+
+    }
 }

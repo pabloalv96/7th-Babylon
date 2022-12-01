@@ -12,19 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: 001 Open Inventory Prompt
   m_EditorClassIdentifier: 
-  dialogue: Please press 'Q' to open your inventory
+  dialogue: '... so I''m going to need to see your invitation
+
+'
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 0}
+  continuedDialogue: {fileID: 11400000, guid: 7b2369c373772d54a91a5fe7ef66d98c, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 1
+  playerCanLeaveDialogue: 0
   isRepeatable: 0
   hasBeenSeen: 0
-  endOfConversation: 1
+  endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  isQuestPrompt: 1
+  isQuestPrompt: 0
   relatedQuest: {fileID: 11400000, guid: a431679213d9f6d49b4d08de2a0d6cdb, type: 2}
+  giveItems: 0
+  itemsToGive: []
+  takeItems: 0
+  itemsToTake: []

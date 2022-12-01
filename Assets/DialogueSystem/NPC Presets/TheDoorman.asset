@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
   m_Name: TheDoorman
   m_EditorClassIdentifier: 
-  npcName: The Doorman
+  npcName: Doorman
   npcGender: 
   npcProfileID: 001
   npcDialogue:
     greetingDialogue:
-    - {fileID: 11400000, guid: 8bac0be45908fad4eb9795d14f9ab562, type: 2}
+    - {fileID: 11400000, guid: 998e8f2627ebf2a41bdcfea970d9f6c8, type: 2}
     goodbyeDialogue:
     - {fileID: 11400000, guid: 15d4f5ff76de9b349a9c8148c0cee086, type: 2}
     changeTopicDialogue:
@@ -25,10 +25,13 @@ MonoBehaviour:
     nothingToSayDialogue: {fileID: 11400000, guid: 3edff59e03006c545860fcea1cf538dd,
       type: 2}
     dialogueConnections:
-    - playerDialogueInput: {fileID: 11400000, guid: 6353126631fc98541825fef61ad01e67,
+    - playerDialogueInput: {fileID: 11400000, guid: 4e581fc7e51d4fc47a08ac4867b79995,
         type: 2}
       npcResponses:
       - requiredStat:
           statName: 
           statValue: 0
-        response: {fileID: 11400000, guid: d04bfb98a3948484b9b671f53340ca25, type: 2}
+        response: {fileID: 11400000, guid: a835e22ca6c90094bbe1d07fe0c40892, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 2081c4a089b976e46bea64ae98aa3bbf,
+        type: 2}
+      npcResponses: []

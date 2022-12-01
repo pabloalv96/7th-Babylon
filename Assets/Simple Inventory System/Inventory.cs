@@ -150,7 +150,7 @@ public class Inventory : MonoBehaviour, IDragHandler
                         FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
                         FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
                     }
-                    else
+                    else if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject == item.prefab)
                     {
                         //display a dialogue panel if the player can't pick up an item
                         FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, itemCapacityReachedDialogue);
@@ -171,9 +171,12 @@ public class Inventory : MonoBehaviour, IDragHandler
                 newItemNumText.text = inventory.Count.ToString();
                 inventoryListUI.Add(newItemText);
 
-                Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
-                FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
-                FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
+                if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject == item.prefab)
+                {
+                    Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
+                    FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
+                    FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
+                }
             }
             else
             {

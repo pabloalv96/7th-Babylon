@@ -12,26 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30f8eed4d283fe49aaaf5b2d55ea18c, type: 3}
   m_Name: Q000 Invitation Quest
   m_EditorClassIdentifier: 
-  dialogue: 'Is this the invitation? '
+  dialogue: Is this the invitation?
   statsToEffectList: []
   isResponseToNPCDialogue: 0
   isGoodbyeOption: 0
   isChangeTopicOption: 0
   isLocked: 0
-  conditionalEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  conditionalEvents: []
   isQuestDialogue: 1
   relatedQuest: {fileID: 11400000, guid: a431679213d9f6d49b4d08de2a0d6cdb, type: 2}
+  giveItems: 1
+  itemsToGive:
+  - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
+  recieveItems: 0
+  itemsToRecieve: []

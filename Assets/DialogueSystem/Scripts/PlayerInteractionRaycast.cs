@@ -37,7 +37,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
     //[SerializeField] private AudioSource audioSource;
 
     private DoorActivator doorActivator;
-    private OJQuestInteraction interaction;
+    private OJQuestTrigger interaction;
     [SerializeField] private NPCInfo narrator;
     [SerializeField] private NPCDialogueOption lockedDoorDialogue;
     [SerializeField] private NPCDialogueOption unlockDoorDialogue;
@@ -435,7 +435,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isDoor = false;
             }
 
-            if (hit.transform.GetComponent<OJQuestInteraction>())
+            if (hit.transform.GetComponent<OJQuestTrigger>())
             {
                 isInteraction = true;
                 selectedObject = hit.transform.gameObject;
@@ -542,9 +542,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
                 if (isInteraction)
                 {
-                    interaction = selectedObject.GetComponent<OJQuestInteraction>();
+                    interaction = selectedObject.GetComponent<OJQuestTrigger>();
 
-                    if (interaction.CheckItemsnInventory())
+                    if (interaction.CheckItemsInInventory())
                     {
                         interactDialogueOption.playerResponses.Clear();
 

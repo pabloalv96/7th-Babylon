@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: 000 Invitation Required
   m_EditorClassIdentifier: 
-  dialogue: Before we go any further, we are hosting a private function tonight so
-    I'm going to need to see your invitation
+  dialogue: "Before we go any further, \nwe are hosting a private function tonight..."
   toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 16bf7f6311c551a49b907c0e367233ba, type: 2}
@@ -22,10 +21,15 @@ MonoBehaviour:
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 1
+  isRepeatable: 0
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
   isQuestPrompt: 0
   relatedQuest: {fileID: 0}
+  giveItems: 1
+  itemsToGive:
+  - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
+  takeItems: 0
+  itemsToTake: []

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: Greeting
   m_EditorClassIdentifier: 
-  dialogue: Hi
+  dialogue: What can I do for you?
   toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
@@ -21,8 +21,14 @@ MonoBehaviour:
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
   isQuestPrompt: 0
   relatedQuest: {fileID: 0}
+  giveItems: 0
+  itemsToGive: []
+  takeItems: 0
+  itemsToTake: []

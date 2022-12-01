@@ -15,16 +15,22 @@ MonoBehaviour:
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
+  requiresDialogueDecision: 0
   questStarted: 0
   questEnded: 0
   questID: Souvenir Quest
   questDescription: Find a Souvenir
   objective:
-    questType: 0
+    questType: 2
+    isItemDialogue: 1
     questItems:
     - {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872, type: 2}
     - {fileID: 11400000, guid: 4f93ff0518ebee44ca81c2dc5ae1ef35, type: 2}
-    questDialogueOptions: []
+    questDialogueOptions:
+    - questDialogueOption: {fileID: 11400000, guid: c6681583f9b7f364a94baf21338aae76,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
+        type: 2}
   outcome:
     questsToUnlock:
     - {fileID: 11400000, guid: d5c2f4dcb7cd2844caa95f4de7988277, type: 2}

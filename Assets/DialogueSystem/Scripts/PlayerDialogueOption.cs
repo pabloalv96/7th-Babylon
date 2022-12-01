@@ -23,8 +23,14 @@ public class PlayerDialogueOption : ScriptableObject
 
     public List<UnityEvent> conditionalEvents;
 
-    public bool isQuestDialogue;
+    //public bool isQuestDialogue;
     public OJQuest relatedQuest;
+
+    //public bool giveItems;
+    public List<InventoryItem> itemsToGive;
+
+    //public bool recieveItems;
+    public List<InventoryItem> itemsToRecieve;
 
     //public void AffectEmotionValues()
     //{
@@ -38,7 +44,7 @@ public class PlayerDialogueOption : ScriptableObject
     //            }
     //        }
     //    }
-       
+
     //}
 
     //public void AffectStatValues()

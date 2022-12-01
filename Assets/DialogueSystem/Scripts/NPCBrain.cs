@@ -12,6 +12,10 @@ public class NPCBrain : MonoBehaviour
 
     //public NPCDialogue npcDialogue;
 
+    public NPCDialogueOption startingDialogue;
+
+    public List<DialogueMemory> dialogueMemories;
+
     public bool isSpeakingToPlayer;
 
     public void SpeakingToPlayer()
@@ -20,6 +24,13 @@ public class NPCBrain : MonoBehaviour
         {
             transform.LookAt(Camera.main.transform);
         }
+    }
+
+    [System.Serializable]
+    public class DialogueMemory
+    {
+        public NPCDialogueOption npcUsedDialogue;
+        public PlayerDialogueOption playerResponse;
     }
 
 }

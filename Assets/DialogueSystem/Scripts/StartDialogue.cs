@@ -23,29 +23,49 @@ public class StartDialogue : MonoBehaviour
 
         dialogueSystem.npc = npcInfo;
         //dialogueSystem.npc.npcEmotions.SetMood();
-        dialogueSystem.npcNameText.text = npcInfo.npcName + ":";
+        dialogueSystem.npcNameText.text = npcInfo.npcName;
+
+
+        if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>() && FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>().npcInfo == npcInfo)
+        {
+            NPCBrain currentNPC = FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>();
+
+            List<NPCDialogueOption> usedDialogue = new List<NPCDialogueOption>();
+
+            foreach (NPCBrain.DialogueMemory dialogueMemory in currentNPC.dialogueMemories)
+            {
+                usedDialogue.Add(dialogueMemory.npcUsedDialogue);
+            }
+
+            if (currentNPC.startingDialogue != null && !usedDialogue.Contains(currentNPC.startingDialogue))
+            {
+                NPCInitiatedDialogue(npcInfo, currentNPC.startingDialogue);
+                return;
+            }
+        }
 
         NPCDialogueOption greetingDialogue = npcInfo.npcDialogue.greetingDialogue[Random.Range(0, npcInfo.npcDialogue.greetingDialogue.Count)];
 
-        if (npcInfo.npcDialogue.dialogueConnections.Count > 0)
+        if (npcInfo.npcDialogue.dialogueConnections.Count > 0 /*&& !greetingDialogue.isNPCInitatied*/) //if the player has stuff to say to the npc
         {
             playerDialogue.AddDialogueOptions();
         }
-        else 
-        {
+        //else if (greetingDialogue.isNPCInitatied)
+        //{
             
-            for (int i = 0; i < npcInfo.npcDialogue.dialogueConnections.Count; i++)
-            {
-                if (npcInfo.npcDialogue.dialogueConnections[i].playerDialogueInput == null && npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response.requiresResponse || npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response.toOtherNPC)
-                {
-                    NPCInitiatedDialogue(npcInfo, npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response);
+        //    for (int i = 0; i < npcInfo.npcDialogue.dialogueConnections.Count; i++)
+        //    {
+        //        if (npcInfo.npcDialogue.dialogueConnections[i].playerDialogueInput == null && npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response.requiresResponse || npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response.toOtherNPC)
+        //        {
+        //            //figure out a new way of providing specific start dialogue 
 
+        //            NPCInitiatedDialogue(npcInfo, npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response);
 
-                    return;
-                }
-            }
+        //            return;
+        //        }
+        //    }
            
-        }
+        //}
 
         greetingDialogue.playerResponses = playerDialogue.SetPlayerDialogueBasedOnCurrentNPCAndDialogue(npcInfo, greetingDialogue).playerResponses;
 

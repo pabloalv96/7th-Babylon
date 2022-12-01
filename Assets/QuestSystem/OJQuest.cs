@@ -16,6 +16,8 @@ public class OJQuest : ScriptableObject
     [HideInInspector] public PlayerDialogue playerDialogue;
     [HideInInspector] public EnvironmentalChangeController environmentalChanges;
 
+    public bool requiresDialogueDecision;
+
     public bool questStarted, questEnded;
 
     private void OnEnable()
@@ -47,8 +49,8 @@ public class OJQuestObjective
 {
     public OJQuestType questType;
 
+    public bool isItemDialogue;
     public List<InventoryItem> questItems;
-    //public List<Collider> questLocationTriggers;
     public List<OJQuestDialogue> questDialogueOptions;
 
 }
@@ -60,24 +62,10 @@ public class OJQuestDialogue
     public NPCInfo dialogueNPCRecipient;
 }
 
+
 [System.Serializable]
 public class OJQuestOutcome
 {
-    // lock & unlock dialogue
-    //public UnlockNewDialogue unlockDialogue;
-
-    //public void UnlockDialogue(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueToUnlock)
-    //{
-
-    //    //unlockDialogue.UnlockDialogueForSpecificNPC(playerDialogue, npc, dialogueToUnlock);
-    //    playerDialogue.
-    //}
-
-    //public void LockDialogue(PlayerDialogue playerDialogue, NPCInfo npc, PlayerDialogueOption dialogueToLock)
-    //{
-    //    //unlockDialogue.RemoveDialogueForSpecificNPC(playerDialogue, npc, dialogueToLock);
-    //}
-
     // add & remove quests
     public List<OJQuest> questsToUnlock;
     public List<OJQuest> questsToLock;
@@ -86,6 +74,8 @@ public class OJQuestOutcome
     public List<StatContainer.Stat> statsToEffectList;
 
 }
+
+
 
 
 //[CustomEditor(typeof(OJQuest))]
