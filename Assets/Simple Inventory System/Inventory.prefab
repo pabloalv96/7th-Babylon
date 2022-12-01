@@ -1697,8 +1697,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Inventory
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 79af01579d200da4e9f5e15a660d3864, type: 2}
-  m_sharedMaterial: {fileID: -7485835214946039675, guid: 79af01579d200da4e9f5e15a660d3864,
+  m_fontAsset: {fileID: 11400000, guid: d52421da743247844a1a0a6b16ee706c, type: 2}
+  m_sharedMaterial: {fileID: 6260490466954843462, guid: d52421da743247844a1a0a6b16ee706c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1847,7 +1847,7 @@ MonoBehaviour:
   selectedColour: {r: 0.8666667, g: 0.87058824, b: 0, a: 1}
   inventoryListUI: []
   inventory: []
-  inventorySlotLimit: 2
+  inventorySlotLimit: 6
   inventoryItemUIPrefab: {fileID: 3365627313915022446, guid: 925efe41adeed724ab49ab7a41212629,
     type: 3}
   inventoryPanel: {fileID: 2326249024483463739}
@@ -1868,7 +1868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cf6ff1fbf0f85b4a9419c65a7b8e923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 2326249024483463739}
+  panel: {fileID: 2326249024483463739}
+  toggleKey: 113
 --- !u!1 &2664678232902270967
 GameObject:
   m_ObjectHideFlags: 0

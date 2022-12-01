@@ -883,8 +883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf5692767cb9f340815ace32fcef536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  greetingDialogue:
-  - {fileID: 11400000, guid: a1ffb6d1fe6406f46a6aa3f04163c52e, type: 2}
   goodbyeDialogue:
   - {fileID: 11400000, guid: 6f415871587b9f34cbbc6915a03d9aec, type: 2}
   changeTopicDialogue:
@@ -2089,6 +2087,16 @@ PrefabInstance:
       propertyPath: m_text
       value: Leave
       objectReference: {fileID: 0}
+    - target: {fileID: 2255157411813455794, guid: 18ac66b66b8fe9748a035e5f65ded123,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255157411813455794, guid: 18ac66b66b8fe9748a035e5f65ded123,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2255157411813455795, guid: 18ac66b66b8fe9748a035e5f65ded123,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2274,6 +2282,16 @@ PrefabInstance:
       propertyPath: m_text
       value: Change Topic
       objectReference: {fileID: 0}
+    - target: {fileID: 3497828465161481455, guid: 18ac66b66b8fe9748a035e5f65ded123,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3497828465161481455, guid: 18ac66b66b8fe9748a035e5f65ded123,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6044735778040850682, guid: 18ac66b66b8fe9748a035e5f65ded123,
         type: 3}
       propertyPath: dialogueOption
@@ -2349,6 +2367,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: '{Continue}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236775693329363989, guid: 18ac66b66b8fe9748a035e5f65ded123,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236775693329363989, guid: 18ac66b66b8fe9748a035e5f65ded123,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8619445445442787319, guid: 18ac66b66b8fe9748a035e5f65ded123,
         type: 3}

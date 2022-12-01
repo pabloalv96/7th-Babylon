@@ -10,24 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 006 jokes on you
+  m_Name: 005.5 thank you
   m_EditorClassIdentifier: 
-  dialogue: No. it isn't.
+  dialogue: Thank you.. I guess
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 39035db49ae25b24aa261697af3039b3, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: e4654217d6a33834abb991797c6322f1, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 1
+  isRepeatable: 0
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuest: {fileID: 11400000, guid: a431679213d9f6d49b4d08de2a0d6cdb, type: 2}
+  relatedQuest: {fileID: 0}
   itemsToGive: []
-  itemsToTake:
-  - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
+  itemsToTake: []
   newStartingDialogue: {fileID: 0}

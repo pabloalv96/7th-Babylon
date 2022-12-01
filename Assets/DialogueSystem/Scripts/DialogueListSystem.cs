@@ -509,7 +509,7 @@ public class DialogueListSystem : MonoBehaviour
 
     public void AddItemBasedOnPlayerDialogue()
     {
-        foreach(InventoryItem item in selectedDialogueOption.itemsToGive)
+        foreach(InventoryItem item in selectedDialogueOption.itemsToRecieve)
         {
             FindObjectOfType<Inventory>().AddItemToInventory(item);
         }
@@ -517,7 +517,7 @@ public class DialogueListSystem : MonoBehaviour
 
     public void RemoveItemBasedOnPlayerDialogue()
     {
-        foreach(InventoryItem item in selectedDialogueOption.itemsToRecieve)
+        foreach(InventoryItem item in selectedDialogueOption.itemsToGive)
         {
             FindObjectOfType<Inventory>().RemoveItemFromInventory(item);
         }

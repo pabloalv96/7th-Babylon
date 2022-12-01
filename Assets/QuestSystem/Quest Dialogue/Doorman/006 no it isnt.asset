@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 003 Show Invitation Prompt
+  m_Name: 006 no it isnt
   m_EditorClassIdentifier: 
-  dialogue: It sure is. May I check it?
+  dialogue: No it isn't.
   toOtherNPC: 0
-  requiresResponse: 1
-  continuedDialogue: {fileID: 0}
-  playerResponses:
-  - {fileID: 11400000, guid: 4e581fc7e51d4fc47a08ac4867b79995, type: 2}
-  - {fileID: 11400000, guid: 2081c4a089b976e46bea64ae98aa3bbf, type: 2}
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: 39035db49ae25b24aa261697af3039b3, type: 2}
+  playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 0
+  isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuest: {fileID: 0}
+  relatedQuest: {fileID: 11400000, guid: a431679213d9f6d49b4d08de2a0d6cdb, type: 2}
   itemsToGive: []
-  itemsToTake: []
+  itemsToTake:
+  - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
   newStartingDialogue: {fileID: 0}
