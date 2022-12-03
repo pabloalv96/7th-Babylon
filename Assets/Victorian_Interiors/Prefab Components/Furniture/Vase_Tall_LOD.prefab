@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 474766}
   - component: {fileID: 3399996}
   - component: {fileID: 2345754}
+  - component: {fileID: 3360585383230863144}
   m_Layer: 0
   m_Name: VaseTall_LOD0
   m_TagString: Untagged
@@ -166,6 +167,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3360585383230863144
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 4471cfc4271bf3143b66090b53eae878, type: 3}
 --- !u!1 &163040
 GameObject:
   m_ObjectHideFlags: 0

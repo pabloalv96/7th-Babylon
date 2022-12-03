@@ -1,0 +1,261 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1951719772106270806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1954040196170844518}
+  m_Layer: 0
+  m_Name: Capsicum_High
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1954040196170844518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951719772106270806}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.719105, y: 0.008767605, z: 0.0063552856}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1954401729496106374}
+  - {fileID: 1954002228972148876}
+  - {fileID: 1954354464750472284}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &327959715958747624
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1954040196170844518}
+    m_Modifications:
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.3650627
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.122390985
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.5484085
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276927076243854658, guid: b239d55f89513484791cca925c485d91,
+        type: 3}
+      propertyPath: m_Name
+      value: Capsicum3_High__500_Tris_
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b239d55f89513484791cca925c485d91, type: 3}
+--- !u!4 &1954354464750472284 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2274993565719166388, guid: b239d55f89513484791cca925c485d91,
+    type: 3}
+  m_PrefabInstance: {fileID: 327959715958747624}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1114520127601197480
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1954040196170844518}
+    m_Modifications:
+    - target: {fileID: 1469161316573964214, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Capsicum2_High__500_Tris_
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.22356462
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f153e7e1dcb92d439793ba5432d13a5, type: 3}
+--- !u!4 &1954002228972148876 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1470865675701819684, guid: 3f153e7e1dcb92d439793ba5432d13a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1114520127601197480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4377194950773709572
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1954040196170844518}
+    m_Modifications:
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.10117388
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2859061679106179734, guid: 9471d874df99efd41b36aa5c4b002605,
+        type: 3}
+      propertyPath: m_Name
+      value: Capsicum1_High__500_Tris_
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9471d874df99efd41b36aa5c4b002605, type: 3}
+--- !u!4 &1954401729496106374 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2855710532693286530, guid: 9471d874df99efd41b36aa5c4b002605,
+    type: 3}
+  m_PrefabInstance: {fileID: 4377194950773709572}
+  m_PrefabAsset: {fileID: 0}

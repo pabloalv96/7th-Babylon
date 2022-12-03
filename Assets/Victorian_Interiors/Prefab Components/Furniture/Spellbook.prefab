@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 463986}
   - component: {fileID: 3318360}
   - component: {fileID: 2379580}
+  - component: {fileID: 4014048695322468970}
   m_Layer: 0
   m_Name: Spellbook
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4014048695322468970
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 9a5b7eb33ea6976498725c6ae3b7f24f, type: 3}

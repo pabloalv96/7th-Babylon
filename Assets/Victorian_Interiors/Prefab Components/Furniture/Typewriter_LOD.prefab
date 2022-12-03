@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 473392}
   - component: {fileID: 3372180}
   - component: {fileID: 2321186}
+  - component: {fileID: 7601221650132071262}
   m_Layer: 0
   m_Name: Typewriter_LOD0
   m_TagString: Untagged
@@ -145,6 +146,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7601221650132071262
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 62f28f78698093342a1fd2d05e93e124, type: 3}
 --- !u!1 &173220
 GameObject:
   m_ObjectHideFlags: 0

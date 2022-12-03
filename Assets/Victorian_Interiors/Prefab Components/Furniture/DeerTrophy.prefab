@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 496810}
   - component: {fileID: 3369880}
   - component: {fileID: 2397724}
+  - component: {fileID: 392218239685500258}
   m_Layer: 0
   m_Name: Deerhead_LOD0
   m_TagString: Untagged
@@ -230,6 +231,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &392218239685500258
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136508}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 05b3754f1d37bc941a1c78709f3f94a3, type: 3}
 --- !u!1 &180938
 GameObject:
   m_ObjectHideFlags: 0

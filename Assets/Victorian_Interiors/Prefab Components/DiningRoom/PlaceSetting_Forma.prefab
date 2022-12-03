@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 445576}
   - component: {fileID: 3360926}
   - component: {fileID: 2348022}
+  - component: {fileID: 49900366477816621}
   m_Layer: 0
   m_Name: Napkin_LOD0
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &49900366477816621
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 70ce1f811c4f9ee468aceee639999150, type: 3}
 --- !u!1 &104126
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +193,8 @@ GameObject:
   - component: {fileID: 3396634}
   - component: {fileID: 6465140}
   - component: {fileID: 2321186}
+  - component: {fileID: 7946250866900950115}
+  - component: {fileID: 3617997281002946141}
   m_Layer: 0
   m_Name: BiggerPlacemat
   m_TagString: Untagged
@@ -219,7 +236,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &2321186
@@ -264,6 +281,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7946250866900950115
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104178}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &3617997281002946141
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104178}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &105734
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +322,7 @@ GameObject:
   - component: {fileID: 469864}
   - component: {fileID: 3355286}
   - component: {fileID: 2301798}
+  - component: {fileID: 1481129906479072618}
   m_Layer: 0
   m_Name: Fork_LOD0
   m_TagString: Untagged
@@ -347,6 +395,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1481129906479072618
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3563455571d2b734db8f3789be94d7c1, type: 3}
 --- !u!1 &106254
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +420,7 @@ GameObject:
   - component: {fileID: 416900}
   - component: {fileID: 3344646}
   - component: {fileID: 2314342}
+  - component: {fileID: 3185766597148077827}
   m_Layer: 0
   m_Name: Fork_Salad_LOD0
   m_TagString: Untagged
@@ -430,6 +493,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3185766597148077827
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: c38a8a64bf7b0d048a1c9a0455a2d1bf, type: 3}
 --- !u!1 &106594
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +518,7 @@ GameObject:
   - component: {fileID: 413022}
   - component: {fileID: 3354080}
   - component: {fileID: 2349124}
+  - component: {fileID: 8267546323686290042}
   m_Layer: 0
   m_Name: Champaign_flute_LOD0
   m_TagString: Untagged
@@ -513,6 +591,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8267546323686290042
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106594}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 1844307456513b846b28865bcb5c930a, type: 3}
 --- !u!1 &107338
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +616,7 @@ GameObject:
   - component: {fileID: 401416}
   - component: {fileID: 3380638}
   - component: {fileID: 2360202}
+  - component: {fileID: 2281302010768320332}
   m_Layer: 0
   m_Name: Saucer_LOD0
   m_TagString: Untagged
@@ -596,6 +689,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2281302010768320332
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 61f8ff75deabfc741b5066c15895d830, type: 3}
 --- !u!1 &108312
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 499286}
   - component: {fileID: 20559408}
+  - component: {fileID: 4703912241282400069}
   m_Layer: 0
   m_Name: Plate_Dinner (1)
   m_TagString: Untagged
@@ -653,6 +761,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2376244}
   m_Enabled: 0
+--- !u!54 &4703912241282400069
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108312}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &108490
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496140}
   - component: {fileID: 20554276}
+  - component: {fileID: 5729069800548484608}
   m_Layer: 0
   m_Name: Water_Goblet (2)
   m_TagString: Untagged
@@ -798,6 +923,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2338250}
   m_Enabled: 0
+--- !u!54 &5729069800548484608
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111128}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &112550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1244,7 @@ GameObject:
   - component: {fileID: 461034}
   - component: {fileID: 3393502}
   - component: {fileID: 2377004}
+  - component: {fileID: 8008649570687333478}
   m_Layer: 0
   m_Name: Wine_glass_LOD0
   m_TagString: Untagged
@@ -1175,6 +1317,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8008649570687333478
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 012eb25aaa7dbe242ab9612fde5d3c3d, type: 3}
 --- !u!1 &118762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1342,7 @@ GameObject:
   - component: {fileID: 432124}
   - component: {fileID: 3330818}
   - component: {fileID: 2384156}
+  - component: {fileID: 3395129194339996848}
   m_Layer: 0
   m_Name: DinnerPlate_LOD0
   m_TagString: Untagged
@@ -1258,6 +1415,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3395129194339996848
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: ae6c5621cac5f514e91ffcb763a94ef0, type: 3}
 --- !u!1 &119866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,6 +1440,7 @@ GameObject:
   - component: {fileID: 466902}
   - component: {fileID: 3352806}
   - component: {fileID: 2357850}
+  - component: {fileID: 4666657275303513525}
   m_Layer: 0
   m_Name: Teacup_LOD0
   m_TagString: Untagged
@@ -1341,6 +1513,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4666657275303513525
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119866}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300006, guid: 54955bb542d27c74a840f384e8983782, type: 3}
 --- !u!1 &121664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1621,7 @@ GameObject:
   - component: {fileID: 428562}
   - component: {fileID: 3376106}
   - component: {fileID: 2318890}
+  - component: {fileID: 5762099075570778270}
   m_Layer: 0
   m_Name: Spoon_Soup_LOD0
   m_TagString: Untagged
@@ -1507,6 +1694,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5762099075570778270
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 1d54ce596e2700e4883a1de5e3c7a42c, type: 3}
 --- !u!1 &129800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,6 +1884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478524}
   - component: {fileID: 20529076}
+  - component: {fileID: 1561781666964768977}
   m_Layer: 0
   m_Name: Saucer
   m_TagString: Untagged
@@ -1730,6 +1932,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2370534}
   m_Enabled: 0
+--- !u!54 &1561781666964768977
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133640}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &135222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,6 +2041,7 @@ GameObject:
   m_Component:
   - component: {fileID: 405424}
   - component: {fileID: 20550678}
+  - component: {fileID: 7481741512617292797}
   m_Layer: 0
   m_Name: Fork
   m_TagString: Untagged
@@ -1870,6 +2089,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2313244}
   m_Enabled: 0
+--- !u!54 &7481741512617292797
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140168}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &146920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +2115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491218}
   - component: {fileID: 20559260}
+  - component: {fileID: 1192112115595836738}
   m_Layer: 0
   m_Name: Teacup
   m_TagString: Untagged
@@ -1932,6 +2168,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2345324}
   m_Enabled: 0
+--- !u!54 &1192112115595836738
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146920}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &147614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,6 +2194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468046}
   - component: {fileID: 20555242}
+  - component: {fileID: 2577255496195511954}
   m_Layer: 0
   m_Name: Knife_Table
   m_TagString: Untagged
@@ -1989,6 +2242,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2398852}
   m_Enabled: 0
+--- !u!54 &2577255496195511954
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147614}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &149520
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +2766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 424598}
   - component: {fileID: 20558082}
+  - component: {fileID: 3165008852708423843}
   m_Layer: 0
   m_Name: Napkin_Folded
   m_TagString: Untagged
@@ -2549,6 +2819,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2369018}
   m_Enabled: 0
+--- !u!54 &3165008852708423843
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158664}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &160194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,6 +2845,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443156}
   - component: {fileID: 20512126}
+  - component: {fileID: 1210852413788229925}
   m_Layer: 0
   m_Name: Fork_Salad
   m_TagString: Untagged
@@ -2606,6 +2893,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2323914}
   m_Enabled: 0
+--- !u!54 &1210852413788229925
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160194}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &163788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2616,6 +2919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 406762}
   - component: {fileID: 20592286}
+  - component: {fileID: 3954645465879622892}
   m_Layer: 0
   m_Name: Champaign_Flute (2)
   m_TagString: Untagged
@@ -2668,6 +2972,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2387012}
   m_Enabled: 0
+--- !u!54 &3954645465879622892
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163788}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &167332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2679,6 +2999,7 @@ GameObject:
   - component: {fileID: 423016}
   - component: {fileID: 3323828}
   - component: {fileID: 2335490}
+  - component: {fileID: 2372098252357777462}
   m_Layer: 0
   m_Name: Spoon_Small_LOD0
   m_TagString: Untagged
@@ -2751,6 +3072,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2372098252357777462
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167332}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: ea74127ce2a2ace45a7f0f30751b868f, type: 3}
 --- !u!1 &171722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2761,6 +3096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493634}
   - component: {fileID: 20506314}
+  - component: {fileID: 8423344366329446418}
   m_Layer: 0
   m_Name: Spoon_Soup
   m_TagString: Untagged
@@ -2808,6 +3144,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2334534}
   m_Enabled: 0
+--- !u!54 &8423344366329446418
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171722}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &176586
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,6 +3171,7 @@ GameObject:
   - component: {fileID: 424020}
   - component: {fileID: 3341804}
   - component: {fileID: 2383970}
+  - component: {fileID: 55753757844267392}
   m_Layer: 0
   m_Name: Knife_Table_LOD0
   m_TagString: Untagged
@@ -2891,6 +3244,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &55753757844267392
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3b0b60b89aab34c4fbc982982089deb4, type: 3}
 --- !u!1 &182344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,6 +3269,8 @@ GameObject:
   - component: {fileID: 441436}
   - component: {fileID: 3382536}
   - component: {fileID: 2392714}
+  - component: {fileID: 9179840671492295975}
+  - component: {fileID: 2907009616456451970}
   m_Layer: 0
   m_Name: Placemat
   m_TagString: Untagged
@@ -2974,6 +3343,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9179840671492295975
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182344}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 81074d0b445c8b64c950e329d54338f2, type: 3}
+--- !u!54 &2907009616456451970
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182344}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &184138
 GameObject:
   m_ObjectHideFlags: 0
@@ -2985,6 +3384,7 @@ GameObject:
   - component: {fileID: 478044}
   - component: {fileID: 3347146}
   - component: {fileID: 2341332}
+  - component: {fileID: 2457045000639725280}
   m_Layer: 0
   m_Name: Water_Goblet_LOD0
   m_TagString: Untagged
@@ -3057,6 +3457,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2457045000639725280
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 84eefa14f8c037448b930eb6efa793bd, type: 3}
 --- !u!1 &185934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,6 +3564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 486120}
   - component: {fileID: 20530974}
+  - component: {fileID: 616456636124604322}
   m_Layer: 0
   m_Name: Wine_Glass (2)
   m_TagString: Untagged
@@ -3202,6 +3617,22 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2312064}
   m_Enabled: 0
+--- !u!54 &616456636124604322
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189458}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &195304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,6 +3726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 496488}
   - component: {fileID: 20592520}
+  - component: {fileID: 440953992089476998}
   m_Layer: 0
   m_Name: Spoon_Small
   m_TagString: Untagged
@@ -3342,3 +3774,19 @@ LODGroup:
     renderers:
     - renderer: {fileID: 2357180}
   m_Enabled: 0
+--- !u!54 &440953992089476998
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196360}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
