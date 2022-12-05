@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 491190}
   - component: {fileID: 3349768}
   - component: {fileID: 2340536}
+  - component: {fileID: 8034723141004916563}
   m_Layer: 0
   m_Name: ChamberChair_LOD0
   m_TagString: Untagged
@@ -223,3 +224,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8034723141004916563
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: ebf1689bcc29ea444bf3f4660a068436, type: 3}

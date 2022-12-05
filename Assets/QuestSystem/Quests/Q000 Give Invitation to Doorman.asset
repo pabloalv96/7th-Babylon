@@ -22,8 +22,9 @@ MonoBehaviour:
   questDescription: Give the invitation to the Doorman
   objective:
     questType: 2
-    isItemDialogue: 0
-    questItems: []
+    isItemDialogue: 1
+    questItems:
+    - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
     questDialogueOptions:
     - questDialogueOption: {fileID: 11400000, guid: 6353126631fc98541825fef61ad01e67,
         type: 2}

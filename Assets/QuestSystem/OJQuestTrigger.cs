@@ -36,22 +36,22 @@ public class OJQuestTrigger : MonoBehaviour
     }
 
     //add dialogue options for each item interaction
-    public bool CheckItemsInInventory()
-    {
-        // create dialogue option for each applicable key in inventory
-        foreach (InventoryItem item in FindObjectOfType<Inventory>().inventory)
-        {
-            for (int i = 0; i < itemInteractionsList.Count; i++)
-            {
-                if (itemInteractionsList[i].item == item)
-                {
-                    return true;
-                }
-            }
-        }
+    //public bool CheckItemsInInventory()
+    //{
+    //    // create dialogue option for each applicable key in inventory
+    //    foreach (InventoryItem item in FindObjectOfType<Inventory>().inventory)
+    //    {
+    //        for (int i = 0; i < itemInteractionsList.Count; i++)
+    //        {
+    //            if (itemInteractionsList[i].item == item)
+    //            {
+    //                return true;
+    //            }
+    //        }
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 }
 
 [System.Serializable]

@@ -15,23 +15,25 @@ MonoBehaviour:
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
-  requiresDialogueDecision: 0
-  questStarted: 0
+  isHiddenFromUI: 0
+  questStarted: 1
   questEnded: 0
   questID: Return to the Doorman
   questDescription: Return to the Doorman
+  questActivation:
+    questsToLock: []
   objective:
-    questType: 2
+    objectiveType: 3
     isItemDialogue: 1
     questItems:
-    - {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872, type: 2}
     - {fileID: 11400000, guid: 4f93ff0518ebee44ca81c2dc5ae1ef35, type: 2}
-    questDialogueOptions:
-    - questDialogueOption: {fileID: 11400000, guid: c6681583f9b7f364a94baf21338aae76,
-        type: 2}
-      dialogueNPCRecipient: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
-        type: 2}
+    - {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872, type: 2}
+    questDialogueOptions: []
+    childrenQuests:
+    - {fileID: 11400000, guid: 12a4479b477863240b6b5cd307ef0d7c, type: 2}
+    - {fileID: 11400000, guid: 9603e5d82b253e047bd1223165333adf, type: 2}
   outcome:
     questsToUnlock: []
-    questsToLock: []
+    questsToLock:
+    - {fileID: 11400000, guid: 86b80fee8acea544682c1b2ae630a7bd, type: 2}
     statsToEffectList: []

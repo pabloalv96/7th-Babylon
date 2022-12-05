@@ -56,8 +56,26 @@ public class Inventory : MonoBehaviour, IDragHandler
     [SerializeField] private NPCDialogueOption itemCapacityReachedDialogue; // if the player has reached the max limit for a specific item
     [SerializeField] private NPCDialogueOption slotLimitReachedDialogue; // if the player has filled all their slots
 
-    private void Start()
+
+    private DialogueListSystem dialogueSystem;
+    private DialogueInitiator dialogueInitiator;
+    private OJQuestManager questManager;
+    //private Inventory inventorySystem;
+    //private PlayerDialogue playerDialogue;
+    //private PlayerInfoController playerInfoController;
+    private PlayerInteractionRaycast playerInteractionRaycast;
+
+
+    private void Awake()
     {
+        dialogueSystem = FindObjectOfType<DialogueListSystem>();
+        dialogueInitiator = FindObjectOfType<DialogueInitiator>();
+        questManager = FindObjectOfType<OJQuestManager>();
+        //inventorySystem = FindObjectOfType<Inventory>();
+        //playerDialogue = FindObjectOfType<PlayerDialogue>();
+        //playerInfoController = FindObjectOfType<PlayerInfoController>();
+        playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         dropItemUIPrompt.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dropItemInput.ToString();
@@ -144,17 +162,17 @@ public class Inventory : MonoBehaviour, IDragHandler
                         inventory[i].numCarried += 1;
                         inventoryListUI[i].text = item.itemName + " x " + item.numCarried;
 
-                        if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<ItemInWorld>())
+                        if (playerInteractionRaycast.selectedObject.GetComponent<ItemInWorld>())
                         {
-                            Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
-                            FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
-                            FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
+                            Destroy(playerInteractionRaycast.selectedObject);
+                            playerInteractionRaycast.selectedObject = null;
+                            playerInteractionRaycast.interactPromptIndicator.SetActive(false);
                         }
                     }
-                    else if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject == item.prefab)
+                    else if (playerInteractionRaycast.selectedObject == item.prefab)
                     {
                         //display a dialogue panel if the player can't pick up an item
-                        FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, itemCapacityReachedDialogue);
+                        dialogueInitiator.NPCInitiatedDialogue(narrator, itemCapacityReachedDialogue);
                     }
                 }
             }
@@ -172,17 +190,17 @@ public class Inventory : MonoBehaviour, IDragHandler
                 newItemNumText.text = inventory.Count.ToString();
                 inventoryListUI.Add(newItemText);
 
-                if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<ItemInWorld>())
+                if (playerInteractionRaycast.selectedObject.GetComponent<ItemInWorld>())
                 {
-                    Destroy(FindObjectOfType<PlayerInteractionRaycast>().selectedObject);
-                    FindObjectOfType<PlayerInteractionRaycast>().selectedObject = null;
-                    FindObjectOfType<PlayerInteractionRaycast>().interactPromptIndicator.SetActive(false);
+                    Destroy(playerInteractionRaycast.selectedObject);
+                    playerInteractionRaycast.selectedObject = null;
+                    playerInteractionRaycast.interactPromptIndicator.SetActive(false);
                 }
             }
             else
             {
                 //display a dialogue panel if the player can't pick up an item
-                FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(narrator, slotLimitReachedDialogue);
+                dialogueInitiator.NPCInitiatedDialogue(narrator, slotLimitReachedDialogue);
             }
         }
     }
@@ -193,6 +211,20 @@ public class Inventory : MonoBehaviour, IDragHandler
         RemoveItemFromInventory(item);
         GameObject droppedItem = Instantiate(item.prefab, player.position + new Vector3(0.0f, 1f, 0.5f), Quaternion.identity);
         droppedItem.transform.parent = null;
+
+        foreach (OJQuest quest in questManager.activeQuestList)
+        {
+            if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
+            {
+                foreach (InventoryItem questItem in quest.objective.questItems)
+                {
+                    if (!CheckInventoryForItem(questItem))
+                    {
+                        questManager.RemoveQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+                    }
+                }
+            }
+        }
     }
 
     public void RemoveItemFromInventory(InventoryItem item)
@@ -206,6 +238,8 @@ public class Inventory : MonoBehaviour, IDragHandler
 
                 if (inventory[i].numCarried <= 0f)
                 {
+                    
+
                     Destroy(inventoryListUI[i].gameObject);
 
                     inventory.RemoveAt(i);
@@ -223,6 +257,35 @@ public class Inventory : MonoBehaviour, IDragHandler
                 }
             }
         }
+    }
+
+    public bool CheckInventoryForItem(InventoryItem desiredItem)
+    {
+        // create dialogue option for each applicable key in inventory
+        foreach (InventoryItem item in inventory)
+        {
+                if (item == desiredItem)
+                {
+                    return true;
+                }
+            
+        }
+
+        return false;
+    }
+
+    public int CheckItemCount(InventoryItem desiredItem)
+    {
+        foreach(InventoryItem item in inventory)
+        {
+            if (item == desiredItem)
+            {
+                return item.numCarried;
+            }
+
+        }
+
+        return 0;
     }
 
     private void InspectItem()
@@ -273,7 +336,7 @@ public class Inventory : MonoBehaviour, IDragHandler
 
     private void EndItemInspection()
     {
-        if (!FindObjectOfType<DialogueListSystem>().inDialogue)
+        if (!dialogueSystem.inDialogue)
         {
             FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
             Cursor.lockState = CursorLockMode.Locked;

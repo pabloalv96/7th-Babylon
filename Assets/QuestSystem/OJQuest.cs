@@ -16,7 +16,7 @@ public class OJQuest : ScriptableObject
     [HideInInspector] public PlayerDialogue playerDialogue;
     [HideInInspector] public EnvironmentalChangeController environmentalChanges;
 
-    public bool requiresDialogueDecision;
+    public bool isHiddenFromUI;
 
     public bool questStarted, questEnded;
 
@@ -31,6 +31,8 @@ public class OJQuest : ScriptableObject
 
     [TextArea (3,10)] public string questDescription;
 
+    public OJQuestActivation questActivation;
+
     public OJQuestObjective objective;
 
     public OJQuestOutcome outcome;
@@ -42,16 +44,23 @@ public class OJQuest : ScriptableObject
 }
 
 [System.Serializable]
-public enum OJQuestType { itemBased, locationBased, dialogueBased }
+public class OJQuestActivation
+{
+    public List<OJQuest> questsToLock;
+}
+
+[System.Serializable]
+public enum OJQuestObjectiveType { itemBased, locationBased, dialogueBased, multiObjective }
 
 [System.Serializable]
 public class OJQuestObjective
 {
-    public OJQuestType questType;
+    public OJQuestObjectiveType objectiveType;
 
     public bool isItemDialogue;
     public List<InventoryItem> questItems;
     public List<OJQuestDialogue> questDialogueOptions;
+    public List<OJQuest> childrenQuests;
 
 }
 

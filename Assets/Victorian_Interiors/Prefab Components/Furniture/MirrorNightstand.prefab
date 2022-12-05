@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 406598}
   - component: {fileID: 3346124}
   - component: {fileID: 2344918}
+  - component: {fileID: 7064686765015462312}
   m_Layer: 0
   m_Name: MirrorNightstand
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7064686765015462312
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.048984393, y: 0.015522669, z: -0.02}
+  m_Center: {x: -7.041347e-10, y: 0.00023295998, z: 0}
