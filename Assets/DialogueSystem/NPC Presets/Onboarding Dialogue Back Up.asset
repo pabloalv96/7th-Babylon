@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
+  m_Name: Onboarding Dialogue Back Up
+  m_EditorClassIdentifier: 
+  npcName: 
+  npcGender: 
+  npcProfileID: 
+  npcDialogue:
+    greetingDialogue: []
+    goodbyeDialogue: []
+    changeTopicDialogue: []
+    nothingToSayDialogue: {fileID: 0}
+    dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: 6353126631fc98541825fef61ad01e67,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 9c86542181b9bb14faf3ee88452f39a1, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 4e581fc7e51d4fc47a08ac4867b79995,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: a835e22ca6c90094bbe1d07fe0c40892, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 2081c4a089b976e46bea64ae98aa3bbf,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 0f9ec062cd998ba419ac4e2b2452d098, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: df13f052833f2ba4f9b6c030037bb63b,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 83bcb400c1e5887499aeef89d0e354c5, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 9b09510b1a2669840912aaf6b9f2572c,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 5f56d9ef1d874454aae5c52e07839b84, type: 2}

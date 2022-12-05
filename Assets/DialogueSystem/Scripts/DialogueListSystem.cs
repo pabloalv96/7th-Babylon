@@ -47,12 +47,29 @@ public class DialogueListSystem : MonoBehaviour
     [SerializeField] private Slider responseTimerUI;   // if true the timer will automatically start during a time-limited response and pick a random option if the player doesn't begin viewing the dialogue options
                                                        // if false the timer won't start until the player has begun viewing the dialogue options
                                                        //Default player dialogue
-    [SerializeField] private PlayerDialogue playerDialogue;
-
     [SerializeField] private GameObject dialogueUI;
+
+    //private DialogueListSystem dialogueSystem;
+    //private DialogueInitiator dialogueInitiator;
+    private OJQuestManager questManager;
+    private Inventory inventorySystem;
+    private PlayerDialogue playerDialogue;
+    private PlayerInfoController playerInfoController;
+    private PlayerInteractionRaycast playerInteractionRaycast;
+
 
     private void Start()
     {
+        //dialogueSystem = FindObjectOfType<DialogueListSystem>();
+        //dialogueInitiator = FindObjectOfType<DialogueInitiator>();
+        questManager = FindObjectOfType<OJQuestManager>();
+        inventorySystem = FindObjectOfType<Inventory>();
+        playerDialogue = FindObjectOfType<PlayerDialogue>();
+        playerInfoController = FindObjectOfType<PlayerInfoController>();
+        playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();
+
+
+
         AddNPCsToPlayerDialogue();
     }
 
@@ -132,23 +149,55 @@ public class DialogueListSystem : MonoBehaviour
                 InvokeNPCConditonalEvents();
             }
 
-            if (npcDialogue.relatedQuest != null)
+            if (npcDialogue.relatedQuests != null)
             {
-                if (!npcDialogue.relatedQuest.questStarted)
+                foreach (OJQuest quest in npcDialogue.relatedQuests)
                 {
-                    FindObjectOfType<OJQuestManager>().StartQuest(npcDialogue.relatedQuest);
+                    if (!quest.objective.isItemDialogue)
+                    {
+                        if (!quest.questStarted)
+                        {
+                            questManager.StartQuest(quest);
+                        }
+                        else if (!quest.questEnded)
+                        {
+                            questManager.EndQuest(quest);
+                        }
+                    }
+                    else
+                    {
+                        if (!quest.questStarted)
+                        {
+                            questManager.StartQuest(quest);
+                        }
+                        else if (!quest.questEnded)
+                        {
+                            questManager.EndQuest(quest);
+                        }
+
+                        if (quest.questStarted && !quest.questEnded)
+                        {
+                            if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
+                            {
+                                foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                                {
+                                    foreach (InventoryItem questItem in quest.objective.questItems)
+                                    {
+                                        questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-                else if (!npcDialogue.relatedQuest.questEnded)
-                {
-                    FindObjectOfType<OJQuestManager>().EndQuest(npcDialogue.relatedQuest);
-                }
+                
             }
 
             if (npcDialogue.newStartingDialogue != null)
             {
-                if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>() && FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
+                if (playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>() && playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
                 {
-                    FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>().startingDialogue = npcDialogue.newStartingDialogue;
+                    playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().startingDialogue = npcDialogue.newStartingDialogue;
                 }
 
             }
@@ -224,10 +273,29 @@ public class DialogueListSystem : MonoBehaviour
 
                     if (!dialogueOption.isLocked)
                     {
-                        GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-                        newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
-                        newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
-                        newDialogue.transform.SetParent(listDialoguePanel.transform);
+                        foreach (OJQuest relatedQuest in dialogueOption.relatedQuests)
+                        {
+                            //if the dialogue isn't locked double check that if it has any related quests at least one of them is active before creating the dialogue option
+                            if ((dialogueOption.relatedQuests != null && questManager.activeQuestList.Contains(relatedQuest)) || dialogueOption.relatedQuests == null) 
+                            {
+                                GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
+                                newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
+                                newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
+                                newDialogue.transform.SetParent(listDialoguePanel.transform);
+                            }
+
+                            if (relatedQuest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && relatedQuest.objective.isItemDialogue)
+                            {
+                                foreach (InventoryItem questItem in relatedQuest.objective.questItems)
+                                {
+                                    if (!inventorySystem.CheckInventoryForItem(questItem))
+                                    {
+                                        questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItem);
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
                 }
 
@@ -268,6 +336,8 @@ public class DialogueListSystem : MonoBehaviour
                 else
                 {
                     changeTopicButton.SetActive(false);
+                    
+                   
                 }
             }
             else
@@ -298,14 +368,14 @@ public class DialogueListSystem : MonoBehaviour
             if (selectedDialogueOption.statsToEffectList.Count > 0)
             {
                 //selectedDialogueOption.AffectStatValues();
-                FindObjectOfType<PlayerInfoController>().AffectStatValues(selectedDialogueOption.statsToEffectList);
+                playerInfoController.AffectStatValues(selectedDialogueOption.statsToEffectList);
             }
             //npc.npcEmotions.SetMood();
 
-            if (selectedDialogueOption.relatedQuest != null)
+            if (selectedDialogueOption.relatedQuests != null)
             {
-
-                FindObjectOfType<OJQuestManager>().EndQuest(selectedDialogueOption.relatedQuest);
+                foreach(OJQuest quest in selectedDialogueOption.relatedQuests)
+                questManager.EndQuest(quest);
             }
 
             if (selectedDialogueOption.itemsToRecieve.Count > 0)
@@ -511,7 +581,7 @@ public class DialogueListSystem : MonoBehaviour
     {
         foreach(InventoryItem item in selectedDialogueOption.itemsToRecieve)
         {
-            FindObjectOfType<Inventory>().AddItemToInventory(item);
+           inventorySystem.AddItemToInventory(item);
         }
     }
 
@@ -519,7 +589,7 @@ public class DialogueListSystem : MonoBehaviour
     {
         foreach(InventoryItem item in selectedDialogueOption.itemsToGive)
         {
-            FindObjectOfType<Inventory>().RemoveItemFromInventory(item);
+           inventorySystem.RemoveItemFromInventory(item);
         }
     } 
     
@@ -527,7 +597,7 @@ public class DialogueListSystem : MonoBehaviour
     {
         foreach(InventoryItem item in npcDialogue.itemsToGive)
         {
-            FindObjectOfType<Inventory>().AddItemToInventory(item);
+            inventorySystem.AddItemToInventory(item);
         }
     }
 
@@ -535,15 +605,15 @@ public class DialogueListSystem : MonoBehaviour
     {
         foreach(InventoryItem item in npcDialogue.itemsToTake)
         {
-            FindObjectOfType<Inventory>().RemoveItemFromInventory(item);
+           inventorySystem.RemoveItemFromInventory(item);
         }
     }
 
     public void RememberDialogueChoices()
     {
-        if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>() && FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
+        if (playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>() &&playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
         {
-            NPCBrain currentNPC = FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>();
+            NPCBrain currentNPC = playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>();
 
             NPCBrain.DialogueMemory dialogueMemory = new NPCBrain.DialogueMemory();
 

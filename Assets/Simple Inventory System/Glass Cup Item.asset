@@ -17,8 +17,8 @@ MonoBehaviour:
   numCarried: 1
   maxNumCarried: 4
   canCollect: 0
-  isQuestItem: 1
-  relatedQuest: {fileID: 11400000, guid: d5c2f4dcb7cd2844caa95f4de7988277, type: 2}
+  relatedQuests:
+  - {fileID: 11400000, guid: 344029fe544ea544ca89f6edca89a339, type: 2}
   statsToEffectList:
   - statName: Lust
     statValue: 5

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 116250, guid: d926100b2a6e45f42b4469eb3526b2fb, type: 3}
   itemName: Frypan
-  numCarried: 0
+  numCarried: 1
   maxNumCarried: 1
   canCollect: 0
-  isQuestItem: 0
-  relatedQuest: {fileID: 11400000, guid: d5c2f4dcb7cd2844caa95f4de7988277, type: 2}
+  relatedQuests:
+  - {fileID: 11400000, guid: b1c6d91f7a973df4bbe145ce6ae95879, type: 2}
   statsToEffectList:
   - statName: Gluttony
     statValue: 5

@@ -10,27 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Q000 Give Invitation to Doorman
+  m_Name: Q001.H1 Greed Souvenir
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
-  requiresDialogueDecision: 0
+  isHiddenFromUI: 1
   questStarted: 0
   questEnded: 0
-  questID: Invitation Quest
-  questDescription: Give the invitation to the Doorman
-  objective:
-    questType: 2
-    isItemDialogue: 1
-    questItems:
-    - {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
-    questDialogueOptions:
-    - questDialogueOption: {fileID: 11400000, guid: 6353126631fc98541825fef61ad01e67,
-        type: 2}
-      dialogueNPCRecipient: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
-        type: 2}
-  outcome:
-    questsToUnlock: []
+  questID: 
+  questDescription: 
+  questActivation:
     questsToLock: []
-    statsToEffectList: []
+  objective:
+    objectiveType: 0
+    isItemDialogue: 0
+    questItems:
+    - {fileID: 0}
+    questDialogueOptions: []
+    childrenQuests: []
+  outcome:
+    questsToUnlock:
+    - {fileID: 11400000, guid: d5c2f4dcb7cd2844caa95f4de7988277, type: 2}
+    - {fileID: 11400000, guid: 110eb1b9a960b5c47ac1dd1ad5212a43, type: 2}
+    questsToLock: []
+    statsToEffectList:
+    - statName: Greed
+      statValue: 10

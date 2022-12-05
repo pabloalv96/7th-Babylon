@@ -5103,7 +5103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &523447822
 Transform:
   m_ObjectHideFlags: 0
@@ -16378,7 +16378,7 @@ PrefabInstance:
     - target: {fileID: 741107121, guid: 1d3b1a1513de66247974634911345b98, type: 3}
       propertyPath: startingDialogue
       value: 
-      objectReference: {fileID: 11400000, guid: 8bac0be45908fad4eb9795d14f9ab562,
+      objectReference: {fileID: 11400000, guid: 50d2bb07448e6864a8c8344886205646,
         type: 2}
     m_RemovedComponents:
     - {fileID: 741107122, guid: 1d3b1a1513de66247974634911345b98, type: 3}
@@ -19859,26 +19859,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 539026668768957451, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_ChildAlignment
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 539026668768957451, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_ChildScaleWidth
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 539026668768957451, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_ChildControlWidth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1677337861947219074, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1677337861947219075, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -19967,16 +19947,6 @@ PrefabInstance:
     - target: {fileID: 4073009043975997406, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4073009043975997407, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4873986286560314488, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4873986286560314489, guid: aa0ee347b0721b64796c9d315557d770,
@@ -20181,6 +20151,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556563642404394045, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563642404394045, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -20212,17 +20187,6 @@ PrefabInstance:
     - target: {fileID: 9043732276933499300, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043732276933499301, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2369484459767532796, guid: d52421da743247844a1a0a6b16ee706c,
-        type: 2}
-    - target: {fileID: 9043732276933499301, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9043732277516350196, guid: aa0ee347b0721b64796c9d315557d770,
@@ -20284,11 +20248,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9043732278446007760, guid: aa0ee347b0721b64796c9d315557d770,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9192585327924903111, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}

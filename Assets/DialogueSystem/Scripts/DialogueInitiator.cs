@@ -2,15 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartDialogue : MonoBehaviour
+public class DialogueInitiator : MonoBehaviour
 {
-    public DialogueListSystem dialogueSystem;
-    public PlayerDialogue playerDialogue;
 
-    private void Start()
+    private DialogueListSystem dialogueSystem;
+    //private DialogueInitiator dialogueInitiator;
+    private OJQuestManager questManager;
+    //private Inventory inventorySystem;
+    private PlayerDialogue playerDialogue;
+    //private PlayerInfoController playerInfoController;
+    private PlayerInteractionRaycast playerInteractionRaycast;
+
+
+    private void Awake()
     {
-        //dialogueSystem = FindObjectOfType<NEWListDialogueSystem>();
-        //playerDialogue = FindObjectOfType<PlayerDialogue>();
+        dialogueSystem = FindObjectOfType<DialogueListSystem>();
+        //dialogueInitiator = FindObjectOfType<DialogueInitiator>();
+        questManager = FindObjectOfType<OJQuestManager>();
+        //inventorySystem = FindObjectOfType<Inventory>();
+        playerDialogue = FindObjectOfType<PlayerDialogue>();
+        //playerInfoController = FindObjectOfType<PlayerInfoController>();
+        playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();
     }
     public void EnterDialogue( NPCInfo npcInfo)
     {
@@ -26,9 +38,9 @@ public class StartDialogue : MonoBehaviour
         dialogueSystem.npcNameText.text = npcInfo.npcName;
 
 
-        if (FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>() && FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>().npcInfo == npcInfo)
+        if (playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>() && playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().npcInfo == npcInfo)
         {
-            NPCBrain currentNPC = FindObjectOfType<PlayerInteractionRaycast>().selectedObject.GetComponent<NPCBrain>();
+            NPCBrain currentNPC = playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>();
 
             List<NPCDialogueOption> usedDialogue = new List<NPCDialogueOption>();
             List<PlayerDialogueOption> playerDialogueChoices = new List<PlayerDialogueOption>();
@@ -49,31 +61,21 @@ public class StartDialogue : MonoBehaviour
 
         NPCDialogueOption greetingDialogue = npcInfo.npcDialogue.greetingDialogue[Random.Range(0, npcInfo.npcDialogue.greetingDialogue.Count)];
 
+        //foreach(OJQuest quest in questManager.activeQuestList)
+        //{
+        //    if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
+        //    {
+
+        //    }
+        //}
+
         if (npcInfo.npcDialogue.dialogueConnections.Count > 0 /*&& !greetingDialogue.isNPCInitatied*/) //if the player has stuff to say to the npc
         {
             playerDialogue.AddDialogueOptions();
         }
-        //else if (greetingDialogue.isNPCInitatied)
-        //{
-            
-        //    for (int i = 0; i < npcInfo.npcDialogue.dialogueConnections.Count; i++)
-        //    {
-        //        if (npcInfo.npcDialogue.dialogueConnections[i].playerDialogueInput == null && npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response.requiresResponse || npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response.toOtherNPC)
-        //        {
-        //            //figure out a new way of providing specific start dialogue 
-
-        //            NPCInitiatedDialogue(npcInfo, npcInfo.npcDialogue.dialogueConnections[i].npcResponses[i].response);
-
-        //            return;
-        //        }
-        //    }
-           
-        //}
 
         greetingDialogue.playerResponses = playerDialogue.SetPlayerDialogueBasedOnCurrentNPCAndDialogue(npcInfo, greetingDialogue).playerResponses;
 
-
-        //dialogueSystem.playerDialogueText.text = playerDialogue.greetingDialogue[Random.Range(0, playerDialogue.greetingDialogue.Count)].dialogue;
 
         //Deactivate Player Controller
         FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;

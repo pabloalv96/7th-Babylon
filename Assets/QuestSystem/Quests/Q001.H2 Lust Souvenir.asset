@@ -10,30 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Q002 Return to the Doorman
+  m_Name: Q001.H2 Lust Souvenir
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
-  isHiddenFromUI: 0
+  isHiddenFromUI: 1
   questStarted: 1
-  questEnded: 0
-  questID: Return to the Doorman
-  questDescription: Return to the Doorman
+  questEnded: 1
+  questID: 
+  questDescription: 
   questActivation:
     questsToLock: []
   objective:
-    objectiveType: 3
-    isItemDialogue: 1
+    objectiveType: 0
+    isItemDialogue: 0
     questItems:
     - {fileID: 11400000, guid: 4f93ff0518ebee44ca81c2dc5ae1ef35, type: 2}
-    - {fileID: 11400000, guid: b860c0cfc7d867345a95de8079811872, type: 2}
     questDialogueOptions: []
-    childrenQuests:
-    - {fileID: 11400000, guid: 12a4479b477863240b6b5cd307ef0d7c, type: 2}
-    - {fileID: 11400000, guid: 9603e5d82b253e047bd1223165333adf, type: 2}
+    childrenQuests: []
   outcome:
-    questsToUnlock: []
-    questsToLock:
-    - {fileID: 11400000, guid: 86b80fee8acea544682c1b2ae630a7bd, type: 2}
-    statsToEffectList: []
+    questsToUnlock:
+    - {fileID: 11400000, guid: d5c2f4dcb7cd2844caa95f4de7988277, type: 2}
+    - {fileID: 11400000, guid: 12a4479b477863240b6b5cd307ef0d7c, type: 2}
+    questsToLock: []
+    statsToEffectList:
+    - statName: Lust
+      statValue: 10

@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 008 Please explore
+  m_Name: souvenir - have you found something
   m_EditorClassIdentifier: 
-  dialogue: We're still setting up for tonight's main event, but feel free to explore
-    the ground floor and meet the other guests.
+  dialogue: Have you found something?
   toOtherNPC: 0
-  requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 0
+  playerCanLeaveDialogue: 1
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0

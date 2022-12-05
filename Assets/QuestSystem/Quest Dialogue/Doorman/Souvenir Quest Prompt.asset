@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 008 Please explore
+  m_Name: Souvenir Quest Prompt
   m_EditorClassIdentifier: 
-  dialogue: We're still setting up for tonight's main event, but feel free to explore
-    the ground floor and meet the other guests.
+  dialogue: Collect a souvenir then come see me
   toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
@@ -27,7 +26,8 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: 86b80fee8acea544682c1b2ae630a7bd, type: 2}
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
