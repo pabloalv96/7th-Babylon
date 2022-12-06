@@ -14,8 +14,8 @@ public class EnvironmentalChangeController : MonoBehaviour
     public List<GameObject> propSpawnPoints;
 
     //public Material wallpapertexture;
-    public GameObject paintingObject;
-    public Material defaultPaintingMaterial;
+    public List<GameObject> paintingsToChange;
+    public Material blankPaintingMaterial;
 
     public AudioSource backgroundAudioSource;
 
@@ -31,7 +31,10 @@ public class EnvironmentalChangeController : MonoBehaviour
 
     private void Start()
     {
-        paintingObject.GetComponent<MeshRenderer>().material = defaultPaintingMaterial;
+        foreach (GameObject painting in paintingsToChange)
+        {
+            painting.GetComponent<MeshRenderer>().material = blankPaintingMaterial;
+        }
     }
 
     private void Update()
@@ -71,10 +74,15 @@ public class EnvironmentalChangeController : MonoBehaviour
                     if (change.requiredValue <= playerInfo.playerStats.highestStat.statValue)
                     {
                         //If there is a painting to change to
-                        if (change.paintingTexture != null)
+
+                        if (change.paintingTextures != null)
                         {
-                            paintingObject.GetComponent<MeshRenderer>().material = change.paintingTexture;
+                            foreach (GameObject painting in paintingsToChange)
+                            {
+                                painting.GetComponent<MeshRenderer>().material = change.paintingTextures[Random.Range(0, change.paintingTextures.Count)];
+                            }
                         }
+                        
 
                         //if there are props to spawn
                         if (change.props.Count > 0)
@@ -148,7 +156,7 @@ public struct EnvironmentalChanges
 {
     public float requiredValue;
 
-    public Material paintingTexture;
+    public List<Material> paintingTextures;
     //public Sprite wallpaperTexture;
     public List<GameObject> props;
 
