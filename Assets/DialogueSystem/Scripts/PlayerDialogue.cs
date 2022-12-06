@@ -52,7 +52,6 @@ public class PlayerDialogue : MonoBehaviour
 
         if (playerQuestions.Count > 0)
         {
-
             for (int i = 0; i < playerQuestions.Count; i++)
             {
                 //Set appropriate dialogue options
