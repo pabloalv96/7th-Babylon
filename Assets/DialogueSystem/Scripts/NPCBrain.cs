@@ -18,6 +18,24 @@ public class NPCBrain : MonoBehaviour
 
     public bool isSpeakingToPlayer;
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if(isSpeakingToPlayer)
+        {
+            animator.SetBool("isSpeaking", true);
+        } else
+        {
+            animator.SetBool("isSpeaking", false);
+        }
+    }
+
     public void SpeakingToPlayer()
     {
         if (FindObjectOfType<DialogueListSystem>().inDialogue && FindObjectOfType<DialogueListSystem>().npc == npcInfo)
