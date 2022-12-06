@@ -215,8 +215,20 @@ public class OJQuestManager : MonoBehaviour
                     {
                         Debug.Log(questDialogue.questDialogueOption.name);
                         Debug.Log(questDialogue.dialogueNPCRecipient);
-                        playerDialogue.AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
-                        Debug.Log("Quest Dialogue Activated");
+
+                        foreach(PlayerDialogue.PlayerQuestions playerQuestion in playerDialogue.playerQuestions)
+                        {
+                            if (playerQuestion.npc == questDialogue.dialogueNPCRecipient)
+                            {
+                                if (!playerQuestion.questionsForNPC.Contains(questDialogue.questDialogueOption))
+                                {
+                                    playerDialogue.AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                                    Debug.Log("Quest Dialogue Activated");
+                                }
+                            }
+                        }
+
+                        
 
                     }
                 }
@@ -252,31 +264,31 @@ public class OJQuestManager : MonoBehaviour
             Debug.Log("quest item: '" + questItem.itemName + "' is in inventory");
 
             //OJQuestDialogue questDialogue = new OJQuestDialogue();
-            PlayerDialogueOption questDialogueOption = new PlayerDialogueOption();
+            //PlayerDialogueOption questDialogueOption = new PlayerDialogueOption();
 
-            questDialogueOption.dialogue = questDialogue.questDialogueOption.dialogue + " { Give " + questItem.itemName + " }";
-            questDialogueOption.isResponseToNPCDialogue = questDialogue.questDialogueOption.isResponseToNPCDialogue;
+            //questDialogueOption.dialogue = questDialogue.questDialogueOption.dialogue + " { " + questItem.itemName + " }";
+            //questDialogueOption.isResponseToNPCDialogue = questDialogue.questDialogueOption.isResponseToNPCDialogue;
             //questDialogueOption.isLocked = false;
-            questDialogueOption.itemsToGive = new List<InventoryItem>();
-            questDialogueOption.itemsToGive.Add(questItem);
-            questDialogueOption.relatedQuests = new List<OJQuest>();
-            foreach (OJQuest quest in questDialogue.questDialogueOption.relatedQuests)
-            {
-                questDialogueOption.relatedQuests.Add(quest);
-            }
+            //questDialogueOption.itemsToGive = new List<InventoryItem>();
+            //questDialogueOption.itemsToGive.Add(questItem);
+            //questDialogueOption.relatedQuests = new List<OJQuest>();
+            //foreach (OJQuest quest in questDialogue.questDialogueOption.relatedQuests)
+            //{
+            //    questDialogueOption.relatedQuests.Add(quest);
+            //}
 
             foreach (NPCDialogue.DialogueConnections dialogueConnection in questDialogue.dialogueNPCRecipient.npcDialogue.dialogueConnections)
             {
                 if (dialogueConnection.playerDialogueInput != null)
                 {
-                    if (questDialogueOption.dialogue.Contains(dialogueConnection.playerDialogueInput.dialogue) && !dialogueConnection.npcResponses[0].response.playerResponses.Contains(questDialogueOption))
+                    if (!questDialogue.questDialogueOption.dialogue.Contains(dialogueConnection.playerDialogueInput.dialogue) && !dialogueConnection.npcResponses[0].response.playerResponses.Contains(questDialogue.questDialogueOption))
                     {
-                        dialogueConnection.npcResponses[0].response.playerResponses.Add(questDialogueOption);
+                        dialogueConnection.npcResponses[0].response.playerResponses.Add(questDialogue.questDialogueOption);
                     }
                 }
             }
 
-            playerDialogue.AddQuestionForSpecificNPC(questDialogueOption, questDialogue.dialogueNPCRecipient);
+            playerDialogue.AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
 
             Debug.Log("Quest Item: '" + questItem.itemName + "' dialogue has been added");
 

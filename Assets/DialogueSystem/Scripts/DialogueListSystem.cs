@@ -273,29 +273,35 @@ public class DialogueListSystem : MonoBehaviour
 
                     if (!dialogueOption.isLocked)
                     {
-                        foreach (OJQuest relatedQuest in dialogueOption.relatedQuests)
-                        {
-                            //if the dialogue isn't locked double check that if it has any related quests at least one of them is active before creating the dialogue option
-                            if ((dialogueOption.relatedQuests != null && questManager.activeQuestList.Contains(relatedQuest)) || dialogueOption.relatedQuests == null) 
-                            {
-                                GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-                                newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
-                                newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
-                                newDialogue.transform.SetParent(listDialoguePanel.transform);
-                            }
+                        GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
+                        newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
+                        newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
+                        newDialogue.transform.SetParent(listDialoguePanel.transform);
 
-                            if (relatedQuest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && relatedQuest.objective.isItemDialogue)
+                        if (dialogueOption.relatedQuests != null)
+                        {
+                            foreach (OJQuest relatedQuest in dialogueOption.relatedQuests)
                             {
-                                foreach (InventoryItem questItem in relatedQuest.objective.questItems)
+                                if (questManager.activeQuestList.Contains(relatedQuest))
                                 {
-                                    if (!inventorySystem.CheckInventoryForItem(questItem))
+                                    GameObject newQuestDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
+                                    newQuestDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
+                                    newQuestDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
+                                    newQuestDialogue.transform.SetParent(listDialoguePanel.transform);
+                                }
+
+                                if (relatedQuest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && relatedQuest.objective.isItemDialogue)
+                                {
+                                    foreach (InventoryItem questItem in relatedQuest.objective.questItems)
                                     {
-                                        questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItem);
+                                        if (!inventorySystem.CheckInventoryForItem(questItem))
+                                        {
+                                            questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItem);
+                                        }
                                     }
                                 }
                             }
                         }
-                        
                     }
                 }
 
@@ -374,8 +380,13 @@ public class DialogueListSystem : MonoBehaviour
 
             if (selectedDialogueOption.relatedQuests != null)
             {
-                foreach(OJQuest quest in selectedDialogueOption.relatedQuests)
-                questManager.EndQuest(quest);
+                foreach (OJQuest quest in selectedDialogueOption.relatedQuests)
+                {
+                    if (quest.questStarted && !quest.questEnded)
+                    {
+                        questManager.EndQuest(quest);
+                    }
+                }
             }
 
             if (selectedDialogueOption.itemsToRecieve.Count > 0)
