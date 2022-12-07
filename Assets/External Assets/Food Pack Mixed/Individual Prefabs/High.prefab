@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6641937607512299931}
   - component: {fileID: 6650022915922634639}
   - component: {fileID: 6660548525136566805}
-  - component: {fileID: 3485733719237966003}
   - component: {fileID: 7571910793942120530}
+  - component: {fileID: 2031183195377758655}
+  - component: {fileID: 7603771882746443264}
   m_Layer: 0
   m_Name: Berries_High__3613_Tris_
   m_TagString: Untagged
@@ -85,7 +86,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &3485733719237966003
+--- !u!64 &7571910793942120530
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647179267206078377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 14f42e4fa9ed4ff4188f790ba6fe1468, type: 3}
+--- !u!54 &2031183195377758655
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,8 +116,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &7571910793942120530
-MeshCollider:
+--- !u!135 &7603771882746443264
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,10 +126,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 14f42e4fa9ed4ff4188f790ba6fe1468, type: 3}
+  serializedVersion: 2
+  m_Radius: 2.2579322
+  m_Center: {x: -0.24670666, y: 0.4299208, z: 0.016159177}
 --- !u!1 &6647240556661560941
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,8 +141,9 @@ GameObject:
   - component: {fileID: 6648600087464401041}
   - component: {fileID: 6660665943747070515}
   - component: {fileID: 6730717538028217315}
-  - component: {fileID: 1995232653848151035}
   - component: {fileID: 6478231668820033429}
+  - component: {fileID: 2841814960811641120}
+  - component: {fileID: 5444069980186169472}
   m_Layer: 0
   m_Name: High
   m_TagString: Untagged
@@ -143,10 +158,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6647240556661560941}
-  m_LocalRotation: {x: 0, y: -0.000000014901159, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.4313354, y: 1.6800001, z: -0.2741777}
-  m_LocalScale: {x: 1, y: 0.7153259, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6641937607512299931}
   m_Father: {fileID: 0}
@@ -222,7 +237,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &1995232653848151035
+--- !u!64 &6478231668820033429
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647240556661560941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3a45114cc17eb34449796839cf6f0a17, type: 3}
+--- !u!54 &2841814960811641120
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,8 +267,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &6478231668820033429
-MeshCollider:
+--- !u!65 &5444069980186169472
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -248,7 +277,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 3a45114cc17eb34449796839cf6f0a17, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 7.310244, y: 3.9460459, z: 7.3279295}
+  m_Center: {x: 0, y: 0, z: 0}

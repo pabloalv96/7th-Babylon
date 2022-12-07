@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1313825308315041912}
   - component: {fileID: 1320494756104577266}
   - component: {fileID: 1330870082455788632}
+  - component: {fileID: 5878051341861796289}
+  - component: {fileID: 4208602609403212019}
   m_Layer: 0
   m_Name: Coffee_Bean_2_High___600_Tris_
   m_TagString: Untagged
@@ -83,6 +85,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &5878051341861796289
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309504993868515334}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &4208602609403212019
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309504993868515334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 06e1fe92faa23824d8c4bd5e82a62d08, type: 3}
 --- !u!1 &1309821590104139608
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,17 +138,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309821590104139608}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -4.328579, y: -0.002679348, z: -0.004703835}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1307220822705271638}
   - {fileID: 1307273181015652816}
   - {fileID: 1313825308315041912}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1309840475972768546
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +160,8 @@ GameObject:
   - component: {fileID: 1307273181015652816}
   - component: {fileID: 1323636957214067974}
   - component: {fileID: 1330835605860956752}
+  - component: {fileID: 8463929546754765611}
+  - component: {fileID: 5361413301617900381}
   m_Layer: 0
   m_Name: Coffee_Bean_1_High___600_Tris_
   m_TagString: Untagged
@@ -200,6 +234,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &8463929546754765611
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309840475972768546}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &5361413301617900381
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309840475972768546}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 06e1fe92faa23824d8c4bd5e82a62d08, type: 3}
 --- !u!1001 &1206347133915994493
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -169,7 +169,7 @@ public class Inventory : MonoBehaviour, IDragHandler
                             playerInteractionRaycast.interactPromptIndicator.SetActive(false);
                         }
                     }
-                    else if (playerInteractionRaycast.selectedObject == item.prefab)
+                    else
                     {
                         //display a dialogue panel if the player can't pick up an item
                         dialogueInitiator.NPCInitiatedDialogue(narrator, itemCapacityReachedDialogue);

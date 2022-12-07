@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 8078090110446024693}
   - component: {fileID: 8106110506949320905}
   - component: {fileID: 8097392224926536515}
-  - component: {fileID: -6268789378105184909}
   - component: {fileID: -8511286833392147127}
+  - component: {fileID: 3732237650613165993}
+  - component: {fileID: 7706561818003178064}
   m_Layer: 0
   m_Name: Onion_High__715_Tris_
   m_TagString: Untagged
@@ -27,10 +28,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8074414083004697981}
-  m_LocalRotation: {x: 0.018083984, y: -0.51184744, z: -0.12675847, w: 0.84948075}
+  m_LocalRotation: {x: 0.018081138, y: -0.5118441, z: -0.12675858, w: 0.84948283}
   m_LocalPosition: {x: -3.854597, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -85,7 +86,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &-6268789378105184909
+--- !u!64 &-8511286833392147127
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074414083004697981}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 2ea2577003f246d49939e8382c6a68fe, type: 3}
+--- !u!54 &3732237650613165993
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,8 +116,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &-8511286833392147127
-MeshCollider:
+--- !u!135 &7706561818003178064
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,7 +126,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 2ea2577003f246d49939e8382c6a68fe, type: 3}
+  serializedVersion: 2
+  m_Radius: 1.69955
+  m_Center: {x: 0.0000076293945, y: 0, z: 0.0000019073486}

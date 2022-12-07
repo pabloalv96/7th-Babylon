@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2719301651845226718}
   - component: {fileID: 5514713719810315535}
   - component: {fileID: 8242878548642828730}
+  - component: {fileID: 4471045364545618423}
   m_Layer: 0
   m_Name: Mushroom3_High__270_Tris_
   m_TagString: Untagged
@@ -115,6 +116,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 2456fcea440f0884e87dede158493993, type: 3}
+--- !u!64 &4471045364545618423
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732088976479519660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 2456fcea440f0884e87dede158493993, type: 3}
 --- !u!1 &2732124944718020818
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,10 +153,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2732124944718020818}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.322334, y: -0.0017516613, z: -1.5067749}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2738174520388036768}
   - {fileID: 2738016238319841914}
@@ -162,6 +177,7 @@ GameObject:
   - component: {fileID: 2718522761062771396}
   - component: {fileID: 5276055279098072367}
   - component: {fileID: 7595847553220358613}
+  - component: {fileID: 7459219264107409092}
   m_Layer: 0
   m_Name: Mushroom2_High__300_Tris_
   m_TagString: Untagged
@@ -251,6 +267,20 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &7595847553220358613
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732321938248445132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300002, guid: 2456fcea440f0884e87dede158493993, type: 3}
+--- !u!64 &7459219264107409092
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

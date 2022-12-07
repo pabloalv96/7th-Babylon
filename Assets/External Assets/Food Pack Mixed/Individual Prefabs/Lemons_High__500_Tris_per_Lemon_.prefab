@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1845216789133132993}
   - component: {fileID: 1855059778287776467}
   - component: {fileID: 9047573653324561486}
-  - component: {fileID: 8378521639712392803}
+  - component: {fileID: 1771116217839817196}
+  - component: {fileID: 5259208922197034175}
   m_Layer: 0
   m_Name: Lemon2_High__500_Tris_
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: 2609e04b9a424e34b843c616fa9b0b08, type: 3}
---- !u!54 &8378521639712392803
+--- !u!54 &1771116217839817196
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,6 +116,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &5259208922197034175
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867498171022563441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.6597747
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1868854505887740733
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,10 +152,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868854505887740733}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.913208, y: -0.0016219616, z: 0.005302429}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1872830867772474553}
   - {fileID: 1865140085438036451}

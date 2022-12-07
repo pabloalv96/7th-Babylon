@@ -14,7 +14,6 @@ public class EnvironmentalChangeController : MonoBehaviour
     public List<GameObject> propSpawnPoints;
 
     //public Material wallpapertexture;
-    public List<GameObject> paintingsToChange;
     public Material blankPaintingMaterial;
 
     public AudioSource backgroundAudioSource;
@@ -26,14 +25,25 @@ public class EnvironmentalChangeController : MonoBehaviour
 
     public bool checkHighestStat;
 
+    [SerializeField] private string highestStatName;
+
     //Check highest stat's value
     //determine what assets to set
 
     private void Start()
     {
-        foreach (GameObject painting in paintingsToChange)
+        foreach (EnvironmentalChangesPerStat environmentalChange in environmentalChanges)
         {
-            painting.GetComponent<MeshRenderer>().material = blankPaintingMaterial;
+            foreach (EnvironmentalChanges change in environmentalChange.environmentalChangesList)
+            {
+                foreach (GameObject painting in change.paintingsToChange)
+                {
+                    if (painting.GetComponent<MeshRenderer>().material != blankPaintingMaterial)
+                    {
+                        painting.GetComponent<MeshRenderer>().material = blankPaintingMaterial;
+                    }
+                }
+            }
         }
     }
 
@@ -58,8 +68,12 @@ public class EnvironmentalChangeController : MonoBehaviour
 
         playerInfo.playerStats.highestStat = playerInfo.playerStats.listOfStats[0];
 
-        SetEnvironmentalChanges();
+        if (highestStatName != playerInfo.playerStats.highestStat.statName)
+        {
+            SetEnvironmentalChanges();
+        }
 
+        highestStatName = playerInfo.playerStats.highestStat.statName;
     }
 
     public void SetEnvironmentalChanges()
@@ -77,9 +91,15 @@ public class EnvironmentalChangeController : MonoBehaviour
 
                         if (change.paintingTextures != null)
                         {
-                            foreach (GameObject painting in paintingsToChange)
+                            foreach (GameObject painting in change.paintingsToChange)
                             {
-                                painting.GetComponent<MeshRenderer>().material = change.paintingTextures[Random.Range(0, change.paintingTextures.Count)];
+                                int rand = Random.Range(0, change.paintingTextures.Count);
+
+                                if (!change.paintingTextures.Contains(painting.GetComponent<MeshRenderer>().material))
+                                {
+                                    painting.GetComponent<MeshRenderer>().material = change.paintingTextures[rand];
+                                }
+
                             }
                         }
                         
@@ -155,6 +175,8 @@ public struct EnvironmentalChangesPerStat
 public struct EnvironmentalChanges
 {
     public float requiredValue;
+
+    public List<GameObject> paintingsToChange;
 
     public List<Material> paintingTextures;
     //public Sprite wallpaperTexture;

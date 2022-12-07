@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2131546796294678047}
   - component: {fileID: 2156221499453767341}
   - component: {fileID: 2146304799405589387}
-  - component: {fileID: -6467657866964101570}
   - component: {fileID: 773749386391119165}
+  - component: {fileID: 2034039129932142340}
+  - component: {fileID: 3785719773250377873}
   m_Layer: 0
   m_Name: Meat_High__160_Tris_
   m_TagString: Untagged
@@ -27,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134564977725550279}
-  m_LocalRotation: {x: -0, y: -0.33050406, z: -0, w: 0.94380456}
+  m_LocalRotation: {x: 0, y: -0.3305062, z: 0, w: 0.9438039}
   m_LocalPosition: {x: -10.239599, y: 0, z: -0.0154800415}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -38.599, z: 0}
 --- !u!33 &2156221499453767341
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -85,7 +86,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &-6467657866964101570
+--- !u!64 &773749386391119165
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134564977725550279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 7da3ba93a27b2ff44a529f098a09ed75, type: 3}
+--- !u!54 &2034039129932142340
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &773749386391119165
+--- !u!64 &3785719773250377873
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
