@@ -18,7 +18,7 @@ public class OJQuest : ScriptableObject
 
     public bool isHiddenFromUI;
 
-    public bool questStarted, questEnded;
+    public bool questStarted, questEnded, isRepeatable = false;
 
     private void OnEnable()
     {
@@ -91,7 +91,7 @@ public struct OJQuestItemObjective
 
     public int requiredAmount; 
 
-    public InventoryItem questItem;
+    public InventoryItem item;
 }
 
 

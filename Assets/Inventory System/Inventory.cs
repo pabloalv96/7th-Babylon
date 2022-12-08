@@ -234,9 +234,9 @@ public class Inventory : MonoBehaviour, IDragHandler
             {
                 foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
                 {
-                    if (!CheckInventoryForItem(questItemObjective.questItem) || CheckItemCount(questItemObjective.questItem) < questItemObjective.requiredAmount)
+                    if (!CheckInventoryForItem(questItemObjective.item) || CheckItemCount(questItemObjective.item) < questItemObjective.requiredAmount)
                     {
-                        questManager.RemoveQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective.questItem);
+                        questManager.RemoveQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective);
                     }
 
                 }
@@ -415,7 +415,7 @@ public class Inventory : MonoBehaviour, IDragHandler
     {
         if (selectedItem != null && selectedItem.canConsume)
         {
-            playerInfoController.AffectStatValues(selectedItem.statsToEffectOnCollectionList);
+            playerInfoController.AffectStatValues(selectedItem.statsToEffectOnConsumptionList);
             playerInfoController.foodConsumed += 1;
             RemoveItemFromInventory(selectedItem);
         }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6798266142195098551}
   - component: {fileID: 2086857008024927228}
   - component: {fileID: 8828167345165582062}
+  - component: {fileID: -5806125573985859367}
   m_Layer: 0
   m_Name: Carrot1_High__500_Tris_
   m_TagString: Untagged
@@ -115,3 +116,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-5806125573985859367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6776300462603679857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 9b4fed0afdd71f54fb5da6cf283d5b67, type: 2}
+  itemInteractions: []

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -8511286833392147127}
   - component: {fileID: 3732237650613165993}
   - component: {fileID: 7706561818003178064}
+  - component: {fileID: 7494411764279314466}
   m_Layer: 0
   m_Name: Onion_High__715_Tris_
   m_TagString: Untagged
@@ -129,3 +130,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.69955
   m_Center: {x: 0.0000076293945, y: 0, z: 0.0000019073486}
+--- !u!114 &7494411764279314466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074414083004697981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 1d3c95a629524854d8ec504a9f968cc4, type: 2}
+  itemInteractions: []

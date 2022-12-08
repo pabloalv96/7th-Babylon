@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3639194216300065300}
   - component: {fileID: 1724291815108928787}
   - component: {fileID: 5631622993658706310}
+  - component: {fileID: 6675460050477913930}
   m_Layer: 0
   m_Name: Almond1_High__200_Tris_
   m_TagString: Untagged
@@ -114,3 +115,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.3951328
   m_Center: {x: 0.016980946, y: -0.009907365, z: 0.076909006}
+--- !u!114 &6675460050477913930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3662906763078901310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 9fc21fee722b43444957214c5a02b729, type: 2}
+  itemInteractions: []

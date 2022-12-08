@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 463812926057379047}
   - component: {fileID: 5780206615474829056}
   - component: {fileID: 6852920424116282237}
+  - component: {fileID: -979075934203131173}
   m_Layer: 0
   m_Name: GelatinPowder_High__351_Tris_
   m_TagString: Untagged
@@ -130,3 +131,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8e0b0ecfa1aea52488c950a72f443bce, type: 3}
+--- !u!114 &-979075934203131173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4433603873354067690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  itemInteractions: []

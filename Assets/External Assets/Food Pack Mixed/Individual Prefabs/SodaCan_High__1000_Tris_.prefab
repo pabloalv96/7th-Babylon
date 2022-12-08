@@ -140,6 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2460507413797719433}
   - component: {fileID: 3097440615004285183}
+  - component: {fileID: 3159629260850015765}
   m_Layer: 0
   m_Name: SodaCan_High__1000_Tris_
   m_TagString: Untagged
@@ -180,6 +181,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3159629260850015765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2463990557862124679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 6cca830a5278fd74e8917806395d49f8, type: 2}
+  itemInteractions: []
 --- !u!1 &2465287346183515289
 GameObject:
   m_ObjectHideFlags: 0

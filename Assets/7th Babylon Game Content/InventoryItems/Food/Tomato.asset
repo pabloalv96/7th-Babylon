@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089cbe2a5087cfe4b9d8f6473c377e11, type: 3}
+  m_Name: Tomato
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4804058398000768591, guid: aa34216210f730f449d5b5bb388d162d, type: 3}
+  itemName: Tomato
+  numCarried: 0
+  maxNumCarried: 8
+  canCollect: 0
+  canConsume: 1
+  relatedQuests: []
+  statsToEffectOnCollectionList: []
+  statsToEffectOnConsumptionList:
+  - statName: Gluttony
+    statValue: 1

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 95388655831268690}
   - component: {fileID: 5449306142773231306}
   - component: {fileID: -6713083046082182203}
+  - component: {fileID: 8843741068490010714}
   m_Layer: 0
   m_Name: 'HeavyCream_41 Tris '
   m_TagString: Untagged
@@ -137,6 +138,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 3a45114cc17eb34449796839cf6f0a17, type: 3}
+--- !u!114 &8843741068490010714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034916261567738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 7e93fef90e2af86489dc4b602b35ba83, type: 2}
+  itemInteractions: []
 --- !u!1 &1921975404559792
 GameObject:
   m_ObjectHideFlags: 0

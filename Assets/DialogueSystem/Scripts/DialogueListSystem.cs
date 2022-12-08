@@ -183,9 +183,9 @@ public class DialogueListSystem : MonoBehaviour
                                 {
                                     foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
                                     {
-                                        if (inventorySystem.CheckItemCount(questItemObjective.questItem) >= questItemObjective.requiredAmount)
+                                        if (inventorySystem.CheckItemCount(questItemObjective.item) >= questItemObjective.requiredAmount)
                                         {
-                                            questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective.questItem);
+                                            questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective);
                                         }
                                     }
                                 }
@@ -287,22 +287,27 @@ public class DialogueListSystem : MonoBehaviour
                             {
                                 if (questManager.activeQuestList.Contains(relatedQuest))
                                 {
-                                    GameObject newQuestDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-                                    newQuestDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
-                                    newQuestDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
-                                    newQuestDialogue.transform.SetParent(listDialoguePanel.transform);
-                                }
-
-                                if (relatedQuest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && relatedQuest.objective.isItemDialogue)
-                                {
-                                    foreach (OJQuestItemObjective questItemObjective in relatedQuest.objective.questItems)
+                                    if (relatedQuest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && relatedQuest.objective.isItemDialogue)
                                     {
-                                        if (!inventorySystem.CheckInventoryForItem(questItemObjective.questItem) || inventorySystem.CheckItemCount(questItemObjective.questItem) < questItemObjective.requiredAmount)
+                                        foreach (OJQuestItemObjective questItemObjective in relatedQuest.objective.questItems)
                                         {
-                                            questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItemObjective.questItem);
+                                            if (!inventorySystem.CheckInventoryForItem(questItemObjective.item) || inventorySystem.CheckItemCount(questItemObjective.item) < questItemObjective.requiredAmount)
+                                            {
+                                                questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItemObjective);
+                                            }
                                         }
                                     }
+                                    else
+                                    {
+
+                                        GameObject newQuestDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
+                                        newQuestDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
+                                        newQuestDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
+                                        newQuestDialogue.transform.SetParent(listDialoguePanel.transform);
+                                    }
                                 }
+
+                               
                             }
                         }
                     }
@@ -593,34 +598,47 @@ public class DialogueListSystem : MonoBehaviour
 
     public void AddItemBasedOnPlayerDialogue()
     {
-        foreach(InventoryItem item in selectedDialogueOption.itemsToRecieve)
+        foreach (OJQuestItemObjective item in selectedDialogueOption.itemsToRecieve)
         {
-           inventorySystem.AddItemToInventory(item);
+            for (int i = 0; i < item.requiredAmount; i++)
+            {
+                inventorySystem.AddItemToInventory(item.item);
+            }
         }
     }
 
     public void RemoveItemBasedOnPlayerDialogue()
     {
-        foreach(InventoryItem item in selectedDialogueOption.itemsToGive)
+        foreach (OJQuestItemObjective item in selectedDialogueOption.itemsToGive)
         {
-           inventorySystem.RemoveItemFromInventory(item);
+            for (int i = 0; i < item.requiredAmount; i++)
+            {
+                inventorySystem.RemoveItemFromInventory(item.item);
+            }
         }
     } 
     
     public void AddItemBasedOnNPCDialogue()
     {
-        foreach(InventoryItem item in npcDialogue.itemsToGive)
+        foreach(OJQuestItemObjective item in npcDialogue.itemsToGive)
         {
-            inventorySystem.AddItemToInventory(item);
+            for (int i = 0; i < item.requiredAmount; i++)
+            {
+                inventorySystem.AddItemToInventory(item.item);
+            }
         }
     }
 
     public void RemoveItemBasedOnNPCDialogue()
     {
-        foreach(InventoryItem item in npcDialogue.itemsToTake)
+        foreach (OJQuestItemObjective item in npcDialogue.itemsToTake)
         {
-           inventorySystem.RemoveItemFromInventory(item);
+            for (int i = 0; i < item.requiredAmount; i++)
+            {
+                inventorySystem.RemoveItemFromInventory(item.item);
+            }
         }
+        
     }
 
     public void RememberDialogueChoices()

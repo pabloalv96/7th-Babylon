@@ -44,10 +44,10 @@ public class NPCDialogueOption : ScriptableObject
     public List<OJQuest> relatedQuests;
 
     //public bool giveItems;
-    public List<InventoryItem> itemsToGive;
+    public List<OJQuestItemObjective> itemsToGive;
 
     //public bool takeItems;
-    public List<InventoryItem> itemsToTake;
+    public List<OJQuestItemObjective> itemsToTake;
 
     public NPCDialogueOption newStartingDialogue;
 

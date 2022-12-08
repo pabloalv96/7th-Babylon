@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2538228418256117634}
   - component: {fileID: 1117519471774751464}
   - component: {fileID: 8574187852868857242}
+  - component: {fileID: -4255863718759190186}
   m_Layer: 0
   m_Name: Clove1_High__400_Tris_
   m_TagString: Untagged
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 2553142942470190210}
   m_LocalRotation: {x: 0.0036403686, y: 0.08868686, z: 0.02886389, w: 0.9956346}
   m_LocalPosition: {x: -0.63139176, y: 0.0884531, z: -0.69331247}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -115,3 +116,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 10eb3d01c5a83f7488d8ec4e2f9cdd28, type: 3}
+--- !u!114 &-4255863718759190186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553142942470190210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 71adc72a88c466b4a9ab2d8490c2736c, type: 2}
+  itemInteractions: []

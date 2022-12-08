@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6394544457617264244}
   - component: {fileID: 3252491148511895630}
   - component: {fileID: -7878595908429371725}
+  - component: {fileID: -850391020736324474}
   m_Layer: 0
   m_Name: TomatoHalf_High__350_Tris_
   m_TagString: Untagged
@@ -115,3 +116,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-850391020736324474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6407511985972486784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: fe1746ff5302e8c40bc9db13d56174e2, type: 2}
+  itemInteractions: []

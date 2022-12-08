@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4596359721009350711}
   - component: {fileID: 5099829643947932853}
   - component: {fileID: 8006780264406331423}
+  - component: {fileID: 2332424937327488222}
   m_Layer: 0
   m_Name: Garlic_High__860_Tris_
   m_TagString: Untagged
@@ -129,3 +130,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.23253073
   m_Center: {x: 0.00000024586916, y: -3.330669e-16, z: -2.220446e-16}
+--- !u!114 &2332424937327488222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332744797498133343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 355c65f8d5bc9624683bc9d808870fcd, type: 2}
+  itemInteractions: []

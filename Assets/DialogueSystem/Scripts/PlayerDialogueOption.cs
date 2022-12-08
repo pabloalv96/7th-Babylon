@@ -27,10 +27,10 @@ public class PlayerDialogueOption : ScriptableObject
     public List<OJQuest> relatedQuests;
 
     //public bool giveItems;
-    public List<InventoryItem> itemsToGive;
+    public List<OJQuestItemObjective> itemsToGive;
 
     //public bool recieveItems;
-    public List<InventoryItem> itemsToRecieve;
+    public List<OJQuestItemObjective> itemsToRecieve;
 
     //public void AffectEmotionValues()
     //{

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: 2 NPCLustDialogue
+  m_EditorClassIdentifier: 
+  dialogue: Some of the statues in the room are quite bright, what material do you
+    think they are made of?
+  toOtherNPC: 0
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: 32b15bbf4dfaa4e449c0fd31204a3c95, type: 2}
+  - {fileID: 11400000, guid: 5384198a03e13bc4aacf5703256cd785, type: 2}
+  - {fileID: 11400000, guid: 8ccef2f95a9f0004fa59b36bbc44267e, type: 2}
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}

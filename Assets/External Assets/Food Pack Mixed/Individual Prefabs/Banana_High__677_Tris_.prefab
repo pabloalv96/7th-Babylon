@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9069200400549730379}
   - component: {fileID: 2287804727220839944}
   - component: {fileID: 5133217212553307633}
+  - component: {fileID: -6601496119244521322}
   m_Layer: 0
   m_Name: Banana_High__677_Tris_
   m_TagString: Untagged
@@ -115,3 +116,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c8e00729a02fc2445874fdd6f59c37c8, type: 3}
+--- !u!114 &-6601496119244521322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9046551338057398671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 5455e8d9ffe0700499d1c21bdbd1986c, type: 2}
+  itemInteractions: []

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -3381557945979642864}
   - component: {fileID: 7605557187470950245}
   - component: {fileID: 1069138409770229687}
+  - component: {fileID: -4853030086512305626}
   m_Layer: 0
   m_Name: Lemon1_High__500_Tris_
   m_TagString: Untagged
@@ -30,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 4663957925503950860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.74, y: 0.0893724, z: -0.051116943}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.035, y: 0.035, z: 0.035}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -129,3 +130,17 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.874859
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4853030086512305626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663957925503950860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 217be3ae7a8c1b94198f8d7d97de94f0, type: 2}
+  itemInteractions: []

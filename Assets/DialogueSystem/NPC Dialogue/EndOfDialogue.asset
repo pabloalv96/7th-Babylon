@@ -16,7 +16,10 @@ MonoBehaviour:
   toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 0}
-  playerResponses: []
+  playerResponses:
+  - {fileID: 11400000, guid: 8007873c8e7d4874da5ea298528547d9, type: 2}
+  - {fileID: 11400000, guid: 6d376f7f6e870d14abfb1af15d621bda, type: 2}
+  - {fileID: 11400000, guid: efcfec4d16ce20c4e9e11d1a9a6ab9ca, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
@@ -26,7 +29,7 @@ MonoBehaviour:
   endOfConversation: 1
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuest: {fileID: 0}
+  relatedQuests: []
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1670261646769768972}
   - component: {fileID: 8644059785954645224}
   - component: {fileID: 760232931362672743}
+  - component: {fileID: 1398602560071468915}
   m_Layer: 0
   m_Name: MincedBeef_High__1500_Tris_
   m_TagString: Untagged
@@ -130,3 +131,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b5c58d16a3531204c9acfd8f88fe4f51, type: 3}
+--- !u!114 &1398602560071468915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398359864678652969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 4c1e0b94e501f6040899db00b0b1ed9d, type: 2}
+  itemInteractions: []
