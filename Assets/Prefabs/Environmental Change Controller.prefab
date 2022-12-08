@@ -15,7 +15,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6102821201107873574
 Transform:
@@ -49,25 +49,264 @@ MonoBehaviour:
   - statName: Greed
     environmentalChangesList:
     - requiredValue: 24
-      paintingTexture: {fileID: 2100000, guid: 8ba357e2a0debf3418044e8108893be6, type: 2}
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: 9eb5f6ba93d3b1d43afc6ab6438dad7a, type: 2}
+      - {fileID: 2100000, guid: e943c95254a0bff4c8601ea14f2be89f, type: 2}
+      - {fileID: 2100000, guid: 8417b24a0293ca546b7897bb1c533e09, type: 2}
+      - {fileID: 2100000, guid: f93e34410b7480944ac2688aab41b9b2, type: 2}
+      - {fileID: 2100000, guid: 7ca1b85087f452c458580ace9aaa6566, type: 2}
+      - {fileID: 2100000, guid: dcfae6f1dbf9b454c8c490bcdf33fffb, type: 2}
+      - {fileID: 2100000, guid: 5feb6d869ff74d547936f85c5646d784, type: 2}
+      - {fileID: 2100000, guid: fb0203f2a8e230d4db92d24135491860, type: 2}
+      - {fileID: 2100000, guid: c13c69cd469acb84996cc035dc7cf989, type: 2}
+      - {fileID: 2100000, guid: 8ba357e2a0debf3418044e8108893be6, type: 2}
       props: []
       backgroundAudio: {fileID: 0}
       changeLights: 1
-      lightsColour: {r: 0.72199994, g: 0.6370588, b: 0, a: 1}
+      lightsColour: {r: 0.6698113, g: 0.62561285, b: 0.3001513, a: 1}
+      lightIntensity: 4
+    - requiredValue: 50
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: 9eb5f6ba93d3b1d43afc6ab6438dad7a, type: 2}
+      - {fileID: 2100000, guid: e943c95254a0bff4c8601ea14f2be89f, type: 2}
+      - {fileID: 2100000, guid: 8417b24a0293ca546b7897bb1c533e09, type: 2}
+      - {fileID: 2100000, guid: f93e34410b7480944ac2688aab41b9b2, type: 2}
+      - {fileID: 2100000, guid: 7ca1b85087f452c458580ace9aaa6566, type: 2}
+      - {fileID: 2100000, guid: dcfae6f1dbf9b454c8c490bcdf33fffb, type: 2}
+      - {fileID: 2100000, guid: 5feb6d869ff74d547936f85c5646d784, type: 2}
+      - {fileID: 2100000, guid: fb0203f2a8e230d4db92d24135491860, type: 2}
+      - {fileID: 2100000, guid: c13c69cd469acb84996cc035dc7cf989, type: 2}
+      - {fileID: 2100000, guid: 8ba357e2a0debf3418044e8108893be6, type: 2}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 0.6509434, g: 0.5940393, b: 0.17501779, a: 1}
+      lightIntensity: 4
+    - requiredValue: 75
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: 9eb5f6ba93d3b1d43afc6ab6438dad7a, type: 2}
+      - {fileID: 2100000, guid: e943c95254a0bff4c8601ea14f2be89f, type: 2}
+      - {fileID: 2100000, guid: 8417b24a0293ca546b7897bb1c533e09, type: 2}
+      - {fileID: 2100000, guid: f93e34410b7480944ac2688aab41b9b2, type: 2}
+      - {fileID: 2100000, guid: 7ca1b85087f452c458580ace9aaa6566, type: 2}
+      - {fileID: 2100000, guid: dcfae6f1dbf9b454c8c490bcdf33fffb, type: 2}
+      - {fileID: 2100000, guid: 5feb6d869ff74d547936f85c5646d784, type: 2}
+      - {fileID: 2100000, guid: fb0203f2a8e230d4db92d24135491860, type: 2}
+      - {fileID: 2100000, guid: c13c69cd469acb84996cc035dc7cf989, type: 2}
+      - {fileID: 2100000, guid: 8ba357e2a0debf3418044e8108893be6, type: 2}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 0.6981132, g: 0.61976165, b: 0.042808846, a: 1}
       lightIntensity: 4
   - statName: Gluttony
     environmentalChangesList:
     - requiredValue: 24
-      paintingTexture: {fileID: 2100000, guid: 6319c82e0637b484d86757364a2b261b, type: 2}
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: 29223daf5a086684193fcd2eb9999882, type: 2}
+      - {fileID: 2100000, guid: 0ac0aa22a9208074eadb800d0a8b1e5b, type: 2}
+      - {fileID: 2100000, guid: 20ce1b952b3268847b1b1c947125a301, type: 2}
+      - {fileID: 2100000, guid: f84225c3798cbe04887be0a0acc87e41, type: 2}
+      - {fileID: 2100000, guid: 8b9b87bebb3bb3d43b4de61c9f15956e, type: 2}
+      - {fileID: 2100000, guid: 3a9417663369dba4cae8ab76a2d4fd17, type: 2}
+      - {fileID: 2100000, guid: 1cfa159788cd6aa4f9fb54d9e492163f, type: 2}
+      - {fileID: 2100000, guid: c6b84217f7efe094ca8f1b3c046cf4e5, type: 2}
+      - {fileID: 2100000, guid: b279276760012e5448105314eaaddcdc, type: 2}
+      - {fileID: 2100000, guid: 6319c82e0637b484d86757364a2b261b, type: 2}
       props: []
       backgroundAudio: {fileID: 0}
       changeLights: 1
-      lightsColour: {r: 1, g: 0.38441053, b: 0, a: 1}
+      lightsColour: {r: 0.6603774, g: 0.43215263, b: 0.28969383, a: 1}
       lightIntensity: 3
+    - requiredValue: 50
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: 29223daf5a086684193fcd2eb9999882, type: 2}
+      - {fileID: 2100000, guid: 0ac0aa22a9208074eadb800d0a8b1e5b, type: 2}
+      - {fileID: 2100000, guid: 20ce1b952b3268847b1b1c947125a301, type: 2}
+      - {fileID: 2100000, guid: f84225c3798cbe04887be0a0acc87e41, type: 2}
+      - {fileID: 2100000, guid: 8b9b87bebb3bb3d43b4de61c9f15956e, type: 2}
+      - {fileID: 2100000, guid: 3a9417663369dba4cae8ab76a2d4fd17, type: 2}
+      - {fileID: 2100000, guid: 1cfa159788cd6aa4f9fb54d9e492163f, type: 2}
+      - {fileID: 2100000, guid: c6b84217f7efe094ca8f1b3c046cf4e5, type: 2}
+      - {fileID: 2100000, guid: b279276760012e5448105314eaaddcdc, type: 2}
+      - {fileID: 2100000, guid: 6319c82e0637b484d86757364a2b261b, type: 2}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 0.735849, g: 0.37830505, b: 0.15619439, a: 1}
+      lightIntensity: 3
+    - requiredValue: 75
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: 29223daf5a086684193fcd2eb9999882, type: 2}
+      - {fileID: 2100000, guid: 0ac0aa22a9208074eadb800d0a8b1e5b, type: 2}
+      - {fileID: 2100000, guid: 20ce1b952b3268847b1b1c947125a301, type: 2}
+      - {fileID: 2100000, guid: f84225c3798cbe04887be0a0acc87e41, type: 2}
+      - {fileID: 2100000, guid: 8b9b87bebb3bb3d43b4de61c9f15956e, type: 2}
+      - {fileID: 2100000, guid: 3a9417663369dba4cae8ab76a2d4fd17, type: 2}
+      - {fileID: 2100000, guid: 1cfa159788cd6aa4f9fb54d9e492163f, type: 2}
+      - {fileID: 2100000, guid: c6b84217f7efe094ca8f1b3c046cf4e5, type: 2}
+      - {fileID: 2100000, guid: b279276760012e5448105314eaaddcdc, type: 2}
+      - {fileID: 2100000, guid: 6319c82e0637b484d86757364a2b261b, type: 2}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 0.8113208, g: 0.31415796, b: 0.003826994, a: 1}
+      lightIntensity: 3
+  - statName: Lust
+    environmentalChangesList:
+    - requiredValue: 24
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: f82b28d6d3b793842a215102e60b36d4, type: 2}
+      - {fileID: 2100000, guid: 936f00868c27e4d449e0d8828cf3cae5, type: 2}
+      - {fileID: 2100000, guid: 99d592b287e5bdf41924219303339607, type: 2}
+      - {fileID: 2100000, guid: 445f562ff1ab76e419b266f2ad64a823, type: 2}
+      - {fileID: 2100000, guid: b0ba5de9c875d014893f4cea4b89c90c, type: 2}
+      - {fileID: 2100000, guid: 251e86d658c9c52458687b0ae9352026, type: 2}
+      - {fileID: 2100000, guid: 26e6b33e74c1e844489c160689d7de64, type: 2}
+      - {fileID: 2100000, guid: 50737881962845c4aa93687c9267cb56, type: 2}
+      - {fileID: 2100000, guid: a6fd7aa31c6f14c44a119ec51e93a5ae, type: 2}
+      - {fileID: 2100000, guid: 840cbc7ee8fc093488aeba5bdb884268, type: 2}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 0.5660378, g: 0.26432896, b: 0.45008698, a: 1}
+      lightIntensity: 2
+    - requiredValue: 50
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: f82b28d6d3b793842a215102e60b36d4, type: 2}
+      - {fileID: 2100000, guid: 936f00868c27e4d449e0d8828cf3cae5, type: 2}
+      - {fileID: 2100000, guid: 99d592b287e5bdf41924219303339607, type: 2}
+      - {fileID: 2100000, guid: 445f562ff1ab76e419b266f2ad64a823, type: 2}
+      - {fileID: 2100000, guid: b0ba5de9c875d014893f4cea4b89c90c, type: 2}
+      - {fileID: 2100000, guid: 251e86d658c9c52458687b0ae9352026, type: 2}
+      - {fileID: 2100000, guid: 26e6b33e74c1e844489c160689d7de64, type: 2}
+      - {fileID: 2100000, guid: 50737881962845c4aa93687c9267cb56, type: 2}
+      - {fileID: 2100000, guid: a6fd7aa31c6f14c44a119ec51e93a5ae, type: 2}
+      - {fileID: 2100000, guid: 840cbc7ee8fc093488aeba5bdb884268, type: 2}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 0.6603774, g: 0.14640442, b: 0.4628506, a: 1}
+      lightIntensity: 2
+    - requiredValue: 75
+      paintingsToChange:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      paintingTextures:
+      - {fileID: 2100000, guid: f82b28d6d3b793842a215102e60b36d4, type: 2}
+      - {fileID: 2100000, guid: 936f00868c27e4d449e0d8828cf3cae5, type: 2}
+      - {fileID: 2100000, guid: 99d592b287e5bdf41924219303339607, type: 2}
+      - {fileID: 2100000, guid: 445f562ff1ab76e419b266f2ad64a823, type: 2}
+      - {fileID: 2100000, guid: b0ba5de9c875d014893f4cea4b89c90c, type: 2}
+      - {fileID: 2100000, guid: 251e86d658c9c52458687b0ae9352026, type: 2}
+      - {fileID: 2100000, guid: 26e6b33e74c1e844489c160689d7de64, type: 2}
+      - {fileID: 2100000, guid: 50737881962845c4aa93687c9267cb56, type: 2}
+      - {fileID: 2100000, guid: a6fd7aa31c6f14c44a119ec51e93a5ae, type: 2}
+      - {fileID: 2100000, guid: 840cbc7ee8fc093488aeba5bdb884268, type: 2}
+      props: []
+      backgroundAudio: {fileID: 0}
+      changeLights: 1
+      lightsColour: {r: 0.6603774, g: 0.028034877, b: 0.41735956, a: 1}
+      lightIntensity: 2
   propSpawnPoints: []
-  paintingObject: {fileID: 0}
-  defaultPaintingMaterial: {fileID: 2100000, guid: 4fade621264e12d43a4d5008b7c200c7,
-    type: 2}
+  blankPaintingMaterial: {fileID: 0}
   backgroundAudioSource: {fileID: 0}
   activeLightsList: []
   checkHighestStat: 1
+  highestStatName: 
