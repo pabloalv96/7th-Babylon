@@ -11,9 +11,11 @@ public class Inventory : MonoBehaviour, IDragHandler
     [SerializeField] private KeyCode dropItemInput = KeyCode.Z;
     //[SerializeField] private KeyCode inspectItemInput = KeyCode.V;
     [SerializeField] private KeyCode cancelSelectionInput = KeyCode.X;
+    [SerializeField] private KeyCode consumeItemInput = KeyCode.C;
 
     [SerializeField] private GameObject dropItemUIPrompt;
     [SerializeField] private GameObject cancelSelectionUIPrompt;
+    [SerializeField] private GameObject consumeItemUIPrompt;
 
     //inspect item variables
     //[SerializeField] private GameObject inspectItemUIPrompt;
@@ -80,6 +82,7 @@ public class Inventory : MonoBehaviour, IDragHandler
 
         dropItemUIPrompt.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = dropItemInput.ToString();
         cancelSelectionUIPrompt.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = cancelSelectionInput.ToString();
+        consumeItemUIPrompt.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = consumeItemInput.ToString();
         //inspectItemUIPrompt.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = inspectItemInput.ToString();
 
         //if (onInspectionZoom == null)
@@ -109,6 +112,15 @@ public class Inventory : MonoBehaviour, IDragHandler
                 //inspectItemUIPrompt.SetActive(true);
                 cancelSelectionUIPrompt.SetActive(true);
 
+                if (selectedItem.canConsume)
+                {
+                    consumeItemUIPrompt.SetActive(true);
+                    if (Input.GetKeyDown(consumeItemInput))
+                    {
+                        ConsumeFood();
+                    }
+                }
+
                 if (Input.GetKeyDown(dropItemInput))
                 {
 
@@ -116,21 +128,24 @@ public class Inventory : MonoBehaviour, IDragHandler
 
                 }
 
-                //if (Input.GetKeyDown(inspectItemInput))
-                //{
-                //    //activate inspect item view
-                //    isInspectingItem = true;
-                //}
-
-                //if (isInspectingItem)
-                //{
-                //    InspectItem();
-                //}
-
                 if (Input.GetKeyDown(cancelSelectionInput))
                 {
                     selectedItem = null;
                     SetSelectedItemTextColour();
+                }
+            }
+            else
+            {
+                dropItemUIPrompt.SetActive(false);
+                //inspectItemUIPrompt.SetActive(false);
+                cancelSelectionUIPrompt.SetActive(false);
+                consumeItemUIPrompt.SetActive(false);
+
+                selectedItem = null;
+                SetSelectedItemTextColour();
+                if (inspectedItem != null)
+                {
+                    EndItemInspection();
                 }
             }
         }
@@ -139,6 +154,7 @@ public class Inventory : MonoBehaviour, IDragHandler
             dropItemUIPrompt.SetActive(false);
             //inspectItemUIPrompt.SetActive(false);
             cancelSelectionUIPrompt.SetActive(false);
+            consumeItemUIPrompt.SetActive(false);
             selectedItem = null;
             SetSelectedItemTextColour();
             if (inspectedItem != null)
@@ -216,12 +232,13 @@ public class Inventory : MonoBehaviour, IDragHandler
         {
             if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
             {
-                foreach (InventoryItem questItem in quest.objective.questItems)
+                foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
                 {
-                    if (!CheckInventoryForItem(questItem))
+                    if (!CheckInventoryForItem(questItemObjective.questItem) || CheckItemCount(questItemObjective.questItem) < questItemObjective.requiredAmount)
                     {
-                        questManager.RemoveQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+                        questManager.RemoveQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective.questItem);
                     }
+
                 }
             }
         }
@@ -297,10 +314,20 @@ public class Inventory : MonoBehaviour, IDragHandler
 
             FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
 
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+            //}
+            //else if (!dialogueSystem.inDialogue)
+            //{
+            //    FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+            //}
+
+
             if (inspectedItem == null)
             {
                 inspectedItem = Instantiate(selectedItem.prefab, inspectBasePos.position, Quaternion.identity);
-                //inspectedItem.transform.parent = inventoryPanel.transform;
+                inspectedItem.transform.parent = inspectBasePos;
 
                 inspectedItem.GetComponent<ItemInWorld>().enabled = false;
                 inspectedItem.GetComponent<Collider>().enabled = false;
@@ -389,6 +416,7 @@ public class Inventory : MonoBehaviour, IDragHandler
         if (selectedItem != null && selectedItem.canConsume)
         {
             playerInfoController.AffectStatValues(selectedItem.statsToEffectOnCollectionList);
+            playerInfoController.foodConsumed += 1;
             RemoveItemFromInventory(selectedItem);
         }
     }
@@ -400,6 +428,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 1 && inventorySlotLimit >= 1)
             {
                 selectedItem = inventory[0];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -408,6 +438,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 2 && inventorySlotLimit >= 2)
             {
                 selectedItem = inventory[1];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -416,6 +448,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 3 && inventorySlotLimit >= 3)
             {
                 selectedItem = inventory[2];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -424,6 +458,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 4 && inventorySlotLimit >= 4)
             {
                 selectedItem = inventory[3];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -432,6 +468,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 5 && inventorySlotLimit >= 5)
             {
                 selectedItem = inventory[4];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -440,6 +478,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 6 && inventorySlotLimit >= 6)
             {
                 selectedItem = inventory[5];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -448,6 +488,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 7 && inventorySlotLimit >= 7)
             {
                 selectedItem = inventory[6];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -456,6 +498,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 8 && inventorySlotLimit >= 8)
             {
                 selectedItem = inventory[7];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -464,6 +508,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 9 && inventorySlotLimit >= 9)
             {
                 selectedItem = inventory[8];
+                EndItemInspection();
+                InspectItem();
             }
         }
 
@@ -472,6 +518,8 @@ public class Inventory : MonoBehaviour, IDragHandler
             if (inventory.Count >= 10 && inventorySlotLimit >= 10)
             {
                 selectedItem = inventory[9];
+                EndItemInspection();
+                InspectItem();
             }
         }
     }

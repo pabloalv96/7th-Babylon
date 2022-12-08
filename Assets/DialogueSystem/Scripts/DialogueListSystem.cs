@@ -181,9 +181,12 @@ public class DialogueListSystem : MonoBehaviour
                             {
                                 foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
                                 {
-                                    foreach (InventoryItem questItem in quest.objective.questItems)
+                                    foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
                                     {
-                                        questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+                                        if (inventorySystem.CheckItemCount(questItemObjective.questItem) >= questItemObjective.requiredAmount)
+                                        {
+                                            questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective.questItem);
+                                        }
                                     }
                                 }
                             }
@@ -292,11 +295,11 @@ public class DialogueListSystem : MonoBehaviour
 
                                 if (relatedQuest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && relatedQuest.objective.isItemDialogue)
                                 {
-                                    foreach (InventoryItem questItem in relatedQuest.objective.questItems)
+                                    foreach (OJQuestItemObjective questItemObjective in relatedQuest.objective.questItems)
                                     {
-                                        if (!inventorySystem.CheckInventoryForItem(questItem))
+                                        if (!inventorySystem.CheckInventoryForItem(questItemObjective.questItem) || inventorySystem.CheckItemCount(questItemObjective.questItem) < questItemObjective.requiredAmount)
                                         {
-                                            questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItem);
+                                            questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItemObjective.questItem);
                                         }
                                     }
                                 }

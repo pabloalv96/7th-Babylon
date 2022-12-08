@@ -74,11 +74,11 @@ public class OJQuestManager : MonoBehaviour
 
             if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
             {
-                foreach (InventoryItem item in quest.objective.questItems)
+                foreach (OJQuestItemObjective itemObjective in quest.objective.questItems)
                 {
-                    if (inventorySystem.CheckInventoryForItem(item))
+                    if (inventorySystem.CheckInventoryForItem(itemObjective.questItem) && inventorySystem.CheckItemCount(itemObjective.questItem) >= itemObjective.requiredAmount)
                     {
-                        foreach (OJQuest itemQuest in item.relatedQuests)
+                        foreach (OJQuest itemQuest in itemObjective.questItem.relatedQuests)
                         {
                             EndQuest(itemQuest);
                         }
@@ -144,21 +144,21 @@ public class OJQuestManager : MonoBehaviour
             case OJQuestObjectiveType.itemBased:
                 //add item interaction dialogue
 
-                foreach (InventoryItem item in quest.objective.questItems)
+                foreach (OJQuestItemObjective itemObjective in quest.objective.questItems)
                 {
-                    if (item.relatedQuests == null)
+                    if (itemObjective.questItem.relatedQuests == null)
                     {
-                        item.relatedQuests = new List<OJQuest>();
+                        itemObjective.questItem.relatedQuests = new List<OJQuest>();
                     }
 
-                    if (!item.relatedQuests.Contains(quest))
+                    if (!itemObjective.questItem.relatedQuests.Contains(quest))
                     {
-                        item.relatedQuests.Add(quest);
+                        itemObjective.questItem.relatedQuests.Add(quest);
                     }
 
-                    if (inventorySystem.CheckInventoryForItem(item))
+                    if (inventorySystem.CheckInventoryForItem(itemObjective.questItem))
                     {
-                        foreach (OJQuest itemQuest in item.relatedQuests)
+                        foreach (OJQuest itemQuest in itemObjective.questItem.relatedQuests)
                         {
                             EndQuest(itemQuest);
                         }
@@ -199,10 +199,10 @@ public class OJQuestManager : MonoBehaviour
                 {
                     foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
                     {
-                        foreach (InventoryItem questItem in quest.objective.questItems)
+                        foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
                         {
 
-                            AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+                            AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective.questItem);
                             //playerDialogue.AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
 
                             
@@ -215,16 +215,21 @@ public class OJQuestManager : MonoBehaviour
                     {
                         Debug.Log(questDialogue.questDialogueOption.name);
                         Debug.Log(questDialogue.dialogueNPCRecipient);
-
-                        foreach(PlayerDialogue.PlayerQuestions playerQuestion in playerDialogue.playerQuestions)
+                        for (int i = 0; i < playerDialogue.playerQuestions.Count; i++)
                         {
-                            if (playerQuestion.npc == questDialogue.dialogueNPCRecipient)
+                            if (playerDialogue.playerQuestions[i].npc == questDialogue.dialogueNPCRecipient && !playerDialogue.playerQuestions[i].questionsForNPC.Contains(questDialogue.questDialogueOption))
                             {
-                                if (!playerQuestion.questionsForNPC.Contains(questDialogue.questDialogueOption))
+                                if (playerDialogue.playerQuestions[i].questionsForNPC.Contains(questDialogue.questDialogueOption))
+                                {
+                                    Debug.Log("Quest Dialogue already added");
+                                }
+                                else
                                 {
                                     playerDialogue.AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
                                     Debug.Log("Quest Dialogue Activated");
                                 }
+
+                                break;
                             }
                         }
 
@@ -386,15 +391,15 @@ public class OJQuestManager : MonoBehaviour
                 {
                     case OJQuestObjectiveType.itemBased:
                         //add item interaction dialogue
-                        foreach (InventoryItem item in quest.objective.questItems)
+                        foreach (OJQuestItemObjective itemObjective in quest.objective.questItems)
                         {
-                            if (item.relatedQuests == null)
+                            if (itemObjective.questItem.relatedQuests == null)
                             {
-                                item.relatedQuests = new List<OJQuest>();
+                                itemObjective.questItem.relatedQuests = new List<OJQuest>();
                             }
                             else
                             {
-                                item.relatedQuests.Remove(quest);
+                                itemObjective.questItem.relatedQuests.Remove(quest);
                             }
                         }
 

@@ -9,6 +9,8 @@ public class PlayerInfoController : MonoBehaviour
 
     public PlayerDialogue playerDialogue;
 
+    public int foodConsumed;
+
     //public float AffectStatalues(StatContainer.Stat stat)
     //{
     //    for (int i = 0; i < playerStats.listOfStats.Count; i++)

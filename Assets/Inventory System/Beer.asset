@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8577832520588069435, guid: 7b0d32bd9bea1a949b77330c36b4e31a, type: 3}
   itemName: Aoroma Amber Ale
-  numCarried: 0
+  numCarried: 2
   maxNumCarried: 2
   canCollect: 0
+  canConsume: 1
   relatedQuests: []
-  statsToEffectList: []
+  statsToEffectOnCollectionList: []
+  statsToEffectOnConsumptionList: []
