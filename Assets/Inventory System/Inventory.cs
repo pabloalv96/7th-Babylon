@@ -62,7 +62,7 @@ public class Inventory : MonoBehaviour, IDragHandler
     private OJQuestManager questManager;
     //private Inventory inventorySystem;
     //private PlayerDialogue playerDialogue;
-    //private PlayerInfoController playerInfoController;
+    private PlayerInfoController playerInfoController;
     private PlayerInteractionRaycast playerInteractionRaycast;
 
 
@@ -73,7 +73,7 @@ public class Inventory : MonoBehaviour, IDragHandler
         questManager = FindObjectOfType<OJQuestManager>();
         //inventorySystem = FindObjectOfType<Inventory>();
         //playerDialogue = FindObjectOfType<PlayerDialogue>();
-        //playerInfoController = FindObjectOfType<PlayerInfoController>();
+        playerInfoController = FindObjectOfType<PlayerInfoController>();
         playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -383,6 +383,15 @@ public class Inventory : MonoBehaviour, IDragHandler
     //    }
 
     //}
+
+    public void ConsumeFood()
+    {
+        if (selectedItem != null && selectedItem.canConsume)
+        {
+            playerInfoController.AffectStatValues(selectedItem.statsToEffectOnCollectionList);
+            RemoveItemFromInventory(selectedItem);
+        }
+    }
 
     private void SelectInventoryItem()
     {

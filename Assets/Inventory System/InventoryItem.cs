@@ -14,9 +14,11 @@ public class InventoryItem : ScriptableObject
     public int maxNumCarried;
 
     public bool canCollect;
+    public bool canConsume;
     public List<OJQuest> relatedQuests;
 
 
-    public List<StatContainer.Stat> statsToEffectList;
+    public List<StatContainer.Stat> statsToEffectOnCollectionList;
+    public List<StatContainer.Stat> statsToEffectOnConsumptionList;
 
 }

@@ -130,9 +130,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
             }
         }
 
-        if (item.statsToEffectList.Count > 0)
+        if (item.statsToEffectOnCollectionList.Count > 0)
         {
-            playerInfoController.AffectStatValues(item.statsToEffectList);
+            playerInfoController.AffectStatValues(item.statsToEffectOnCollectionList);
         }
 
 
