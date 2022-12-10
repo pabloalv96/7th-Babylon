@@ -56,23 +56,7 @@ public class OJQuestManager : MonoBehaviour
         if (((!quest.questStarted && !quest.questEnded) || quest.questEnded && quest.isRepeatable ) && !activeQuestList.Contains(quest))
         {
 
-            if (quest.isRepeatable)
-            {
-                quest.questStarted = false;
-                quest.questEnded = false;
-
-                if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
-                {
-                    foreach(OJQuestItemObjective questItem in quest.objective.questItems)
-                    {
-                        foreach(OJQuestDialogue dialogue in quest.objective.questDialogueOptions)
-                        {
-                            RemoveQuestItemDialogue(dialogue, questItem);
-
-                        }
-                    }
-                }
-            }
+           
 
             if (!quest.isHiddenFromUI)
             {
@@ -91,19 +75,19 @@ public class OJQuestManager : MonoBehaviour
                 EndQuest(questToLock);
             }
 
-            if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
-            {
-                foreach (OJQuestItemObjective itemObjective in quest.objective.questItems)
-                {
-                    if (inventorySystem.CheckInventoryForItem(itemObjective.item) && inventorySystem.CheckItemCount(itemObjective.item) >= itemObjective.requiredAmount)
-                    {
-                        foreach (OJQuest itemQuest in itemObjective.item.relatedQuests)
-                        {
-                            EndQuest(itemQuest);
-                        }
-                    }
-                }
-            }
+            //if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
+            //{
+            //    foreach (OJQuestItemObjective itemObjective in quest.objective.questItems)
+            //    {
+            //        if (inventorySystem.CheckInventoryForItem(itemObjective.item) && inventorySystem.CheckItemCount(itemObjective.item) >= itemObjective.requiredAmount)
+            //        {
+            //            foreach (OJQuest itemQuest in itemObjective.item.relatedQuests)
+            //            {
+            //                EndQuest(itemQuest);
+            //            }
+            //        }
+            //    }
+            //}
 
             quest.questStarted = true;
         }
@@ -175,12 +159,16 @@ public class OJQuestManager : MonoBehaviour
                         itemObjective.item.relatedQuests.Add(quest);
                     }
 
-                    if (inventorySystem.CheckInventoryForItem(itemObjective.item))
+                    if (inventorySystem.CheckInventoryForItem(itemObjective.item) && inventorySystem.CheckItemCount(itemObjective.item) >= itemObjective.requiredAmount)
                     {
-                        foreach (OJQuest itemQuest in itemObjective.item.relatedQuests)
-                        {
-                            EndQuest(itemQuest);
-                        }
+                        itemObjective.requiredAmountCollected = true;
+                        AddQuestItemDialogue(quest.objective.questDialogueOptions[0], itemObjective);
+
+                        //foreach (OJQuest itemQuest in itemObjective.item.relatedQuests)
+                        //{
+
+                        //    //EndQuest(itemQuest);
+                        //}
                     }
                 }
 
@@ -214,22 +202,22 @@ public class OJQuestManager : MonoBehaviour
 
             case OJQuestObjectiveType.dialogueBased:
 
-                if (quest.objective.isItemDialogue)
-                {
-                    foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
-                    {
-                        foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
-                        {
+                //if (quest.objective.isItemDialogue)
+                //{
+                //    foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                //    {
+                //        foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
+                //        {
 
-                            AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective);
-                            //playerDialogue.AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                //            AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective);
+                //            //playerDialogue.AddQuestionForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
 
                             
-                        }
-                    }
-                }
-                else
-                {
+                //        }
+                //    }
+                //}
+                //else
+                //{
                     foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
                     {
                         Debug.Log(questDialogue.questDialogueOption.name);
@@ -255,17 +243,17 @@ public class OJQuestManager : MonoBehaviour
                         
 
                     }
-                }
+                //}
                 break;
             case OJQuestObjectiveType.multiObjective:
                 foreach (OJQuest childQuest in quest.objective.childrenQuests)
                 {
                     if (!activeQuestList.Contains(childQuest))
                     {
-                        if (!childQuest.objective.isItemDialogue)
-                        {
+                        //if (!childQuest.objective.isItemDialogue)
+                        //{
                             StartQuest(childQuest);
-                        }
+                        //}
                         //else
                         //{
                         //    // check if item is in inventory first
@@ -343,6 +331,7 @@ public class OJQuestManager : MonoBehaviour
                             //questDialogue.questDialogueOption.isLocked = true;
                             playerDialogue.RemoveDialogueForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
 
+                            Debug.Log("Item dialogue removed");
                         }
                     }
                 }
@@ -350,57 +339,7 @@ public class OJQuestManager : MonoBehaviour
         }
     }
 
-    //public void ()
-    //{
-
-    //}
-
-    //public void TriggerQuestInteraction(OJQuest quest)
-    //{
-    //    switch (quest.objective.questType)
-    //    {
-    //        case OJQuestType.itemBased:
-    //            //add item interaction dialogue
-    //            break;
-    //        case OJQuestType.locationBased:
-    //            foreach (Collider trigger in quest.objective.questLocationTriggers)
-    //            {
-    //                trigger.enabled = false;
-    //            }
-    //            break;
-    //        case OJQuestType.dialogueBased:
-    //            foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
-    //            {
-    //                quest.outcome.unlockDialogue.RemoveDialogueForSpecificNPC(FindObjectOfType<PlayerDialogue>(), questDialogue.dialogueNPCRecipient, questDialogue.questDialogueOption);
-    //            }
-    //            break;
-    //    }
-    //}
-
-    //public bool CheckItemsInInventory(OJQuest quest)
-    //{
-    //    if (quest.objective.questType == OJQuestType.dialogueBased && quest.objective.isItemDialogue)
-    //    {
-    //        // create dialogue option for each applicable key in inventory
-    //        foreach (InventoryItem item in inventorySystem.inventory)
-    //        {
-    //            Debug.Log(item.name);
-
-    //            for (int i = 0; i < quest.objective.questItems.Count; i++)
-    //            {
-    //                if (quest.objective.questItems[i] == item)
-    //                {
-    //                    return true;
-    //                }
-    //            }
-    //        }
-    //    }
-
-    //    Debug.Log("Inventory has been checked");
-
-    //    return false;
-    //}
-
+   
     public void DeactivateOldQuestInteractions()
     {
         foreach (OJQuest quest in activeQuestList)
@@ -468,24 +407,24 @@ public class OJQuestManager : MonoBehaviour
 
         if (quest.questStarted && !quest.questEnded)
         {
-            switch (quest.objective.objectiveType)
+            if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased)
             {
-                case OJQuestObjectiveType.itemBased:
-
-                    break;
-                case OJQuestObjectiveType.locationBased: // needs a monobehaviour to store colliders per location quest
-                    //foreach (Collider trigger in quest.objective.questLocationTriggers)
-                    //{
-                    //    trigger.enabled = false;
-                    //}
-                    break;
-                case OJQuestObjectiveType.dialogueBased:
-                    foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                {
+                    playerDialogue.RemoveDialogueForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
+                    //quest.outcome.unlockDialogue.RemoveDialogueForSpecificNPC(FindObjectOfType<PlayerDialogue>(), questDialogue.dialogueNPCRecipient, questDialogue.questDialogueOption);
+                }
+            }
+            else if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+            {
+                foreach (OJQuestItemObjective questItem in quest.objective.questItems)
+                {
+                    if (!questItem.questCompleted)
                     {
-                        playerDialogue.RemoveDialogueForSpecificNPC(questDialogue.questDialogueOption, questDialogue.dialogueNPCRecipient);
-                        //quest.outcome.unlockDialogue.RemoveDialogueForSpecificNPC(FindObjectOfType<PlayerDialogue>(), questDialogue.dialogueNPCRecipient, questDialogue.questDialogueOption);
+                        questItem.questCompleted = true;
                     }
-                    break;
+                    
+                }
             }
 
             if (activeQuestList.Contains(quest))
@@ -546,6 +485,30 @@ public class OJQuestManager : MonoBehaviour
 
 
 
+            }
+        }
+
+        if (quest.isRepeatable)
+        {
+            quest.questStarted = false;
+            quest.questEnded = false;
+
+            if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+            {
+                foreach (OJQuestItemObjective questItem in quest.objective.questItems)
+                {
+                    questItem.questCompleted = false;
+
+                    if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
+                    {
+                        questItem.requiredAmountCollected = true;
+
+                    }
+                    else
+                    {
+                        questItem.requiredAmountCollected = false;
+                    }
+                }
             }
         }
 

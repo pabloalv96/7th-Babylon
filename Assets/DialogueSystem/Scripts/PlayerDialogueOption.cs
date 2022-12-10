@@ -24,6 +24,7 @@ public class PlayerDialogueOption : ScriptableObject
     public List<UnityEvent> conditionalEvents;
 
     //public bool isQuestDialogue;
+    public bool completeRelatedQuest;
     public List<OJQuest> relatedQuests;
 
     //public bool giveItems;

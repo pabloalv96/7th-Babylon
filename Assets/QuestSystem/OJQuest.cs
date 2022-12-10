@@ -57,7 +57,7 @@ public class OJQuestObjective
 {
     public OJQuestObjectiveType objectiveType;
 
-    public bool isItemDialogue;
+    //public bool isItemDialogue;
     public List<OJQuestItemObjective> questItems;
     public List<OJQuestDialogue> questDialogueOptions;
     public List<OJQuest> childrenQuests;
@@ -85,13 +85,16 @@ public class OJQuestOutcome
 }
 
 [System.Serializable]
-public struct OJQuestItemObjective
+public class OJQuestItemObjective
 {
     // add minAmount for sloth / greed / gluttony and disappointed npc dialogue if the player returns less than required
 
     public int requiredAmount; 
 
     public InventoryItem item;
+
+    public bool requiredAmountCollected;
+    public bool questCompleted;
 }
 
 

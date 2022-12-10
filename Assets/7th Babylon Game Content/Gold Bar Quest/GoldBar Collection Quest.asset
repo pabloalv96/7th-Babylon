@@ -16,7 +16,7 @@ MonoBehaviour:
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
   isHiddenFromUI: 0
-  questStarted: 0
+  questStarted: 1
   questEnded: 0
   isRepeatable: 1
   questID: Gold Bar Collection Quest
@@ -25,14 +25,18 @@ MonoBehaviour:
     questsToLock: []
   objective:
     objectiveType: 0
-    isItemDialogue: 0
     questItems:
-    - requiredAmount: 5
+    - requiredAmount: 10
       item: {fileID: 11400000, guid: fc89f7ce4d0c0684dbd7e68fb1087af8, type: 2}
-    questDialogueOptions: []
+      requiredAmountCollected: 1
+      questCompleted: 0
+    questDialogueOptions:
+    - questDialogueOption: {fileID: 11400000, guid: 5b74374d04f253c418e049464d084dc8,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: cba763f13f1de304fa598de751544c23,
+        type: 2}
     childrenQuests: []
   outcome:
-    questsToUnlock:
-    - {fileID: 11400000, guid: da6bdefa8f618ec489a234bc5f489e1e, type: 2}
+    questsToUnlock: []
     questsToLock: []
     statsToEffectList: []

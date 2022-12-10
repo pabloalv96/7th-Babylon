@@ -10,17 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: Locked Door
+  m_Name: NPC1.3 Excellent
   m_EditorClassIdentifier: 
-  dialogue: It's locked...
-  toOtherNPC: 1
+  dialogue: Excellent I'll take those.
+  toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 333cd1d1132db0748a06ed9b9cca8a52, type: 2}
   playerResponses: []
-  limitedTime: 1
-  timeLimit: 3
+  limitedTime: 0
+  timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 0
+  playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}

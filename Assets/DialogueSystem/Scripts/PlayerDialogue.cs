@@ -20,6 +20,7 @@ public class PlayerDialogue : MonoBehaviour
     public NPCDialogueOption questions;
 
     private DialogueListSystem dialogueSystem;
+    private Inventory inventorySystem;
 
     [Serializable]
     public class PlayerQuestions
@@ -35,6 +36,7 @@ public class PlayerDialogue : MonoBehaviour
     private void Start()
     {
         dialogueSystem = FindObjectOfType<DialogueListSystem>();
+        inventorySystem = FindObjectOfType<Inventory>();
     }
 
 
@@ -122,15 +124,42 @@ public class PlayerDialogue : MonoBehaviour
                     if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput != null) 
                     {
                         // if it is, check whether the player is responding to the npc
-                        if (!playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue) 
+                        if (!playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue)
                         {
-                            // if they aren't responding, add it to the player's current dialogue options
-                            playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); 
+                            // if they aren't responding, check whether it's dialogue for a quest
+                            if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuests != null)
+                            {
+                                foreach(OJQuest quest in playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuests)
+                                {
+                                    if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+                                    {
+                                        foreach(OJQuestItemObjective questItem in quest.objective.questItems)
+                                        {
+                                            if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
+                                            {
+                                                playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+
+                                            }
+
+                                        }
+                                    }
+                                    else if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased)
+                                    {
+                                        playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                // add it to the player's current dialogue options
+                                playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+                            }
                         }
                         else
                         {
                             //if they are, remove it from the player's dialogue options
-                            playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); 
+                            playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
                         }
                     }
                     else // if there is nothing for the player to say to the npc
@@ -152,57 +181,13 @@ public class PlayerDialogue : MonoBehaviour
                     }
                 }
             }
-        }
-        //for (int i = 0; i < playerQuestions.Count; i++)
-        //{
-        //    if (playerQuestions[i].npc == dialogueSystem.npc) // check that you are only getting dialogue for the current npc
-        //    {
-        //        playerQuestions[i].questionsForNPC = new List<PlayerDialogueOption>(); // reset their dialogue options
-
-        //        for (int d = 0; d < playerQuestions[i].npc.npcDialogue.dialogueConnections.Count; d++) //for each npc dialogue object of each npc
-        //        {
-        //            if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput != null) //if there is a player input dialogue
-        //            {
-        //                if (!playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue) // check the dialogue object for if the player is responding
-        //                {
-        //                    if ((playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest != null && FindObjectOfType<OJQuestManager>().activeQuestList.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest))
-        //                        || playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest == null) //check if it's for a quest, and whether the quest is active
-        //                    {
-        //                        playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); //add it to the player's current dialogue selection
-
-      
-        //                    }
-        //                    else if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest != null && !FindObjectOfType<OJQuestManager>().activeQuestList.Contains(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuest))
-        //                    {
-        //                        if (playerQuestions[i].npc.npcDialogue.dialogueConnections[0].playerDialogueInput == null && playerQuestions[i].npc.npcDialogue.dialogueConnections[0].npcResponses[0].response.requiresResponse)
-        //                        {
-        //                            FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(playerQuestions[i].npc, playerQuestions[i].npc.npcDialogue.dialogueConnections[0].npcResponses[0].response);
-
-        //                            AddResponseOptions();
-        //                        }
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    playerQuestions[i].questionsForNPC.Remove(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput); //otherwise remove it
-        //                }
-        //            }
-        //            else // if the player has nothing to start with, let the npc say something first
-        //            {
-        //                if (playerQuestions[i].npc.npcDialogue.dialogueConnections[0].playerDialogueInput == null && playerQuestions[i].npc.npcDialogue.dialogueConnections[0].npcResponses[0].response.requiresResponse)
-        //                {
-        //                    FindObjectOfType<StartDialogue>().NPCInitiatedDialogue(playerQuestions[i].npc, playerQuestions[i].npc.npcDialogue.dialogueConnections[0].npcResponses[0].response);
-
-        //                    AddResponseOptions();
-        //                }
-        //            }
-
-        //            //Debug.Log("Dialogue Option '" + playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.name + "' has been added to questions for '" + playerQuestions[i].npc.name + "'");
-        //        }
-        //    }
-        //}
+        } 
+    }
+    public void DecideWhetherToAddQuestDialogue(OJQuest quest)
+    {
         
     }
+
 
     public void AddResponseOptions()
     {

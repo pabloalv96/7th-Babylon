@@ -77,6 +77,7 @@ public class Inventory : MonoBehaviour, IDragHandler
         //playerDialogue = FindObjectOfType<PlayerDialogue>();
         playerInfoController = FindObjectOfType<PlayerInfoController>();
         playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();
+        playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -225,18 +226,19 @@ public class Inventory : MonoBehaviour, IDragHandler
     public void DropItem(InventoryItem item)
     {
         RemoveItemFromInventory(item);
-        GameObject droppedItem = Instantiate(item.prefab, player.position + new Vector3(0.0f, 1f, 0.5f), Quaternion.identity);
+        GameObject droppedItem = Instantiate(item.prefab, inspectBasePos.position, Quaternion.identity);
         droppedItem.transform.parent = null;
 
         foreach (OJQuest quest in questManager.activeQuestList)
         {
-            if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
+            if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
             {
                 foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
                 {
                     if (!CheckInventoryForItem(questItemObjective.item) || CheckItemCount(questItemObjective.item) < questItemObjective.requiredAmount)
                     {
-                        questManager.RemoveQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective);
+                        questItemObjective.requiredAmountCollected = false;
+                        Debug.Log("Quest Requirement No Longer Reached. Dialogue Has been Removed");
                     }
 
                 }

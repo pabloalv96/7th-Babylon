@@ -39,8 +39,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private DoorActivator doorActivator;
     private OJQuestTrigger interaction;
     [SerializeField] private NPCInfo narrator;
-    [SerializeField] private NPCDialogueOption lockedDoorDialogue;
-    [SerializeField] private NPCDialogueOption unlockDoorDialogue;
+
     [SerializeField] private NPCDialogueOption interactDialogueOption;
 
     public LayerMask uiLayer;
@@ -126,7 +125,21 @@ public class PlayerInteractionRaycast : MonoBehaviour
         {
             foreach (OJQuest quest in item.relatedQuests)
             {
-                questManager.EndQuest(quest);
+                if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+                {
+                    foreach (OJQuestItemObjective questItem in quest.objective.questItems)
+                    {
+                        if (!questItem.questCompleted)
+                        {
+                            if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
+                            {
+                                questItem.requiredAmountCollected = true;
+                                questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -305,7 +318,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                         if (doorActivator.CheckKeysInInventory())
                         {
 
-                            unlockDoorDialogue.playerResponses.Clear();
+                            doorActivator.unlockDoorDialogue.playerResponses.Clear();
 
                             foreach (DoorKey key in doorActivator.keysList)
                             {
@@ -327,7 +340,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
                                         newUnlockDialogue.statsToEffectList = key.statsToEffectList;
 
-                                        unlockDoorDialogue.playerResponses.Add(newUnlockDialogue);
+                                        doorActivator.unlockDoorDialogue.playerResponses.Add(newUnlockDialogue);
 
 
 
@@ -335,12 +348,12 @@ public class PlayerInteractionRaycast : MonoBehaviour
                                 }
                             }
 
-                            dialogueInitiator.NPCInitiatedDialogue(narrator, unlockDoorDialogue);
+                            dialogueInitiator.NPCInitiatedDialogue(narrator, doorActivator.unlockDoorDialogue);
 
                         }
                         else
                         {
-                            dialogueInitiator.NPCInitiatedDialogue(narrator, lockedDoorDialogue);
+                            dialogueInitiator.NPCInitiatedDialogue(narrator, doorActivator.lockedDoorDialogue);
 
                         }
 

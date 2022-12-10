@@ -10,25 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC1.3 Excellent bring me more
+  m_Name: Locked Door No Key
   m_EditorClassIdentifier: 
-  dialogue: Excellent, keep finding them and come see me when they become too much
-    for you to carry.
-  toOtherNPC: 0
-  requiresResponse: 1
-  continuedDialogue: {fileID: 0}
+  dialogue: It's locked.
+  toOtherNPC: 1
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
-  limitedTime: 0
-  timeLimit: 0
-  playerCanChangeTopic: 1
-  playerCanLeaveDialogue: 1
+  limitedTime: 1
+  timeLimit: 3
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuests:
-  - {fileID: 11400000, guid: ab3ebe8f2416e984f8e6cbd87618caef, type: 2}
+  relatedQuests: []
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}

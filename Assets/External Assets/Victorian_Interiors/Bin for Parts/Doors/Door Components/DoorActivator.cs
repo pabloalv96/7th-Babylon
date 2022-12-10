@@ -20,6 +20,8 @@ public class DoorActivator : MonoBehaviour
     public bool isLocked = false;
 
     public List<DoorKey> keysList;
+    public NPCDialogueOption lockedDoorDialogue;
+    public NPCDialogueOption unlockDoorDialogue;
 
     void Awake()
     {

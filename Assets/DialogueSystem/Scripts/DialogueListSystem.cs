@@ -153,7 +153,7 @@ public class DialogueListSystem : MonoBehaviour
             {
                 foreach (OJQuest quest in npcDialogue.relatedQuests)
                 {
-                    if (!quest.objective.isItemDialogue)
+                    if (quest.objective.objectiveType != OJQuestObjectiveType.itemBased)
                     {
                         if (!quest.questStarted)
                         {
@@ -161,8 +161,18 @@ public class DialogueListSystem : MonoBehaviour
                         }
                         else if (!quest.questEnded)
                         {
-                            questManager.EndQuest(quest);
+                            foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                            {
+                                if (questDialogue.questDialogueOption.completeRelatedQuest)
+                                {
+                                    questManager.EndQuest(quest);
+                                    Debug.Log("Ending Quest '" + quest.questID + "' from SetNewDialogueText");
+
+                                }
+                            }
                         }
+
+                       
                     }
                     else
                     {
@@ -170,27 +180,55 @@ public class DialogueListSystem : MonoBehaviour
                         {
                             questManager.StartQuest(quest);
                         }
-                        else if (!quest.questEnded)
+                        else
                         {
-                            questManager.EndQuest(quest);
-                        }
-
-                        if (quest.questStarted && !quest.questEnded)
-                        {
-                            if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
+                            foreach (OJQuestItemObjective questItem in quest.objective.questItems)
                             {
-                                foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                                if (!questItem.questCompleted)
                                 {
-                                    foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
+                                    if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
                                     {
-                                        if (inventorySystem.CheckItemCount(questItemObjective.item) >= questItemObjective.requiredAmount)
-                                        {
-                                            questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective);
-                                        }
+                                        questItem.requiredAmountCollected = true;
+                                        //foreach (OJQuestDialogue dialogue in quest.objective.questDialogueOptions)
+                                        //{
+                                        //    AddQuestItemDialogue(dialogue, questItem);
+
+
+                                        //}
+                                    }
+                                    else
+                                    {
+                                        questItem.requiredAmountCollected = false;
+                                        //foreach (OJQuestDialogue dialogue in quest.objective.questDialogueOptions)
+                                        //{
+                                        //    RemoveQuestItemDialogue(dialogue, questItem);
+
+                                        //}
                                     }
                                 }
                             }
                         }
+                        //else if (quest.objective.questItem)
+                        //{
+                        //    questManager.EndQuest(quest);
+                        //}
+
+                        //if (quest.questStarted && !quest.questEnded)
+                        //{
+                        //    if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && quest.objective.isItemDialogue)
+                        //    {
+                        //        foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                        //        {
+                        //            foreach (OJQuestItemObjective questItemObjective in quest.objective.questItems)
+                        //            {
+                        //                if (inventorySystem.CheckItemCount(questItemObjective.item) >= questItemObjective.requiredAmount)
+                        //                {
+                        //                    questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItemObjective);
+                        //                }
+                        //            }
+                        //        }
+                        //    }
+                        //}
                     }
                 }
                 
@@ -287,24 +325,37 @@ public class DialogueListSystem : MonoBehaviour
                             {
                                 if (questManager.activeQuestList.Contains(relatedQuest))
                                 {
-                                    if (relatedQuest.objective.objectiveType == OJQuestObjectiveType.dialogueBased && relatedQuest.objective.isItemDialogue)
+                                    if (relatedQuest.objective.objectiveType == OJQuestObjectiveType.itemBased)
                                     {
-                                        foreach (OJQuestItemObjective questItemObjective in relatedQuest.objective.questItems)
+                                        foreach (OJQuestItemObjective questItem in relatedQuest.objective.questItems)
                                         {
-                                            if (!inventorySystem.CheckInventoryForItem(questItemObjective.item) || inventorySystem.CheckItemCount(questItemObjective.item) < questItemObjective.requiredAmount)
+                                            if (!questItem.requiredAmountCollected)
                                             {
-                                                questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItemObjective);
+
+                                                questItem.requiredAmountCollected = false;
+                                                questManager.RemoveQuestItemDialogue(relatedQuest.objective.questDialogueOptions[0], questItem);
+
+
                                             }
+                                            //else
+                                            //{
+                                            //    if (dialogueOption.completeRelatedQuest)
+                                            //    {
+                                            //        questManager.EndQuest(relatedQuest);
+                                            //        Debug.Log("Ending Quest '" + relatedQuest.questID + "' from CreateDialogueOptions");
+
+                                            //    }
+                                            //}
                                         }
                                     }
-                                    else
-                                    {
+                                    //else
+                                    //{
 
-                                        GameObject newQuestDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
-                                        newQuestDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
-                                        newQuestDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
-                                        newQuestDialogue.transform.SetParent(listDialoguePanel.transform);
-                                    }
+                                    //    GameObject newQuestDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
+                                    //    newQuestDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
+                                    //    newQuestDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
+                                    //    newQuestDialogue.transform.SetParent(listDialoguePanel.transform);
+                                    //}
                                 }
 
                                
@@ -390,9 +441,22 @@ public class DialogueListSystem : MonoBehaviour
             {
                 foreach (OJQuest quest in selectedDialogueOption.relatedQuests)
                 {
-                    if (quest.questStarted && !quest.questEnded)
+                    if (!quest.questStarted || (quest.questEnded && quest.isRepeatable))
                     {
-                        questManager.EndQuest(quest);
+                        questManager.StartQuest(quest);
+                        quest.questEnded = false;
+                    }
+                    else if (quest.questStarted && !quest.questEnded)
+                    {
+                        //foreach(OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                        //{
+                            if (selectedDialogueOption.completeRelatedQuest)
+                            {
+                                questManager.EndQuest(quest);
+                                Debug.Log("Ending Quest '" + quest.questID + "' from LockInResponse");
+
+                            }
+                        //}
                     }
                 }
             }

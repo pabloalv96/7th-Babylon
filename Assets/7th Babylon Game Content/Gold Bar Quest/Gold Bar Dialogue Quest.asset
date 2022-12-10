@@ -18,17 +18,18 @@ MonoBehaviour:
   isHiddenFromUI: 1
   questStarted: 0
   questEnded: 0
-  isRepeatable: 1
+  isRepeatable: 0
   questID: GoldBar Dialogue Quest
   questDescription: Help Brad acquire gold bars
   questActivation:
     questsToLock: []
   objective:
     objectiveType: 2
-    isItemDialogue: 1
     questItems:
     - requiredAmount: 5
       item: {fileID: 11400000, guid: fc89f7ce4d0c0684dbd7e68fb1087af8, type: 2}
+      requiredAmountCollected: 0
+      questCompleted: 0
     questDialogueOptions:
     - questDialogueOption: {fileID: 11400000, guid: 5b74374d04f253c418e049464d084dc8,
         type: 2}

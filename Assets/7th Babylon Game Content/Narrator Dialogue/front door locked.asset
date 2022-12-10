@@ -10,27 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 001 Open Inventory Prompt
+  m_Name: front door locked
   m_EditorClassIdentifier: 
-  dialogue: '... so I''m going to need to see your invitation
-
-'
-  toOtherNPC: 0
+  dialogue: It's locked. How did I get here?
+  toOtherNPC: 1
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 7b2369c373772d54a91a5fe7ef66d98c, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
-  limitedTime: 0
-  timeLimit: 0
+  limitedTime: 1
+  timeLimit: 3
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 0
+  isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  completeRelatedQuest: 0
-  relatedQuests:
-  - {fileID: 11400000, guid: a431679213d9f6d49b4d08de2a0d6cdb, type: 2}
+  relatedQuests: []
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}

@@ -41,6 +41,7 @@ public class NPCDialogueOption : ScriptableObject
     public List<UnityEvent> conditionalEvents;
 
     //public bool isQuestPrompt;
+    //public bool completeRelatedQuest;
     public List<OJQuest> relatedQuests;
 
     //public bool giveItems;

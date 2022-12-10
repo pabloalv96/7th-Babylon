@@ -19,9 +19,12 @@ MonoBehaviour:
   isChangeTopicOption: 0
   isLocked: 0
   conditionalEvents: []
+  completeRelatedQuest: 1
   relatedQuests:
-  - {fileID: 11400000, guid: da6bdefa8f618ec489a234bc5f489e1e, type: 2}
+  - {fileID: 11400000, guid: ab3ebe8f2416e984f8e6cbd87618caef, type: 2}
   itemsToGive:
-  - requiredAmount: 5
+  - requiredAmount: 10
     item: {fileID: 11400000, guid: fc89f7ce4d0c0684dbd7e68fb1087af8, type: 2}
+    requiredAmountCollected: 0
+    questCompleted: 0
   itemsToRecieve: []
