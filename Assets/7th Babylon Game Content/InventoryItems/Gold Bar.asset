@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1356594798545312, guid: 613f9f5e201acbb448bd03d2aaac70f3, type: 3}
   itemName: Gold Bar
-  numCarried: 2
+  numCarried: 0
   maxNumCarried: 10
   canCollect: 0
   canConsume: 0
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: ab3ebe8f2416e984f8e6cbd87618caef, type: 2}
   statsToEffectOnCollectionList:
   - statName: Greed
-    statValue: 0.5
+    statValue: 1.2
   statsToEffectOnConsumptionList: []
