@@ -127,26 +127,29 @@ public class PlayerDialogue : MonoBehaviour
                         if (!playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isResponseToNPCDialogue)
                         {
                             // if they aren't responding, check whether it's dialogue for a quest
-                            if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuests != null)
+                            if (playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.isQuestDialogue)
                             {
                                 foreach(OJQuest quest in playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput.relatedQuests)
                                 {
-                                    if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+                                    if (quest.questStarted && !quest.questEnded)
                                     {
-                                        foreach(OJQuestItemObjective questItem in quest.objective.questItems)
+                                        if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
                                         {
-                                            if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
+                                            foreach (OJQuestItemObjective questItem in quest.objective.questItems)
                                             {
-                                                playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+                                                if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
+                                                {
+                                                    playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
+
+                                                }
 
                                             }
+                                        }
+                                        else if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased)
+                                        {
+                                            playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
 
                                         }
-                                    }
-                                    else if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased)
-                                    {
-                                        playerQuestions[i].questionsForNPC.Add(playerQuestions[i].npc.npcDialogue.dialogueConnections[d].playerDialogueInput);
-
                                     }
                                 }
                             }
@@ -183,11 +186,6 @@ public class PlayerDialogue : MonoBehaviour
             }
         } 
     }
-    public void DecideWhetherToAddQuestDialogue(OJQuest quest)
-    {
-        
-    }
-
 
     public void AddResponseOptions()
     {

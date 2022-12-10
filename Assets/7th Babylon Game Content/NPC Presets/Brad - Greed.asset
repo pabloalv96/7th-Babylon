@@ -24,6 +24,41 @@ MonoBehaviour:
     nothingToSayDialogue: {fileID: 11400000, guid: a28c7069c7156aa4db312a61e3363ad7,
       type: 2}
     dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: 64e2a130a8deb2c44a8d6d4947772f5e,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 04ec8dcb2bffbfb4181681d8b82c5183, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 4cc9262fcacd0d948b280b31f01815ee,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 4fa592a8f91c281418fe62db11ee02d5, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: a3ac95358335566468e5079df4aaf35d,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 3aff1144bdf2faf458a02f818e309c7b, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 04e364a61646edd438bb7c3659132bdb,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 825b54e835e33a347a92de5dc0981f63, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 0ac01b80dc323a54b9b6604cd448a9da,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: ea31fd4fac6c00442b6b408ccdd348aa, type: 2}
     - playerDialogueInput: {fileID: 11400000, guid: 92745f2a0d925ad4e9a8f4dfae26d1c7,
         type: 2}
       npcResponses:
@@ -51,7 +86,7 @@ MonoBehaviour:
       - requiredStat:
           statName: 
           statValue: 0
-        response: {fileID: 11400000, guid: ac229c2e983d26141b543deb05162e28, type: 2}
+        response: {fileID: 11400000, guid: 06bcee0db7b02cc41bd09609f817fd8f, type: 2}
     - playerDialogueInput: {fileID: 11400000, guid: 122a307486633604682b8c92dc66a1c9,
         type: 2}
       npcResponses:
@@ -59,3 +94,10 @@ MonoBehaviour:
           statName: 
           statValue: 0
         response: {fileID: 11400000, guid: 01a2adc2ca785a44ea7c05d9fc723e32, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 526b29f255f161c42811fa473be8c6f7,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: ac229c2e983d26141b543deb05162e28, type: 2}

@@ -9,6 +9,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 {
 
     [SerializeField] private KeyCode selectInput = KeyCode.E;
+    [SerializeField] private KeyCode consumeInput = KeyCode.C;
 
     [SerializeField] private float reachDistance = 5f;
     [SerializeField] private float selectionSize = 1f;
@@ -19,12 +20,14 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
 
     public GameObject interactPromptIndicator;
+    public GameObject consumePromptIndicator;
     public Image interactionAimIndicator;
 
     private bool isNPC;
     private bool isWorldDialogue;
     [HideInInspector] public bool isDoor;
     private bool isItem;
+    private bool isConsumable;
     private bool isInteraction;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
 
@@ -45,6 +48,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
     public LayerMask uiLayer;
 
     [SerializeField] private TextMeshProUGUI interactionPromptText;
+    [SerializeField] private TextMeshProUGUI interactionKeyPromptText;
+    [SerializeField] private TextMeshProUGUI consumePromptText;
+    [SerializeField] private TextMeshProUGUI consumeKeyPromptText;
 
 
     private DialogueListSystem dialogueSystem;
@@ -57,6 +63,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
     {
 
         interactPromptIndicator.SetActive(false);
+        consumePromptIndicator.SetActive(false);
 
         dialogueSystem = FindObjectOfType<DialogueListSystem>();
         dialogueInitiator = FindObjectOfType<DialogueInitiator>();
@@ -69,6 +76,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
         //checkInventoryIndicator.enabled = false;
         //inventoryIndicatorDisplayTimeReset = inventoryIndicatorDisplayTime;
+
+        consumeKeyPromptText.text = consumeInput.ToString();
+        interactionKeyPromptText.text = selectInput.ToString();
     }
 
     private void Update()
@@ -148,10 +158,6 @@ public class PlayerInteractionRaycast : MonoBehaviour
             playerInfoController.AffectStatValues(item.statsToEffectOnCollectionList);
         }
 
-
-        
-
-
         //if (audioSource.isPlaying)
         //{
         //    audioSource.Stop();
@@ -180,6 +186,16 @@ public class PlayerInteractionRaycast : MonoBehaviour
         //}
     }
 
+
+    //public void ConsumeFood()
+    //{
+    //    if (selectedItem != null && selectedItem.canConsume)
+    //    {
+    //        playerInfoController.AffectStatValues(selectedItem.statsToEffectOnConsumptionList);
+    //        playerInfoController.foodConsumed += 1;
+    //        RemoveItemFromInventory(selectedItem);
+    //    }
+    //}
     public IEnumerator InteractionRaycast()
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -197,10 +213,24 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 interactPromptIndicator.SetActive(true);
                 interactionAimIndicator.color = Color.red;
                 interactionPromptText.text = "Collect " + selectedObject.GetComponent<ItemInWorld>().item.itemName;
+
+                if (selectedObject.GetComponent<ItemInWorld>().item.canConsume)
+                {
+                    isConsumable = true;
+                    consumePromptIndicator.SetActive(true);
+                    consumePromptText.text = "Consume " + selectedObject.GetComponent<ItemInWorld>().item.itemName;
+                }
+                else
+                {
+                    isConsumable = false;
+                    consumePromptIndicator.SetActive(false);
+
+                }
             }
             else
             {
                 isItem = false;
+                isConsumable = false;
             }
 
             if (hit.transform.GetComponent<DialogueInWorld>())
@@ -267,6 +297,14 @@ public class PlayerInteractionRaycast : MonoBehaviour
             else
             {
                 isInteraction = false;
+            }
+
+            if (selectedObject != null && isConsumable && Input.GetKeyDown(consumeInput))
+            {
+                playerInfoController.AffectStatValues(selectedObject.GetComponent<ItemInWorld>().item.statsToEffectOnConsumptionList);
+                playerInfoController.foodConsumed += 1;
+                Destroy(selectedObject.gameObject);
+                //Play consume sound effect
             }
 
             if (selectedObject != null && Input.GetKeyDown(selectInput))
@@ -402,6 +440,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
             //Debug.Log("Did not Hit");
             selectedObject = null;
             interactPromptIndicator.SetActive(false);
+            consumePromptIndicator.SetActive(false);
+
             interactionAimIndicator.color = Color.white;
         }
 

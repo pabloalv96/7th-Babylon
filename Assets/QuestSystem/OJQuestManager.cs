@@ -20,6 +20,8 @@ public class OJQuestManager : MonoBehaviour
 
     public List<Collider> questColliders;
 
+    //public List<InvisibleBarrier> invisibleBarriers;
+
     private DialogueListSystem dialogueSystem;
     //private DialogueInitiator dialogueInitiator;
     //private OJQuestManager questManager;
@@ -30,6 +32,12 @@ public class OJQuestManager : MonoBehaviour
     // track currently active quests
     // lock quests that are completed or no longer available
 
+    //[System.Serializable]
+    //public class InvisibleBarrier
+    //{
+    //    public GameObject barrierObject;
+    //    public string barrierID;
+    //}
     private void Awake()
     {
         questColliders = new List<Collider>();
@@ -102,7 +110,7 @@ public class OJQuestManager : MonoBehaviour
         {
             foreach (OJQuest completedQuest in completedQuestList)
             {
-                if (!completedQuest.isHiddenFromUI && activeQuestUiList[i].text == completedQuest.questDescription)
+                if ((!completedQuest.isHiddenFromUI && activeQuestUiList[i].text == completedQuest.questDescription) && !completedQuest.isRepeatable)
                 {
                     TextMeshProUGUI questUiToDestroy = activeQuestUiList[i];
                     activeQuestUiList.Remove(activeQuestUiList[i]);
@@ -114,7 +122,7 @@ public class OJQuestManager : MonoBehaviour
             }
             foreach (OJQuest missedQuest in missedQuestList)
             {
-                if (!missedQuest.isHiddenFromUI && activeQuestUiList[i].text == missedQuest.questDescription)
+                if ((!missedQuest.isHiddenFromUI && activeQuestUiList[i].text == missedQuest.questDescription)&& !missedQuest.isRepeatable)
                 {
                     TextMeshProUGUI questUiToDestroy = activeQuestUiList[i];
                     activeQuestUiList.Remove(activeQuestUiList[i]);

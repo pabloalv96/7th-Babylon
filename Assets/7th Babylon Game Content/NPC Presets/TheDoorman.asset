@@ -25,6 +25,13 @@ MonoBehaviour:
     nothingToSayDialogue: {fileID: 11400000, guid: 3edff59e03006c545860fcea1cf538dd,
       type: 2}
     dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: 35c0dff550dce944f89d2723198cde4b,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 51d6adf1086162b4ba77f93447b43eef, type: 2}
     - playerDialogueInput: {fileID: 11400000, guid: 6353126631fc98541825fef61ad01e67,
         type: 2}
       npcResponses:

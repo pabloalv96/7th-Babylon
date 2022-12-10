@@ -17,14 +17,15 @@ MonoBehaviour:
   npcProfileID: Lust NPC
   npcDialogue:
     greetingDialogue:
-    - {fileID: 11400000, guid: 535867a178813c541b6110c3c47564af, type: 2}
-    goodbyeDialogue:
-    - {fileID: 11400000, guid: 15d4f5ff76de9b349a9c8148c0cee086, type: 2}
+    - {fileID: 11400000, guid: 3e84a296c23a7ad4c91cfd6756b40ed8, type: 2}
+    goodbyeDialogue: []
     changeTopicDialogue:
-    - {fileID: 11400000, guid: 757d6f8079bc1384eb60e11df36ba286, type: 2}
-    nothingToSayDialogue: {fileID: 0}
+    - {fileID: 11400000, guid: 3e84a296c23a7ad4c91cfd6756b40ed8, type: 2}
+    nothingToSayDialogue: {fileID: 11400000, guid: 3e84a296c23a7ad4c91cfd6756b40ed8,
+      type: 2}
     dialogueConnections:
-    - playerDialogueInput: {fileID: 0}
+    - playerDialogueInput: {fileID: 11400000, guid: 3dae8bf4ca50ea540af84c02bcce9f9e,
+        type: 2}
       npcResponses:
       - requiredStat:
           statName: 
@@ -112,3 +113,52 @@ MonoBehaviour:
           statName: 
           statValue: 0
         response: {fileID: 11400000, guid: ff0e9c2cd2eb49e4ebc7c02d348eca3e, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 64e2a130a8deb2c44a8d6d4947772f5e,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 9eb9405e4bde73f4496490545d69f403, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 4cc9262fcacd0d948b280b31f01815ee,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 693e3d843cd09d841973598a6710be45, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 0ac01b80dc323a54b9b6604cd448a9da,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 858059134369b584f9032372164e15ba, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: b50157e8ac97e0a4fa793aecac65470c,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: a62cbe5a95400d6459567f1432ec689a, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 39506336ff9137e408b284848fa7f2d4,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: b41909452c67c10458d3d2bcd3d55767, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: fad3ab9078b08ce41bb519d8b238f096,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 112478be0a9dc784f8f8ead70bd7c7c6, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 386b61ccaf9d9d84c944a5a3443d8ec3,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: b41909452c67c10458d3d2bcd3d55767, type: 2}

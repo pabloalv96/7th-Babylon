@@ -726,4 +726,36 @@ public class DialogueListSystem : MonoBehaviour
         //reset whether dialogue has been seen by player;
 
     }
+
+    public void UnlockPlayerDialogue(PlayerDialogueOption dialogueToUnlock)
+    {
+        dialogueToUnlock.isLocked = false;
+    }
+
+    public void LockPlayerDialogue(PlayerDialogueOption dialogueToLock)
+    {
+        dialogueToLock.isLocked = true;
+
+    }
+    //public void ActivateInvisibleBarrier(string barrierID)
+    //{
+    //    foreach (OJQuestManager.InvisibleBarrier barrier in questManager.invisibleBarriers)
+    //    {
+    //        if (barrier.barrierID == barrierID)
+    //        {
+    //            barrier.barrierObject.SetActive(true);
+    //        }
+    //    }
+    //}
+    //public void DeactivateInvisibleBarrier(string barrierID)
+    //{
+    //    foreach(OJQuestManager.InvisibleBarrier barrier in questManager.invisibleBarriers)
+    //    {
+    //        if (barrier.barrierID == barrierID)
+    //        {
+    //            barrier.barrierObject.SetActive(false);
+    //            break;
+    //        }
+    //    }
+    //}
 }

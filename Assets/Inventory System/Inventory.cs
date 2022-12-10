@@ -184,6 +184,8 @@ public class Inventory : MonoBehaviour, IDragHandler
                             Destroy(playerInteractionRaycast.selectedObject);
                             playerInteractionRaycast.selectedObject = null;
                             playerInteractionRaycast.interactPromptIndicator.SetActive(false);
+                            playerInteractionRaycast.consumePromptIndicator.SetActive(false);
+
                         }
                     }
                     else
@@ -212,6 +214,8 @@ public class Inventory : MonoBehaviour, IDragHandler
                     Destroy(playerInteractionRaycast.selectedObject);
                     playerInteractionRaycast.selectedObject = null;
                     playerInteractionRaycast.interactPromptIndicator.SetActive(false);
+                    playerInteractionRaycast.consumePromptIndicator.SetActive(false);
+
                 }
             }
             else
@@ -225,9 +229,11 @@ public class Inventory : MonoBehaviour, IDragHandler
     // Drop and Remove have not been tested
     public void DropItem(InventoryItem item)
     {
-        RemoveItemFromInventory(item);
-        GameObject droppedItem = Instantiate(item.prefab, inspectBasePos.position, Quaternion.identity);
-        droppedItem.transform.parent = null;
+        Quaternion inspectedItemRotation = inspectedItem.transform.rotation;
+            RemoveItemFromInventory(item);
+            GameObject droppedItem = Instantiate(item.prefab, inspectBasePos.position, inspectedItemRotation);
+            droppedItem.transform.parent = null;
+
 
         foreach (OJQuest quest in questManager.activeQuestList)
         {
@@ -554,7 +560,7 @@ public class Inventory : MonoBehaviour, IDragHandler
         {
             Debug.Log("OnDrag");
 
-            inspectedItem.transform.eulerAngles += new Vector3(eventData.delta.x, eventData.delta.y);
+            inspectedItem.transform.eulerAngles += new Vector3(eventData.delta.y , eventData.delta.x );
         }
     }
 }

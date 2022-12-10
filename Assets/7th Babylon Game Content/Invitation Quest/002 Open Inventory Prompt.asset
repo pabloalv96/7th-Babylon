@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: 002 Open Inventory Prompt
   m_EditorClassIdentifier: 
-  dialogue: 'Kindly press ''Q'' to open your inventory
+  dialogue: 'Kindly press ''Q'' to check your inventory.
 
-    you can also see what
-    people have told you to do'
+    If you have it come
+    talk to me.'
   toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
@@ -29,7 +29,7 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuest: {fileID: 0}
+  relatedQuests: []
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
