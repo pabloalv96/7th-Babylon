@@ -313,6 +313,20 @@ public class Inventory : MonoBehaviour, IDragHandler
         return 0;
     }
 
+    public bool CheckIfConsumableItem(InventoryItem desiredItem)
+    {
+        foreach (InventoryItem item in inventory)
+        {
+            if (item == desiredItem)
+            {
+                return item.canConsume;
+            }
+
+        }
+
+        return false;
+    }
+
     private void InspectItem()
     {
         if (selectedItem != null)

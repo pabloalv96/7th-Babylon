@@ -135,17 +135,20 @@ public class PlayerInteractionRaycast : MonoBehaviour
         {
             foreach (OJQuest quest in item.relatedQuests)
             {
-                if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+                if (quest.questStarted && !quest.questEnded)
                 {
-                    foreach (OJQuestItemObjective questItem in quest.objective.questItems)
+                    if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
                     {
-                        if (!questItem.questCompleted)
+                        foreach (OJQuestItemObjective questItem in quest.objective.questItems)
                         {
-                            if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
+                            if (!questItem.questCompleted)
                             {
-                                questItem.requiredAmountCollected = true;
-                                questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+                                if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
+                                {
+                                    questItem.requiredAmountCollected = true;
+                                    questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
 
+                                }
                             }
                         }
                     }

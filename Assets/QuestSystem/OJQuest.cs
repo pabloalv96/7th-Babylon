@@ -89,7 +89,9 @@ public class OJQuestItemObjective
 {
     // add minAmount for sloth / greed / gluttony and disappointed npc dialogue if the player returns less than required
 
-    public int requiredAmount; 
+    public int requiredAmount;
+
+    //public bool isFoodQuest;
 
     public InventoryItem item;
 

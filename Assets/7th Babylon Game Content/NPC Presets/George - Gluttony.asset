@@ -16,8 +16,81 @@ MonoBehaviour:
   npcGender: Male
   npcProfileID: GluttonyNPC
   npcDialogue:
-    greetingDialogue: []
+    greetingDialogue:
+    - {fileID: 11400000, guid: 820df6693ac97d646aae79bbf56d82cd, type: 2}
     goodbyeDialogue: []
-    changeTopicDialogue: []
-    nothingToSayDialogue: {fileID: 0}
-    dialogueConnections: []
+    changeTopicDialogue:
+    - {fileID: 11400000, guid: 820df6693ac97d646aae79bbf56d82cd, type: 2}
+    nothingToSayDialogue: {fileID: 11400000, guid: 820df6693ac97d646aae79bbf56d82cd,
+      type: 2}
+    dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: 64e2a130a8deb2c44a8d6d4947772f5e,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 25daee9f6bd7bb045a5c8492d9f28ee2, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 4cc9262fcacd0d948b280b31f01815ee,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: f44aee59a271bfd4f9a611ba939e833d, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 0ac01b80dc323a54b9b6604cd448a9da,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 16856f030f3cf3e4e9fffe34f340ba7a, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 579e214d295fab94eaaa7c88a52e658d,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 51a6c724db1ee3b4b9614997ee17e600, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 6e57bf2167cca27448ec53e65764d515,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: a023eebd4327e2c47b9c0ac4ebc27455, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: dd9c34e86d1dd874d9727093ba645233,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 7c3fedbd55f7e2341974fe87e2f3e567, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 1644518e0a694b846a26be5749841ea5,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 8bea4d2631a8b2049bd1ba2712b0ac66, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 088ce976a003935468108d67bdd6d04d,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 62e76f4ac2bdb15469ab4673ad9194d4, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 713a9e2eb6b66c340bc20cedd4fef481,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 08da922861a10ff48b0a3c92ea6fe19b, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: cae70f5f0ebf4834a98ee00d3763c14b,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: c159d443fb62caa4985443455ff2a890, type: 2}

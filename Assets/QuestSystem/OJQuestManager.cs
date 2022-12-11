@@ -167,33 +167,56 @@ public class OJQuestManager : MonoBehaviour
                         itemObjective.item.relatedQuests.Add(quest);
                     }
 
-                    if (inventorySystem.CheckInventoryForItem(itemObjective.item) && inventorySystem.CheckItemCount(itemObjective.item) >= itemObjective.requiredAmount)
-                    {
-                        itemObjective.requiredAmountCollected = true;
-                        AddQuestItemDialogue(quest.objective.questDialogueOptions[0], itemObjective);
+                    //if (!itemObjective.isFoodQuest)
+                    //{
+                        if (inventorySystem.CheckInventoryForItem(itemObjective.item) && inventorySystem.CheckItemCount(itemObjective.item) >= itemObjective.requiredAmount)
+                        {
+                            itemObjective.requiredAmountCollected = true;
+                            AddQuestItemDialogue(quest.objective.questDialogueOptions[0], itemObjective);
 
-                        //foreach (OJQuest itemQuest in itemObjective.item.relatedQuests)
-                        //{
+                            //foreach (OJQuest itemQuest in itemObjective.item.relatedQuests)
+                            //{
 
-                        //    //EndQuest(itemQuest);
-                        //}
-                    }
+                            //    //EndQuest(itemQuest);
+                            //}
+                        }
+                    //}
+                    //else
+                    //{
+                    //    foreach (InventoryItem item in inventorySystem.inventory)
+                    //    {
+                    //        if (inventorySystem.CheckInventoryForItem(item) && inventorySystem.CheckIfConsumableItem(item) && inventorySystem.CheckItemCount(item) >= itemObjective.requiredAmount)
+
+                    //        {
+                    //            itemObjective.requiredAmountCollected = true;
+                    //            AddQuestItemDialogue(quest.objective.questDialogueOptions[0], itemObjective);
+
+                    //            //foreach (OJQuest itemQuest in itemObjective.item.relatedQuests)
+                    //            //{
+
+                    //            //    //EndQuest(itemQuest);
+                    //            //}
+                    //        }
+                    //    }
+
+                    //}
                 }
 
-                //foreach (InventoryItem inventoryItem in FindObjectOfType<Inventory>().inventory)
-                //{
-                //    foreach (ItemInWorld.ItemInteraction interaction in inventoryItem.prefab.GetComponent<ItemInWorld>().itemInteractions)
-                //    {
-                //        if (inventoryItem.isQuestItem && !interaction.interactableObject.questInteractionDialogue.Contains(interaction.interactionDialogue))
-                //        {
-                //            interaction.interactableObject.questInteractionDialogue.Add(interaction.interactionDialogue);
-                //        }
-                //        //FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(interaction.interactionDialogue, narrator);
-                //    }
-                //}
+                    //foreach (InventoryItem inventoryItem in FindObjectOfType<Inventory>().inventory)
+                    //{
+                    //    foreach (ItemInWorld.ItemInteraction interaction in inventoryItem.prefab.GetComponent<ItemInWorld>().itemInteractions)
+                    //    {
+                    //        if (inventoryItem.isQuestItem && !interaction.interactableObject.questInteractionDialogue.Contains(interaction.interactionDialogue))
+                    //        {
+                    //            interaction.interactableObject.questInteractionDialogue.Add(interaction.interactionDialogue);
+                    //        }
+                    //        //FindObjectOfType<PlayerDialogue>().AddQuestionForSpecificNPC(interaction.interactionDialogue, narrator);
+                    //    }
+                    //}
 
-                Debug.Log("Quest Items Activated");
-                break;
+                    Debug.Log("Quest Items Activated");
+                    break;
+                
             case OJQuestObjectiveType.locationBased:
                 foreach (Collider trigger in questColliders)
                 {
