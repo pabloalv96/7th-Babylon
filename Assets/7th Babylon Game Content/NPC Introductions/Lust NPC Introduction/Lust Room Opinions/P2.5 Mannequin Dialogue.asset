@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c30f8eed4d283fe49aaaf5b2d55ea18c, type: 3}
-  m_Name: P1 I went to that room
+  m_Name: P2.5 Mannequin Dialogue
   m_EditorClassIdentifier: 
-  dialogue: I went to the Western room.
+  dialogue: The mannequin was pretty creepy
   statsToEffectList: []
-  isResponseToNPCDialogue: 0
+  isResponseToNPCDialogue: 1
   isGoodbyeOption: 0
   isChangeTopicOption: 0
-  isLocked: 0
+  isLocked: 1
   conditionalEvents: []
-  isQuestDialogue: 1
-  completeRelatedQuest: 1
-  relatedQuests:
-  - {fileID: 11400000, guid: fa20b33f1a5926a4189556684f51989d, type: 2}
+  isQuestDialogue: 0
+  completeRelatedQuest: 0
+  relatedQuests: []
   itemsToGive: []
   itemsToRecieve: []

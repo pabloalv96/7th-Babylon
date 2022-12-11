@@ -16,6 +16,9 @@ public class OJQuestTrigger : MonoBehaviour
 
     public List<EnvironmentalItemInteraction> itemInteractionsList;
 
+    public List<UnityEvent> conditionalEvents;
+
+
     private void Start()
     {
         questManager = FindObjectOfType<OJQuestManager>();
@@ -28,10 +31,19 @@ public class OJQuestTrigger : MonoBehaviour
     {
         foreach (OJQuest quest in relatedQuests)
         {
-            if (questManager.activeQuestList.Contains(quest))
+            if (!quest.questStarted)
+            {
+                questManager.StartQuest(quest);
+            }
+            else if (quest.questStarted && !quest.questEnded)
             {
                 questManager.EndQuest(quest);
             }
+        }
+
+        foreach(UnityEvent conditional in conditionalEvents)
+        {
+            conditional.Invoke();
         }
     }
 

@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: 0.1 NPCLustDialogue
+  m_Name: NPC1.2 tell me what you think
   m_EditorClassIdentifier: 
-  dialogue: I saw a very interesting room to the west of this place. Why don't you
-    check it and tell me what you see?
+  dialogue: Great! Make sure to come tell me what catches your eye! I really think
+    it will help me get to know you better
   toOtherNPC: 0
-  requiresResponse: 1
-  continuedDialogue: {fileID: 0}
-  playerResponses:
-  - {fileID: 11400000, guid: cf9979ca508ca4c42b006855ae9e424a, type: 2}
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
+  playerResponses: []
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 0
+  playerCanChangeTopic: 1
   playerCanLeaveDialogue: 1
   isRepeatable: 1
   hasBeenSeen: 0

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Go To Lust Room
+  m_Name: Q3 Return to Jessica
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
@@ -19,17 +19,20 @@ MonoBehaviour:
   questStarted: 0
   questEnded: 0
   isRepeatable: 0
-  questID: Go to the Western Room
-  questDescription: Visit the Western Room
+  questID: return to jessica
+  questDescription: Return to Jessica
   questActivation:
     questsToLock: []
   objective:
-    objectiveType: 1
+    objectiveType: 2
     questItems: []
-    questDialogueOptions: []
+    questDialogueOptions:
+    - questDialogueOption: {fileID: 11400000, guid: 3dae8bf4ca50ea540af84c02bcce9f9e,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: c8a6958657381ba47af35ec2c016ed5d,
+        type: 2}
     childrenQuests: []
   outcome:
-    questsToUnlock:
-    - {fileID: 11400000, guid: fa20b33f1a5926a4189556684f51989d, type: 2}
+    questsToUnlock: []
     questsToLock: []
     statsToEffectList: []

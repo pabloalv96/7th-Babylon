@@ -10,27 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Return to Jessica
+  m_Name: Q2.3H Inspect Apples
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
-  isHiddenFromUI: 0
-  questStarted: 0
+  isHiddenFromUI: 1
+  questStarted: 1
   questEnded: 0
   isRepeatable: 0
-  questID: return to jessica
-  questDescription: Return to Jessica
+  questID: Inspect Apples
+  questDescription: 
   questActivation:
     questsToLock: []
   objective:
-    objectiveType: 2
+    objectiveType: 1
     questItems: []
-    questDialogueOptions:
-    - questDialogueOption: {fileID: 11400000, guid: 3dae8bf4ca50ea540af84c02bcce9f9e,
-        type: 2}
-      dialogueNPCRecipient: {fileID: 11400000, guid: c8a6958657381ba47af35ec2c016ed5d,
-        type: 2}
+    questDialogueOptions: []
     childrenQuests: []
   outcome:
     questsToUnlock: []

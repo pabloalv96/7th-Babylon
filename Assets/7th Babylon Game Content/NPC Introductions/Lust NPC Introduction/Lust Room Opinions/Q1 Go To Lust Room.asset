@@ -10,31 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Q000.1 Give Invitation to Doorman
+  m_Name: Q1 Go To Lust Room
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
   isHiddenFromUI: 0
-  questStarted: 0
-  questEnded: 0
+  questStarted: 1
+  questEnded: 1
   isRepeatable: 0
-  questID: Invitation Quest
-  questDescription: Give the invitation to the Doorman
+  questID: Go to the Western Room
+  questDescription: Find the Bedroom
   questActivation:
     questsToLock: []
   objective:
-    objectiveType: 0
-    questItems:
-    - requiredAmount: 1
-      item: {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
-      requiredAmountCollected: 1
-      questCompleted: 1
-    questDialogueOptions:
-    - questDialogueOption: {fileID: 11400000, guid: 6353126631fc98541825fef61ad01e67,
-        type: 2}
-      dialogueNPCRecipient: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
-        type: 2}
+    objectiveType: 1
+    questItems: []
+    questDialogueOptions: []
     childrenQuests: []
   outcome:
     questsToUnlock: []

@@ -10,20 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: EndOfDialogue
+  m_Name: NPC1.1 find it and tell me what interests you
   m_EditorClassIdentifier: 
-  dialogue: 
+  dialogue: 'If you come across it, have a look around.. I want to know if anything
+    catches your interest '
   toOtherNPC: 0
-  requiresResponse: 0
+  requiresResponse: 1
   continuedDialogue: {fileID: 0}
-  playerResponses: []
+  playerResponses:
+  - {fileID: 11400000, guid: d1a7278f36071154a93a22a6e7c9ffd1, type: 2}
+  - {fileID: 11400000, guid: 50c7bc1b7ccb5f4459725ec9411b3331, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 0
+  isRepeatable: 1
   hasBeenSeen: 0
-  endOfConversation: 1
+  endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
   relatedQuests: []
