@@ -13,21 +13,18 @@ MonoBehaviour:
   m_Name: Interact Dialogue
   m_EditorClassIdentifier: 
   dialogue: Interact?
-  toOtherNPC: 1
-  requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
+  toOtherNPC: 0
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
   playerResponses: []
-  limitedTime: 1
-  timeLimit: 3
+  limitedTime: 0
+  timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 0
+  playerCanLeaveDialogue: 1
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuests: []
-  itemsToGive: []
-  itemsToTake: []
-  newStartingDialogue: {fileID: 0}
-  statsToEffectList: []
+  isQuestPrompt: 0
+  relatedQuest: {fileID: 0}

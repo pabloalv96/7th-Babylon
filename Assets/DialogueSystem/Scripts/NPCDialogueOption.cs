@@ -52,8 +52,6 @@ public class NPCDialogueOption : ScriptableObject
 
     public NPCDialogueOption newStartingDialogue;
 
-    public List<StatContainer.Stat> statsToEffectList;
-
 
 }
 

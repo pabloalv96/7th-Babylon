@@ -7,7 +7,6 @@ public class DialogueInWorld : MonoBehaviour
     public NPCDialogueOption dialogueFromWorld;
     public NPCInfo narrator;
 
-
     private void Awake()
     {
 

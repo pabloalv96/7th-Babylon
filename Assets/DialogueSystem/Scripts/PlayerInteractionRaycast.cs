@@ -294,7 +294,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 selectedObject = hit.transform.gameObject;
                 interactPromptIndicator.SetActive(true);
                 interactionAimIndicator.color = Color.red;
-                interactionPromptText.text = "Inspect";
+                interactionPromptText.text = "Interact";
 
             }
             else
