@@ -15,8 +15,9 @@ MonoBehaviour:
   dialogue: Unlock the door?
   toOtherNPC: 0
   requiresResponse: 1
-  continuedDialogue: {fileID: 0}
-  playerResponses: []
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
+  playerResponses:
+  - {fileID: 0}
   limitedTime: 0
   timeLimit: 3
   playerCanChangeTopic: 0
@@ -26,5 +27,8 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  isQuestPrompt: 0
-  relatedQuest: {fileID: 0}
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []

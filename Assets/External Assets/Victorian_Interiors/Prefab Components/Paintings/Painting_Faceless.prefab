@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 473282}
   - component: {fileID: 3376166}
   - component: {fileID: 2363736}
+  - component: {fileID: 2577258481741597721}
   m_Layer: 0
   m_Name: Painting_Faceless
   m_TagString: Untagged
@@ -85,6 +86,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2577258481741597721
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.011777712, y: 0.014567088, z: 0.0011134924}
+  m_Center: {x: -0.00002852501, y: 0.0005139611, z: 0.0003381272}
 --- !u!1 &3480963207535570535
 GameObject:
   m_ObjectHideFlags: 0

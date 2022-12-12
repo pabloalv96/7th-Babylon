@@ -149,6 +149,12 @@ public class DialogueListSystem : MonoBehaviour
                 InvokeNPCConditonalEvents();
             }
 
+            if (npcDialogue.statsToEffectList.Count > 0)
+            {
+                //selectedDialogueOption.AffectStatValues();
+                playerInfoController.AffectStatValues(npcDialogue.statsToEffectList);
+            }
+
             if (npcDialogue.relatedQuests != null)
             {
                 foreach (OJQuest quest in npcDialogue.relatedQuests)

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 448350}
   - component: {fileID: 3334722}
   - component: {fileID: 2390938}
+  - component: {fileID: -5526939641352373018}
   m_Layer: 0
   m_Name: Painting_Colnel2
   m_TagString: Untagged
@@ -85,6 +86,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-5526939641352373018
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153366}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01447308, y: 0.011195355, z: 0.0011885623}
+  m_Center: {x: -0.0000149456555, y: -0.00005811898, z: 0.00046390324}
 --- !u!1 &2232312969263540304
 GameObject:
   m_ObjectHideFlags: 0
