@@ -161,14 +161,21 @@ public class DialogueListSystem : MonoBehaviour
                         }
                         else if (!quest.questEnded)
                         {
-                            foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
+                            if (quest.objective.objectiveType == OJQuestObjectiveType.dialogueBased)
                             {
-                                if (questDialogue.questDialogueOption.completeRelatedQuest)
+                                foreach (OJQuestDialogue questDialogue in quest.objective.questDialogueOptions)
                                 {
-                                    questManager.EndQuest(quest);
-                                    Debug.Log("Ending Quest '" + quest.questID + "' from SetNewDialogueText");
+                                    if (questDialogue.questDialogueOption.completeRelatedQuest)
+                                    {
+                                        questManager.EndQuest(quest);
+                                        Debug.Log("Ending Quest '" + quest.questID + "' from SetNewDialogueText");
 
+                                    }
                                 }
+                            }
+                            else if (quest.objective.objectiveType == OJQuestObjectiveType.locationBased)
+                            {
+                                questManager.EndQuest(quest);
                             }
                         }
 

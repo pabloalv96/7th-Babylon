@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC2.4 we could be destiny
+  m_Name: NPC2.14 well feel free to still do it
   m_EditorClassIdentifier: 
-  dialogue: Like we could be destiny
+  dialogue: That's ok.. but If you happen to find yourself in there why not still
+    give it a deeper look?
   toOtherNPC: 0
-  requiresResponse: 1
-  continuedDialogue: {fileID: 0}
-  playerResponses:
-  - {fileID: 11400000, guid: fad3ab9078b08ce41bb519d8b238f096, type: 2}
-  - {fileID: 11400000, guid: 386b61ccaf9d9d84c944a5a3443d8ec3, type: 2}
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
+  playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 1
+  isRepeatable: 0
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: f1a44ea7a7c32144fb844da934154f5b, type: 2}
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}

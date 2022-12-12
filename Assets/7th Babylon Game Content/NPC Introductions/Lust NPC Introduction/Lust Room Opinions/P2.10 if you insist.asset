@@ -10,31 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c30f8eed4d283fe49aaaf5b2d55ea18c, type: 3}
-  m_Name: P2.2 I doubt it
+  m_Name: P2.10 if you insist
   m_EditorClassIdentifier: 
-  dialogue: I doubt that.
+  dialogue: If you insist
   statsToEffectList: []
   isResponseToNPCDialogue: 1
   isGoodbyeOption: 0
   isChangeTopicOption: 0
   isLocked: 0
-  conditionalEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  conditionalEvents: []
   isQuestDialogue: 0
   completeRelatedQuest: 0
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: f1a44ea7a7c32144fb844da934154f5b, type: 2}
   itemsToGive: []
   itemsToRecieve: []

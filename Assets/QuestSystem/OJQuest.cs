@@ -60,7 +60,7 @@ public class OJQuestObjective
     //public bool isItemDialogue;
     public List<OJQuestItemObjective> questItems;
     public List<OJQuestDialogue> questDialogueOptions;
-    public List<OJQuest> childrenQuests;
+    public List<OJQuestMultiObjective> childrenQuests;
 
 }
 
@@ -71,6 +71,14 @@ public class OJQuestDialogue
     public NPCInfo dialogueNPCRecipient;
 }
 
+[System.Serializable]
+public class OJQuestMultiObjective
+{
+    public int requiredChildrenQuestsCompletedToComplete;
+    public int completedChildrenQuestCount;
+
+    public List<OJQuest> childrenQuests;
+}
 
 [System.Serializable]
 public class OJQuestOutcome

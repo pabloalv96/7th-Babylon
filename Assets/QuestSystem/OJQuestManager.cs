@@ -277,18 +277,21 @@ public class OJQuestManager : MonoBehaviour
                 //}
                 break;
             case OJQuestObjectiveType.multiObjective:
-                foreach (OJQuest childQuest in quest.objective.childrenQuests)
+                foreach (OJQuestMultiObjective multiQuest in quest.objective.childrenQuests)
                 {
-                    if (!activeQuestList.Contains(childQuest))
+                    foreach (OJQuest childQuest in multiQuest.childrenQuests)
                     {
-                        //if (!childQuest.objective.isItemDialogue)
-                        //{
+                        if (!activeQuestList.Contains(childQuest))
+                        {
+                            //if (!childQuest.objective.isItemDialogue)
+                            //{
                             StartQuest(childQuest);
-                        //}
-                        //else
-                        //{
-                        //    // check if item is in inventory first
-                        //}
+                            //}
+                            //else
+                            //{
+                            //    // check if item is in inventory first
+                            //}
+                        }
                     }
                 }
                 break;
@@ -497,24 +500,38 @@ public class OJQuestManager : MonoBehaviour
         }
 
         for (int q = 0; q < activeQuestList.ToArray().Length; q++)
-
         {
+            //int completedChildrenQuestCount = 0;
             if (activeQuestList[q].objective.objectiveType == OJQuestObjectiveType.multiObjective)
             {
-                for (int i = 0; i < activeQuestList[q].objective.childrenQuests.Count; i++)
+                for (int aQ = 0; aQ < activeQuestList[q].objective.childrenQuests.Count; aQ++)
                 {
-                    if (activeQuestList.Contains(activeQuestList[q].objective.childrenQuests[i]))
+                    activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount = 0;
+                    for (int cQ = 0; cQ < activeQuestList[q].objective.childrenQuests[aQ].childrenQuests.Count; cQ++) 
                     {
-                        //EndQuest(activeQuest.objective.childrenQuests[i]);
-                        break;
+                        //if (activeQuestList.Contains(activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ]) || activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questStarted && !activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questEnded)
+                        //{
+                        //    //EndQuest(activeQuest.objective.childrenQuests[i]);
+                        //    break;
+                        //}
+                        
+                        if (activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questEnded)
+                        {
+                            activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount ++;
+                        }
+
+                        if (activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount >= activeQuestList[q].objective.childrenQuests[aQ].requiredChildrenQuestsCompletedToComplete)
+                        {
+                            EndQuest(activeQuestList[q]);
+                        }
+
+                        //if (aQ + 1 >= activeQuestList[q].objective.childrenQuests.Count)
+                        //{
+                        //    EndQuest(activeQuestList[q]);
+                        //}
                     }
-                    if (i + 1 >= activeQuestList[q].objective.childrenQuests.Count)
-                    {
-                        EndQuest(activeQuestList[q]);
-                    }
+
                 }
-
-
 
             }
         }
