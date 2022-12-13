@@ -329,6 +329,7 @@ public class DialogueListSystem : MonoBehaviour
                     {
                         GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
                         newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
+                        newDialogue.GetComponentInChildren<TextMeshProUGUI>().fontSize = leaveButton.GetComponentInChildren<TextMeshProUGUI>().fontSize;
                         newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
                         newDialogue.transform.SetParent(listDialoguePanel.transform);
 
