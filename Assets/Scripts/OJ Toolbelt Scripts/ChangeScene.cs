@@ -10,24 +10,23 @@ namespace Toolbelt_OJ
 
         public Animator transition;
 
-        public float transitionTime = 2f;
+        public float transitionTime = 1f;
 
         public void MoveToScene(int sceneID)
         {
-            transition.SetTrigger("Start 0");
-            transition.SetBool("startTran", true);
+            //transition.SetTrigger("Start 0");
+            //transition.SetBool("startTran", true);
 
-            StartCoroutine(LoadLevel(sceneID));
+            SceneManager.LoadScene(sceneID);
         }
 
-        IEnumerator LoadLevel(int sceneID)
+        /*IEnumerator LoadLevel(int sceneID)
         {
-            
 
             yield return new WaitForSeconds(transitionTime);
 
             SceneManager.LoadScene(sceneID);
-        }
+        }*/
 
     }
 }
