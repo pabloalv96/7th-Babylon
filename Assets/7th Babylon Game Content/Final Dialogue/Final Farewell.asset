@@ -14,18 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: Lets indulge in this hellish night. Welcome to 7th Babylon!
   toOtherNPC: 0
-  requiresResponse: 1
-  continuedDialogue: {fileID: 0}
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: 5f20d1c907493394faf7a9b3c6639957, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
+  playerCanChangeTopic: 0
   playerCanLeaveDialogue: 1
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
-  conditionalEvents: []
+  conditionalEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   relatedQuests: []
   itemsToGive: []
   itemsToTake: []

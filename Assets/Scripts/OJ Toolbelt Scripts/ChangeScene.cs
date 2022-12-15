@@ -8,9 +8,9 @@ namespace Toolbelt_OJ
     public class ChangeScene : MonoBehaviour
     {
 
-        public Animator transition;
+        //public Animator transition;
 
-        public float transitionTime = 1f;
+        //public float transitionTime = 1f;
 
         public void MoveToScene(int sceneID)
         {

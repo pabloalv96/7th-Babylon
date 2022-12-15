@@ -10,26 +10,37 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: Final Greeting
+  m_Name: Final End Dialogue
   m_EditorClassIdentifier: 
-  dialogue: 'I see that you are impatient and wandered where you are not suppose
-    to.
-
-    It doesn''t matter, as soon, in this purgatory, we will enjoy a night
-    of sins.'
+  dialogue: 
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: a6a200dc5e01d634e985eade01161342, type: 2}
+  continuedDialogue: {fileID: 0}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 1
+  playerCanLeaveDialogue: 0
   isRepeatable: 0
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
-  conditionalEvents: []
+  conditionalEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5893844441743670748, guid: c7ffc92bf96bed3438d5627df9adb1f7,
+          type: 3}
+        m_TargetAssemblyTypeName: Toolbelt_OJ.ChangeScene, Assembly-CSharp
+        m_MethodName: MoveToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   relatedQuests: []
   itemsToGive: []
   itemsToTake: []
