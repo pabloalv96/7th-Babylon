@@ -242,7 +242,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 interactPromptIndicator.SetActive(true);
                 interactionAimIndicator.color = Color.red;
                 isWorldDialogue = true;
-                interactionPromptText.text = "Interact";
+                interactionPromptText.text = "Inspect";
 
             }
             else

@@ -26,6 +26,7 @@ public class EnvironmentalChangeController : MonoBehaviour
     public bool checkHighestStat;
 
     [SerializeField] private string highestStatName;
+    [SerializeField] private float highestStatValue;
 
     //Check highest stat's value
     //determine what assets to set
@@ -68,12 +69,13 @@ public class EnvironmentalChangeController : MonoBehaviour
 
         playerInfo.playerStats.highestStat = playerInfo.playerStats.listOfStats[0];
 
-        if (highestStatName != playerInfo.playerStats.highestStat.statName)
+        if (highestStatName != playerInfo.playerStats.highestStat.statName || highestStatName == playerInfo.playerStats.highestStat.statName && highestStatValue != playerInfo.playerStats.highestStat.statValue)
         {
             SetEnvironmentalChanges();
         }
 
         highestStatName = playerInfo.playerStats.highestStat.statName;
+        highestStatValue = playerInfo.playerStats.highestStat.statValue;
     }
 
     public void SetEnvironmentalChanges()
@@ -156,6 +158,7 @@ public class EnvironmentalChangeController : MonoBehaviour
                         //{
 
                         //}
+                        Debug.Log("environment changed");
                     }
                 }
             }

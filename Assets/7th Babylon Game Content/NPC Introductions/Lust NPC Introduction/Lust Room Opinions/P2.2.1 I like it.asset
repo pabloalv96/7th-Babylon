@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: P2.2.1 I like it
   m_EditorClassIdentifier: 
   dialogue: I think it's nice. Really ties the room together
-  statsToEffectList: []
+  statsToEffectList:
+  - statName: Lust
+    statValue: 7
   isResponseToNPCDialogue: 1
   isGoodbyeOption: 0
   isChangeTopicOption: 0
-  isLocked: 1
+  isLocked: 0
   conditionalEvents: []
   isQuestDialogue: 0
   completeRelatedQuest: 0

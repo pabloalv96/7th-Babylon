@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4796003420369153449, guid: b0abdd3186dd4d4439e9fe453617e991, type: 3}
   itemName: Roast Pork
-  numCarried: 0
+  numCarried: 1
   maxNumCarried: 1
   canCollect: 1
   canConsume: 1
@@ -24,4 +24,4 @@ MonoBehaviour:
   statsToEffectOnCollectionList: []
   statsToEffectOnConsumptionList:
   - statName: Gluttony
-    statValue: 10
+    statValue: 5
