@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Final End Dialogue
   m_EditorClassIdentifier: 
   dialogue: 
-  toOtherNPC: 0
+  toOtherNPC: 1
   requiresResponse: 0
-  continuedDialogue: {fileID: 0}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
@@ -23,20 +23,20 @@ MonoBehaviour:
   playerCanLeaveDialogue: 0
   isRepeatable: 0
   hasBeenSeen: 0
-  endOfConversation: 0
+  endOfConversation: 1
   changeOfTopic: 0
   conditionalEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5893844441743670748, guid: c7ffc92bf96bed3438d5627df9adb1f7,
+      - m_Target: {fileID: 5893562334688184190, guid: 405fe16642725ee4b8e0a358dc823826,
           type: 3}
-        m_TargetAssemblyTypeName: Toolbelt_OJ.ChangeScene, Assembly-CSharp
-        m_MethodName: MoveToScene
-        m_Mode: 3
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
