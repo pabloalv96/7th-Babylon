@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3320120}
   - component: {fileID: 2390622}
   - component: {fileID: 6516240}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 3379624}
   - component: {fileID: 2333440}
   - component: {fileID: 6540844}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2Long
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 401520}
   - component: {fileID: 10898036}
   - component: {fileID: 484890469}
+  - component: {fileID: 46696005}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -477,6 +478,26 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &484890469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &46696005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -916,7 +937,7 @@ GameObject:
   - component: {fileID: 2316378}
   - component: {fileID: 6500944}
   - component: {fileID: 6576262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2Med
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1132,7 @@ GameObject:
   - component: {fileID: 3344718}
   - component: {fileID: 2333436}
   - component: {fileID: 6554222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2Long (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1210,7 +1231,7 @@ GameObject:
   - component: {fileID: 3360568}
   - component: {fileID: 2373766}
   - component: {fileID: 6547166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2Window (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1310,7 +1331,7 @@ GameObject:
   - component: {fileID: 3369322}
   - component: {fileID: 2337468}
   - component: {fileID: 6513038}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2BoxDeep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1516,7 @@ GameObject:
   - component: {fileID: 6581046}
   m_Layer: 3
   m_Name: Privy_Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1950,7 +1971,7 @@ GameObject:
   - component: {fileID: 3351638}
   - component: {fileID: 2337828}
   - component: {fileID: 6557240}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2Short
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2049,7 +2070,7 @@ GameObject:
   - component: {fileID: 3389174}
   - component: {fileID: 2313744}
   - component: {fileID: 6577650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2Long (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2148,7 +2169,7 @@ GameObject:
   - component: {fileID: 3362588}
   - component: {fileID: 2376930}
   - component: {fileID: 6577388}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall2BoxDeep (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

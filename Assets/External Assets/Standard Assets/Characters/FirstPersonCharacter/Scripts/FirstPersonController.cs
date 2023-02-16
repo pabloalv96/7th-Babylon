@@ -105,9 +105,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void FixedUpdate()
         {
             
-            GetInput(/*out speed*/);
-            GetRunInput();
-            Debug.Log("Speed = " + speed);
+            GetInput(out speed);
+            //GetRunInput();
+            //Debug.Log("Speed = " + speed);
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
 
@@ -213,21 +213,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void GetInput(/*out float speed*/)
+        private void GetInput(out float speed)
         {
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxisRaw("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxisRaw("Vertical");
 
-            //bool waswalking = m_IsWalking;
+            bool waswalking = m_IsWalking;
 
-//#if !MOBILE_INPUT
+#if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-//            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
-//#endif
-//            // set the desired speed to be walking or running
-//            //speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+#endif
+
+            if (stamina <= 0)
+            {
+                m_IsWalking = true;
+            }
+
+            // set the desired speed to be walking or running
+            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+
+          
+
+
 
             m_Input = new Vector2(horizontal, vertical);
 
@@ -239,68 +249,79 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             // handle speed change to give an fov kick
             // only if the player is going to a run, is running and the fovkick is to be used
-            //if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
-            //{
-            //    StopAllCoroutines();
-            //    StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
-            //}
-        }
-
-        private void GetRunInput()
-        {
-            bool waswalking = m_IsWalking;
-
-            if (Input.GetKeyDown(KeyCode.LeftShift) )
-            {
-                if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
-                {
-                    m_IsWalking = false;
-                }
-                else
-                {
-                    m_IsWalking = true;
-                }
-            }
-           
-
-
-            if (m_IsWalking)
-            { 
-                if (speed > m_WalkSpeed)
-                {
-                    speed -= Time.deltaTime * slowDownMultiplier;
-                }
-
-                if (stamina < maxStamina)
-                {
-                    stamina += Time.deltaTime * staminaRegenSpeed;
-                }
-            }
-            else
-            {
-                if (stamina > 0)
-                {
-                    stamina -= Time.deltaTime * staminaDepletionRate;
-
-                    if (speed < m_RunSpeed)
-                    {
-                        speed += Time.deltaTime * speedUpMultiplier;
-                    }
-                }
-                else
-                {
-                    m_IsWalking = true;
-                }
-            }
-
-            // handle speed change to give an fov kick
-            // only if the player is going to a run, is running and the fovkick is to be used
             if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
             {
                 StopAllCoroutines();
                 StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
             }
+
+            if (m_IsWalking)
+            {
+                if (stamina < maxStamina)
+                    stamina += Time.deltaTime * staminaRegenSpeed;
+
+            }
+            else
+            {
+                stamina -= Time.deltaTime * staminaDepletionRate;
+            }
         }
+
+        //private void GetRunInput()
+        //{
+        //    bool waswalking = m_IsWalking;
+
+        //    if (Input.GetKeyDown(KeyCode.LeftShift) )
+        //    {
+        //        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
+        //        {
+        //            m_IsWalking = false;
+        //        }
+        //        else
+        //        {
+        //            m_IsWalking = true;
+        //        }
+        //    }
+           
+
+
+        //    if (m_IsWalking)
+        //    { 
+        //        if (speed > m_WalkSpeed)
+        //        {
+        //            speed = m_WalkSpeed;
+        //        }
+
+        //        if (stamina < maxStamina)
+        //        {
+        //            stamina += Time.deltaTime * staminaRegenSpeed;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (stamina > 0)
+        //        {
+        //            stamina -= Time.deltaTime * staminaDepletionRate;
+
+        //            if (speed < m_RunSpeed)
+        //            {
+        //                speed = m_RunSpeed;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            m_IsWalking = true;
+        //        }
+        //    }
+
+        //    // handle speed change to give an fov kick
+        //    // only if the player is going to a run, is running and the fovkick is to be used
+        //    if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
+        //    {
+        //        StopAllCoroutines();
+        //        StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
+        //    }
+        //}
 
         private void RotateView()
         {
