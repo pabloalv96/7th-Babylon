@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -15,6 +16,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
+        [SerializeField] private float stamina, maxStamina, staminaRegenSpeed, staminaDepletionRate;
+        [SerializeField] private float speed;
         [SerializeField] private bool canJump;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -30,6 +33,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        [SerializeField] private float speedUpMultiplier;
+        [SerializeField] private float slowDownMultiplier;
 
         [HideInInspector] public Camera m_Camera;
         private bool m_Jump;
@@ -45,6 +50,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+
         // Use this for initialization
         private void Start()
         {
@@ -58,6 +64,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
             m_MouseLook.Init(transform, m_Camera.transform);
+            speed = m_WalkSpeed;
         }
 
 
@@ -97,8 +104,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void FixedUpdate()
         {
-            float speed;
+            
             GetInput(out speed);
+            //GetRunInput();
+            //Debug.Log("Speed = " + speed);
             // always move along the camera forward as it is the direction that it being aimed at
             Vector3 desiredMove = transform.forward * m_Input.y + transform.right * m_Input.x;
 
@@ -217,8 +226,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // keep track of whether or not the character is walking or running
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
+
+            if (stamina <= 0)
+            {
+                m_IsWalking = true;
+            }
+
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+
+          
+
+
+
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
@@ -234,8 +254,74 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 StopAllCoroutines();
                 StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
             }
+
+            if (m_IsWalking)
+            {
+                if (stamina < maxStamina)
+                    stamina += Time.deltaTime * staminaRegenSpeed;
+
+            }
+            else
+            {
+                stamina -= Time.deltaTime * staminaDepletionRate;
+            }
         }
 
+        //private void GetRunInput()
+        //{
+        //    bool waswalking = m_IsWalking;
+
+        //    if (Input.GetKeyDown(KeyCode.LeftShift) )
+        //    {
+        //        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
+        //        {
+        //            m_IsWalking = false;
+        //        }
+        //        else
+        //        {
+        //            m_IsWalking = true;
+        //        }
+        //    }
+           
+
+
+        //    if (m_IsWalking)
+        //    { 
+        //        if (speed > m_WalkSpeed)
+        //        {
+        //            speed = m_WalkSpeed;
+        //        }
+
+        //        if (stamina < maxStamina)
+        //        {
+        //            stamina += Time.deltaTime * staminaRegenSpeed;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (stamina > 0)
+        //        {
+        //            stamina -= Time.deltaTime * staminaDepletionRate;
+
+        //            if (speed < m_RunSpeed)
+        //            {
+        //                speed = m_RunSpeed;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            m_IsWalking = true;
+        //        }
+        //    }
+
+        //    // handle speed change to give an fov kick
+        //    // only if the player is going to a run, is running and the fovkick is to be used
+        //    if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
+        //    {
+        //        StopAllCoroutines();
+        //        StartCoroutine(!m_IsWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
+        //    }
+        //}
 
         private void RotateView()
         {
@@ -258,5 +344,5 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity * 0.1f, hit.point, ForceMode.Impulse);
         }
-    }
+    }    
 }
