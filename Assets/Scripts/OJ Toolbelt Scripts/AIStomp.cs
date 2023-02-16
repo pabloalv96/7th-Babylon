@@ -3,6 +3,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 [RequireComponent(typeof(AudioSource))]
 //[RequireComponent(typeof(CharacterController))]
@@ -10,19 +11,21 @@ public class AIStomp : MonoBehaviour
 {
     private AudioSource audioSource;
     //private CharacterController controller;
-    private Rigidbody rb;
+    //private Rigidbody rb;
+    private RichAI richAI;
 
     [SerializeField] private List<AudioClip> footstepSounds;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         //controller = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
+        richAI = GetComponent<RichAI>();
     }
 
     void Update()
     {
-        if (rb.velocity.magnitude > 2f && !audioSource.isPlaying)
+        if (richAI.velocity.magnitude > 2f && !audioSource.isPlaying)
         {
             audioSource.volume = Random.Range(0.25f, 0.35f);
             audioSource.pitch = Random.Range(0.7f, 0.8f);
