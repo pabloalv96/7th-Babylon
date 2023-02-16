@@ -23790,7 +23790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1245784216
 Transform:
   m_ObjectHideFlags: 0
@@ -24052,9 +24052,8 @@ MonoBehaviour:
   isOpen: 0
   isLocked: 0
   keysList: []
-  chosenKey:
-    keyItem: {fileID: 0}
-    statsToEffectList: []
+  lockedDoorDialogue: {fileID: 0}
+  unlockDoorDialogue: {fileID: 0}
 --- !u!1 &1381871131
 GameObject:
   m_ObjectHideFlags: 0

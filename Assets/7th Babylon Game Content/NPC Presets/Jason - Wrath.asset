@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
+  m_Name: Jason - Wrath
+  m_EditorClassIdentifier: 
+  npcName: Jason
+  npcGender: Male
+  npcProfileID: WrathNPC
+  npcDialogue:
+    greetingDialogue:
+    - {fileID: 11400000, guid: 525de159e5a166d42b85a295fa44fc29, type: 2}
+    goodbyeDialogue: []
+    changeTopicDialogue:
+    - {fileID: 11400000, guid: 525de159e5a166d42b85a295fa44fc29, type: 2}
+    nothingToSayDialogue: {fileID: 11400000, guid: 525de159e5a166d42b85a295fa44fc29,
+      type: 2}
+    dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: bf0b1f850cd72974b929f094c558fc06,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 7d3aa7de4ba8ac042a6283cc50b0c4ca, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 6e2c4a100de7b4041acce43cf1d7fbb6,
+        type: 2}
+      npcResponses: []
+    - playerDialogueInput: {fileID: 11400000, guid: f274ff3c4ad8aa840bd9c548bc2ee0fe,
+        type: 2}
+      npcResponses: []
