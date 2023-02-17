@@ -142,7 +142,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2913174071397797287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.664, z: 0.118}
+  m_LocalPosition: {x: 0, y: 1.33, z: 0.118}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2887,51 +2887,24 @@ MonoBehaviour:
   doormanEyes: {fileID: 2913174071397797287}
   viewDistance: 100
   viewRadius: 25
-  waypointsList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypointsList: []
   destinationSetter: {fileID: 2913174072132325303}
   changeWaypointDistance: 2
   closestWaypointToPlayer: {fileID: 0}
   searchTimer: 10
+  lobbyWaypoint: {x: -12.597, y: 0.121202946, z: -9.545}
+  chasingDialogue:
+  - {fileID: 11400000, guid: 3e8daa790c040d844a55714ba10d5c40, type: 2}
+  - {fileID: 11400000, guid: d5720f689d66f944692692ea92be8bcd, type: 2}
+  - {fileID: 11400000, guid: 99e11d7189d12144896f44346faf71c6, type: 2}
+  searchingDialogue:
+  - {fileID: 11400000, guid: 5e7b78d92ddf1904393cd2720a508d24, type: 2}
+  - {fileID: 11400000, guid: 061537fe0b869db47b407bace737c4a2, type: 2}
+  - {fileID: 11400000, guid: 3e968765afdf698419e0d557a806fb2f, type: 2}
+  caughtDialogue:
+  - {fileID: 11400000, guid: 764f33ad0bffa604bb2fc3859c64bee3, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2913174071802186778
 MonoBehaviour:
   m_ObjectHideFlags: 0

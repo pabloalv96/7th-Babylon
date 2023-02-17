@@ -5,7 +5,10 @@ using UnityEngine.Events;
 
 public class HallwayTrigger : MonoBehaviour
 {
+    public List<Transform> nearbyWaypoints;
+
     public List<UnityEvent> eventsToTrigger;
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -19,6 +22,14 @@ public class HallwayTrigger : MonoBehaviour
 
     public void GivePositionToDoorman()
     {
-        FindObjectOfType<DoormanHallwayAI>().closestWaypointToPlayer = transform;
+        FindObjectOfType<DoormanHallwayAI>().waypointsList = new List<Transform>();
+        FindObjectOfType<DoormanHallwayAI>().waypointsList = nearbyWaypoints;
+        FindObjectOfType<DoormanHallwayAI>().closestWaypointToPlayer = nearbyWaypoints[Random.Range(0, nearbyWaypoints.Count)];
+
+    }
+
+    public void StartHallwaySequence(GameObject doorman)
+    {
+        doorman.SetActive(true);
     }
 }
