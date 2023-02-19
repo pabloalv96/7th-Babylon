@@ -171,4 +171,23 @@ public class DialogueInitiator : MonoBehaviour
 
         return npc;
     }
+
+    public void TriggerNPCDialogue(NPCBrain npc)
+    {
+        if (npc.startingDialogue.toOtherNPC)
+        {
+            BeginSubtitleSequence(npc.npcInfo, npc.startingDialogue);
+        }
+        else
+        {
+            NPCInitiatedDialogue(npc.npcInfo, npc.startingDialogue);
+        }
+    }
+
+    public void ResetStartingDialogue(NPCBrain npc)
+    {
+        npc.startingDialogue = null;
+    }
+
+
 }

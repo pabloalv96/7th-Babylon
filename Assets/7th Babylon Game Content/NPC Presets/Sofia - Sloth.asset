@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Sofia
   npcGender: Female
-  npcProfileID: Sloth
+  npcProfileID: SlothNPC
   npcDialogue:
     greetingDialogue:
-    - {fileID: 11400000, guid: 64941764d2a73484d9b3edc6ea590da8, type: 2}
+    - {fileID: 11400000, guid: 149127c202775f248a2aec9a8b2103fe, type: 2}
     goodbyeDialogue:
     - {fileID: 11400000, guid: 4aac21e0740e42e4ba83f9e58a3464e6, type: 2}
     changeTopicDialogue:
     - {fileID: 11400000, guid: 8c9590ce3d394d64e9fef0625a236c3e, type: 2}
-    nothingToSayDialogue: {fileID: 0}
+    nothingToSayDialogue: {fileID: 11400000, guid: 8c9590ce3d394d64e9fef0625a236c3e,
+      type: 2}
     dialogueConnections:
     - playerDialogueInput: {fileID: 11400000, guid: 181af69ffed0ef044813e2ab5cd8a8bb,
         type: 2}
@@ -40,7 +41,29 @@ MonoBehaviour:
         response: {fileID: 11400000, guid: 234966971767de54f9424ffc43f18af0, type: 2}
     - playerDialogueInput: {fileID: 11400000, guid: 4cc9262fcacd0d948b280b31f01815ee,
         type: 2}
-      npcResponses: []
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: f3731e064a0889c44b064021c076f510, type: 2}
     - playerDialogueInput: {fileID: 11400000, guid: 64e2a130a8deb2c44a8d6d4947772f5e,
         type: 2}
-      npcResponses: []
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: f30ede522dea1b14680a19d9d387d865, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: b36a309b01e18444ebe5c737f69e5fb6,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 8a9d85bbf29767443bdf66c2c5b23d19, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: a874115856770354a9a7f1d360bddf92,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: eba57422209d0d247be039ab1b3f6844, type: 2}

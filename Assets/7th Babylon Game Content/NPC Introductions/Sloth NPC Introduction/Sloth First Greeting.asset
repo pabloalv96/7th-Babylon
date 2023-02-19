@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC1.1 silence
+  m_Name: Sloth First Greeting
   m_EditorClassIdentifier: 
-  dialogue: ' . . .'
+  dialogue: Hey.. Do you know whats going on here?
   toOtherNPC: 0
-  requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: d0484e28a58fca54cab42d8c832fdf4a, type: 2}
-  playerResponses: []
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: 181af69ffed0ef044813e2ab5cd8a8bb, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 1
+  isRepeatable: 0
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0

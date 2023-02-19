@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC1.1 silence
+  m_Name: SUB1.3 (response) but hes also creepy
   m_EditorClassIdentifier: 
-  dialogue: ' . . .'
-  toOtherNPC: 0
+  dialogue: But honestly talking to him might have scared you more
+  toOtherNPC: 1
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: d0484e28a58fca54cab42d8c832fdf4a, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 6496496aec7c218438d5e24f3484373f, type: 2}
   playerResponses: []
-  limitedTime: 0
-  timeLimit: 0
+  limitedTime: 1
+  timeLimit: 3
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 1
+  isRepeatable: 0
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0

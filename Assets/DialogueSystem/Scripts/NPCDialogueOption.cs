@@ -54,6 +54,8 @@ public class NPCDialogueOption : ScriptableObject
 
     public List<StatContainer.Stat> statsToEffectList;
 
+    public NPCInfo designatedNPC; // only for subtitle sequences
+
 
 }
 

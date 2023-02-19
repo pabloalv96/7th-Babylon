@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c30f8eed4d283fe49aaaf5b2d55ea18c, type: 3}
-  m_Name: P2.0 is that it
+  m_Name: PQ1.0 how did you get here
   m_EditorClassIdentifier: 
-  dialogue: Is that it? Tell me about yourself
+  dialogue: Do you remember how you got here?
   statsToEffectList: []
-  isResponseToNPCDialogue: 1
+  isResponseToNPCDialogue: 0
   isGoodbyeOption: 0
   isChangeTopicOption: 0
   isLocked: 0
   conditionalEvents: []
-  isQuestDialogue: 0
+  isQuestDialogue: 1
   completeRelatedQuest: 0
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: f047155c814f93a429845441d58a4e41, type: 2}
   itemsToGive: []
   itemsToRecieve: []

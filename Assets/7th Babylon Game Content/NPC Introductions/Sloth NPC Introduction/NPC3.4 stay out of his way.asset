@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC1.1 silence
+  m_Name: NPC3.4 stay out of his way
   m_EditorClassIdentifier: 
-  dialogue: ' . . .'
+  dialogue: 'I''d say just take it slow and steer clear of that dude
+
+    I haven''t
+    met him but by the sounds of it I can''t say I''m not glad..'
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: d0484e28a58fca54cab42d8c832fdf4a, type: 2}
+  continuedDialogue: {fileID: 0}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 0
+  playerCanChangeTopic: 1
+  playerCanLeaveDialogue: 1
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
-  changeOfTopic: 0
+  changeOfTopic: 1
   conditionalEvents: []
   relatedQuests: []
   itemsToGive: []

@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: Sloth Greeting
   m_EditorClassIdentifier: 
-  dialogue: Oh uh.. hello. Do you know whats going on here?
+  dialogue: Oh uh.. hello...
   toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
   playerResponses:
-  - {fileID: 11400000, guid: 181af69ffed0ef044813e2ab5cd8a8bb, type: 2}
+  - {fileID: 11400000, guid: 0ac01b80dc323a54b9b6604cd448a9da, type: 2}
+  - {fileID: 11400000, guid: 4cc9262fcacd0d948b280b31f01815ee, type: 2}
+  - {fileID: 11400000, guid: 64e2a130a8deb2c44a8d6d4947772f5e, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 1
@@ -32,3 +34,4 @@ MonoBehaviour:
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
   statsToEffectList: []
+  designatedNPC: {fileID: 0}
