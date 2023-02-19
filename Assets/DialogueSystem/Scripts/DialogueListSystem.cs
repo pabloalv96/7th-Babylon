@@ -249,10 +249,19 @@ public class DialogueListSystem : MonoBehaviour
 
             if (npcDialogue.newStartingDialogue != null)
             {
-                if (playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>() && playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
+                //if (playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>() && playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
+                //{
+                //    playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().startingDialogue = npcDialogue.newStartingDialogue;
+                //}
+                foreach (NPCBrain brain in FindObjectsOfType<NPCBrain>())
                 {
-                    playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().startingDialogue = npcDialogue.newStartingDialogue;
+                    if (brain.npcInfo == npc)
+                    {
+                        brain.startingDialogue = npcDialogue.newStartingDialogue;
+                        break;
+                    }
                 }
+
 
             }
 
@@ -674,6 +683,12 @@ public class DialogueListSystem : MonoBehaviour
         //playerDialogue.AddDialogueOptions();
     }
 
+    public void ResetPlayerQuestions()
+    {
+        playerDialogue.playerQuestions = new List<PlayerDialogue.PlayerQuestions>();
+        AddNPCsToPlayerDialogue();
+    }
+
     public void AddItemBasedOnPlayerDialogue()
     {
         foreach (OJQuestItemObjective item in selectedDialogueOption.itemsToRecieve)
@@ -751,6 +766,19 @@ public class DialogueListSystem : MonoBehaviour
         dialogueToLock.isLocked = true;
 
     }
+
+    public void ChangeSpeaker(NPCInfo newSpeaker)
+    {
+        DialogueListSystem dialogueListSystem = FindObjectOfType<DialogueListSystem>();
+        dialogueListSystem.npc = newSpeaker;
+        dialogueListSystem.npcNameText.text = newSpeaker.npcName;
+
+        Debug.Log("New Speaker = " + newSpeaker.npcName);
+        // set new speaker animations
+        //stop current speaker animations
+    }
+
+
     //public void ActivateInvisibleBarrier(string barrierID)
     //{
     //    foreach (OJQuestManager.InvisibleBarrier barrier in questManager.invisibleBarriers)
