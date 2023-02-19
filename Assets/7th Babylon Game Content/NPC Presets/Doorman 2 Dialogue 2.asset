@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: Final Greeting
+  m_Name: Doorman 2 Dialogue 2
   m_EditorClassIdentifier: 
-  dialogue: 'Wait, what are you doing there, You are not suppose to come this way.
-
-'
+  dialogue: Get away from here!
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: a6a200dc5e01d634e985eade01161342, type: 2}
+  continuedDialogue: {fileID: 0}
   playerResponses: []
-  limitedTime: 0
-  timeLimit: 0
+  limitedTime: 1
+  timeLimit: 2
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 1
-  isRepeatable: 0
+  isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
@@ -31,7 +29,6 @@ MonoBehaviour:
   relatedQuests: []
   itemsToGive: []
   itemsToTake: []
-  newStartingDialogue: {fileID: 11400000, guid: 82310a2e4a83c6c439c66baf6b50635a,
-    type: 2}
+  newStartingDialogue: {fileID: 0}
   statsToEffectList: []
   designatedNPC: {fileID: 0}
