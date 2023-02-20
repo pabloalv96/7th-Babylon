@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8565742391968106439}
   m_Layer: 0
   m_Name: Waypoint
-  m_TagString: Untagged
+  m_TagString: HallWaypoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec3eaf35852206488336f537962a8ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nearbyWaypoints: []
   eventsToTrigger:
   - m_PersistentCalls:
       m_Calls:

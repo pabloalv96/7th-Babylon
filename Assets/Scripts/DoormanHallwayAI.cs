@@ -96,14 +96,17 @@ public class DoormanHallwayAI : MonoBehaviour
                 //searchTimer = searchTimerReset;
                 //Chase();
 
-                dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, chasingDialogue[Random.Range(0, chasingDialogue.Count)]);
+                if (!FindObjectOfType<DialogueListSystem>().enabled)
+                    dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, chasingDialogue[Random.Range(0, chasingDialogue.Count)]);
 
                 //Debug.Log("Player in sight");
             }
             else
             {
                 doormanState = AIState.patrolling;
-                dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, searchingDialogue[Random.Range(0, searchingDialogue.Count)]);
+
+                if (!FindObjectOfType<DialogueListSystem>().enabled)
+                    dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, searchingDialogue[Random.Range(0, searchingDialogue.Count)]);
             }
             //else
             //{
@@ -163,9 +166,19 @@ public class DoormanHallwayAI : MonoBehaviour
 
     public void Patrol()
     {
-        if (destinationSetter.target == null || Vector3.Distance(transform.position, destinationSetter.target.transform.position) <= changeWaypointDistance)
+        if (waypointsList != null)
         {
-            destinationSetter.target = waypointsList[Random.Range(0, waypointsList.Count)];
+            if (destinationSetter.target == null || Vector3.Distance(transform.position, destinationSetter.target.transform.position) <= changeWaypointDistance)
+            {
+                destinationSetter.target = waypointsList[Random.Range(0, waypointsList.Count)];
+            }
+        }
+        else
+        {
+            if (destinationSetter.target == null || Vector3.Distance(transform.position, destinationSetter.target.transform.position) <= changeWaypointDistance)
+            {
+                destinationSetter.target = GameObject.FindGameObjectsWithTag("HallWaypoint")[Random.Range(0, GameObject.FindGameObjectsWithTag("HallWaypoint").Length)].transform;
+            }
         }
     }
 
@@ -199,7 +212,10 @@ public class DoormanHallwayAI : MonoBehaviour
         //enable cross fade
         //player.GetComponent<Rigidbody>().position = lobbyWaypoint.position;
         player.transform.position = lobbyWaypoint.position;
-        gameObject.SetActive(false);
+        //destinationSetter.enabled = true;
+
+        //gameObject.SetActive(false);
+        doormanState = AIState.patrolling;
     }
 
 
