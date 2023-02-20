@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: Get away from here!
   toOtherNPC: 0
-  requiresResponse: 0
-  continuedDialogue: {fileID: 0}
+  requiresResponse: 1
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
-  limitedTime: 1
-  timeLimit: 2
+  limitedTime: 0
+  timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 1
+  playerCanLeaveDialogue: 0
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
