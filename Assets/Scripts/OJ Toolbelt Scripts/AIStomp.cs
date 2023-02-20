@@ -13,6 +13,12 @@ public class AIStomp : MonoBehaviour
     //private CharacterController controller;
     //private Rigidbody rb;
     private RichAI richAI;
+    [SerializeField] bool randomiseVolume;
+    [SerializeField] float minVolume = 0.25f, maxVolume = 0.35f;
+
+    [SerializeField] bool randomisePitch;
+    [SerializeField] float minPitch = 0.7f, maxPitch = 0.8f;
+
 
     [SerializeField] private List<AudioClip> footstepSounds;
     void Start()
@@ -27,8 +33,16 @@ public class AIStomp : MonoBehaviour
     {
         if (richAI.velocity.magnitude > 2f && !audioSource.isPlaying)
         {
-            audioSource.volume = Random.Range(0.25f, 0.35f);
-            audioSource.pitch = Random.Range(0.7f, 0.8f);
+            if (randomiseVolume)
+            {
+                audioSource.volume = Random.Range(minVolume, maxVolume);
+            }
+
+            if (randomisePitch)
+            {
+                audioSource.pitch = Random.Range(minPitch, maxPitch);
+            }
+
             audioSource.PlayOneShot(footstepSounds[Random.Range(0, footstepSounds.Count)]);
         }
     }

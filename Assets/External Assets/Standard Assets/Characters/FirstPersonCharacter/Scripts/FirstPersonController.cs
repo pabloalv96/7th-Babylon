@@ -32,6 +32,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip[] m_FootstepSounds;    // an array of footstep sounds that will be randomly selected from.
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
+        [SerializeField] private AudioClip outOfStaminaSound;
 
         [SerializeField] private float speedUpMultiplier;
         [SerializeField] private float slowDownMultiplier;
@@ -49,6 +50,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        [SerializeField] private AudioSource staminaAudioSource;
 
 
         // Use this for initialization
@@ -224,13 +226,33 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
-            m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+
+            // m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+
+            if (stamina >= maxStamina / 4)
+            {
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    m_IsWalking = false;
+                }
+                else
+                {
+                    m_IsWalking = true;
+                }
+            }
 #endif
 
             if (stamina <= 0)
             {
                 m_IsWalking = true;
+                //staminaAudioSource.Stop();
+                staminaAudioSource.PlayOneShot(outOfStaminaSound);
             }
+
+            //if (m_IsWalking && stamina < maxStamina / 3)
+            //{
+            //    m_IsWalking = true;
+            //}
 
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;

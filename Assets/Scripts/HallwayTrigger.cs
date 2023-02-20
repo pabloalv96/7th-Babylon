@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Pathfinding;
 
 public class HallwayTrigger : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class HallwayTrigger : MonoBehaviour
 
     public void StartHallwaySequence(GameObject doorman)
     {
-        doorman.SetActive(true);
+        doorman.GetComponent<RichAI>().enabled = true;
+        doorman.GetComponent<AIDestinationSetter>().enabled = true;
     }
 }
