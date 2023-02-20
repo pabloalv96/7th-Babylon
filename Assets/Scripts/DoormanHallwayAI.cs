@@ -37,6 +37,10 @@ public class DoormanHallwayAI : MonoBehaviour
 
     [SerializeField] private List<NPCDialogueOption> chasingDialogue, searchingDialogue, caughtDialogue;
 
+    public CameraFade cameraFade;
+
+    public float teleportDelay = 1;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -210,12 +214,22 @@ public class DoormanHallwayAI : MonoBehaviour
     public void FailState()
     {
         //enable cross fade
+        cameraFade.trapped = true;
         //player.GetComponent<Rigidbody>().position = lobbyWaypoint.position;
-        player.transform.position = lobbyWaypoint.position;
+        StartCoroutine(TrappedTime(1));
         //destinationSetter.enabled = true;
 
         //gameObject.SetActive(false);
         doormanState = AIState.patrolling;
+    }
+
+    public IEnumerator TrappedTime(float time) { 
+
+        yield return new WaitForSeconds(time);
+
+        player.transform.position = lobbyWaypoint.position;
+
+
     }
 
 
