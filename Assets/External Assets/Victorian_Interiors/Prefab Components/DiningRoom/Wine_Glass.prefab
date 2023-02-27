@@ -261,6 +261,8 @@ GameObject:
   - component: {fileID: 20584094}
   - component: {fileID: 5420948}
   - component: {fileID: 6521818}
+  - component: {fileID: 5138245803624246622}
+  - component: {fileID: 1827856736796228911}
   m_Layer: 0
   m_Name: Wine_Glass
   m_TagString: Untagged
@@ -342,3 +344,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22, y: 0.45, z: 0.25}
   m_Center: {x: 0, y: 0.22, z: 0}
+--- !u!114 &5138245803624246622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 34b1cf1462c9aa94d8cd97b9b11be28a, type: 2}
+  itemInteractions: []
+--- !u!114 &1827856736796228911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e4831f871e28546b4a0e9ed84b59cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenPartsPrefabs: []
+  relatedSin:
+  - statName: Wrath
+    statValue: 5

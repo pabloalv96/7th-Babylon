@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: SUB1.3 bad introduction
+  m_EditorClassIdentifier: 
+  dialogue: 'Is this how you introduce yourself?
+
+    By throwing a tantrum?'
+  toOtherNPC: 1
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: fcade249bb0744c4f94458abfc271849, type: 2}
+  playerResponses: []
+  limitedTime: 0
+  timeLimit: 3
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 0
+  hasBeenSeen: 0
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}
