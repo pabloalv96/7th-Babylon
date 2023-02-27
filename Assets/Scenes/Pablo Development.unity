@@ -2175,6 +2175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Single (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 197776, guid: 3d23871042855f847b01d3124f3728dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 444648, guid: 3d23871042855f847b01d3124f3728dd, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -7563,7 +7567,7 @@ PrefabInstance:
     - target: {fileID: 2169264618504624465, guid: 35720e2843b0c8a49aa8021e418ca846,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2169264618504624470, guid: 35720e2843b0c8a49aa8021e418ca846,
         type: 3}
@@ -14578,6 +14582,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1337437396936495626, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 1337437396995976948, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14989,7 +14998,7 @@ PrefabInstance:
     - target: {fileID: 2218804340648903276, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: isLocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2218804340648903276, guid: 328939e18e347d14299df72546721db1,
         type: 3}
