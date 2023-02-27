@@ -10,17 +10,16 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     [SerializeField] private KeyCode selectInput = KeyCode.E;
     [SerializeField] private KeyCode consumeInput = KeyCode.C;
+    [SerializeField] private KeyCode breakInput = KeyCode.F;
 
     [SerializeField] private float reachDistance = 5f;
     [SerializeField] private float selectionSize = 1f;
 
     public GameObject selectedObject;
 
-
-
-
     public GameObject interactPromptIndicator;
     public GameObject consumePromptIndicator;
+    public GameObject breakPromptIndicator;
     public Image interactionAimIndicator;
 
     private bool isNPC;
@@ -29,6 +28,10 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private bool isItem;
     private bool isConsumable;
     private bool isInteraction;
+    private bool isLookSin;
+    private bool isBreakable;
+
+    [SerializeField]  private GameObject lookSinObject;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
 
     //[SerializeField] private float inventoryIndicatorDisplayTime = 7.5f;
@@ -51,6 +54,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
     [SerializeField] private TextMeshProUGUI interactionKeyPromptText;
     [SerializeField] private TextMeshProUGUI consumePromptText;
     [SerializeField] private TextMeshProUGUI consumeKeyPromptText;
+    [SerializeField] private TextMeshProUGUI breakPromptText;
+    [SerializeField] private TextMeshProUGUI breakKeyPromptText;
 
 
     private DialogueListSystem dialogueSystem;
@@ -64,6 +69,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
         interactPromptIndicator.SetActive(false);
         consumePromptIndicator.SetActive(false);
+        breakPromptIndicator.SetActive(false);
 
         dialogueSystem = FindObjectOfType<DialogueListSystem>();
         dialogueInitiator = FindObjectOfType<DialogueInitiator>();
@@ -79,6 +85,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
         consumeKeyPromptText.text = consumeInput.ToString();
         interactionKeyPromptText.text = selectInput.ToString();
+        breakKeyPromptText.text = breakInput.ToString();
     }
 
     private void Update()
@@ -302,6 +309,33 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isInteraction = false;
             }
 
+            if (hit.transform.GetComponent<LookSinTimer>())
+            {
+                isLookSin = true;
+                lookSinObject = hit.transform.gameObject;
+                Debug.Log("Hit Look Sin Object: " + lookSinObject.name);
+                
+            }
+            else
+            {
+                isLookSin = false;
+            }
+
+            if (hit.transform.GetComponent<Breakable>())
+            {
+                isBreakable = true;
+                selectedObject = hit.transform.gameObject;
+                breakPromptIndicator.SetActive(true);
+                interactionAimIndicator.color = Color.red;
+                breakPromptText.text = "Break";
+            }
+            else
+            {
+                isBreakable = false;
+                breakPromptIndicator.SetActive(false);
+            }
+
+
             if (selectedObject != null && isConsumable && Input.GetKeyDown(consumeInput))
             {
                 playerInfoController.AffectStatValues(selectedObject.GetComponent<ItemInWorld>().item.statsToEffectOnConsumptionList);
@@ -435,6 +469,14 @@ public class PlayerInteractionRaycast : MonoBehaviour
                     dialogueInitiator.NPCInitiatedDialogue(narrator, interactDialogueOption);
 
                 }
+
+                if (isBreakable)
+                {
+                    selectedObject.GetComponent<Breakable>().BreakObject();
+
+                    Debug.Log(selectedObject.name + " has been broken");
+
+                }
             }
         }
         else
@@ -446,6 +488,18 @@ public class PlayerInteractionRaycast : MonoBehaviour
             consumePromptIndicator.SetActive(false);
 
             interactionAimIndicator.color = Color.white;
+        }
+
+        if (lookSinObject != null)
+        {
+            if (isLookSin)
+            {
+                lookSinObject.GetComponent<LookSinTimer>().isLooking = true;
+            }
+            else
+            {
+                lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
+            }
         }
 
         yield return null;

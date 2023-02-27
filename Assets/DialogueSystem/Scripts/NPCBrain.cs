@@ -44,6 +44,11 @@ public class NPCBrain : MonoBehaviour
         }
     }
 
+    public void SetStartingDialogue(NPCDialogueOption newStartingDialogue)
+    {
+        startingDialogue = newStartingDialogue;
+    }
+
     [System.Serializable]
     public class DialogueMemory
     {
