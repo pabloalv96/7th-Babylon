@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
+  m_Name: Q Find Pride & Envy
+  m_EditorClassIdentifier: 
+  questManager: {fileID: 0}
+  playerDialogue: {fileID: 0}
+  environmentalChanges: {fileID: 0}
+  isHiddenFromUI: 0
+  questStarted: 0
+  questEnded: 0
+  isRepeatable: 0
+  questID: Look for Pride & Envy
+  questDescription: Look upstairs for the missing guests
+  questActivation:
+    questsToLock: []
+  objective:
+    objectiveType: 1
+    questItems: []
+    questDialogueOptions: []
+    childrenQuests: []
+  outcome:
+    questsToUnlock: []
+    questsToLock: []
+    statsToEffectList: []

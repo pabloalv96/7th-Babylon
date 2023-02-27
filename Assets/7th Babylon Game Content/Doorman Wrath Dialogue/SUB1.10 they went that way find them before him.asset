@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: SUB1.3 bad introduction
+  m_Name: SUB1.10 they went that way find them before him
   m_EditorClassIdentifier: 
-  dialogue: 'Is this how you introduce yourself?
-
-    By throwing a tantrum?'
+  dialogue: Screw that guy! If someone finds them first I'm sure that'd really mess
+    with him. They ran upstairs as soon as I tossed that thing. Better not get caught
+    though...
   toOtherNPC: 1
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: fcade249bb0744c4f94458abfc271849, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 1
-  timeLimit: 3
+  timeLimit: 5
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
   isRepeatable: 0
@@ -28,7 +28,8 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: f0eab4b1435b2684cac11fa9a882ecc3, type: 2}
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
