@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: NPC 3.2 Find Mary
+  m_EditorClassIdentifier: 
+  dialogue: 'I won''t stand her being the only one knowing about what is going on
+    here.
+
+    Take this key, I stole it from her on one of our conversations. Go
+    and find what she knows.'
+  toOtherNPC: 0
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: 62bd0469d39f98e43a51db2ea54bd2ae, type: 2}
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 1
+  hasBeenSeen: 0
+  endOfConversation: 1
+  changeOfTopic: 0
+  conditionalEvents: []
+  relatedQuests:
+  - {fileID: 11400000, guid: a68aa62e1d907d04fa38c775dcc91564, type: 2}
+  itemsToGive:
+  - requiredAmount: 1
+    item: {fileID: 0}
+    requiredAmountCollected: 0
+    questCompleted: 0
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}

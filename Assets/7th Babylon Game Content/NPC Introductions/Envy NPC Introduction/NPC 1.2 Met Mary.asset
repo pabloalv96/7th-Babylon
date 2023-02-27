@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC1.2 Who cares
+  m_Name: NPC 1.2 Met Mary
   m_EditorClassIdentifier: 
-  dialogue: Who cares? Somebody needs to give me an explanation now or I will be
-    rolling heads here. That bald man will pay for this.
+  dialogue: After talking to the doorman, I met mary. Looks like we were the first
+    one to come to this place. After exploring for a while we decided to go back
+    to the entrance to debrief.
   toOtherNPC: 0
-  requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 27e6098767dbabc4893be91d24f25054, type: 2}
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0

@@ -177,10 +177,12 @@ public class DialogueInitiator : MonoBehaviour
         if (npc.startingDialogue.toOtherNPC)
         {
             BeginSubtitleSequence(npc.npcInfo, npc.startingDialogue);
+            npc.isSpeakingToPlayer = true;
         }
         else
         {
             NPCInitiatedDialogue(npc.npcInfo, npc.startingDialogue);
+            npc.isSpeakingToPlayer = false;
         }
     }
 

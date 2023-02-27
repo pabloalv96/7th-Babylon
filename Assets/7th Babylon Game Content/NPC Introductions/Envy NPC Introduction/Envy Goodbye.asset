@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC1.2 Who cares
+  m_Name: Envy Goodbye
   m_EditorClassIdentifier: 
-  dialogue: Who cares? Somebody needs to give me an explanation now or I will be
-    rolling heads here. That bald man will pay for this.
+  dialogue: Go look around and tell me what you see.
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 27e6098767dbabc4893be91d24f25054, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
-  playerCanLeaveDialogue: 1
-  isRepeatable: 1
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 0
   hasBeenSeen: 0
-  endOfConversation: 0
+  endOfConversation: 1
   changeOfTopic: 0
   conditionalEvents: []
   relatedQuests: []
