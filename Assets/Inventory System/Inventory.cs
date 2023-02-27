@@ -231,11 +231,17 @@ public class Inventory : MonoBehaviour, IDragHandler
     {
         Quaternion inspectedItemRotation = inspectedItem.transform.rotation;
             RemoveItemFromInventory(item);
+
             GameObject droppedItem = Instantiate(item.prefab, inspectBasePos.position, inspectedItemRotation);
             droppedItem.transform.parent = null;
 
+        if (droppedItem.GetComponent<Breakable>())
+        {
+            droppedItem.GetComponent<Breakable>().BreakObject();
+        }
 
-        foreach (OJQuest quest in questManager.activeQuestList)
+
+            foreach (OJQuest quest in questManager.activeQuestList)
         {
             if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
             {
