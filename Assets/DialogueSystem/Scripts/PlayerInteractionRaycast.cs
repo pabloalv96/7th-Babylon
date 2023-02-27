@@ -90,20 +90,20 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     private void Update()
     {
-        if (!dialogueSystem.enabled)
+        if (!dialogueSystem.enabled || (dialogueSystem.enabled && dialogueSystem.npcDialogue.toOtherNPC))
         {
             StartCoroutine(InteractionRaycast());
         }
-        else
-        { 
+        //else
+        //{ 
             
-            if (Input.GetKeyDown(selectInput))
-            {
-                dialogueSystem.responseTimer = 0f;
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        dialogueSystem.responseTimer = 0f;
 
 
-            }
-        }
+        //    }
+        //}
     }
 
     public void SelectNPC()

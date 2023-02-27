@@ -191,5 +191,10 @@ public class DialogueInitiator : MonoBehaviour
         npc.startingDialogue = null;
     }
 
+    public void DisableObjectAfterDialogue(GameObject prefab)
+    {
+        GameObject.Find(prefab.name).SetActive(false);
+    }
+
 
 }
