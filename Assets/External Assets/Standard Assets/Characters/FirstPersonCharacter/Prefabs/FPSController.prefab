@@ -472,11 +472,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectInput: 101
   consumeInput: 99
+  breakInput: 102
   reachDistance: 2
   selectionSize: 0.1
   selectedObject: {fileID: 0}
   interactPromptIndicator: {fileID: 0}
   consumePromptIndicator: {fileID: 0}
+  breakPromptIndicator: {fileID: 0}
   interactionAimIndicator: {fileID: 0}
   isDoor: 0
   lookSinObject: {fileID: 0}
@@ -490,6 +492,8 @@ MonoBehaviour:
   interactionKeyPromptText: {fileID: 0}
   consumePromptText: {fileID: 0}
   consumeKeyPromptText: {fileID: 0}
+  breakPromptText: {fileID: 0}
+  breakKeyPromptText: {fileID: 0}
 --- !u!1 &34534509
 GameObject:
   m_ObjectHideFlags: 0
