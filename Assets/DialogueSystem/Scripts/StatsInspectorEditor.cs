@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 //Create and edit npc emotions in the inspector
-//# if UNITY_EDITOR
+#if UNITY_EDITOR
 [CustomEditor(typeof(PlayerInfoController))]
 
 public class StatsInspectorEditor : Editor
@@ -104,4 +104,4 @@ public class StatsInspectorEditor : Editor
 
     }
 }
-//#endif
+#endif
