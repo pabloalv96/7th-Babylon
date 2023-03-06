@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 20550594}
   - component: {fileID: 6510284}
   - component: {fileID: 6569464}
+  - component: {fileID: 2790260074956961096}
   m_Layer: 0
   m_Name: Suit of ArmorW_Sword
   m_TagString: Untagged
@@ -258,6 +259,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.51, y: 2.38, z: 0.63}
   m_Center: {x: 0, y: -0.21, z: 0.26}
+--- !u!114 &2790260074956961096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!1 &162300
 GameObject:
   m_ObjectHideFlags: 0

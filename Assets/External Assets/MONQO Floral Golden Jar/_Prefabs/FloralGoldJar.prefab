@@ -127,20 +127,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4112223442683579317}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &4112223442683579312
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345878832312160956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8314571269056883277, guid: e1e070a13571dd6429b90757339028f4, type: 3}
 --- !u!54 &2379084464578738008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,6 +143,58 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &4112223442683579312
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345878832312160956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8314571269056883277, guid: e1e070a13571dd6429b90757339028f4, type: 3}
+--- !u!114 &3865745248677156042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345878832312160956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e4831f871e28546b4a0e9ed84b59cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenPartsPrefabs:
+  - {fileID: 1562745526367141249, guid: 77b7e3c9d7f6c1745ac1a409f1013fc7, type: 3}
+  - {fileID: 2947611487962043959, guid: 3c4cb47c5eb4aad48ab462dc10994c48, type: 3}
+  - {fileID: 2000367340315628625, guid: 406bb2cae9de5824e8b31c09985180f7, type: 3}
+  - {fileID: 8231772088410012066, guid: 37a8354d15f317045bd6b2522fef6cd0, type: 3}
+  - {fileID: 7485691036865958626, guid: 55301312fede09f4c9e83cabaa231e65, type: 3}
+  relatedSin:
+  - statName: Wrath
+    statValue: 10
+--- !u!114 &8513231848785887116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345878832312160956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!4 &8965322849072570543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,

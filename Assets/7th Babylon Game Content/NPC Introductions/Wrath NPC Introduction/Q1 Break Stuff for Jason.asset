@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
+  m_Name: Q1 Break Stuff for Jason
+  m_EditorClassIdentifier: 
+  questManager: {fileID: 0}
+  playerDialogue: {fileID: 0}
+  environmentalChanges: {fileID: 0}
+  isHiddenFromUI: 0
+  questStarted: 0
+  questEnded: 0
+  isRepeatable: 0
+  questID: Break Stuff
+  questDescription: Break Stuff for Jason
+  questActivation:
+    questsToLock: []
+  objective:
+    objectiveType: 1
+    questItems: []
+    questDialogueOptions: []
+    childrenQuests: []
+  outcome:
+    questsToUnlock:
+    - {fileID: 11400000, guid: 3054d38f14f3a8b469d31788274687b9, type: 2}
+    questsToLock: []
+    statsToEffectList: []

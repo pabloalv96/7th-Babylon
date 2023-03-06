@@ -38,6 +38,8 @@ public class SinTimer : MonoBehaviour
                     prideStat.statValue = point.pridePoints;
 
                     statsToAffectList.Add(prideStat);
+                    Debug.Log("Arrived at " + gameTimer + ". expected time is between " + point.minTime + " & " + point.maxTime);
+                    Debug.Log("Adding " + prideStat.statValue + " Pride Points");
 
                     //add pride points
                     playerInfoController.AffectStatValues(statsToAffectList);
@@ -53,8 +55,9 @@ public class SinTimer : MonoBehaviour
                     slothStat.statValue = point.slothPoints;
 
                     statsToAffectList.Add(slothStat);
+                    Debug.Log("Arrived at " + gameTimer + " seconds. expected time is between " + point.minTime + " & " + point.maxTime + " seconds");
+                    Debug.Log("Adding " + slothStat.statValue + " Sloth Points");
 
-                    //add pride points
                     playerInfoController.AffectStatValues(statsToAffectList);
                     return;
                 }

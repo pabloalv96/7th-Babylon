@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1386707691010980944}
   - component: {fileID: -512436988959310227}
   - component: {fileID: -5875050082866571794}
+  - component: {fileID: 1718324866606521181}
   m_Layer: 0
   m_Name: VanillaExtract_NoVariants (761 tris)
   m_TagString: Untagged
@@ -134,3 +135,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 2fc05bc933c2100458eeca5a547ed04b, type: 2}
   itemInteractions: []
+--- !u!114 &1718324866606521181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280969666934756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e4831f871e28546b4a0e9ed84b59cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenPartsPrefabs:
+  - {fileID: 6133191205193798038, guid: 938b22dcd9d490b4fa3e355e45ad7d5d, type: 3}
+  - {fileID: 6133191205193798038, guid: 938b22dcd9d490b4fa3e355e45ad7d5d, type: 3}
+  - {fileID: 6133191205193798038, guid: 938b22dcd9d490b4fa3e355e45ad7d5d, type: 3}
+  relatedSin:
+  - statName: Wrath
+    statValue: 5

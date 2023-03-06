@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 3369880}
   - component: {fileID: 2397724}
   - component: {fileID: 392218239685500258}
+  - component: {fileID: 268502123778223034}
   m_Layer: 0
   m_Name: Deerhead_LOD0
   m_TagString: Untagged
@@ -245,6 +246,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: 05b3754f1d37bc941a1c78709f3f94a3, type: 3}
+--- !u!114 &268502123778223034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!1 &180938
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     [SerializeField] private KeyCode selectInput = KeyCode.E;
     [SerializeField] private KeyCode consumeInput = KeyCode.C;
-    [SerializeField] private KeyCode breakInput = KeyCode.F;
+    public KeyCode breakInput = KeyCode.F;
 
     [SerializeField] private float reachDistance = 5f;
     [SerializeField] private float selectionSize = 1f;
@@ -29,7 +29,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private bool isConsumable;
     private bool isInteraction;
     private bool isLookSin;
-    private bool isBreakable;
+    [HideInInspector] public bool isBreakable;
 
     [SerializeField] private GameObject lookSinObject;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
@@ -90,20 +90,20 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     private void Update()
     {
-        if (!dialogueSystem.enabled || (dialogueSystem.enabled && dialogueSystem.npcDialogue.toOtherNPC))
+        if (!dialogueSystem.enabled || (dialogueSystem.enabled && dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC))
         {
             StartCoroutine(InteractionRaycast());
         }
-        else
-        {
+        //else
+        //{ 
 
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                dialogueSystem.responseTimer = 0f;
+        //    if (Input.GetKeyDown(KeyCode.Space))
+        //    {
+        //        dialogueSystem.responseTimer = 0f;
 
 
-            }
-        }
+        //    }
+        //}
     }
 
     public void SelectNPC()
@@ -243,7 +243,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isConsumable = false;
             }
 
-            if (hit.transform.GetComponent<DialogueInWorld>() && !dialogueSystem.npcDialogue.toOtherNPC)
+            if (hit.transform.GetComponent<DialogueInWorld>())
             {
                 selectedObject = hit.transform.gameObject;
                 interactPromptIndicator.SetActive(true);
@@ -257,7 +257,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isWorldDialogue = false;
             }
 
-            if (hit.transform.GetComponent<NPCBrain>() && !dialogueSystem.npcDialogue.toOtherNPC)
+            if (hit.transform.GetComponent<NPCBrain>())
             {
                 isNPC = true;
                 selectedObject = hit.transform.gameObject;
@@ -390,125 +390,123 @@ public class PlayerInteractionRaycast : MonoBehaviour
                         //communicate locked door to player
                         //hint player about key
 
-                        if (!dialogueSystem.npcDialogue.toOtherNPC)
+                        if (doorActivator.CheckKeysInInventory())
                         {
 
-                            if (doorActivator.CheckKeysInInventory())
+                            doorActivator.unlockDoorDialogue.playerResponses.Clear();
+
+                            foreach (DoorKey key in doorActivator.keysList)
                             {
-
-                                doorActivator.unlockDoorDialogue.playerResponses.Clear();
-
-                                foreach (DoorKey key in doorActivator.keysList)
+                                for (int i = 0; i < inventorySystem.inventory.Count; i++)
                                 {
-                                    for (int i = 0; i < inventorySystem.inventory.Count; i++)
+                                    if (inventorySystem.inventory[i] == key.keyItem)
                                     {
-                                        if (inventorySystem.inventory[i] == key.keyItem)
-                                        {
-                                            PlayerDialogueOption newUnlockDialogue = new PlayerDialogueOption();
+                                        PlayerDialogueOption newUnlockDialogue = new PlayerDialogueOption();
 
-                                            newUnlockDialogue.isResponseToNPCDialogue = true;
-                                            newUnlockDialogue.isGoodbyeOption = true;
-                                            newUnlockDialogue.dialogue = "Unlock the door with " + key.keyItem.itemName;
+                                        newUnlockDialogue.isResponseToNPCDialogue = true;
+                                        newUnlockDialogue.isGoodbyeOption = true;
+                                        newUnlockDialogue.dialogue = "Unlock the door with " + key.keyItem.itemName;
 
-                                            newUnlockDialogue.conditionalEvents = new List<UnityEvent>();
+                                        newUnlockDialogue.conditionalEvents = new List<UnityEvent>();
 
-                                            newUnlockDialogue.conditionalEvents.Add(doorActivator.unlockDoorEvent);
+                                        newUnlockDialogue.conditionalEvents.Add(doorActivator.unlockDoorEvent);
 
-                                            newUnlockDialogue.conditionalEvents.Add(doorActivator.openDoorEvent);
+                                        newUnlockDialogue.conditionalEvents.Add(doorActivator.openDoorEvent);
 
-                                            newUnlockDialogue.statsToEffectList = key.statsToEffectList;
+                                        newUnlockDialogue.statsToEffectList = key.statsToEffectList;
 
-                                            doorActivator.unlockDoorDialogue.playerResponses.Add(newUnlockDialogue);
+                                        doorActivator.unlockDoorDialogue.playerResponses.Add(newUnlockDialogue);
 
 
 
-                                        }
                                     }
                                 }
-
-                                dialogueInitiator.NPCInitiatedDialogue(narrator, doorActivator.unlockDoorDialogue);
-
                             }
-                            else
-                            {
-                                dialogueInitiator.NPCInitiatedDialogue(narrator, doorActivator.lockedDoorDialogue);
 
-                            }
+                            dialogueInitiator.NPCInitiatedDialogue(narrator, doorActivator.unlockDoorDialogue);
 
                         }
-                    }
-
-                    if (isInteraction)
-                    {
-                        if (!dialogueSystem.npcDialogue.toOtherNPC)
+                        else
                         {
-                            interaction = selectedObject.GetComponent<OJQuestTrigger>();
+                            dialogueInitiator.NPCInitiatedDialogue(narrator, doorActivator.lockedDoorDialogue);
 
-                            interactDialogueOption.playerResponses.Clear();
-
-                            foreach (EnvironmentalItemInteraction itemInteraction in interaction.itemInteractionsList)
-                            {
-                                if (inventorySystem.CheckInventoryForItem(itemInteraction.item))
-                                {
-
-                                    PlayerDialogueOption interactionDialogue = new PlayerDialogueOption();
-
-                                    interactionDialogue.isResponseToNPCDialogue = true;
-                                    interactionDialogue.isGoodbyeOption = true;
-                                    interactionDialogue.dialogue = "Use " + itemInteraction.item.itemName + " on " + interaction.interactionObjectName;
-
-                                    interactionDialogue.conditionalEvents = new List<UnityEvent>();
-
-                                    foreach (UnityEvent itemEvent in itemInteraction.itemInteractionEvents)
-                                    {
-                                        interactionDialogue.conditionalEvents.Add(itemEvent);
-                                    }
-
-                                    interactionDialogue.statsToEffectList = itemInteraction.statsToEffectList;
-
-                                    interactDialogueOption.playerResponses.Add(interactionDialogue);
-
-                                }
-                            }
-
-                            dialogueInitiator.NPCInitiatedDialogue(narrator, interactDialogueOption);
                         }
-                    }
-
-                    if (isBreakable)
-                    {
-                        selectedObject.GetComponent<Breakable>().BreakObject();
-
-                        Debug.Log(selectedObject.name + " has been broken");
 
                     }
                 }
+
+                if (isInteraction)
+                {
+                    interaction = selectedObject.GetComponent<OJQuestTrigger>();
+
+                    interactDialogueOption.playerResponses.Clear();
+
+                    foreach (EnvironmentalItemInteraction itemInteraction in interaction.itemInteractionsList)
+                    {
+                        if (inventorySystem.CheckInventoryForItem(itemInteraction.item))
+                        {
+
+                            PlayerDialogueOption interactionDialogue = new PlayerDialogueOption();
+
+                            interactionDialogue.isResponseToNPCDialogue = true;
+                            interactionDialogue.isGoodbyeOption = true;
+                            interactionDialogue.dialogue = "Use " + itemInteraction.item.itemName + " on " + interaction.interactionObjectName;
+
+                            interactionDialogue.conditionalEvents = new List<UnityEvent>();
+
+                            foreach (UnityEvent itemEvent in itemInteraction.itemInteractionEvents)
+                            {
+                                interactionDialogue.conditionalEvents.Add(itemEvent);
+                            }
+
+                            interactionDialogue.statsToEffectList = itemInteraction.statsToEffectList;
+
+                            interactDialogueOption.playerResponses.Add(interactionDialogue);
+
+                        }
+                    }
+
+                    dialogueInitiator.NPCInitiatedDialogue(narrator, interactDialogueOption);
+
+                }
+            }
+            else if (selectedObject != null && Input.GetKeyDown(breakInput))
+            {
+                if (isBreakable)
+                {
+                    Debug.Log(selectedObject.name + " has been broken");
+
+                    selectedObject.GetComponent<Breakable>().BreakObject();
+
+
+
+                }
+            }
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            //Debug.Log("Did not Hit");
+            selectedObject = null;
+            interactPromptIndicator.SetActive(false);
+            consumePromptIndicator.SetActive(false);
+
+            interactionAimIndicator.color = Color.white;
+        }
+
+        if (lookSinObject != null)
+        {
+            if (isLookSin)
+            {
+                lookSinObject.GetComponent<LookSinTimer>().isLooking = true;
             }
             else
             {
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-                //Debug.Log("Did not Hit");
-                selectedObject = null;
-                interactPromptIndicator.SetActive(false);
-                consumePromptIndicator.SetActive(false);
-
-                interactionAimIndicator.color = Color.white;
+                lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
             }
-
-            if (lookSinObject != null)
-            {
-                if (isLookSin)
-                {
-                    lookSinObject.GetComponent<LookSinTimer>().isLooking = true;
-                }
-                else
-                {
-                    lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
-                }
-            }
-
-            yield return null;
         }
+
+        yield return null;
     }
 
     //public IEnumerator CheckInventoryIndicator()
@@ -541,7 +539,6 @@ public class PlayerInteractionRaycast : MonoBehaviour
     //    yield return null;
     //}
 }
-
 
 
 
