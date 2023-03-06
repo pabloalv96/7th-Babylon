@@ -10,7 +10,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     [SerializeField] private KeyCode selectInput = KeyCode.E;
     [SerializeField] private KeyCode consumeInput = KeyCode.C;
-    [SerializeField] private KeyCode breakInput = KeyCode.F;
+    public KeyCode breakInput = KeyCode.F;
 
     [SerializeField] private float reachDistance = 5f;
     [SerializeField] private float selectionSize = 1f;
@@ -29,9 +29,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private bool isConsumable;
     private bool isInteraction;
     private bool isLookSin;
-    private bool isBreakable;
+    [HideInInspector] public bool isBreakable;
 
-    [SerializeField]  private GameObject lookSinObject;
+    [SerializeField] private GameObject lookSinObject;
     //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
 
     //[SerializeField] private float inventoryIndicatorDisplayTime = 7.5f;
@@ -90,13 +90,13 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     private void Update()
     {
-        if (!dialogueSystem.enabled || (dialogueSystem.enabled && dialogueSystem.npcDialogue.toOtherNPC))
+        if (!dialogueSystem.enabled || (dialogueSystem.enabled && dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC))
         {
             StartCoroutine(InteractionRaycast());
         }
         //else
         //{ 
-            
+
         //    if (Input.GetKeyDown(KeyCode.Space))
         //    {
         //        dialogueSystem.responseTimer = 0f;
@@ -314,7 +314,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isLookSin = true;
                 lookSinObject = hit.transform.gameObject;
                 Debug.Log("Hit Look Sin Object: " + lookSinObject.name);
-                
+
             }
             else
             {
@@ -469,12 +469,16 @@ public class PlayerInteractionRaycast : MonoBehaviour
                     dialogueInitiator.NPCInitiatedDialogue(narrator, interactDialogueOption);
 
                 }
-
+            }
+            else if (selectedObject != null && Input.GetKeyDown(breakInput))
+            {
                 if (isBreakable)
                 {
+                    Debug.Log(selectedObject.name + " has been broken");
+
                     selectedObject.GetComponent<Breakable>().BreakObject();
 
-                    Debug.Log(selectedObject.name + " has been broken");
+
 
                 }
             }

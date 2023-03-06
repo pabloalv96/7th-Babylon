@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089cbe2a5087cfe4b9d8f6473c377e11, type: 3}
+  m_Name: Plate
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 166750, guid: 369934bd2189d1344b5083504ee6774d, type: 3}
+  itemName: Dinner Plate
+  numCarried: 0
+  maxNumCarried: 10
+  canCollect: 1
+  canConsume: 0
+  relatedQuests: []
+  statsToEffectOnCollectionList: []
+  statsToEffectOnConsumptionList: []
