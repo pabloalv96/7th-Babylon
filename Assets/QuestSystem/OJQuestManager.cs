@@ -29,6 +29,14 @@ public class OJQuestManager : MonoBehaviour
     private PlayerDialogue playerDialogue;
     private PlayerInfoController playerInfoController;
 
+    [SerializeField] private TextPopUp popUpText;
+
+    public List<OJQuest> listOfAllQuests;
+    public List<PlayerDialogueOption> lockedAtStartDialogue;
+    public List<PlayerDialogueOption> unlockedAtStartDialogue;
+
+
+
     // track currently active quests
     // lock quests that are completed or no longer available
 
@@ -61,10 +69,16 @@ public class OJQuestManager : MonoBehaviour
     public void StartQuest(OJQuest quest)
     {
         // add quest to active quest list
-        if (((!quest.questStarted && !quest.questEnded) || quest.questEnded && quest.isRepeatable ) && !activeQuestList.Contains(quest))
+        if (((!quest.questStarted && !quest.questEnded) || quest.questEnded && quest.isRepeatable) && !activeQuestList.Contains(quest))
         {
 
-           
+            popUpText.popUpText.text = "New Task Recieved. Press Q to Check";
+
+            popUpText.popUpIndicator = true;
+
+
+            popUpText.DisplayPopUp();
+
 
             if (!quest.isHiddenFromUI)
             {

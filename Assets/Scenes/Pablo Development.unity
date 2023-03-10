@@ -13018,6 +13018,157 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8ec1c7ed7ea911b4fa7f9104cf96ad10, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e15efbc6997c314c8e35bc34d5396db, type: 3}
+--- !u!1 &1697567071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697567072}
+  - component: {fileID: 1697567075}
+  - component: {fileID: 1697567074}
+  - component: {fileID: 1697567073}
+  m_Layer: 5
+  m_Name: Pop Up Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1697567072
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697567071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1345249975}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 460}
+  m_SizeDelta: {x: 500, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1697567073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697567071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa60f105b8cc56c4bb33b5f9a9ee531b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpText: {fileID: 1697567074}
+  popUpDisplayTime: 7.5
+  popUpIndicator: 0
+--- !u!114 &1697567074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697567071}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1697567075
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697567071}
+  m_CullTransparentMesh: 1
 --- !u!114 &1716194219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21269,6 +21420,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: popUpText
+      value: 
+      objectReference: {fileID: 1697567073}
+    - target: {fileID: 754110112, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: breakPromptText
       value: 
       objectReference: {fileID: 679490770}
@@ -23574,7 +23729,7 @@ PrefabInstance:
     - target: {fileID: 3131803793223492669, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3131803793223492669, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
@@ -23649,7 +23804,7 @@ PrefabInstance:
     - target: {fileID: 5788174892996732826, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 240
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5788174892996732826, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
@@ -23793,6 +23948,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
+      propertyPath: popUpText
+      value: 
+      objectReference: {fileID: 1697567073}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.size
+      value: 37
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
       propertyPath: questColliders.Array.data[0]
       value: 
       objectReference: {fileID: 1580489712}
@@ -23836,6 +24001,251 @@ PrefabInstance:
       propertyPath: questColliders.Array.data[8]
       value: 
       objectReference: {fileID: 1580489704}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ed562224ea071743b7478cb18db8291,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a68aa62e1d907d04fa38c775dcc91564,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: da6bdefa8f618ec489a234bc5f489e1e,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: ab3ebe8f2416e984f8e6cbd87618caef,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: baf88bf8fc710ad42bf285ba61825c67,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4953c2d04a4b69645905de37d0131fab,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: f0eab4b1435b2684cac11fa9a882ecc3,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: a431679213d9f6d49b4d08de2a0d6cdb,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e2ab3bb2389f154f9ab23cf8ea2d507,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 86b80fee8acea544682c1b2ae630a7bd,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: ec071545fca08564bbc3cf625d9dbddf,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 25a1db1c0d51ca148896f4c72008988b,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: f047155c814f93a429845441d58a4e41,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a72999fb91267d4897deee8cea70279,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: 344029fe544ea544ca89f6edca89a339,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: b1c6d91f7a973df4bbe145ce6ae95879,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: daa117862f11b1d4ebdabdbe5d3f878b,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bc07cedf35500a48a9ec42ccd7a1150,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3054d38f14f3a8b469d31788274687b9,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[19]
+      value: 
+      objectReference: {fileID: 11400000, guid: d5c2f4dcb7cd2844caa95f4de7988277,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[20]
+      value: 
+      objectReference: {fileID: 11400000, guid: f00f62527dbc60b41b19bec9b7d8c8d7,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[21]
+      value: 
+      objectReference: {fileID: 11400000, guid: f3c87d6fca69cf442b2df403f11c6d03,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[22]
+      value: 
+      objectReference: {fileID: 11400000, guid: af396a97595d2534e985d0f061aa95c2,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[23]
+      value: 
+      objectReference: {fileID: 11400000, guid: a0dd3bd9d75145945846a6995e2826e5,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[24]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4e5a67949341f6948b0b878cfc00685d,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[25]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8191cebb25aff8a43b5019a5008997e5,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[26]
+      value: 
+      objectReference: {fileID: 11400000, guid: f72681222cd645b4481dc924a538ed52,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[27]
+      value: 
+      objectReference: {fileID: 11400000, guid: b9c0bac1ee93edb43be2939ab11bb6ce,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[28]
+      value: 
+      objectReference: {fileID: 11400000, guid: be87a750ffaea5449b099ba0ff8f37ad,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[29]
+      value: 
+      objectReference: {fileID: 11400000, guid: f1a44ea7a7c32144fb844da934154f5b,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[30]
+      value: 
+      objectReference: {fileID: 11400000, guid: 110eb1b9a960b5c47ac1dd1ad5212a43,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[31]
+      value: 
+      objectReference: {fileID: 11400000, guid: 12a4479b477863240b6b5cd307ef0d7c,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[32]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9603e5d82b253e047bd1223165333adf,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[33]
+      value: 
+      objectReference: {fileID: 11400000, guid: fa20b33f1a5926a4189556684f51989d,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[34]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d3f923c7a617c8428c84ce0eb5021a7,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[35]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e5accb5920efcf4198100bfdc8fed69,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[36]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a59815db082444458b4e9f7383cfabe,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: unlockedAtStartDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: unlockedAtStartDialogue.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 418a773f702b8484192f4ea59e221140,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: unlockedAtStartDialogue.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9372b93fa3cb3e740ac73d1426c9ae1a,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: unlockedAtStartDialogue.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 97aabcdece9161347b22ada26a1df56b,
+        type: 2}
     - target: {fileID: 9043732276702932915, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: m_Pivot.x

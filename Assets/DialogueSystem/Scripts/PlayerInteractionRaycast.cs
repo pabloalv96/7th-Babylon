@@ -32,14 +32,9 @@ public class PlayerInteractionRaycast : MonoBehaviour
     [HideInInspector] public bool isBreakable;
 
     [SerializeField] private GameObject lookSinObject;
-    //[SerializeField] private TextMeshProUGUI checkInventoryIndicator;
 
-    //[SerializeField] private float inventoryIndicatorDisplayTime = 7.5f;
-    //private float inventoryIndicatorDisplayTimeReset;
-
-    //[SerializeField] private bool displayInventoryIndicator;
-
-    //[SerializeField] private AudioSource audioSource;
+    [SerializeField] private TextPopUp popUpText;
+   
 
 
     private DoorActivator doorActivator;
@@ -167,6 +162,14 @@ public class PlayerInteractionRaycast : MonoBehaviour
         {
             playerInfoController.AffectStatValues(item.statsToEffectOnCollectionList);
         }
+
+
+        popUpText.popUpText.text = "New Item. Press Q to Check Your Inventory";
+
+        popUpText.popUpIndicator = true;
+
+
+        popUpText.DisplayPopUp();
 
         //if (audioSource.isPlaying)
         //{
@@ -509,35 +512,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
         yield return null;
     }
 
-    //public IEnumerator CheckInventoryIndicator()
-    //{
-    //    if (displayInventoryIndicator)
-    //    {
-    //        checkInventoryIndicator.enabled = true;
-    //        inventoryIndicatorDisplayTime -= Time.deltaTime;
-
-    //        if (inventoryIndicatorDisplayTime >= inventoryIndicatorDisplayTimeReset - 2f)
-    //        {
-    //            checkInventoryIndicator.alpha = Mathf.Lerp(0f, 1f, inventoryIndicatorDisplayTimeReset - inventoryIndicatorDisplayTime);
-
-    //        }
-
-    //        if (inventoryIndicatorDisplayTime <= 2f)
-    //        {
-    //            checkInventoryIndicator.alpha = Mathf.Lerp(0f, 1f, inventoryIndicatorDisplayTime);
-    //        }
-
-    //        if (inventoryIndicatorDisplayTime <= 0f)
-    //        {
-
-    //            displayInventoryIndicator = false;
-    //            inventoryIndicatorDisplayTime = inventoryIndicatorDisplayTimeReset;
-    //            displayInventoryIndicator = false;
-    //        }
-    //    }
-
-    //    yield return null;
-    //}
+   
 }
 
 
