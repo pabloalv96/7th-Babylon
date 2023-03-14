@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class DontDestroy : MonoBehaviour
 {
+    public string dontDestroyTag;
     void Awake()
     {
-        GameObject[] obj = GameObject.FindGameObjectsWithTag("Music");
+        GameObject[] obj = GameObject.FindGameObjectsWithTag(dontDestroyTag);
         if (obj.Length > 1)
         {
             Destroy(this.gameObject);

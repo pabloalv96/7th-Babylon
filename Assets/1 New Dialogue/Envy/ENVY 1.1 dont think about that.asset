@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: ENVY 1.1 dont think about that
+  m_EditorClassIdentifier: 
+  dialogue: "Oops silly me. You aren\u2019t supposed to think about that. Forget
+    I asked.\r"
+  toOtherNPC: 0
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: d4ba84f880d473b4a91753e60a2d0d7e, type: 2}
+  - {fileID: 11400000, guid: d0954b01c271f1949baf581ed377b925, type: 2}
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 1
+  playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}

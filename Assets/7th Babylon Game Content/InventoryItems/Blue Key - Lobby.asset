@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Blue Key - Lobby
   m_EditorClassIdentifier: 
   prefab: {fileID: 548598303330476114, guid: 57a8d83d50b48aa4db611dc13979ffbc, type: 3}
-  itemName: Blue Key
+  itemName: Lobby Key
   numCarried: 0
   maxNumCarried: 1
   canCollect: 0
+  canConsume: 0
   relatedQuests: []
-  statsToEffectList: []
+  statsToEffectOnCollectionList: []
+  statsToEffectOnConsumptionList: []

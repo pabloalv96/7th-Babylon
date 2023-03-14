@@ -16,8 +16,8 @@ MonoBehaviour:
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
   isHiddenFromUI: 1
-  questStarted: 0
-  questEnded: 0
+  questStarted: 1
+  questEnded: 1
   isRepeatable: 0
   questID: Inspect Greek Figurine
   questDescription: 
@@ -29,7 +29,7 @@ MonoBehaviour:
     questDialogueOptions:
     - questDialogueOption: {fileID: 11400000, guid: 6da56407b7bc1f8468c9b57479e93262,
         type: 2}
-      dialogueNPCRecipient: {fileID: 11400000, guid: c8a6958657381ba47af35ec2c016ed5d,
+      dialogueNPCRecipient: {fileID: 11400000, guid: 297d4c8b923bfe345bee4e5fc9a10f59,
         type: 2}
     childrenQuests: []
   outcome:

@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue: Unlock the door?
   toOtherNPC: 0
   requiresResponse: 1
-  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 14aae506e8c9eac4e917eebb0fbfda5e, type: 2}
   playerResponses:
   - {fileID: 0}
   limitedTime: 0
@@ -29,6 +29,11 @@ MonoBehaviour:
   conditionalEvents: []
   relatedQuests: []
   itemsToGive: []
-  itemsToTake: []
+  itemsToTake:
+  - requiredAmount: 0
+    item: {fileID: 0}
+    requiredAmountCollected: 0
+    questCompleted: 0
   newStartingDialogue: {fileID: 0}
   statsToEffectList: []
+  designatedNPC: {fileID: 0}

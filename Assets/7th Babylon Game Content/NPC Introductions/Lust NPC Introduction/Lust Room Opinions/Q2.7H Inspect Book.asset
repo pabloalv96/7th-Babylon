@@ -16,8 +16,8 @@ MonoBehaviour:
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
   isHiddenFromUI: 1
-  questStarted: 0
-  questEnded: 0
+  questStarted: 1
+  questEnded: 1
   isRepeatable: 0
   questID: Inspect Book
   questDescription: 
@@ -26,7 +26,11 @@ MonoBehaviour:
   objective:
     objectiveType: 1
     questItems: []
-    questDialogueOptions: []
+    questDialogueOptions:
+    - questDialogueOption: {fileID: 11400000, guid: ec3cf2f0e9aaada4ea5752f1866fc3d4,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: 297d4c8b923bfe345bee4e5fc9a10f59,
+        type: 2}
     childrenQuests: []
   outcome:
     questsToUnlock: []

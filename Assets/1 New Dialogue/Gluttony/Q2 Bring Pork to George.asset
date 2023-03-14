@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
+  m_Name: Q2 Bring Pork to George
+  m_EditorClassIdentifier: 
+  questManager: {fileID: 0}
+  playerDialogue: {fileID: 0}
+  environmentalChanges: {fileID: 0}
+  isHiddenFromUI: 0
+  questStarted: 0
+  questEnded: 0
+  isRepeatable: 0
+  questID: give pork to george
+  questDescription: Give the Pork to George
+  questActivation:
+    questsToLock: []
+  objective:
+    objectiveType: 2
+    questItems:
+    - requiredAmount: 1
+      item: {fileID: 11400000, guid: 8b0f6a6edeceb2d4f86866f8531c0e9f, type: 2}
+      requiredAmountCollected: 0
+      questCompleted: 0
+    questDialogueOptions:
+    - questDialogueOption: {fileID: 11400000, guid: b1dcb049641a1474087a89c1c4cccaba,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: 2288c6aec87f7674b817aecbd67a0d34,
+        type: 2}
+    childrenQuests: []
+  outcome:
+    questsToUnlock: []
+    questsToLock: []
+    statsToEffectList: []

@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
+  m_Name: Jessica - New Lust NPC
+  m_EditorClassIdentifier: 
+  npcName: Jessica
+  npcGender: Female
+  npcProfileID: Lust
+  npcDialogue:
+    greetingDialogue:
+    - {fileID: 11400000, guid: 78426f8c32ef20c409e056f50b1fcef1, type: 2}
+    goodbyeDialogue: []
+    changeTopicDialogue: []
+    nothingToSayDialogue: {fileID: 0}
+    dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: 5adc2fa74a230cd4fac40599f53370af,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: ecfdc1cc1ca2cbd4dbcb70153cb83206, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 283baf057786d0649b92ec2d2c4b9cfc,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 536b8b8ea675afc4cba6eec65020e738, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 333ed10987d54e94f8e4b1a89971efe4,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 5cc56493c77520e4a9831e7edbe66472, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 486467e112b8c3e409b4835d3b144c61,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 5cc56493c77520e4a9831e7edbe66472, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 47e47aa1e24292b4fb259d380a3b640a,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 95e7dd15766e2814e8e5c159d6d6a2d4, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: c752707e3b2cfcf44accf84cc6975161,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 6c91d66e0b62078479e477d3fc6ff578, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: b89515789f0f56e4fa2a14f4264debfb,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 5239aeca908e8424b996e8d0404bc67d, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 4543eb43c500a1a4ca5f55a96a3f8299,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 770cd6424a6ed62468d6162e5cd8f33c, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: ecf2a04592b69824da2970e883a8691f,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 8b363f3f16dff02438cf86c182f3767d, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: d9be5d0cf26df3b45a71ed40f9c4c057,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: d0ebab113a8acfa4b9ef43fbce1d7c46, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 08abbe2abacc8e54a9d6dd15409ec7a4,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 1d4ce5ad83c0bc349890b160c612877b, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 9d41dabb1c62f0a43ac44af4f342fef1,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 00fe272afe94ac0498b080e206b462f6, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: ec3cf2f0e9aaada4ea5752f1866fc3d4,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: a726b4bbe9fc58e4daa7969a199319cb, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 6da56407b7bc1f8468c9b57479e93262,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: eed289604e0e0b84790d123127f73dea, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 4b2e6305e6f4457459228469f6a97fc2,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 4ad6d52ea940ccf449dd3ba8fbb8f6c6, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: b274a77bf28a3d844a7591a84936de7e,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 816f47ef62a36fd468c54b91a37b35e2, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 582696f45af5aad40bc5119faab083b5,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 816f47ef62a36fd468c54b91a37b35e2, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: bf1906f39e132e244922e73244e8afca,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 6cdea94ba493e3240aebc225e4fc8cf1, type: 2}

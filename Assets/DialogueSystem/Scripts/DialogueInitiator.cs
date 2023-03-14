@@ -52,7 +52,7 @@ public class DialogueInitiator : MonoBehaviour
                 playerDialogueChoices.Add(dialogueMemory.playerResponse);
             }
 
-            if (currentNPC.startingDialogue != null && !usedDialogue.Contains(currentNPC.startingDialogue))
+            if (currentNPC.startingDialogue != null && (!usedDialogue.Contains(currentNPC.startingDialogue) || currentNPC.startingDialogue.isRepeatable))
             {
                 NPCInitiatedDialogue(npcInfo, currentNPC.startingDialogue);
                 return;

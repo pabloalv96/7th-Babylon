@@ -1,7 +1,7 @@
-//Developed by Tom Kail at Inkle
-// Released under the MIT Licence as held at https://opensource.org/licenses/MIT
+////Developed by Tom Kail at Inkle
+//// Released under the MIT Licence as held at https://opensource.org/licenses/MIT
 
-// Must be placed within a folder named "Editor"
+//// Must be placed within a folder named "Editor"
 //using System;
 //using System.Reflection;
 //using System.Collections;
@@ -10,11 +10,11 @@
 //using UnityEditor;
 //using Object = UnityEngine.Object;
 
-/// < summary >
-/// Extends how ScriptableObject object references are displayed in the inspector
-/// Shows you all values under the object reference
-/// Also provides a button to create a new ScriptableObject if property is null.
-/// </ summary >
+/////< summary >
+///// Extends how ScriptableObject object references are displayed in the inspector
+///// Shows you all values under the object reference
+///// Also provides a button to create a new ScriptableObject if property is null.
+////</ summary >
 //[CustomPropertyDrawer(typeof(ScriptableObject), true)]
 //public class ExtendedScriptableObjectDrawer : PropertyDrawer
 //{
@@ -43,10 +43,10 @@
 //                }
 //                while (prop.NextVisible(false));
 //            }
-//            Add a tiny bit of height if open for the background
+//            //Add a tiny bit of height if open for the background
 
-//           totalHeight += EditorGUIUtility.standardVerticalSpacing;
-//           serializedObject.Dispose();
+//            totalHeight += EditorGUIUtility.standardVerticalSpacing;
+//            serializedObject.Dispose();
 //        }
 //        return totalHeight;
 //    }
@@ -82,10 +82,10 @@
 //        }
 //        else
 //        {
-//            So yeah having a foldout look like a label is a weird hack
-//            but both code paths seem to need to be a foldout or
-//            the object field control goes weird when the codepath changes.
-//             I guess because foldout is an interactable control of its own and throws off the controlID?
+//            //So yeah having a foldout look like a label is a weird hack
+//            //but both code paths seem to need to be a foldout or
+//            //the object field control goes weird when the codepath changes.
+//            // I guess because foldout is an interactable control of its own and throws off the controlID?
 //            foldoutRect.x += 12;
 //            EditorGUI.Foldout(foldoutRect, property.isExpanded, guiContent, true, EditorStyles.label);
 //        }
@@ -109,20 +109,20 @@
 
 //            if (property.isExpanded)
 //            {
-//                Draw a background that shows us clearly which fields are part of the ScriptableObject
+//                //Draw a background that shows us clearly which fields are part of the ScriptableObject
 //                GUI.Box(new Rect(0, position.y + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing - 1, Screen.width, position.height - EditorGUIUtility.singleLineHeight - EditorGUIUtility.standardVerticalSpacing), "");
 
 //                EditorGUI.indentLevel++;
 //                SerializedObject serializedObject = new SerializedObject(data);
 
-//                Iterate over all the values and draw them
+//                //Iterate over all the values and draw them
 //                SerializedProperty prop = serializedObject.GetIterator();
 //                float y = position.y + EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
 //                if (prop.NextVisible(true))
 //                {
 //                    do
 //                    {
-//                        Don't bother drawing the class file
+//                        //Don't bother drawing the class file
 //                        if (prop.name == "m_Script") continue;
 //                        float height = EditorGUI.GetPropertyHeight(prop, new GUIContent(prop.displayName), true);
 //                        EditorGUI.PropertyField(new Rect(position.x, y, position.width - buttonWidth, height), prop, true);
@@ -176,10 +176,10 @@
 //        }
 //        else
 //        {
-//            So yeah having a foldout look like a label is a weird hack
-//            but both code paths seem to need to be a foldout or
-//            the object field control goes weird when the codepath changes.
-//             I guess because foldout is an interactable control of its own and throws off the controlID?
+//            //So yeah having a foldout look like a label is a weird hack
+//            //but both code paths seem to need to be a foldout or
+//            //the object field control goes weird when the codepath changes.
+//            // I guess because foldout is an interactable control of its own and throws off the controlID?
 //            foldoutRect.x += 12;
 //            EditorGUI.Foldout(foldoutRect, isExpanded, guiContent, true, EditorStyles.label);
 
@@ -219,18 +219,18 @@
 
 //    static void DrawScriptableObjectChildFields<T>(T objectReferenceValue) where T : ScriptableObject
 //    {
-//        Draw a background that shows us clearly which fields are part of the ScriptableObject
+//        //Draw a background that shows us clearly which fields are part of the ScriptableObject
 //        EditorGUI.indentLevel++;
 //        EditorGUILayout.BeginVertical(GUI.skin.box);
 
 //        var serializedObject = new SerializedObject(objectReferenceValue);
-//        Iterate over all the values and draw them
+//        //Iterate over all the values and draw them
 //        SerializedProperty prop = serializedObject.GetIterator();
 //        if (prop.NextVisible(true))
 //        {
 //            do
 //            {
-//                Don't bother drawing the class file
+//                //Don't bother drawing the class file
 //                if (prop.name == "m_Script") continue;
 //                EditorGUILayout.PropertyField(prop, true);
 //            }
@@ -260,10 +260,10 @@
 //        }
 //        else
 //        {
-//            So yeah having a foldout look like a label is a weird hack
-//            but both code paths seem to need to be a foldout or
-//            the object field control goes weird when the codepath changes.
-//             I guess because foldout is an interactable control of its own and throws off the controlID?
+//            //So yeah having a foldout look like a label is a weird hack
+//            //but both code paths seem to need to be a foldout or
+//            //the object field control goes weird when the codepath changes.
+//            // I guess because foldout is an interactable control of its own and throws off the controlID?
 //            foldoutRect.x += 12;
 //            EditorGUI.Foldout(foldoutRect, isExpanded, guiContent, true, EditorStyles.label);
 
@@ -300,7 +300,7 @@
 //        return objectReferenceValue;
 //    }
 
-//    Creates a new ScriptableObject via the default Save File panel
+//    //Creates a new ScriptableObject via the default Save File panel
 //    static ScriptableObject CreateAssetWithSavePrompt(Type type, string path)
 //    {
 //        path = EditorUtility.SaveFilePanelInProject("Save ScriptableObject", type.Name + ".asset", "asset", "Enter a file name for the ScriptableObject.", path);
