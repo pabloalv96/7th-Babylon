@@ -20,7 +20,7 @@ MonoBehaviour:
   questEnded: 0
   isRepeatable: 0
   questID: Go to the Western Room
-  questDescription: Find the interestomg bedroom
+  questDescription: Enter the room behind Jessica
   questActivation:
     questsToLock: []
   objective:
@@ -29,6 +29,7 @@ MonoBehaviour:
     questDialogueOptions: []
     childrenQuests: []
   outcome:
-    questsToUnlock: []
+    questsToUnlock:
+    - {fileID: 11400000, guid: 8bc07cedf35500a48a9ec42ccd7a1150, type: 2}
     questsToLock: []
     statsToEffectList: []

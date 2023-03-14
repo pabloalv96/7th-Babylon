@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: LUST Greeting
+  m_EditorClassIdentifier: 
+  dialogue: "Hello Darling, I\u2019m Jessica. Ooo you are exactly how I imagined!"
+  toOtherNPC: 0
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses:
+  - {fileID: 11400000, guid: 5adc2fa74a230cd4fac40599f53370af, type: 2}
+  - {fileID: 11400000, guid: 283baf057786d0649b92ec2d2c4b9cfc, type: 2}
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 0
+  hasBeenSeen: 0
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}

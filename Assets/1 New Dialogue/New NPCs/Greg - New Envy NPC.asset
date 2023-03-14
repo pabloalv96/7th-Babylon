@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
+  m_Name: Greg - New Envy NPC
+  m_EditorClassIdentifier: 
+  npcName: Greg
+  npcGender: Male
+  npcProfileID: Envy
+  npcDialogue:
+    greetingDialogue:
+    - {fileID: 11400000, guid: 9bf5b5ff7c8c14b40b80f6294f1f67ff, type: 2}
+    goodbyeDialogue: []
+    changeTopicDialogue: []
+    nothingToSayDialogue: {fileID: 0}
+    dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: 91422a08b875cab40bf97e08e159ea89,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 7bd8b0993bacb4546a17acf4cceedf85, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 2811d3e52e764fe4eab98d2e73d12103,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: e03c6a9c0d398c54d872867675f71cb9, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: d4ba84f880d473b4a91753e60a2d0d7e,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 71197539d2ae8cb4682992d8d34a9f98, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: d0954b01c271f1949baf581ed377b925,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 7d687944ad3ff334a81a64142c304a7d, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: c2870e83fa8232d44a42beace5ab96c5,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: af14aec8b730a0349ba0e6c6d4c40af8, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: b1afc53f972019f46930440c8320342a,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: ec791bd20ee937a47b910af2bbee0793, type: 2}

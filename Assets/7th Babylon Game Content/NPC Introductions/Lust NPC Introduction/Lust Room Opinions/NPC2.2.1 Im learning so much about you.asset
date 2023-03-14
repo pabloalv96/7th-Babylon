@@ -19,15 +19,18 @@ MonoBehaviour:
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
-  playerCanLeaveDialogue: 1
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: fa20b33f1a5926a4189556684f51989d, type: 2}
   itemsToGive: []
   itemsToTake: []
-  newStartingDialogue: {fileID: 0}
+  newStartingDialogue: {fileID: 11400000, guid: c42fedf92ce7315479d84f85caa0324e,
+    type: 2}
   statsToEffectList: []
+  designatedNPC: {fileID: 0}

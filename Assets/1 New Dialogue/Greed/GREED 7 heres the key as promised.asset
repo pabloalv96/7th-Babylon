@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: GREED 7 heres the key as promised
+  m_EditorClassIdentifier: 
+  dialogue: And as promised, here is that key. Good doing business with you.
+  toOtherNPC: 0
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
+  playerResponses: []
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 1
+  hasBeenSeen: 0
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
+  relatedQuests: []
+  itemsToGive:
+  - requiredAmount: 1
+    item: {fileID: 11400000, guid: a4e4d5c651acf904d9173cbd68a7e1a7, type: 2}
+    requiredAmountCollected: 0
+    questCompleted: 0
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}

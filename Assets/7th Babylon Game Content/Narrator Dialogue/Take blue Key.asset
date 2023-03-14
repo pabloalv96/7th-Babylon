@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: Take blue Key
+  m_EditorClassIdentifier: 
+  dialogue: 
+  toOtherNPC: 0
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
+  playerResponses: []
+  limitedTime: 1
+  timeLimit: 0.5
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 0
+  hasBeenSeen: 0
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake:
+  - requiredAmount: 1
+    item: {fileID: 11400000, guid: 5b29ceffb48fe804bb2d0d30e7d36765, type: 2}
+    requiredAmountCollected: 0
+    questCompleted: 0
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}

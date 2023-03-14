@@ -28,8 +28,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b2e6305e6f4457459228469f6a97fc2, type: 2}
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
-  playerCanLeaveDialogue: 1
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
@@ -40,3 +40,4 @@ MonoBehaviour:
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
   statsToEffectList: []
+  designatedNPC: {fileID: 0}

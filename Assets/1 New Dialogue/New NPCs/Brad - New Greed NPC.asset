@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
+  m_Name: Brad - New Greed NPC
+  m_EditorClassIdentifier: 
+  npcName: Brad
+  npcGender: Male
+  npcProfileID: Greed
+  npcDialogue:
+    greetingDialogue:
+    - {fileID: 11400000, guid: 5bd0883dfa7d45e488a977c1d1104d90, type: 2}
+    goodbyeDialogue: []
+    changeTopicDialogue: []
+    nothingToSayDialogue: {fileID: 0}
+    dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: d5729a9957e1f2043becf695dc6bbc66,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: a3b67b7485f805c409a90e8ca097e427, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: cc05cb86069fa094fad3d17b66d57b92,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 5ea1f7e494358c54593a0a813effb9b7, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 37b7986f6003de840ac8e698be601adf,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: d5de3f2c625cc8040a0ee7cfd4300af8, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: e85148e7b0c72a647b57e2a6615d8cab,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: fd00f043c5cff2740b146ce204fb5572, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 36092796558af6c4f9dd221c54a4a50e,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: 64ca1748f62f43a45beb22cbfd3ac6c2, type: 2}

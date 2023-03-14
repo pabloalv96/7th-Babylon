@@ -16,12 +16,12 @@ MonoBehaviour:
     in that room while I was looking around. Maybe you can find what it opens.
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: b40887a5c03484948ad3b600cf752d2c, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
-  playerCanLeaveDialogue: 1
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
@@ -35,3 +35,5 @@ MonoBehaviour:
     questCompleted: 0
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}
