@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
-  m_Name: Mary - Pride
+  m_Name: Final Pride - Dialogue
   m_EditorClassIdentifier: 
   npcName: Mary
   npcGender: Female
-  npcProfileID: PrideNPC
+  npcProfileID: FinalPrideNPC
   npcDialogue:
-    greetingDialogue:
-    - {fileID: 11400000, guid: 5643f81c77029c6489579d3b932dc28e, type: 2}
-    goodbyeDialogue:
-    - {fileID: 11400000, guid: 05dc554301d0b7e41a39c59c1d8d7069, type: 2}
-    changeTopicDialogue:
-    - {fileID: 11400000, guid: b6e6174072e15484199115d5b8477b8a, type: 2}
-    nothingToSayDialogue: {fileID: 11400000, guid: b6e6174072e15484199115d5b8477b8a,
-      type: 2}
+    greetingDialogue: []
+    goodbyeDialogue: []
+    changeTopicDialogue: []
+    nothingToSayDialogue: {fileID: 0}
     dialogueConnections: []
