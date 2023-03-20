@@ -24,6 +24,15 @@ public class QuestManagerInspectorEditor : Editor
             {
                 quest.questStarted = false;
                 quest.questEnded = false;
+
+                if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+                {
+                    foreach(OJQuestItemObjective item in quest.objective.questItems)
+                    {
+                        item.questCompleted = false;
+                        item.requiredAmountCollected = false;
+                    }
+                }
             }
 
             foreach (PlayerDialogueOption dialogueOption in questManager.lockedAtStartDialogue)

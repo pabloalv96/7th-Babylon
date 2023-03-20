@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30f8eed4d283fe49aaaf5b2d55ea18c, type: 3}
+  m_Name: P1.1 Yes (give invitation)
+  m_EditorClassIdentifier: 
+  dialogue: "Yes [Give Invitation]\r"
+  statsToEffectList: []
+  isResponseToNPCDialogue: 0
+  isGoodbyeOption: 0
+  isChangeTopicOption: 0
+  isLocked: 1
+  conditionalEvents: []
+  isQuestDialogue: 1
+  completeRelatedQuest: 1
+  relatedQuests:
+  - {fileID: 11400000, guid: 141c064e1e81db948968ce3ca3af54fd, type: 2}
+  itemsToGive:
+  - requiredAmount: 1
+    item: {fileID: 11400000, guid: 19136f151d52296428bfc076489e9f84, type: 2}
+    requiredAmountCollected: 0
+    questCompleted: 0
+  itemsToRecieve: []

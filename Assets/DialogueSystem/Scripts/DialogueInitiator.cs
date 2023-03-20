@@ -29,6 +29,14 @@ public class DialogueInitiator : MonoBehaviour
         //Set NPC
         //Set greeting text
         //Set player options
+        if (dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC)
+        {
+            dialogueSystem.pausedSubtitleDialogue = dialogueSystem.npcDialogue;
+            dialogueSystem.pausedSubtitleNPC = dialogueSystem.npc;
+
+            dialogueSystem.LeaveDialogue();
+        }
+
         dialogueSystem.inDialogue = true;
 
         dialogueSystem.enabled = true;
@@ -40,6 +48,8 @@ public class DialogueInitiator : MonoBehaviour
 
         if (playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>() && playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().npcInfo == npcInfo)
         {
+           
+
             NPCBrain currentNPC = playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>();
 
             List<NPCDialogueOption> usedDialogue = new List<NPCDialogueOption>();
@@ -96,6 +106,14 @@ public class DialogueInitiator : MonoBehaviour
 
     public void NPCInitiatedDialogue(NPCInfo npc, NPCDialogueOption startingDialogue)
     {
+        //if (dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC)
+        //{
+        //    dialogueSystem.pausedSubtitleDialogue = dialogueSystem.npcDialogue;
+        //    dialogueSystem.pausedSubtitleNPC = dialogueSystem.npc;
+
+        //    dialogueSystem.LeaveDialogue();
+        //}
+
         if (startingDialogue.toOtherNPC)
         {
             BeginSubtitleSequence(npc, startingDialogue);

@@ -22,6 +22,8 @@ public class DialogueListSystem : MonoBehaviour
 
     //Dialogue to display in npc text box
     public NPCDialogueOption npcDialogue;
+    public NPCDialogueOption pausedSubtitleDialogue;
+    public NPCInfo pausedSubtitleNPC;
 
     //Dialogue to display in the player text box
     public PlayerDialogueOption selectedDialogueOption;
@@ -324,6 +326,7 @@ public class DialogueListSystem : MonoBehaviour
 
         if (!npcDialogue.toOtherNPC)
         {
+            listDialoguePanel.SetActive(true);
 
             if (npcDialogue.requiresResponse)
             {
@@ -623,7 +626,7 @@ public class DialogueListSystem : MonoBehaviour
     // Close Dialogue
     public void LeaveDialogue()
     {
-
+        
         DestroyOldDialogueOptions();
         dialogueUI.SetActive(false);
         inDialogue = false;
@@ -638,7 +641,14 @@ public class DialogueListSystem : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
 
-        enabled = false;
+        if (pausedSubtitleDialogue == null)
+        {
+            enabled = false;
+        }
+        else
+        {
+            FindObjectOfType<DialogueInitiator>().BeginSubtitleSequence(pausedSubtitleNPC, pausedSubtitleDialogue);
+        }
     }
 
     // Return to initial dialogue options

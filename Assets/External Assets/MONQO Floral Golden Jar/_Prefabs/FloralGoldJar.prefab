@@ -47,22 +47,22 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.46967
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.46967
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.46967
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.422
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,
         type: 3}
@@ -72,7 +72,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.067
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,
         type: 3}
@@ -109,6 +109,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: e1e070a13571dd6429b90757339028f4,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -143,20 +148,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &4112223442683579312
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5345878832312160956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8314571269056883277, guid: e1e070a13571dd6429b90757339028f4, type: 3}
 --- !u!114 &3865745248677156042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +169,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 10
+  brokenParts: 7
 --- !u!114 &8513231848785887116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +187,19 @@ MonoBehaviour:
     statValue: 0
   lookTimer: 0
   isLooking: 0
+--- !u!65 &2021092063
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345878832312160956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3862057, y: 1.3862062, z: 2.2526424}
+  m_Center: {x: -0.0000038146973, y: -0.000007688999, z: 1.1344241}
 --- !u!4 &8965322849072570543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e1e070a13571dd6429b90757339028f4,

@@ -9,7 +9,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 {
 
     [SerializeField] private KeyCode selectInput = KeyCode.E;
-    [SerializeField] private KeyCode consumeInput = KeyCode.C;
+    public KeyCode consumeInput = KeyCode.C;
     public KeyCode breakInput = KeyCode.F;
 
     [SerializeField] private float reachDistance = 5f;
@@ -80,7 +80,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
         consumeKeyPromptText.text = consumeInput.ToString();
         interactionKeyPromptText.text = selectInput.ToString();
-        breakKeyPromptText.text = breakInput.ToString();
+        //breakKeyPromptText.text = consumeInput.ToString();
     }
 
     private void Update()
@@ -164,7 +164,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
         }
 
 
-        popUpText.popUpText.text = "New Item. Press Q to Check Your Inventory";
+        popUpText.popUpText.text = item.itemName + " Collected! \n Press 'Q' to Check Your Inventory";
 
         popUpText.popUpIndicator = true;
 
@@ -330,7 +330,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 selectedObject = hit.transform.gameObject;
                 breakPromptIndicator.SetActive(true);
                 interactionAimIndicator.color = Color.red;
-                breakPromptText.text = "Break";
+                consumePromptText.text = "Break";
             }
             else
             {
@@ -491,8 +491,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             //Debug.Log("Did not Hit");
             selectedObject = null;
-            interactPromptIndicator.SetActive(false);
-            consumePromptIndicator.SetActive(false);
+            //interactPromptIndicator.SetActive(false);
+            breakPromptIndicator.SetActive(false);
 
             interactionAimIndicator.color = Color.white;
         }

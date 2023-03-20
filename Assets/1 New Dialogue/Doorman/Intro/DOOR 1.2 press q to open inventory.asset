@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
+  m_Name: DOOR 1.2 press q to open inventory
+  m_EditorClassIdentifier: 
+  dialogue: "Press \u2018Q\u2019 to open and close your 'Inventory' and 'Tasks'.\nIf
+    you don\u2019t have the invitation I must ask you to leave."
+  toOtherNPC: 0
+  requiresResponse: 0
+  continuedDialogue: {fileID: 11400000, guid: ff7f44993c5c3eb4a8f119ecf8e0d346, type: 2}
+  playerResponses: []
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 0
+  hasBeenSeen: 0
+  endOfConversation: 0
+  changeOfTopic: 0
+  conditionalEvents: []
+  relatedQuests:
+  - {fileID: 11400000, guid: 141c064e1e81db948968ce3ca3af54fd, type: 2}
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}
