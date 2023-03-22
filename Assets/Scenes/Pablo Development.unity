@@ -303,6 +303,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2111583469}
+        m_TargetAssemblyTypeName: SinTimer, Assembly-CSharp
+        m_MethodName: CheckTime
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 38980208}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &38980210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -408,6 +422,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: Bowl
   brokenParts: 7
 --- !u!114 &66756805
 MonoBehaviour:
@@ -562,6 +577,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1001 &77618835
 PrefabInstance:
@@ -727,6 +743,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &89672870
 GameObject:
@@ -1019,6 +1036,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!54 &111835642
 Rigidbody:
@@ -1074,90 +1092,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1337437396713662998}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &148943661
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 984695786}
-    m_Modifications:
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 81
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.19999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.099999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0134999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10.003999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.5220001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.4990015
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.6538826
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.2691423
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.6538826
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.2691423
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 315.255
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5222563352390434646, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6133191205193798038, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-        type: 3}
-      propertyPath: m_Name
-      value: Invitation
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 938b22dcd9d490b4fa3e355e45ad7d5d, type: 3}
 --- !u!1001 &151059170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1323,6 +1257,149 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 730375136164759458d97b67e1204a21, type: 3}
+--- !u!1 &152295832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152295837}
+  - component: {fileID: 152295836}
+  - component: {fileID: 152295835}
+  - component: {fileID: 152295834}
+  - component: {fileID: 152295833}
+  m_Layer: 0
+  m_Name: Intro Subtitles Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &152295833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152295832}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffbab4418585404ab1868d82c750b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedQuests: []
+  interactionObjectName: 
+  questInteractionDialogue: []
+  itemInteractionsList: []
+  conditionalEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8556563643081325000}
+        m_TargetAssemblyTypeName: DialogueInitiator, Assembly-CSharp
+        m_MethodName: TriggerNPCDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1573141351}
+          m_ObjectArgumentAssemblyTypeName: NPCBrain, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 152295832}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &152295834
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152295832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &152295835
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152295832}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1fc280f473c2e174c976e2bceeb39096, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &152295836
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152295832}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &152295837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152295832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.16, y: 0.872, z: -29.86}
+  m_LocalScale: {x: 4.75, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 33
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &152914058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1431,7 +1508,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 25, y: 225}
+  m_AnchoredPosition: {x: 25, y: 125}
   m_SizeDelta: {x: 100, y: 120}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &162134731
@@ -1744,7 +1821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &192397777
 Transform:
   m_ObjectHideFlags: 0
@@ -2277,6 +2354,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &309643120 stripped
 GameObject:
@@ -2914,6 +2992,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &348051668 stripped
 GameObject:
@@ -2956,6 +3035,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!4 &350603574 stripped
 Transform:
@@ -3218,6 +3298,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &373481893 stripped
 GameObject:
@@ -3260,6 +3341,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1001 &390308236
 PrefabInstance:
@@ -3659,6 +3741,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!114 &452331636
 MonoBehaviour:
@@ -4371,6 +4454,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &521123661
 GameObject:
@@ -4633,6 +4717,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &566042757 stripped
 GameObject:
@@ -4736,6 +4821,20 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2111583469}
+        m_TargetAssemblyTypeName: SinTimer, Assembly-CSharp
+        m_MethodName: CheckTime
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 566718702}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!65 &566718704
 BoxCollider:
@@ -4889,6 +4988,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &587750721 stripped
 GameObject:
@@ -4931,6 +5031,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!114 &589077215
 MonoBehaviour:
@@ -5135,20 +5236,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8556563643081325000}
-        m_TargetAssemblyTypeName: DialogueInitiator, Assembly-CSharp
-        m_MethodName: TriggerNPCDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1220559162}
-          m_ObjectArgumentAssemblyTypeName: NPCBrain, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!65 &599117928
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5220,7 +5307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599117926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.16, y: 0.872, z: -25.2}
+  m_LocalPosition: {x: -12.16, y: 0.872, z: -24.72}
   m_LocalScale: {x: 4.75, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5576,30 +5663,6 @@ MonoBehaviour:
     statValue: 0
   lookTimer: 0
   isLooking: 0
---- !u!1 &641249831 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4138460264376905096, guid: 328939e18e347d14299df72546721db1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1337437396713662998}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &641249838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641249831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e4831f871e28546b4a0e9ed84b59cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brokenPartsPrefabs:
-  - {fileID: 2139232858}
-  relatedSin:
-  - statName: Wrath
-    statValue: 5
-  brokenParts: 7
 --- !u!1001 &647943402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5823,6 +5886,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &665633558
 GameObject:
@@ -6068,6 +6132,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &687695656
 GameObject:
@@ -6178,8 +6243,7 @@ PrefabInstance:
     - target: {fileID: 1285865174, guid: fbc2595e5e1dc9b4ca6b45ec7ff0ab42, type: 3}
       propertyPath: startingDialogue
       value: 
-      objectReference: {fileID: 11400000, guid: afd99d115324c7a41993d872cbb5fa54,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1064854106437736, guid: fbc2595e5e1dc9b4ca6b45ec7ff0ab42, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6741,6 +6805,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &749222456 stripped
 GameObject:
@@ -7033,6 +7098,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!64 &834964301
 MeshCollider:
@@ -7735,6 +7801,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!4 &918810947 stripped
 Transform:
@@ -8114,6 +8181,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &977443836 stripped
 GameObject:
@@ -8217,6 +8285,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!114 &1014935593
 MonoBehaviour:
@@ -8987,6 +9056,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!65 &1143839987
 BoxCollider:
@@ -9129,6 +9199,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &1166956318 stripped
 GameObject:
@@ -9326,6 +9397,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!54 &1182627675
 Rigidbody:
@@ -9383,6 +9455,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: Bowl
   brokenParts: 7
 --- !u!114 &1186090610
 MonoBehaviour:
@@ -9524,6 +9597,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &1210070801 stripped
 GameObject:
@@ -9620,6 +9694,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!114 &1227026438
 MonoBehaviour:
@@ -9692,6 +9767,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &1243278028
 GameObject:
@@ -10298,6 +10374,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!4 &1343871093 stripped
 Transform:
@@ -10344,6 +10421,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: Glass
   brokenParts: 7
 --- !u!1 &1350118283 stripped
 GameObject:
@@ -10416,6 +10494,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &1356533796
 GameObject:
@@ -10699,6 +10778,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: Bowl
   brokenParts: 7
 --- !u!114 &1377208705
 MonoBehaviour:
@@ -10771,6 +10851,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: Bowl
   brokenParts: 7
 --- !u!114 &1381585519
 MonoBehaviour:
@@ -11021,6 +11102,9 @@ PrefabInstance:
     - {fileID: 1554750480, guid: 11411f9a2f3217b4bbb32f353976dfbd, type: 3}
     - {fileID: 2082716458, guid: 11411f9a2f3217b4bbb32f353976dfbd, type: 3}
     - {fileID: 1137990182, guid: 11411f9a2f3217b4bbb32f353976dfbd, type: 3}
+    - {fileID: 5266003204132888983, guid: 11411f9a2f3217b4bbb32f353976dfbd, type: 3}
+    - {fileID: 7109424152216192330, guid: 11411f9a2f3217b4bbb32f353976dfbd, type: 3}
+    - {fileID: 4009755392531150962, guid: 11411f9a2f3217b4bbb32f353976dfbd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 11411f9a2f3217b4bbb32f353976dfbd, type: 3}
 --- !u!4 &1403184978 stripped
 Transform:
@@ -11721,6 +11805,62 @@ MonoBehaviour:
   conditionalEvents:
   - m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8556563643081325000}
+        m_TargetAssemblyTypeName: DialogueInitiator, Assembly-CSharp
+        m_MethodName: TriggerNPCDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1220559162}
+          m_ObjectArgumentAssemblyTypeName: NPCBrain, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8556563643081325000}
+        m_TargetAssemblyTypeName: DialogueInitiator, Assembly-CSharp
+        m_MethodName: ResetStartingDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1220559162}
+          m_ObjectArgumentAssemblyTypeName: NPCBrain, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1833018568}
+        m_TargetAssemblyTypeName: DialogueListSystem, Assembly-CSharp
+        m_MethodName: ResetPlayerQuestions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2111583469}
+        m_TargetAssemblyTypeName: SinTimer, Assembly-CSharp
+        m_MethodName: CheckTime
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1470516650}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 1512368270}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -11736,6 +11876,20 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 248970335}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1625227513}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -11856,6 +12010,160 @@ MonoBehaviour:
     statValue: 0
   lookTimer: 0
   isLooking: 0
+--- !u!1001 &1472639306
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 711249034}
+    m_Modifications:
+    - target: {fileID: 3865745248677156042, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: objectName
+      value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223442683579312, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -46.995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871941, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_Name
+      value: FloralGoldJar (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.46967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.46967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.46967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.543
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.933
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6, type: 3}
+--- !u!1 &1472639307 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5345878832312160956, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1472639306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1472639308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4112223443246871941, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1472639306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1472639309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472639307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
+--- !u!54 &1472639310
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472639308}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &1473323674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12071,7 +12379,139 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
+--- !u!1001 &1505253077
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 711249034}
+    m_Modifications:
+    - target: {fileID: 3865745248677156042, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: objectName
+      value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223442683579312, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53.43998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.409992
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871938, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112223443246871941, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_Name
+      value: FloralGoldJar (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.46967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.46967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.46967
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.543
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965322849072570543, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.933
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6, type: 3}
+--- !u!1 &1505253078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4112223443246871941, guid: 425c1d4a9cce2a541aa3c2b22b2d4fc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1505253077}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1505253079
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505253078}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1512368270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8732828098174505871, guid: f9941a91c76a3634e857d82704d1371b,
@@ -12804,6 +13244,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1001 &1573141349
 PrefabInstance:
@@ -13316,6 +13757,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1573141349}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1573141351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1285865174, guid: fbc2595e5e1dc9b4ca6b45ec7ff0ab42,
+    type: 3}
+  m_PrefabInstance: {fileID: 1573141349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc2c929de5246694495b2a9c3a6da112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1580489704 stripped
 MeshCollider:
   m_CorrespondingSourceObject: {fileID: 7623430401018703476, guid: 328939e18e347d14299df72546721db1,
@@ -13538,7 +13991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1625227514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13593,6 +14046,20 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2111583469}
+        m_TargetAssemblyTypeName: SinTimer, Assembly-CSharp
+        m_MethodName: CheckTime
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1625227513}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13939,6 +14406,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!114 &1647598574
 MonoBehaviour:
@@ -14134,6 +14602,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!4 &1682866048 stripped
 Transform:
@@ -15112,13 +15581,12 @@ PrefabInstance:
     - target: {fileID: 741107121, guid: 1d3b1a1513de66247974634911345b98, type: 3}
       propertyPath: npcInfo
       value: 
-      objectReference: {fileID: 11400000, guid: b5cc8d88aed5d5c4d89a43fdf61ef58f,
+      objectReference: {fileID: 11400000, guid: a40b1689664b9d1439634a1ed69cd56e,
         type: 2}
     - target: {fileID: 741107121, guid: 1d3b1a1513de66247974634911345b98, type: 3}
       propertyPath: startingDialogue
       value: 
-      objectReference: {fileID: 11400000, guid: 8bac0be45908fad4eb9795d14f9ab562,
-        type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 741107122, guid: 1d3b1a1513de66247974634911345b98, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1d3b1a1513de66247974634911345b98, type: 3}
@@ -15306,6 +15774,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &1899465648 stripped
 GameObject:
@@ -15471,6 +15940,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: Bowl
   brokenParts: 7
 --- !u!114 &1906032850
 MonoBehaviour:
@@ -15571,6 +16041,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &1919660453
 GameObject:
@@ -16261,6 +16732,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!4 &1981624606 stripped
 Transform:
@@ -16802,6 +17274,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!54 &2045984803
 Rigidbody:
@@ -17088,6 +17561,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!114 &2078537955 stripped
 MonoBehaviour:
@@ -17505,43 +17979,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.5, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2111141961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111141957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d163b3e3e1954a428d968c241ee0488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueFromWorld: {fileID: 11400000, guid: 25cecc35bf01eb640a3c9638349066a9, type: 2}
-  narrator: {fileID: 11400000, guid: 5714d22b24469b3478395fe452907447, type: 2}
---- !u!114 &2111141964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2111141957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0e4831f871e28546b4a0e9ed84b59cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brokenPartsPrefabs:
-  - {fileID: 7245308033377984828, guid: dceeea324452dd94f8d1f64d3496df7f, type: 3}
-  - {fileID: 7245308033377984828, guid: dceeea324452dd94f8d1f64d3496df7f, type: 3}
-  - {fileID: 7245308033377984828, guid: dceeea324452dd94f8d1f64d3496df7f, type: 3}
-  - {fileID: 7245308033377984828, guid: dceeea324452dd94f8d1f64d3496df7f, type: 3}
-  - {fileID: 7245308033377984828, guid: dceeea324452dd94f8d1f64d3496df7f, type: 3}
-  - {fileID: 7245308033377984828, guid: dceeea324452dd94f8d1f64d3496df7f, type: 3}
-  relatedSin:
-  - statName: Wrath
-    statValue: 10
-  brokenParts: 7
 --- !u!1 &2111583468
 GameObject:
   m_ObjectHideFlags: 0
@@ -17593,6 +18030,21 @@ MonoBehaviour:
     pridePoints: 40
     slothPoints: 40
     timeCheckpoint: {fileID: 1246220251}
+  - minTime: 900
+    maxTime: 1500
+    pridePoints: 40
+    slothPoints: 40
+    timeCheckpoint: {fileID: 1470516650}
+  - minTime: 1080
+    maxTime: 1680
+    pridePoints: 40
+    slothPoints: 40
+    timeCheckpoint: {fileID: 566718702}
+  - minTime: 1200
+    maxTime: 1800
+    pridePoints: 40
+    slothPoints: 40
+    timeCheckpoint: {fileID: 38980208}
 --- !u!4 &2111583470
 Transform:
   m_ObjectHideFlags: 0
@@ -17861,6 +18313,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!54 &2128802439
 Rigidbody:
@@ -17930,12 +18383,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8556563643081324997}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2139232858 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6133191205193798038, guid: 938b22dcd9d490b4fa3e355e45ad7d5d,
-    type: 3}
-  m_PrefabInstance: {fileID: 148943661}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2142584954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1337437395004480473, guid: 328939e18e347d14299df72546721db1,
@@ -17977,6 +18424,7 @@ MonoBehaviour:
   relatedSin:
   - statName: Wrath
     statValue: 5
+  objectName: 
   brokenParts: 7
 --- !u!1 &2144909530
 GameObject:
@@ -18360,6 +18808,10 @@ PrefabInstance:
     - target: {fileID: 815471196, guid: 328939e18e347d14299df72546721db1, type: 3}
       propertyPath: m_RootOrder
       value: 207
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040988038, guid: 328939e18e347d14299df72546721db1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1040988039, guid: 328939e18e347d14299df72546721db1, type: 3}
       propertyPath: m_RootOrder
@@ -19150,6 +19602,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1337437394938226868, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1337437394944741464, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: m_RootOrder
@@ -19690,7 +20147,7 @@ PrefabInstance:
     - target: {fileID: 1337437395194260919, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 83
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 1337437395306185002, guid: 328939e18e347d14299df72546721db1,
         type: 3}
@@ -19736,6 +20193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 126
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337437395491977190, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337437395504979518, guid: 328939e18e347d14299df72546721db1,
         type: 3}
@@ -19849,6 +20311,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1337437395775158182, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1337437395790318106, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: m_IsActive
@@ -19930,6 +20397,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5c335b473563b6c489ce17847281945a,
         type: 2}
+    - target: {fileID: 1337437396334321313, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337437396334321313, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337437396334321324, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1337437396334353222, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: m_IsActive
@@ -19955,10 +20437,15 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 202
       objectReference: {fileID: 0}
+    - target: {fileID: 1337437396442727511, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1337437396504580642, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 84
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 1337437396507666194, guid: 328939e18e347d14299df72546721db1,
         type: 3}
@@ -19983,7 +20470,7 @@ PrefabInstance:
     - target: {fileID: 1337437396653180645, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 82
+      value: 81
       objectReference: {fileID: 0}
     - target: {fileID: 1337437396678052509, guid: 328939e18e347d14299df72546721db1,
         type: 3}
@@ -20087,6 +20574,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337437396965943669, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1337437396995976948, guid: 328939e18e347d14299df72546721db1,
         type: 3}
@@ -20814,6 +21306,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822185676839323059, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: objectName
+      value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822185676940868273, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: objectName
+      value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822185677236139090, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: objectName
+      value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822185678105824140, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: objectName
+      value: Vase
       objectReference: {fileID: 0}
     - target: {fileID: 2864841245473155613, guid: 328939e18e347d14299df72546721db1,
         type: 3}
@@ -21546,6 +22058,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1112793604548269494, guid: 9e2308f0707f62a48a311281c7d82754,
         type: 3}
+    - target: {fileID: 5395629300521918990, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395629300521918990, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395629300521918990, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 5582516233896698898, guid: 328939e18e347d14299df72546721db1,
         type: 3}
       propertyPath: m_RootOrder
@@ -21980,6 +22507,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -5.32351
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038124065382514374, guid: 328939e18e347d14299df72546721db1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 7081898846332186720, guid: 328939e18e347d14299df72546721db1,
         type: 3}
@@ -22591,6 +23123,14 @@ PrefabInstance:
     - {fileID: 1337437395868746610, guid: 328939e18e347d14299df72546721db1, type: 3}
     - {fileID: 1337437396120435146, guid: 328939e18e347d14299df72546721db1, type: 3}
     - {fileID: 2277280882075242678, guid: 328939e18e347d14299df72546721db1, type: 3}
+    - {fileID: 2111141964, guid: 328939e18e347d14299df72546721db1, type: 3}
+    - {fileID: 2573789634884945870, guid: 328939e18e347d14299df72546721db1, type: 3}
+    - {fileID: 5955913323405484541, guid: 328939e18e347d14299df72546721db1, type: 3}
+    - {fileID: 553007430090384723, guid: 328939e18e347d14299df72546721db1, type: 3}
+    - {fileID: 5067452811796460876, guid: 328939e18e347d14299df72546721db1, type: 3}
+    - {fileID: 134253152188162842, guid: 328939e18e347d14299df72546721db1, type: 3}
+    - {fileID: 641249838, guid: 328939e18e347d14299df72546721db1, type: 3}
+    - {fileID: 4256454284245886805, guid: 328939e18e347d14299df72546721db1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 328939e18e347d14299df72546721db1, type: 3}
 --- !u!1 &1337437396713662999 stripped
 GameObject:
@@ -22811,15 +23351,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.28
+      value: -12.46
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.76
+      value: 1.708
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 92.58
+      value: -43.828
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25465,7 +26005,7 @@ PrefabInstance:
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: listOfAllQuests.Array.size
-      value: 40
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
@@ -25751,6 +26291,18 @@ PrefabInstance:
       propertyPath: listOfAllQuests.Array.data[39]
       value: 
       objectReference: {fileID: 11400000, guid: 7e5500f84d9dbd74ca830e9b0ac832f9,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[40]
+      value: 
+      objectReference: {fileID: 11400000, guid: 141c064e1e81db948968ce3ca3af54fd,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: listOfAllQuests.Array.data[41]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2d8bb2b43e671a242a6fb940b9a89281,
         type: 2}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}

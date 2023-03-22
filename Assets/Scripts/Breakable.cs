@@ -7,8 +7,17 @@ public class Breakable : MonoBehaviour
     public List<GameObject> brokenPartsPrefabs;
     public List<StatContainer.Stat> relatedSin;
 
+    public string objectName;
+
     public float brokenParts = 7;
 
+    public void Awake()
+    {
+        if (gameObject.GetComponent<ItemInWorld>())
+        {
+            objectName = gameObject.GetComponent<ItemInWorld>().item.itemName;
+        }
+    }
 
     public void BreakObject()
     {

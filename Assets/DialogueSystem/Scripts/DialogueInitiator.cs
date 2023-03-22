@@ -106,13 +106,13 @@ public class DialogueInitiator : MonoBehaviour
 
     public void NPCInitiatedDialogue(NPCInfo npc, NPCDialogueOption startingDialogue)
     {
-        //if (dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC)
-        //{
-        //    dialogueSystem.pausedSubtitleDialogue = dialogueSystem.npcDialogue;
-        //    dialogueSystem.pausedSubtitleNPC = dialogueSystem.npc;
+        if (dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC)
+        {
+            dialogueSystem.pausedSubtitleDialogue = dialogueSystem.npcDialogue;
+            dialogueSystem.pausedSubtitleNPC = dialogueSystem.npc;
 
-        //    dialogueSystem.LeaveDialogue();
-        //}
+            //dialogueSystem.LeaveDialogue();
+        }
 
         if (startingDialogue.toOtherNPC)
         {
@@ -156,6 +156,14 @@ public class DialogueInitiator : MonoBehaviour
 
     public void BeginSubtitleSequence(NPCInfo npc, NPCDialogueOption startingDialogue)
     {
+        if (dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC)
+        {
+            dialogueSystem.pausedSubtitleDialogue = dialogueSystem.npcDialogue;
+            dialogueSystem.pausedSubtitleNPC = dialogueSystem.npc;
+
+            //dialogueSystem.LeaveDialogue();
+        }
+
         dialogueSystem.enabled = true;
 
         dialogueSystem.SetNewDialogueText(startingDialogue);

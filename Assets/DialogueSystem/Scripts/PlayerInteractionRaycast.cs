@@ -330,7 +330,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 selectedObject = hit.transform.gameObject;
                 breakPromptIndicator.SetActive(true);
                 interactionAimIndicator.color = Color.red;
-                consumePromptText.text = "Break";
+                breakPromptText.text = "Break " + hit.transform.GetComponent<Breakable>().objectName;
             }
             else
             {
@@ -350,10 +350,10 @@ public class PlayerInteractionRaycast : MonoBehaviour
             if (selectedObject != null && Input.GetKeyDown(selectInput))
             {
                 interactPromptIndicator.SetActive(false);
-                if (dialogueSystem.enabled)
-                {
-                    dialogueSystem.responseTimer = 0f;
-                }
+                //if (dialogueSystem.enabled)
+                //{
+                //    //dialogueSystem.responseTimer = 0f;
+                //}
 
                 if (isNPC)
                 {
@@ -491,7 +491,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             //Debug.Log("Did not Hit");
             selectedObject = null;
-            //interactPromptIndicator.SetActive(false);
+            interactPromptIndicator.SetActive(false);
+            consumePromptIndicator.SetActive(false);
             breakPromptIndicator.SetActive(false);
 
             interactionAimIndicator.color = Color.white;

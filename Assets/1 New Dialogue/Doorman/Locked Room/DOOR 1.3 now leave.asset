@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: Final Greeting
+  m_Name: DOOR 1.3 now leave
   m_EditorClassIdentifier: 
-  dialogue: What! How did you get in here?!
+  dialogue: "Now go back and wait with the others! \nI will deal with you shortly."
   toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: c28eecf2a79c2714b87ad57c27b83896, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 1
-  isRepeatable: 0
+  playerCanLeaveDialogue: 0
+  isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
   relatedQuests: []
   itemsToGive: []
   itemsToTake: []
-  newStartingDialogue: {fileID: 11400000, guid: 82310a2e4a83c6c439c66baf6b50635a,
+  newStartingDialogue: {fileID: 11400000, guid: cdd4e1075705f494da71feb8b55dfd46,
     type: 2}
   statsToEffectList: []
   designatedNPC: {fileID: 0}

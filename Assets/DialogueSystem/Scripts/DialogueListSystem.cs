@@ -617,10 +617,19 @@ public class DialogueListSystem : MonoBehaviour
             //inDialogue = false;
             dialogueUI.SetActive(true);
             listDialoguePanel.SetActive(false);
+
+            if (pausedSubtitleDialogue != null && pausedSubtitleDialogue == npcDialogue)
+            {
+                pausedSubtitleDialogue = null;
+                pausedSubtitleNPC = null;
+            }
+
+
+            //pausedSubtitleDialogue = npcDialogue;
+            //pausedSubtitleNPC = npc;
+
+            //LeaveDialogue();
         }
-
-
-
     }
 
     // Close Dialogue
@@ -710,7 +719,7 @@ public class DialogueListSystem : MonoBehaviour
         }
     }
 
-    public void RemoveItemBasedOnPlayerDialogue()
+    public void RemoveItemBasedOnPlayerDialogue() //add pop up text when item removed
     {
         foreach (OJQuestItemObjective item in selectedDialogueOption.itemsToGive)
         {
@@ -732,7 +741,7 @@ public class DialogueListSystem : MonoBehaviour
         }
     }
 
-    public void RemoveItemBasedOnNPCDialogue()
+    public void RemoveItemBasedOnNPCDialogue() //add pop up text when item removed
     {
         foreach (OJQuestItemObjective item in npcDialogue.itemsToTake)
         {
