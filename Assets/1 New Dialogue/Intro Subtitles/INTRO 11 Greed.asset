@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: INTRO 11 Greed
   m_EditorClassIdentifier: 
-  dialogue: "We\u2019ve been left completely unattended in this high-class hotel.."
+  dialogue: "Now let's get down to business. We\u2019ve been left completely unattended
+    in this high-class hotel.."
   toOtherNPC: 1
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: a9a196cce6cc9664a9adba8c19a81b73, type: 2}
@@ -45,6 +46,7 @@ MonoBehaviour:
   relatedQuests: []
   itemsToGive: []
   itemsToTake: []
-  newStartingDialogue: {fileID: 0}
+  newStartingDialogue: {fileID: 11400000, guid: 85587dd5d70bcbb45957e60e6e7069be,
+    type: 2}
   statsToEffectList: []
   designatedNPC: {fileID: 0}

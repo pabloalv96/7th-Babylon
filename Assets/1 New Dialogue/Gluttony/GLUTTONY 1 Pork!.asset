@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: GLUTTONY 1 Pork!
   m_EditorClassIdentifier: 
-  dialogue: "Pork! Delicious roast pork! \n...Man I\u2019m starving."
+  dialogue: 'Man I am STARVING!
+
+    Where is that pork?! It must be in here!'
   toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
   playerResponses:
   - {fileID: 11400000, guid: 1d4e403ec390054488df6e5d3cb9328b, type: 2}
+  - {fileID: 11400000, guid: 380d5a66e3a9256499da72cf944bcee9, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0

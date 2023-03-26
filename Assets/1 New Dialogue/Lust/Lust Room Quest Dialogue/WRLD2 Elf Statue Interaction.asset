@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: WRLD1 Mirror Interaction
+  m_Name: WRLD2 Elf Statue Interaction
   m_EditorClassIdentifier: 
-  dialogue: Such a dull mirror..
+  dialogue: Is that an elf?
   toOtherNPC: 1
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
@@ -34,7 +34,7 @@ MonoBehaviour:
         m_MethodName: UnlockPlayerDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b89515789f0f56e4fa2a14f4264debfb,
+          m_ObjectArgument: {fileID: 11400000, guid: 4543eb43c500a1a4ca5f55a96a3f8299,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: PlayerDialogueOption, Assembly-CSharp
           m_IntArgument: 0
@@ -43,9 +43,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   relatedQuests:
-  - {fileID: 11400000, guid: f00f62527dbc60b41b19bec9b7d8c8d7, type: 2}
+  - {fileID: 11400000, guid: f3c87d6fca69cf442b2df403f11c6d03, type: 2}
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
-  statsToEffectList: []
+  statsToEffectList:
+  - statName: Lust
+    statValue: 6
   designatedNPC: {fileID: 0}

@@ -16,7 +16,7 @@ MonoBehaviour:
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
   isHiddenFromUI: 0
-  questStarted: 1
+  questStarted: 0
   questEnded: 0
   isRepeatable: 0
   questID: 
@@ -28,12 +28,24 @@ MonoBehaviour:
     questItems:
     - requiredAmount: 1
       item: {fileID: 11400000, guid: 8b0f6a6edeceb2d4f86866f8531c0e9f, type: 2}
-      requiredAmountCollected: 1
+      requiredAmountCollected: 0
       questCompleted: 0
     questDialogueOptions:
     - questDialogueOption: {fileID: 11400000, guid: b1dcb049641a1474087a89c1c4cccaba,
         type: 2}
       dialogueNPCRecipient: {fileID: 11400000, guid: 2288c6aec87f7674b817aecbd67a0d34,
+        type: 2}
+    - questDialogueOption: {fileID: 11400000, guid: 2ec23f72bfda42846acdce9d3573facb,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: 302d10d3bdcfec04c879f1a47fe86040,
+        type: 2}
+    - questDialogueOption: {fileID: 11400000, guid: 2ec23f72bfda42846acdce9d3573facb,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: 297d4c8b923bfe345bee4e5fc9a10f59,
+        type: 2}
+    - questDialogueOption: {fileID: 11400000, guid: 2ec23f72bfda42846acdce9d3573facb,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: 60cc4b2892f2af343a2c5a726a0114f2,
         type: 2}
     childrenQuests: []
   outcome:
