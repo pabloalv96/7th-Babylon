@@ -6,10 +6,12 @@ using UnityEngine;
 public class PlayerInfoController : MonoBehaviour
 {
     public StatContainer playerStats;
+    public int minStatValue = 0, maxStatValue = 100;
 
     public PlayerDialogue playerDialogue;
 
     public int foodConsumed;
+
 
     //public float AffectStatalues(StatContainer.Stat stat)
     //{
@@ -29,7 +31,7 @@ public class PlayerInfoController : MonoBehaviour
         {
             foreach (StatContainer.Stat stat in FindObjectOfType<PlayerInfoController>().playerStats.listOfStats)
             {
-                if (stat.statName == statToEffect.statName)
+                if (stat.statName == statToEffect.statName && (stat.statValue > minStatValue || statToEffect.statValue > 0) && (stat.statValue < maxStatValue || statToEffect.statValue < 0))
                 {
                     stat.statValue += statToEffect.statValue;
                 }

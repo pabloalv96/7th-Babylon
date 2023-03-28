@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC2.3 Apple Response
+  m_Name: NPC2.2 Elf Statue Response
   m_EditorClassIdentifier: 
-  dialogue: They must really be controlled by their desires..
+  dialogue: Yes I noticed that as well.. whoever owns this room has interesting taste.
+    That isn't what caught my eye though.
   toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: b40887a5c03484948ad3b600cf752d2c, type: 2}
@@ -34,7 +35,7 @@ MonoBehaviour:
         m_MethodName: LockPlayerDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: ecf2a04592b69824da2970e883a8691f,
+          m_ObjectArgument: {fileID: 11400000, guid: 4543eb43c500a1a4ca5f55a96a3f8299,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: PlayerDialogueOption, Assembly-CSharp
           m_IntArgument: 0
@@ -46,7 +47,5 @@ MonoBehaviour:
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
-  statsToEffectList:
-  - statName: Lust
-    statValue: 2
+  statsToEffectList: []
   designatedNPC: {fileID: 0}

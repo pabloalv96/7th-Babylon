@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
-  m_Name: Q3 Return to Jessica
+  m_Name: Q2.10H Inspect Painting
   m_EditorClassIdentifier: 
   questManager: {fileID: 0}
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
-  isHiddenFromUI: 0
-  questStarted: 0
+  isHiddenFromUI: 1
+  questStarted: 1
   questEnded: 0
   isRepeatable: 0
-  questID: return to jessica
-  questDescription: Return to Jessica
+  questID: Inspect Bed
+  questDescription: 
   questActivation:
     questsToLock: []
   objective:
-    objectiveType: 2
+    objectiveType: 1
     questItems: []
     questDialogueOptions:
-    - questDialogueOption: {fileID: 11400000, guid: 47e47aa1e24292b4fb259d380a3b640a,
+    - questDialogueOption: {fileID: 11400000, guid: c512d3a9fb420d44f9f68c0c1426974a,
         type: 2}
       dialogueNPCRecipient: {fileID: 11400000, guid: 297d4c8b923bfe345bee4e5fc9a10f59,
         type: 2}

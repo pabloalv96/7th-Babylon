@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC2.5 Mannequin Response
+  m_Name: NPC2.6 Female Statue Response
   m_EditorClassIdentifier: 
-  dialogue: I thought so too, what a strange thing to have watching you sleep.
+  dialogue: I thought she was rather elegant, but she isn't what drew my eye.
   toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: b40887a5c03484948ad3b600cf752d2c, type: 2}
@@ -34,7 +34,7 @@ MonoBehaviour:
         m_MethodName: LockPlayerDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 08abbe2abacc8e54a9d6dd15409ec7a4,
+          m_ObjectArgument: {fileID: 11400000, guid: 9d41dabb1c62f0a43ac44af4f342fef1,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: PlayerDialogueOption, Assembly-CSharp
           m_IntArgument: 0
@@ -46,5 +46,7 @@ MonoBehaviour:
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
-  statsToEffectList: []
+  statsToEffectList:
+  - statName: Lust
+    statValue: 2
   designatedNPC: {fileID: 0}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: EndOfDialogue
+  m_Name: NPC2.10.2 Painting Response 2
   m_EditorClassIdentifier: 
-  dialogue: 
-  toOtherNPC: 1
+  dialogue: 'I''ve noticed a strange quality to the art in this place.. '
+  toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 0}
+  continuedDialogue: {fileID: 11400000, guid: ec1ea28cfaebe2b49b0768206c4ca62d, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
@@ -23,11 +23,9 @@ MonoBehaviour:
   playerCanLeaveDialogue: 0
   isRepeatable: 0
   hasBeenSeen: 0
-  endOfConversation: 1
+  endOfConversation: 0
   changeOfTopic: 0
-  conditionalEvents:
-  - m_PersistentCalls:
-      m_Calls: []
+  conditionalEvents: []
   relatedQuests: []
   itemsToGive: []
   itemsToTake: []

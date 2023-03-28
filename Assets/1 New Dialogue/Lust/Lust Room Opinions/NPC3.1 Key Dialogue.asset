@@ -10,26 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: EndOfDialogue
+  m_Name: NPC3.1 Key Dialogue
   m_EditorClassIdentifier: 
-  dialogue: 
-  toOtherNPC: 1
-  requiresResponse: 0
-  continuedDialogue: {fileID: 0}
+  dialogue: 'Since you actually found it here''s the key as promised!
+
+    You''ve
+    earned  it~'
+  toOtherNPC: 0
+  requiresResponse: 1
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 0
+  isRepeatable: 1
   hasBeenSeen: 0
-  endOfConversation: 1
+  endOfConversation: 0
   changeOfTopic: 0
-  conditionalEvents:
-  - m_PersistentCalls:
-      m_Calls: []
+  conditionalEvents: []
   relatedQuests: []
-  itemsToGive: []
+  itemsToGive:
+  - requiredAmount: 1
+    item: {fileID: 11400000, guid: fefce31a881cda749a71be3a735b0d20, type: 2}
+    requiredAmountCollected: 0
+    questCompleted: 0
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
   statsToEffectList: []

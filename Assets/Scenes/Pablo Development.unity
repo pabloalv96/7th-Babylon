@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueFromWorld: {fileID: 11400000, guid: b7c62e1daad05964989ad3ad0297651f, type: 2}
-  narrator: {fileID: 0}
+  narrator: {fileID: 11400000, guid: 5714d22b24469b3478395fe452907447, type: 2}
 --- !u!1 &66756801 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1337437395004627963, guid: 328939e18e347d14299df72546721db1,
@@ -1296,7 +1296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &152295833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5231,6 +5231,20 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 599117926}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8556563643081325000}
+        m_TargetAssemblyTypeName: DialogueInitiator, Assembly-CSharp
+        m_MethodName: TriggerNPCDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1573141351}
+          m_ObjectArgumentAssemblyTypeName: NPCBrain, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19006,6 +19020,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 1814871064, guid: 328939e18e347d14299df72546721db1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1814871065, guid: 328939e18e347d14299df72546721db1, type: 3}
       propertyPath: m_RootOrder
       value: 72
@@ -23616,7 +23634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.46
+      value: -44.19
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -23624,7 +23642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.828
+      value: -4.26
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26333,7 +26351,7 @@ PrefabInstance:
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: listOfAllQuests.Array.size
-      value: 42
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
@@ -26634,8 +26652,14 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
+      propertyPath: listOfAllQuests.Array.data[42]
+      value: 
+      objectReference: {fileID: 11400000, guid: 657fea3763cc19347ae3097807c43ca9,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
       propertyPath: lockedAtStartDialogue.Array.size
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
@@ -26725,6 +26749,12 @@ PrefabInstance:
       propertyPath: lockedAtStartDialogue.Array.data[13]
       value: 
       objectReference: {fileID: 11400000, guid: 2ec23f72bfda42846acdce9d3573facb,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: lockedAtStartDialogue.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: c512d3a9fb420d44f9f68c0c1426974a,
         type: 2}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}

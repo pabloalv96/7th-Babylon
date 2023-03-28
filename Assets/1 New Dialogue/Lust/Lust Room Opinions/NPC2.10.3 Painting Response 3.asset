@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: EndOfDialogue
+  m_Name: NPC2.10.3 Painting Response 3
   m_EditorClassIdentifier: 
-  dialogue: 
-  toOtherNPC: 1
+  dialogue: That was most certainly a painting of some roses when I entered this
+    chamber.
+  toOtherNPC: 0
   requiresResponse: 0
-  continuedDialogue: {fileID: 0}
+  continuedDialogue: {fileID: 11400000, guid: 6d60c336ff1ceb649b1ceca634d17de3, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
@@ -23,11 +24,9 @@ MonoBehaviour:
   playerCanLeaveDialogue: 0
   isRepeatable: 0
   hasBeenSeen: 0
-  endOfConversation: 1
+  endOfConversation: 0
   changeOfTopic: 0
-  conditionalEvents:
-  - m_PersistentCalls:
-      m_Calls: []
+  conditionalEvents: []
   relatedQuests: []
   itemsToGive: []
   itemsToTake: []

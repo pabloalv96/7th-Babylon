@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: NPC2.4 Figurine Response
+  m_Name: NPC2.8 Greek Statue Response
   m_EditorClassIdentifier: 
-  dialogue: They must have a strong appreciation of the female form
+  dialogue: Do you really think it's from Ancient Greece? I would've never known..
+    so yeah.. that isn't it!
   toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: b40887a5c03484948ad3b600cf752d2c, type: 2}
@@ -34,7 +35,7 @@ MonoBehaviour:
         m_MethodName: LockPlayerDialogue
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: d9be5d0cf26df3b45a71ed40f9c4c057,
+          m_ObjectArgument: {fileID: 11400000, guid: 6da56407b7bc1f8468c9b57479e93262,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: PlayerDialogueOption, Assembly-CSharp
           m_IntArgument: 0
@@ -46,7 +47,5 @@ MonoBehaviour:
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
-  statsToEffectList:
-  - statName: Lust
-    statValue: 3
+  statsToEffectList: []
   designatedNPC: {fileID: 0}
