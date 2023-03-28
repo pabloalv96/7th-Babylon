@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: DOOR SUB leave
   m_EditorClassIdentifier: 
-  dialogue: 'I don''t have time for you now. Go wait with the others! '
+  dialogue: 'I don''t have time for you right now. Go wait with the others! '
   toOtherNPC: 1
   requiresResponse: 0
-  continuedDialogue: {fileID: 0}
+  continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 1
   timeLimit: 2
@@ -29,6 +29,6 @@ MonoBehaviour:
   relatedQuests: []
   itemsToGive: []
   itemsToTake: []
-  newStartingDialogue: {fileID: 0}
+  newStartingDialogue: {fileID: 11400000}
   statsToEffectList: []
   designatedNPC: {fileID: 0}

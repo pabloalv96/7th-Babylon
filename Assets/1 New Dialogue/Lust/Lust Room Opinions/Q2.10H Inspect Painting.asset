@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf75c70ba37f39540a4a8795a557cef2, type: 3}
+  m_Name: Q2.10H Inspect Painting
+  m_EditorClassIdentifier: 
+  questManager: {fileID: 0}
+  playerDialogue: {fileID: 0}
+  environmentalChanges: {fileID: 0}
+  isHiddenFromUI: 1
+  questStarted: 1
+  questEnded: 0
+  isRepeatable: 0
+  questID: Inspect Bed
+  questDescription: 
+  questActivation:
+    questsToLock: []
+  objective:
+    objectiveType: 1
+    questItems: []
+    questDialogueOptions:
+    - questDialogueOption: {fileID: 11400000, guid: c512d3a9fb420d44f9f68c0c1426974a,
+        type: 2}
+      dialogueNPCRecipient: {fileID: 11400000, guid: 297d4c8b923bfe345bee4e5fc9a10f59,
+        type: 2}
+    childrenQuests: []
+  outcome:
+    questsToUnlock: []
+    questsToLock: []
+    statsToEffectList: []

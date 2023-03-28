@@ -534,11 +534,7 @@ public class OJQuestManager : MonoBehaviour
                             activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount ++;
                         }
 
-                        if (activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount >= activeQuestList[q].objective.childrenQuests[aQ].requiredChildrenQuestsCompletedToComplete)
-                        {
-                            EndQuest(activeQuestList[q]);
-                            //Debug.Log(activeQuestList[q].questID + " Quest has ended");
-                        }
+                        
 
                         //if (aQ + 1 >= activeQuestList[q].objective.childrenQuests.Count)
                         //{
@@ -546,6 +542,11 @@ public class OJQuestManager : MonoBehaviour
                         //}
                     }
 
+                    if (activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount >= activeQuestList[q].objective.childrenQuests[aQ].requiredChildrenQuestsCompletedToComplete)
+                    {
+                        EndQuest(activeQuestList[q]);
+                        //Debug.Log(activeQuestList[q].questID + " Quest has ended");
+                    }
                 }
 
             }

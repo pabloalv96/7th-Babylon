@@ -13,6 +13,8 @@ public class DialogueInitiator : MonoBehaviour
     //private PlayerInfoController playerInfoController;
     private PlayerInteractionRaycast playerInteractionRaycast;
 
+    private Transform player;
+
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class DialogueInitiator : MonoBehaviour
         playerDialogue = FindObjectOfType<PlayerDialogue>();
         //playerInfoController = FindObjectOfType<PlayerInfoController>();
         playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     public void EnterDialogue( NPCInfo npcInfo)
     {
@@ -34,7 +37,7 @@ public class DialogueInitiator : MonoBehaviour
             dialogueSystem.pausedSubtitleDialogue = dialogueSystem.npcDialogue;
             dialogueSystem.pausedSubtitleNPC = dialogueSystem.npc;
 
-            dialogueSystem.LeaveDialogue();
+            //dialogueSystem.LeaveDialogue();
         }
 
         dialogueSystem.inDialogue = true;
@@ -51,6 +54,13 @@ public class DialogueInitiator : MonoBehaviour
            
 
             NPCBrain currentNPC = playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>();
+
+            //currentNPC.gameObject.transform.LookAt(player.transform);
+
+            Vector3 targetPostition = new Vector3(player.position.x,
+                                       currentNPC.transform.position.y,
+                                       player.position.z);
+            currentNPC.transform.LookAt(targetPostition);
 
             List<NPCDialogueOption> usedDialogue = new List<NPCDialogueOption>();
             List<PlayerDialogueOption> playerDialogueChoices = new List<PlayerDialogueOption>();

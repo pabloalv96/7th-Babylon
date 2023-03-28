@@ -29,21 +29,24 @@ public class OJQuestTrigger : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        foreach (OJQuest quest in relatedQuests)
+        if (other.gameObject.CompareTag("Player"))
         {
-            if (!quest.questStarted)
+            foreach (OJQuest quest in relatedQuests)
             {
-                questManager.StartQuest(quest);
+                if (!quest.questStarted)
+                {
+                    questManager.StartQuest(quest);
+                }
+                else if (quest.questStarted && !quest.questEnded)
+                {
+                    questManager.EndQuest(quest);
+                }
             }
-            else if (quest.questStarted && !quest.questEnded)
-            {
-                questManager.EndQuest(quest);
-            }
-        }
 
-        foreach(UnityEvent conditional in conditionalEvents)
-        {
-            conditional.Invoke();
+            foreach (UnityEvent conditional in conditionalEvents)
+            {
+                conditional.Invoke();
+            }
         }
     }
 

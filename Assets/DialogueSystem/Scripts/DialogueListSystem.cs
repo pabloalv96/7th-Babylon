@@ -454,7 +454,7 @@ public class DialogueListSystem : MonoBehaviour
         //selectedDialogueOption.AffectEmotionValues();
         if (inDialogue)
         {
-            RememberDialogueChoices();
+            //RememberDialogueChoices();
 
             if (selectedDialogueOption.statsToEffectList.Count > 0)
             {
@@ -753,21 +753,21 @@ public class DialogueListSystem : MonoBehaviour
         
     }
 
-    public void RememberDialogueChoices()
-    {
-        if (playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>() &&playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
-        {
-            NPCBrain currentNPC = playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>();
+    //public void RememberDialogueChoices()
+    //{
+    //    if (playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>() &&playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>().npcInfo == npc)
+    //    {
+    //        NPCBrain currentNPC = playerInteractionRaycast.selectedObject.GetComponent<NPCBrain>();
 
-            NPCBrain.DialogueMemory dialogueMemory = new NPCBrain.DialogueMemory();
+    //        NPCBrain.DialogueMemory dialogueMemory = new NPCBrain.DialogueMemory();
 
-            dialogueMemory.npcUsedDialogue = npcDialogue;
+    //        dialogueMemory.npcUsedDialogue = npcDialogue;
 
-            dialogueMemory.playerResponse = selectedDialogueOption;
+    //        dialogueMemory.playerResponse = selectedDialogueOption;
 
-            currentNPC.dialogueMemories.Add(dialogueMemory);
-        }
-    }
+    //        currentNPC.dialogueMemories.Add(dialogueMemory);
+    //    }
+    //}
 
     public void ResetDialogueVariables()
     {
