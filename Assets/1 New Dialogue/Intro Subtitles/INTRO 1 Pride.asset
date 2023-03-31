@@ -45,7 +45,11 @@ MonoBehaviour:
         m_CallState: 2
   relatedQuests: []
   itemsToGive: []
-  itemsToTake: []
+  itemsToTake:
+  - requiredAmount: 1
+    item: {fileID: 11400000, guid: 5b29ceffb48fe804bb2d0d30e7d36765, type: 2}
+    requiredAmountCollected: 0
+    questCompleted: 0
   newStartingDialogue: {fileID: 11400000, guid: dc0d5ed490f28e84b88d5ecd97d8969a,
     type: 2}
   statsToEffectList: []
