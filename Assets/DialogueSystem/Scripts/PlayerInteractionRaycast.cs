@@ -545,13 +545,15 @@ public class PlayerInteractionRaycast : MonoBehaviour
             {
                 isLookSinInteracted = true;
                 lookSinObject.GetComponent<LookSinTimer>().isLooking = true;
-            } 
+            }
+            else
+            {
+                isLookSinInteracted = false;
+                lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
+            }
+
         }
-        else
-        {
-            isLookSinInteracted = false;
-            lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
-        }
+        
 
         yield return null;
     }
