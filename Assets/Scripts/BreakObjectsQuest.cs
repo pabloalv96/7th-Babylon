@@ -15,7 +15,7 @@ public class BreakObjectsQuest : MonoBehaviour
     {
         if (questManager.activeQuestList.Contains(breakObjectsQuest))
         {
-            if (interactionRaycast.isBreakable && Input.GetKeyDown(interactionRaycast.consumeInput))
+            if (interactionRaycast.isBreakable && Input.GetKeyDown(interactionRaycast.breakInput))
             {
                 if (itemsBrokenCount < requiredBrokenCount)
                 {

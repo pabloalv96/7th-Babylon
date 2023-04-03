@@ -17,9 +17,12 @@ MonoBehaviour:
     You''ve
     earned  it~'
   toOtherNPC: 0
-  requiresResponse: 1
+  requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
-  playerResponses: []
+  playerResponses:
+  - {fileID: 11400000, guid: 47e47aa1e24292b4fb259d380a3b640a, type: 2}
+  - {fileID: 11400000, guid: 47e47aa1e24292b4fb259d380a3b640a, type: 2}
+  - {fileID: 11400000, guid: 47e47aa1e24292b4fb259d380a3b640a, type: 2}
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0

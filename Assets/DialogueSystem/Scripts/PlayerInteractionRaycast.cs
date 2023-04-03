@@ -148,8 +148,14 @@ public class PlayerInteractionRaycast : MonoBehaviour
                                 if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
                                 {
                                     questItem.requiredAmountCollected = true;
-                                    questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
-
+                                    if (quest.objective.questDialogueOptions.Count > 0)
+                                    {
+                                        questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+                                    }
+                                    else
+                                    {
+                                        questManager.EndQuest(quest);
+                                    }
                                 }
                             }
                         }
@@ -506,9 +512,11 @@ public class PlayerInteractionRaycast : MonoBehaviour
             }
             else
             {
+                isLookSinInteracted = false;
                 lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
             }
         }
+        
 
         yield return null;
     }
