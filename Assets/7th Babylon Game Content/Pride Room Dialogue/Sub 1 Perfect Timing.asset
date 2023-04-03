@@ -26,9 +26,11 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: a68aa62e1d907d04fa38c775dcc91564, type: 2}
   itemsToGive: []
   itemsToTake: []
-  newStartingDialogue: {fileID: 0}
+  newStartingDialogue: {fileID: 11400000, guid: 5643f81c77029c6489579d3b932dc28e,
+    type: 2}
   statsToEffectList: []
   designatedNPC: {fileID: 0}

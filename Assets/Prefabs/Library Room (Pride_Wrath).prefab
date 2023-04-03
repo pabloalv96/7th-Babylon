@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 8732828098171425899}
   - component: {fileID: 8732828098172065773}
   - component: {fileID: 8732828098185942353}
+  - component: {fileID: 1883578736}
   m_Layer: 0
   m_Name: Globe
   m_TagString: Untagged
@@ -499,6 +500,23 @@ CapsuleCollider:
   m_Height: 0.09
   m_Direction: 2
   m_Center: {x: -0.000000029802322, y: -0.00000023841858, z: -0.01}
+--- !u!114 &1883578736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8732828098174489949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!1 &8732828098174490457
 GameObject:
   m_ObjectHideFlags: 0
@@ -10985,7 +11003,7 @@ MonoBehaviour:
   closeSound: {fileID: 8300000, guid: 373fbe4790323c04b9bd759127a791b3, type: 3}
   source: {fileID: 0}
   isOpen: 0
-  isLocked: 0
+  isLocked: 1
   keysList: []
   lockedDoorDialogue: {fileID: 0}
   unlockDoorDialogue: {fileID: 0}
@@ -11334,7 +11352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8732828098174524709}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071067}
-  m_LocalPosition: {x: -6.971326, y: -7.751438, z: 1.3834276}
+  m_LocalPosition: {x: -6.97, y: -7.751438, z: 5.94}
   m_LocalScale: {x: 15.905169, y: 17.973059, z: 13.615953}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18859,7 +18877,7 @@ MonoBehaviour:
   openSound: {fileID: 8300000, guid: 1c8d62081c544fa4689c05e3e42baa62, type: 3}
   closeSound: {fileID: 8300000, guid: 373fbe4790323c04b9bd759127a791b3, type: 3}
   source: {fileID: 0}
-  isOpen: 0
+  isOpen: 1
   isLocked: 0
   keysList: []
   lockedDoorDialogue: {fileID: 0}
@@ -21154,7 +21172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8732828098174285223
 Transform:
   m_ObjectHideFlags: 0
@@ -21293,6 +21311,7 @@ GameObject:
   - component: {fileID: 8732828098176258971}
   - component: {fileID: 8732828098176269895}
   - component: {fileID: 8732828098174738069}
+  - component: {fileID: 457056757}
   m_Layer: 0
   m_Name: FireplaceGrandHall
   m_TagString: Untagged
@@ -21474,6 +21493,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &457056757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8732828098174577235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!1 &8732828098174577267
 GameObject:
   m_ObjectHideFlags: 0
@@ -21877,7 +21913,7 @@ MonoBehaviour:
   closeSound: {fileID: 8300000, guid: 6f10aed795114174ebbb2aeed2455807, type: 3}
   source: {fileID: 0}
   isOpen: 0
-  isLocked: 0
+  isLocked: 1
   keysList: []
   lockedDoorDialogue: {fileID: 0}
   unlockDoorDialogue: {fileID: 0}
@@ -23595,6 +23631,43 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 741945102196528292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8865134733675041068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 869719f8fec2b894987f90f7c9ecac49,
+    type: 3}
+  m_PrefabInstance: {fileID: 741945102196528292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &21284395
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865134733675041068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: 869719f8fec2b894987f90f7c9ecac49, type: 3}
+--- !u!114 &21284394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865134733675041068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!1001 &1300668857996475269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23664,6 +23737,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dc79254d7e05f44f94ace50ba018477, type: 3}
+--- !u!1 &1300668857996508453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 4dc79254d7e05f44f94ace50ba018477,
+    type: 3}
+  m_PrefabInstance: {fileID: 1300668857996475269}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &457056759
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300668857996508453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 4dc79254d7e05f44f94ace50ba018477, type: 3}
+--- !u!114 &457056756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300668857996508453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!4 &1300668857996599557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4dc79254d7e05f44f94ace50ba018477,
@@ -23816,6 +23926,43 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3176844208668933496}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3176844208668834776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 4dc79254d7e05f44f94ace50ba018477,
+    type: 3}
+  m_PrefabInstance: {fileID: 3176844208668933496}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &457056758
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176844208668834776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 4dc79254d7e05f44f94ace50ba018477, type: 3}
+--- !u!114 &457056755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176844208668834776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!1001 &3600269484898982404
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23891,6 +24038,52 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3600269484898982404}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3600269484898962382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 119242, guid: a9c76a0f31a399647af506139666869e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3600269484898982404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &457056754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600269484898962382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
+--- !u!1 &3600269484898965042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 117814, guid: a9c76a0f31a399647af506139666869e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3600269484898982404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &457056753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3600269484898965042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!1001 &4686999600576116935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24031,6 +24224,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dc79254d7e05f44f94ace50ba018477, type: 3}
+--- !u!1 &5395907786224218134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 4dc79254d7e05f44f94ace50ba018477,
+    type: 3}
+  m_PrefabInstance: {fileID: 5395907786224252598}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1883578734
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5395907786224218134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 4dc79254d7e05f44f94ace50ba018477, type: 3}
+--- !u!114 &1883578735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5395907786224218134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1061e9241ad1d14fbaacb2c9394c714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  relatedSin:
+  - statName: Envy
+    statValue: 0
+  lookTimer: 0
+  isLooking: 0
 --- !u!4 &5395907786224643126 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4dc79254d7e05f44f94ace50ba018477,

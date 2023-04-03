@@ -166,7 +166,7 @@ public class DialogueInitiator : MonoBehaviour
 
     public void BeginSubtitleSequence(NPCInfo npc, NPCDialogueOption startingDialogue)
     {
-        if (dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC)
+        if (dialogueSystem.enabled && dialogueSystem.npcDialogue != null && dialogueSystem.npcDialogue.toOtherNPC)
         {
             dialogueSystem.pausedSubtitleDialogue = dialogueSystem.npcDialogue;
             dialogueSystem.pausedSubtitleNPC = dialogueSystem.npc;
@@ -213,12 +213,12 @@ public class DialogueInitiator : MonoBehaviour
         if (npc.startingDialogue.toOtherNPC)
         {
             BeginSubtitleSequence(npc.npcInfo, npc.startingDialogue);
-            npc.isSpeakingToPlayer = true;
+            npc.isSpeakingToPlayer = false;
         }
         else
         {
             NPCInitiatedDialogue(npc.npcInfo, npc.startingDialogue);
-            npc.isSpeakingToPlayer = false;
+            npc.isSpeakingToPlayer = true;
         }
     }
 
