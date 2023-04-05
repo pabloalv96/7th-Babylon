@@ -16,9 +16,9 @@ MonoBehaviour:
   playerDialogue: {fileID: 0}
   environmentalChanges: {fileID: 0}
   isHiddenFromUI: 0
-  questStarted: 0
+  questStarted: 1
   questEnded: 0
-  isRepeatable: 1
+  isRepeatable: 0
   questID: 
   questDescription: '''Inspect'' the bedroom furniture'
   questActivation:
@@ -28,8 +28,8 @@ MonoBehaviour:
     questItems: []
     questDialogueOptions: []
     childrenQuests:
-    - requiredChildrenQuestsCompletedToComplete: 3
-      completedChildrenQuestCount: 3
+    - requiredChildrenQuestsCompletedToComplete: 0
+      completedChildrenQuestCount: 1
       childrenQuests:
       - {fileID: 11400000, guid: f00f62527dbc60b41b19bec9b7d8c8d7, type: 2}
       - {fileID: 11400000, guid: f3c87d6fca69cf442b2df403f11c6d03, type: 2}
