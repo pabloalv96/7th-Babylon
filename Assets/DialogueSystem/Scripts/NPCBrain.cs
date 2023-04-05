@@ -6,7 +6,7 @@ public class NPCBrain : MonoBehaviour
 {
     public NPCInfo npcInfo;
 
-    public Transform head;
+    [SerializeField] private Transform head;
 
     //public NPCEmotions npcEmotions;
 
