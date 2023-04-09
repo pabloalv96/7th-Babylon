@@ -36,6 +36,6 @@ public class Breakable : MonoBehaviour
 
         Destroy(gameObject);
 
-        //StartCoroutine(FindObjectOfType<PlayerInteractionRaycast>().DelaySettingFalseVariables());
+
     }
 }
