@@ -6,6 +6,8 @@ public class TogglePanel : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     [SerializeField] private KeyCode toggleKey;
+
+    [SerializeField] private Inventory inventory;
     void Start()
     {
         panel.SetActive(false);
@@ -25,7 +27,7 @@ public class TogglePanel : MonoBehaviour
         {
             panel.SetActive(false);
 
-            if (FindObjectOfType<Inventory>().inventoryPanel.activeSelf && !FindObjectOfType<DialogueListSystem>().inDialogue)
+            if (inventory.inventoryPanel.activeSelf && !FindObjectOfType<DialogueListSystem>().inDialogue)
             {
                 FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
             }
@@ -34,7 +36,7 @@ public class TogglePanel : MonoBehaviour
         {
             panel.SetActive(true);
 
-            if (FindObjectOfType<Inventory>().inventoryPanel.activeSelf && FindObjectOfType<Inventory>().selectedItem != null)
+            if (inventory.inventoryPanel.activeSelf)
             {
                 FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
             }

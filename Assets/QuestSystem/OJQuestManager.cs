@@ -87,8 +87,10 @@ public class OJQuestManager : MonoBehaviour
                 audioSource.Stop();
             }
 
-            audioSource.PlayOneShot(newQuestAudio);
-
+            if (newQuestAudio != null)
+            {
+                audioSource.PlayOneShot(newQuestAudio);
+            }
             if (!quest.isHiddenFromUI)
             {
                 TextMeshProUGUI questUIText = Instantiate(questUIPrefab, activeQuestUIParent.transform);
@@ -523,9 +525,10 @@ public class OJQuestManager : MonoBehaviour
             {
                 audioSource.Stop();
             }
-
-            audioSource.PlayOneShot(questCompleteAudio);
-
+            if (questCompleteAudio != null)
+            {
+                audioSource.PlayOneShot(questCompleteAudio);
+            }
 
         }
 

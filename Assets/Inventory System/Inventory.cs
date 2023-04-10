@@ -205,6 +205,7 @@ public class Inventory : MonoBehaviour/*, IDragHandler*/
                 GameObject newItemUI = Instantiate(inventoryItemUIPrefab, inventoryPanel.transform);
                 TextMeshProUGUI newItemText = newItemUI.GetComponent<TextMeshProUGUI>();
                 newItemText.text = item.itemName + " x " + item.numCarried;
+                newItemText.color = Color.black;
                 TextMeshProUGUI newItemNumText = newItemUI.transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                 newItemNumText.text = inventory.Count.ToString();
                 inventoryListUI.Add(newItemText);
@@ -391,11 +392,11 @@ public class Inventory : MonoBehaviour/*, IDragHandler*/
 
     private void EndItemInspection()
     {
-        if (!dialogueSystem.inDialogue)
-        {
-            FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        //if (!dialogueSystem.inDialogue)
+        //{
+        //    FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //}
 
         Destroy(inspectedItem);
 

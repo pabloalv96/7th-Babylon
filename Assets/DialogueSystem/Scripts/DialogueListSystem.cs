@@ -53,8 +53,8 @@ public class DialogueListSystem : MonoBehaviour
 
     //private DialogueListSystem dialogueSystem;
     //private DialogueInitiator dialogueInitiator;
-    private OJQuestManager questManager;
-    private Inventory inventorySystem;
+    [SerializeField] private OJQuestManager questManager;
+    [SerializeField] private Inventory inventorySystem;
     private PlayerDialogue playerDialogue;
     private PlayerInfoController playerInfoController;
     private PlayerInteractionRaycast playerInteractionRaycast;
@@ -64,8 +64,8 @@ public class DialogueListSystem : MonoBehaviour
     {
         //dialogueSystem = FindObjectOfType<DialogueListSystem>();
         //dialogueInitiator = FindObjectOfType<DialogueInitiator>();
-        questManager = FindObjectOfType<OJQuestManager>();
-        inventorySystem = FindObjectOfType<Inventory>();
+        //questManager = FindObjectOfType<OJQuestManager>();
+        //inventorySystem = FindObjectOfType<Inventory>();
         playerDialogue = FindObjectOfType<PlayerDialogue>();
         playerInfoController = FindObjectOfType<PlayerInfoController>();
         playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();

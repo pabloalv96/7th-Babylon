@@ -60,8 +60,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
     private DialogueListSystem dialogueSystem;
     private DialogueInitiator dialogueInitiator;
-    private OJQuestManager questManager;
-    private Inventory inventorySystem;
+    [SerializeField]private OJQuestManager questManager;
+    [SerializeField] private Inventory inventorySystem;
     //private PlayerDialogue playerDialogue;
     private PlayerInfoController playerInfoController;
     [SerializeField] private float delayTime = 1f;
@@ -198,7 +198,10 @@ public class PlayerInteractionRaycast : MonoBehaviour
             audioSource.Stop();
         }
 
-        audioSource.PlayOneShot(collectAudioList[Random.Range(0, collectAudioList.Count)]);
+        if (collectAudioList.Count > 0)
+        {
+            audioSource.PlayOneShot(collectAudioList[Random.Range(0, collectAudioList.Count)]);
+        }
 
         StartCoroutine(DelaySettingFalseVariables());
 
