@@ -27,6 +27,14 @@ public class OJQuestTrigger : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (relatedQuests.Count > 0 && relatedQuests[0].questEnded)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

@@ -31,10 +31,15 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private bool isLookSin;
     [HideInInspector] public bool isBreakable;
 
+    [HideInInspector] public bool isItemInteracted;
+    [HideInInspector] public bool isConsumableInteracted;
+    [HideInInspector] public bool isLookSinInteracted;
+    [HideInInspector] public bool isBreakableInteracted;
+
     [SerializeField] private GameObject lookSinObject;
 
     [SerializeField] private TextPopUp popUpText;
-   
+
 
 
     private DoorActivator doorActivator;
@@ -59,6 +64,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
     private Inventory inventorySystem;
     //private PlayerDialogue playerDialogue;
     private PlayerInfoController playerInfoController;
+    [SerializeField] private float delayTime = 1f;
+
     void Awake()
     {
 
@@ -148,8 +155,14 @@ public class PlayerInteractionRaycast : MonoBehaviour
                                 if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
                                 {
                                     questItem.requiredAmountCollected = true;
-                                    questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
-
+                                    if (quest.objective.questDialogueOptions.Count > 0)
+                                    {
+                                        questManager.AddQuestItemDialogue(quest.objective.questDialogueOptions[0], questItem);
+                                    }
+                                    else
+                                    {
+                                        questManager.EndQuest(quest);
+                                    }
                                 }
                             }
                         }
@@ -170,6 +183,10 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
 
         popUpText.DisplayPopUp();
+
+        StartCoroutine(DelaySettingFalseVariables());
+
+        //isItemInteracted = false;
 
         //if (audioSource.isPlaying)
         //{
@@ -209,6 +226,30 @@ public class PlayerInteractionRaycast : MonoBehaviour
     //        RemoveItemFromInventory(selectedItem);
     //    }
     //}
+    public IEnumerator DelaySettingFalseVariables()
+    {
+        if (isItemInteracted)
+        {
+            yield return new WaitForSeconds(delayTime);
+
+            isItemInteracted = false;
+        }
+
+        if (isConsumableInteracted)
+        {
+            yield return new WaitForSeconds(delayTime);
+
+            isConsumableInteracted = false;
+        }
+
+        if (isBreakableInteracted)
+        {
+            yield return new WaitForSeconds(delayTime);
+
+            isBreakableInteracted = false;
+        }
+    }
+
     public IEnumerator InteractionRaycast()
     {
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -341,9 +382,12 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
             if (selectedObject != null && isConsumable && Input.GetKeyDown(consumeInput))
             {
+                isConsumableInteracted = true;
                 playerInfoController.AffectStatValues(selectedObject.GetComponent<ItemInWorld>().item.statsToEffectOnConsumptionList);
                 playerInfoController.foodConsumed += 1;
                 Destroy(selectedObject.gameObject);
+                StartCoroutine(DelaySettingFalseVariables());
+
                 //Play consume sound effect
             }
 
@@ -369,6 +413,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
                 if (isItem)
                 {
+                    isItemInteracted = true;
                     PickUpItem();
                 }
 
@@ -477,9 +522,11 @@ public class PlayerInteractionRaycast : MonoBehaviour
             {
                 if (isBreakable)
                 {
+                    isBreakableInteracted = true;
                     Debug.Log(selectedObject.name + " has been broken");
 
                     selectedObject.GetComponent<Breakable>().BreakObject();
+                    StartCoroutine(DelaySettingFalseVariables());
 
 
 
@@ -502,18 +549,22 @@ public class PlayerInteractionRaycast : MonoBehaviour
         {
             if (isLookSin)
             {
+                isLookSinInteracted = true;
                 lookSinObject.GetComponent<LookSinTimer>().isLooking = true;
             }
             else
             {
+                isLookSinInteracted = false;
                 lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
             }
+
         }
+
 
         yield return null;
     }
 
-   
+
 }
 
 

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: WRLD3 Apple Interaction
+  m_Name: WRLD9 Bed Interaction
   m_EditorClassIdentifier: 
-  dialogue: Whoever owns this room must really like apples
+  dialogue: Wow that looks very comfy, if not a bit excessive
   toOtherNPC: 1
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
@@ -25,25 +25,8 @@ MonoBehaviour:
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
-  conditionalEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 810313523487165986, guid: c57e5eeb3befafe4fa5bb81684f4638e,
-          type: 3}
-        m_TargetAssemblyTypeName: DialogueListSystem, Assembly-CSharp
-        m_MethodName: UnlockPlayerDialogue
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: ecf2a04592b69824da2970e883a8691f,
-            type: 2}
-          m_ObjectArgumentAssemblyTypeName: PlayerDialogueOption, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  relatedQuests:
-  - {fileID: 11400000, guid: af396a97595d2534e985d0f061aa95c2, type: 2}
+  conditionalEvents: []
+  relatedQuests: []
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}

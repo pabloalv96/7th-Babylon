@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cf53f3566551d4b80490abee7ea6da, type: 3}
+  m_Name: NEW new Jessica - Lust NPC
+  m_EditorClassIdentifier: 
+  npcName: Jessica
+  npcGender: Female
+  npcProfileID: 
+  npcDialogue:
+    greetingDialogue: []
+    goodbyeDialogue: []
+    changeTopicDialogue: []
+    nothingToSayDialogue: {fileID: 0}
+    dialogueConnections:
+    - playerDialogueInput: {fileID: 11400000, guid: f686a95271f5a714a85df6f1a97b1d01,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: c3f343fe2d553c04380451640f548eea, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 3e5acb8e4b69c3b478586048b63a764c,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: d69c8d410d934474898922e1efd08372, type: 2}
+    - playerDialogueInput: {fileID: 11400000, guid: 5d9f4eecffd89f449bfd89a022af6c8c,
+        type: 2}
+      npcResponses:
+      - requiredStat:
+          statName: 
+          statValue: 0
+        response: {fileID: 11400000, guid: aad6a675e69fe9f46b873b793d5cf000, type: 2}
