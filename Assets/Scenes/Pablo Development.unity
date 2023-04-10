@@ -861,7 +861,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &89167069
 MonoBehaviour:
@@ -16201,7 +16201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 427610, guid: 1d3b1a1513de66247974634911345b98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.824
+      value: -16.923
       objectReference: {fileID: 0}
     - target: {fileID: 427610, guid: 1d3b1a1513de66247974634911345b98, type: 3}
       propertyPath: m_LocalPosition.y
@@ -16313,28 +16313,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1868024054}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64ea0483577d04e419acab9735ccc468, type: 3}
+  m_Script: {fileID: 11500000, guid: 963c2f2985f2fc74198e2dbab661112f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2855499213626991069}
-  dialogueInitiator: {fileID: 8556563643081325000}
-  responseToPlayerActionsList:
-  - playerAction: 0
-    npcDialogueResponse: {fileID: 11400000, guid: d3ead3148252dc545a4f3cd0c940fc95,
-      type: 2}
-  - playerAction: 1
-    npcDialogueResponse: {fileID: 11400000, guid: 6e7e3b20e0acd54498c28e04aaa83451,
-      type: 2}
-  - playerAction: 2
-    npcDialogueResponse: {fileID: 11400000, guid: 9f550d551c9060a4e93b18d7be6fd81d,
-      type: 2}
-  - playerAction: 3
-    npcDialogueResponse: {fileID: 11400000, guid: ea561a96a136e0d4480076f42a5ad6c8,
-      type: 2}
+  player: {fileID: 0}
+  dialogueInitiator: {fileID: 0}
+  responseToPlayerActionsList: []
   viewDistance: 10
   viewRadius: 25
   playerInteractionRaycast: {fileID: 69002830}
-  eyes: {fileID: 1502824915}
+  eyes: {fileID: 297459560}
 --- !u!1001 &1877474314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27613,7 +27601,7 @@ PrefabInstance:
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
       propertyPath: lockedAtStartDialogue.Array.size
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
@@ -27709,6 +27697,12 @@ PrefabInstance:
       propertyPath: lockedAtStartDialogue.Array.data[14]
       value: 
       objectReference: {fileID: 11400000, guid: c512d3a9fb420d44f9f68c0c1426974a,
+        type: 2}
+    - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
+        type: 3}
+      propertyPath: lockedAtStartDialogue.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cbf16127817b344783fb5dbf1520498,
         type: 2}
     - target: {fileID: 8556563642642489157, guid: aa0ee347b0721b64796c9d315557d770,
         type: 3}
