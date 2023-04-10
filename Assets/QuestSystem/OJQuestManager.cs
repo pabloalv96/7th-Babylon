@@ -72,9 +72,6 @@ public class OJQuestManager : MonoBehaviour
         if (((!quest.questStarted && !quest.questEnded) || quest.questEnded && quest.isRepeatable) && !activeQuestList.Contains(quest))
         {
 
-            quest.questStarted = false;
-            quest.questEnded = false;
-
             popUpText.popUpText.text = "New Task Recieved. Press Q to Check";
 
             popUpText.popUpIndicator = true;
@@ -127,7 +124,7 @@ public class OJQuestManager : MonoBehaviour
         {
             foreach (OJQuest completedQuest in completedQuestList)
             {
-                if ((!completedQuest.isHiddenFromUI && activeQuestUiList[i].text == completedQuest.questDescription))
+                if ((!completedQuest.isHiddenFromUI && activeQuestUiList[i].text == completedQuest.questDescription) && !completedQuest.isRepeatable)
                 {
                     TextMeshProUGUI questUiToDestroy = activeQuestUiList[i];
                     activeQuestUiList.Remove(activeQuestUiList[i]);
@@ -477,23 +474,6 @@ public class OJQuestManager : MonoBehaviour
                     
                 }
             }
-            else if (quest.objective.objectiveType == OJQuestObjectiveType.multiObjective)
-            {
-                quest.objective.childrenQuests[0].completedChildrenQuestCount = 0;
-
-                foreach(OJQuest childQuest in quest.objective.childrenQuests[0].childrenQuests)
-                {
-                    if (childQuest.questEnded)
-                    {
-                        quest.objective.childrenQuests[0].completedChildrenQuestCount += 1;
-                    }
-                }
-
-                if (quest.objective.childrenQuests[0].completedChildrenQuestCount >= quest.objective.childrenQuests[0].requiredChildrenQuestsCompletedToComplete)
-                {
-                    quest.questEnded = true;
-                }
-            }
 
             if (activeQuestList.Contains(quest))
             {
@@ -524,79 +504,77 @@ public class OJQuestManager : MonoBehaviour
                 }
             }
 
-            
-
-            quest.questEnded = true;
-
             DeactivateOldQuestInteractions();
 
             RemoveInactiveQuestUI();
 
+            quest.questEnded = true;
+
+
         }
 
-        //for (int q = 0; q < activeQuestList.ToArray().Length; q++)
-        //{
-        //    //int completedChildrenQuestCount = 0;
-        //    if (activeQuestList[q].objective.objectiveType == OJQuestObjectiveType.multiObjective)
-        //    {
-        //        for (int aQ = 0; aQ < activeQuestList[q].objective.childrenQuests.Count; aQ++)
-        //        {
-        //            activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount = 0;
-        //            for (int cQ = 0; cQ < activeQuestList[q].objective.childrenQuests[aQ].childrenQuests.Count; cQ++) 
-        //            {
-        //                //if (activeQuestList.Contains(activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ]) || activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questStarted && !activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questEnded)
-        //                //{
-        //                //    //EndQuest(activeQuest.objective.childrenQuests[i]);
-        //                //    break;
-        //                //}
+        for (int q = 0; q < activeQuestList.ToArray().Length; q++)
+        {
+            //int completedChildrenQuestCount = 0;
+            if (activeQuestList[q].objective.objectiveType == OJQuestObjectiveType.multiObjective)
+            {
+                for (int aQ = 0; aQ < activeQuestList[q].objective.childrenQuests.Count; aQ++)
+                {
+                    activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount = 0;
+                    for (int cQ = 0; cQ < activeQuestList[q].objective.childrenQuests[aQ].childrenQuests.Count; cQ++) 
+                    {
+                        //if (activeQuestList.Contains(activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ]) || activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questStarted && !activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questEnded)
+                        //{
+                        //    //EndQuest(activeQuest.objective.childrenQuests[i]);
+                        //    break;
+                        //}
                         
-        //                if (activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questEnded)
-        //                {
-        //                    activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount ++;
-        //                }
+                        if (activeQuestList[q].objective.childrenQuests[aQ].childrenQuests[cQ].questEnded)
+                        {
+                            activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount ++;
+                        }
 
                         
 
-        //                //if (aQ + 1 >= activeQuestList[q].objective.childrenQuests.Count)
-        //                //{
-        //                //    EndQuest(activeQuestList[q]);
-        //                //}
-        //            }
+                        //if (aQ + 1 >= activeQuestList[q].objective.childrenQuests.Count)
+                        //{
+                        //    EndQuest(activeQuestList[q]);
+                        //}
+                    }
 
-        //            if (activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount >= activeQuestList[q].objective.childrenQuests[aQ].requiredChildrenQuestsCompletedToComplete)
-        //            {
-        //                EndQuest(activeQuestList[q]);
-        //                RemoveInactiveQuestUI();
-        //                //Debug.Log(activeQuestList[q].questID + " Quest has ended");
-        //            }
-        //        }
+                    if (activeQuestList[q].objective.childrenQuests[aQ].completedChildrenQuestCount >= activeQuestList[q].objective.childrenQuests[aQ].requiredChildrenQuestsCompletedToComplete)
+                    {
+                        EndQuest(activeQuestList[q]);
+                        //Debug.Log(activeQuestList[q].questID + " Quest has ended");
+                    }
+                }
 
-        //    }
-        //}
+            }
+        }
 
-        //if (quest.isRepeatable)
-        //{
-        //    quest.questStarted = false;
-        //    quest.questEnded = false;
+        if (quest.isRepeatable)
+        {
+            quest.questStarted = false;
+            quest.questEnded = false;
 
-        //    if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
-        //    {
-        //        foreach (OJQuestItemObjective questItem in quest.objective.questItems)
-        //        {
-        //            questItem.questCompleted = false;
+            if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+            {
+                foreach (OJQuestItemObjective questItem in quest.objective.questItems)
+                {
+                    questItem.questCompleted = false;
 
-        //            if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
-        //            {
-        //                questItem.requiredAmountCollected = true;
+                    if (inventorySystem.CheckInventoryForItem(questItem.item) && inventorySystem.CheckItemCount(questItem.item) >= questItem.requiredAmount)
+                    {
+                        questItem.requiredAmountCollected = true;
 
-        //            }
-        //            else
-        //            {
-        //                questItem.requiredAmountCollected = false;
-        //            }
-        //        }
-        //    }
-        //}
+                    }
+                    else
+                    {
+                        questItem.requiredAmountCollected = false;
+                    }
+                }
+            }
+        }
 
 
     }
