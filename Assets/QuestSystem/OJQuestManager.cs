@@ -64,11 +64,6 @@ public class OJQuestManager : MonoBehaviour
         inventorySystem = FindObjectOfType<Inventory>();
         playerDialogue = FindObjectOfType<PlayerDialogue>();
         playerInfoController = FindObjectOfType<PlayerInfoController>();
-
-
-        //FindObjectOfType<QuestManagerInspectorEditor>().ResetQuestsAndDialogue(this);
-        //Debug.Log("Quests and Dialogue Reset");
-
     }
 
     public void StartQuest(OJQuest quest)

@@ -20,39 +20,35 @@ public class QuestManagerInspectorEditor : Editor
 
         if (GUILayout.Button("Reset Quests and Dialogue"))
         {
-            ResetQuestsAndDialogue(questManager);
+            foreach(OJQuest quest in questManager.listOfAllQuests)
+            {
+                quest.questStarted = false;
+                quest.questEnded = false;
+
+                if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
+                {
+                    foreach(OJQuestItemObjective item in quest.objective.questItems)
+                    {
+                        item.questCompleted = false;
+                        item.requiredAmountCollected = false;
+                    }
+                }
+            }
+
+            foreach (PlayerDialogueOption dialogueOption in questManager.lockedAtStartDialogue)
+            {
+                dialogueOption.isLocked = true;
+            } 
+            
+            foreach (PlayerDialogueOption dialogueOption in questManager.unlockedAtStartDialogue)
+            {
+                dialogueOption.isLocked = false;
+            }
+
         }
         GUILayout.EndHorizontal();
 
         GUILayout.Space(5f);
-    }
-
-    public void ResetQuestsAndDialogue(OJQuestManager questManager)
-    {
-        foreach (OJQuest quest in questManager.listOfAllQuests)
-        {
-            quest.questStarted = false;
-            quest.questEnded = false;
-
-            if (quest.objective.objectiveType == OJQuestObjectiveType.itemBased)
-            {
-                foreach (OJQuestItemObjective item in quest.objective.questItems)
-                {
-                    item.questCompleted = false;
-                    item.requiredAmountCollected = false;
-                }
-            }
-        }
-
-        foreach (PlayerDialogueOption dialogueOption in questManager.lockedAtStartDialogue)
-        {
-            dialogueOption.isLocked = true;
-        }
-
-        foreach (PlayerDialogueOption dialogueOption in questManager.unlockedAtStartDialogue)
-        {
-            dialogueOption.isLocked = false;
-        }
     }
 }
 
