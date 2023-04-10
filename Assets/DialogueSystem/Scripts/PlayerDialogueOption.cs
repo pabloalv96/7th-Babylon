@@ -33,6 +33,8 @@ public class PlayerDialogueOption : ScriptableObject
     //public bool recieveItems;
     public List<OJQuestItemObjective> itemsToRecieve;
 
+    public AudioClip audioClip;
+
     //public void AffectEmotionValues()
     //{
     //    foreach (NPCMood.Emotion emotionToAffect in emotionsToAffectList)

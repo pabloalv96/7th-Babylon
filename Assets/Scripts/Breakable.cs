@@ -11,6 +11,8 @@ public class Breakable : MonoBehaviour
 
     public float brokenParts = 7;
 
+    //public List<AudioClip> audioClipList;
+
     public void Awake()
     {
         if (gameObject.GetComponent<ItemInWorld>())

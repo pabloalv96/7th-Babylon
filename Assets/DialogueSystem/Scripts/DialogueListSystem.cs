@@ -59,7 +59,7 @@ public class DialogueListSystem : MonoBehaviour
     private PlayerInfoController playerInfoController;
     private PlayerInteractionRaycast playerInteractionRaycast;
 
-
+    public AudioSource audioSource;
     private void Start()
     {
         //dialogueSystem = FindObjectOfType<DialogueListSystem>();
@@ -155,6 +155,16 @@ public class DialogueListSystem : MonoBehaviour
             {
                 //selectedDialogueOption.AffectStatValues();
                 playerInfoController.AffectStatValues(npcDialogue.statsToEffectList);
+            }
+
+            if (npcDialogueOption.audioClip != null)
+            {
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+
+                audioSource.PlayOneShot(npcDialogueOption.audioClip);
             }
 
             if (npcDialogue.relatedQuests != null)
@@ -485,6 +495,16 @@ public class DialogueListSystem : MonoBehaviour
                         //}
                     }
                 }
+            }
+
+            if (selectedDialogueOption.audioClip != null)
+            {
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+
+                audioSource.PlayOneShot(selectedDialogueOption.audioClip);
             }
 
             if (selectedDialogueOption.itemsToRecieve.Count > 0)

@@ -56,6 +56,8 @@ public class NPCDialogueOption : ScriptableObject
 
     public NPCInfo designatedNPC; // only for subtitle sequences
 
+    public AudioClip audioClip;
+
 
 }
 

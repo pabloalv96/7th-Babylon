@@ -35,6 +35,9 @@ public class OJQuestManager : MonoBehaviour
     public List<PlayerDialogueOption> lockedAtStartDialogue;
     public List<PlayerDialogueOption> unlockedAtStartDialogue;
 
+    public AudioSource audioSource;
+
+    public AudioClip newQuestAudio, questCompleteAudio;
 
 
     // track currently active quests
@@ -79,6 +82,12 @@ public class OJQuestManager : MonoBehaviour
 
             popUpText.DisplayPopUp();
 
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+
+            audioSource.PlayOneShot(newQuestAudio);
 
             if (!quest.isHiddenFromUI)
             {
@@ -509,6 +518,13 @@ public class OJQuestManager : MonoBehaviour
             RemoveInactiveQuestUI();
 
             quest.questEnded = true;
+
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+
+            audioSource.PlayOneShot(questCompleteAudio);
 
 
         }

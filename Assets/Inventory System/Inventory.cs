@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Inventory : MonoBehaviour, IDragHandler
+public class Inventory : MonoBehaviour/*, IDragHandler*/
 {
     public InventoryItem selectedItem;
 
@@ -337,10 +337,10 @@ public class Inventory : MonoBehaviour, IDragHandler
     {
         if (selectedItem != null)
         {
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.Confined;
+            //Cursor.visible = true;
 
-            FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+            //FindObjectOfType<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
 
             //if (Input.GetMouseButtonDown(0))
             //{
@@ -574,13 +574,13 @@ public class Inventory : MonoBehaviour, IDragHandler
         }
     }
 
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (inventoryPanel.activeSelf)
-        {
-            Debug.Log("OnDrag");
+    //public void OnDrag(PointerEventData eventData)
+    //{
+    //    if (inventoryPanel.activeSelf)
+    //    {
+    //        Debug.Log("OnDrag");
 
-            inspectedItem.transform.eulerAngles += new Vector3(eventData.delta.y , eventData.delta.x );
-        }
-    }
+    //        inspectedItem.transform.eulerAngles += new Vector3(eventData.delta.y , eventData.delta.x );
+    //    }
+    //}
 }

@@ -18,6 +18,8 @@ public class OJQuestTrigger : MonoBehaviour
 
     public List<UnityEvent> conditionalEvents;
 
+    public AudioClip audioClip;
+
 
     private void Start()
     {
@@ -54,6 +56,19 @@ public class OJQuestTrigger : MonoBehaviour
             foreach (UnityEvent conditional in conditionalEvents)
             {
                 conditional.Invoke();
+            }
+
+            if (audioClip != null)
+            {
+                if (audioClip != null)
+                {
+                    if (questManager.audioSource.isPlaying)
+                    {
+                        questManager.audioSource.Stop();
+                    }
+
+                    questManager.audioSource.PlayOneShot(audioClip);
+                }
             }
         }
     }
