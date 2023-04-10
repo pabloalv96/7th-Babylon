@@ -13,7 +13,7 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseGame();
         }
@@ -21,14 +21,14 @@ public class Pause : MonoBehaviour
 
     private void PauseGame()
     {
-        if (Time.timeScale == 1f)
+        if (!pauseUI.activeSelf)
         {
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             pauseUI.SetActive(true);
         }
         else
         {
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             pauseUI.SetActive(false);
         }
     }
