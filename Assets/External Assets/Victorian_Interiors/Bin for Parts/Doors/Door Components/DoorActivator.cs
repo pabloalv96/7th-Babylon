@@ -105,7 +105,7 @@ public class DoorActivator : MonoBehaviour
     public bool CheckKeysInInventory()
     {
         // create dialogue option for each applicable key in inventory
-        foreach (InventoryItem item in FindObjectOfType<Inventory>().inventory)
+        foreach (InventoryItem item in FindObjectOfType<DialogueListSystem>().inventorySystem.inventory)
         {
             for (int i = 0; i < keysList.Count; i++)
             {

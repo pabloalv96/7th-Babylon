@@ -580,15 +580,15 @@ public class PlayerInteractionRaycast : MonoBehaviour
         {
             if (isLookSin)
             {
-                if (audioSource.isPlaying)
+                /*if (audioSource.isPlaying)
                 {
                     audioSource.Stop();
                 }
 
-                audioSource.clip = lookAudio;
-                audioSource.Play();
+                audioSource.clip = lookAudio; 
+                audioSource.Play(); 
                 audioSource.pitch = Mathf.Lerp(defaultPitch, maxPitch, lookSinObject.GetComponent<LookSinTimer>().lookTimer);
-                audioSource.volume = Mathf.Lerp(defaultVolume, maxVolume, lookSinObject.GetComponent<LookSinTimer>().lookTimer);
+                audioSource.volume = Mathf.Lerp(defaultVolume, maxVolume, lookSinObject.GetComponent<LookSinTimer>().lookTimer);*/
 
                 isLookSinInteracted = true;
                 lookSinObject.GetComponent<LookSinTimer>().isLooking = true;
@@ -597,8 +597,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
             {
                 isLookSinInteracted = false;
                 lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
-                audioSource.Stop();
-                audioSource.clip = null;
+                //audioSource.Stop();
+                //audioSource.clip = null;
             }
 
         }

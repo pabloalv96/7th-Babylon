@@ -54,7 +54,7 @@ public class DialogueListSystem : MonoBehaviour
     //private DialogueListSystem dialogueSystem;
     //private DialogueInitiator dialogueInitiator;
     [SerializeField] private OJQuestManager questManager;
-    [SerializeField] private Inventory inventorySystem;
+    [SerializeField] public Inventory inventorySystem;
     private PlayerDialogue playerDialogue;
     private PlayerInfoController playerInfoController;
     private PlayerInteractionRaycast playerInteractionRaycast;
@@ -351,7 +351,7 @@ public class DialogueListSystem : MonoBehaviour
                     {
                         GameObject newDialogue = Instantiate(playerDialoguePrefab, listDialoguePanel.transform.position, Quaternion.identity);
                         newDialogue.GetComponentInChildren<TextMeshProUGUI>().text = dialogueOption.dialogue;
-                        newDialogue.GetComponentInChildren<TextMeshProUGUI>().fontSize = leaveButton.GetComponentInChildren<TextMeshProUGUI>().fontSize;
+                        //newDialogue.GetComponentInChildren<TextMeshProUGUI>().fontSize = leaveButton.GetComponentInChildren<TextMeshProUGUI>().fontSize;
                         newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
                         newDialogue.transform.SetParent(listDialoguePanel.transform);
 
