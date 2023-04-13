@@ -84,15 +84,18 @@ public class DoormanHallwayAI : MonoBehaviour
         RaycastHit hit;
         playerLayer = 1 << 7;
 
-        if (Physics.Raycast(doormanEyes.transform.position, transform.forward, out hit, Mathf.Infinity, playerLayer))
+        if (Physics.Raycast(doormanEyes.transform.position, transform.forward, out hit, Mathf.Infinity /*playerLayer*/))
         {
-            //Debug.DrawLine(doormanEyes.transform.position, transform.TransformDirection(Vector3.forward), Color.magenta);
-            //if ((hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Wall")) && !hit.collider.CompareTag("Player"))
-            //{
-            //    return;
-            //}
-            //else
-            if (hit.collider != null)
+            Debug.DrawLine(doormanEyes.transform.position, transform.TransformDirection(Vector3.forward), Color.magenta);
+            if (hit.collider.CompareTag("Wall"))
+            {
+                doormanState = AIState.patrolling;
+
+                //if (!FindObjectOfType<DialogueListSystem>().enabled)
+                //    dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, searchingDialogue[Random.Range(0, searchingDialogue.Count)]);
+            }
+            else
+            if (hit.collider.CompareTag("Player"))
             {
                 Debug.DrawLine(transform.position, hit.point, Color.red);
 
