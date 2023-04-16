@@ -333,6 +333,9 @@ MonoBehaviour:
   unlockDoorEvent:
     m_PersistentCalls:
       m_Calls: []
+  openDoorEvent:
+    m_PersistentCalls:
+      m_Calls: []
   animator: {fileID: 0}
   openSound: {fileID: 8300000, guid: 1c8d62081c544fa4689c05e3e42baa62, type: 3}
   closeSound: {fileID: 8300000, guid: 373fbe4790323c04b9bd759127a791b3, type: 3}
@@ -340,6 +343,8 @@ MonoBehaviour:
   isOpen: 0
   isLocked: 0
   keysList: []
+  lockedDoorDialogue: {fileID: 0}
+  unlockDoorDialogue: {fileID: 0}
 --- !u!65 &8670141913119968343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -351,8 +356,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.011054519, y: 0.026236635, z: 0.0030675984}
-  m_Center: {x: -0.0055272565, y: 0.01311833, z: -0.0000278144}
+  m_Size: {x: 0.49, y: 2.71, z: 1.15}
+  m_Center: {x: -0.02, y: 0.43, z: -0.55}
 --- !u!1 &174074
 GameObject:
   m_ObjectHideFlags: 0
