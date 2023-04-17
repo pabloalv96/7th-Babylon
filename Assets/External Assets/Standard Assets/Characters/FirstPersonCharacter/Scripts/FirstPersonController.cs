@@ -34,6 +34,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
         [SerializeField] private AudioClip outOfStaminaSound;
 
+        [SerializeField] FinalTriggerTimer endScreen;
+
         [SerializeField] private float speedUpMultiplier;
         [SerializeField] private float slowDownMultiplier;
 
@@ -93,6 +95,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            if(endScreen.endScreen)
+            {
+                m_WalkSpeed = 0f;
+                m_RunSpeed = 0f;
+            }
         }
 
 
