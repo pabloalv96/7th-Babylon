@@ -5,16 +5,16 @@ using Pathfinding;
 
 public class DoormanHallwayAI : MonoBehaviour
 {
-    public enum AIState { patrolling, chasing, /*searching,*/ idling}
+    public enum AIState { searching, chasing, wandering, idling}
 
     public AIState doormanState;
 
     public GameObject doormanEyes;
 
-    [SerializeField] private float viewDistance /*, viewRadius*/;
+    [SerializeField] private float viewDistance;
 
     [SerializeField] private bool playerInSight;
-    private int playerLayer;
+    //private int playerLayer;
 
     public List<Transform> waypointsList;
 
@@ -35,24 +35,51 @@ public class DoormanHallwayAI : MonoBehaviour
 
     private DialogueInitiator dialogueInitiator;
 
+    public float dialogueCooldownTimer;
+    public float dialogueCooldownTimerReset;
+
     [SerializeField] private List<NPCDialogueOption> chasingDialogue, searchingDialogue, caughtDialogue;
 
     public CameraFade cameraFade;
 
     public float teleportDelay = 1;
 
+    public float maxSpeed, minSpeed;
+
+    public float speedChangeTimer;
+    public float speedChangeTimerReset;
+
+    public bool increaseSpeed;
+
+    public float increaseSpeedMultiplier;
+    //public bool randomWaypoint;
+
+    public float minDistance = 2f;
+
+    private RichAI richAI;
+
+    //public float attentionSpanTimer;
+
+    //public float teleportCount
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         searchTimerReset = searchTimer;
         dialogueInitiator = GameObject.FindObjectOfType<DialogueInitiator>();
+        richAI = GetComponent<RichAI>();
     }
     public void Update()
     {
         switch (doormanState)
         {
-            case AIState.patrolling:
-                Patrol();
+            //case AIState.wandering:
+            //    Wander();
+            //    gizmoColour = Color.green;
+            //    break;
+
+            case AIState.searching:
+                Search();
                 gizmoColour = Color.yellow;
                 break;
 
@@ -62,12 +89,6 @@ public class DoormanHallwayAI : MonoBehaviour
 
                 break;
 
-            //case AIState.searching:
-            //    Search();
-            //    gizmoColour = Color.magenta;
-
-            //    break;
-
             case AIState.idling:
                 Idle();
                 gizmoColour = Color.cyan;
@@ -75,21 +96,27 @@ public class DoormanHallwayAI : MonoBehaviour
                 break;
         }
 
-       
-       
-    }
+       if (dialogueCooldownTimer > 0)
+        {
+            dialogueCooldownTimer -= Time.deltaTime;
+        }
 
-    public void FixedUpdate()
-    {
+       if (doormanState == AIState.searching)
+        {
+            searchTimer -= Time.deltaTime;
+
+        }
+       
+
         RaycastHit hit;
-        playerLayer = 1 << 7;
+        //playerLayer = 1 << 7;
 
         if (Physics.Raycast(doormanEyes.transform.position, transform.forward, out hit, Mathf.Infinity /*playerLayer*/))
         {
             Debug.DrawLine(doormanEyes.transform.position, transform.TransformDirection(Vector3.forward), Color.magenta);
-            if (hit.collider.CompareTag("Wall"))
+            if (hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Untagged"))
             {
-                doormanState = AIState.patrolling;
+                doormanState = AIState.searching;
 
                 //if (!FindObjectOfType<DialogueListSystem>().enabled)
                 //    dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, searchingDialogue[Random.Range(0, searchingDialogue.Count)]);
@@ -103,81 +130,83 @@ public class DoormanHallwayAI : MonoBehaviour
                 //searchTimer = searchTimerReset;
                 //Chase();
 
-                if (!FindObjectOfType<DialogueListSystem>().enabled)
+                if (!FindObjectOfType<DialogueListSystem>().enabled && dialogueCooldownTimer == 0)
+                {
                     dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, chasingDialogue[Random.Range(0, chasingDialogue.Count)]);
-
+                    dialogueCooldownTimer = dialogueCooldownTimerReset;
+                }
                 //Debug.Log("Player in sight");
-            }
-            else
-            {
-                doormanState = AIState.patrolling;
-
-                if (!FindObjectOfType<DialogueListSystem>().enabled)
-                    dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, searchingDialogue[Random.Range(0, searchingDialogue.Count)]);
             }
             //else
             //{
-            //    Debug.DrawLine(transform.position, hit.point, Color.white);
+            //    doormanState = AIState.wandering;
+            //    randomWaypoint = true;
 
-            //    if (doormanState == AIState.chasing)
-            //    {
-            //        searchTimer -= Time.deltaTime;
-
-            //        if (searchTimer <= 0)
-            //        {
-            //            //doormanState = AIState.searching;
-            //            doormanState = AIState.patrolling;
-
-            //            //Patrol();
-
-            //            dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, searchingDialogue[Random.Range(0, searchingDialogue.Count)]);
-
-
-            //            Debug.DrawRay(transform.position, hit.point, Color.magenta);
-
-            //            searchTimer = searchTimerReset;
-            //        }
-            //    }
+            //    //if (!FindObjectOfType<DialogueListSystem>().enabled && dialogueCooldownTimer == 0)
+            //    //{
+            //    //    dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, searchingDialogue[Random.Range(0, searchingDialogue.Count)]);
+            //    //    dialogueCooldownTimer = dialogueCooldownTimerReset;
+            //    //}
             //}
-        }
 
-        //if (doormanState == AIState.searching)
-        //{
-        //    searchTimer -= Time.deltaTime;
 
-        //    if (searchTimer <= 0f)
-        //    {
-        //        doormanState = AIState.patrolling;
-        //        searchTimer = searchTimerReset;
-        //    }
-        //}
-
-        if (Vector3.Distance(transform.position, player.transform.position) < 2f)
-        {
-            if (doormanState == AIState.chasing)
+            if (Vector3.Distance(transform.position, player.transform.position) < 2f)
             {
-                doormanState = AIState.idling;
+                if (doormanState == AIState.chasing)
+                {
+                    doormanState = AIState.idling;
 
-                // fail state here
-                dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, caughtDialogue[Random.Range(0, caughtDialogue.Count)]);
+                    // fail state here
+                    dialogueInitiator.BeginSubtitleSequence(gameObject.GetComponent<NPCBrain>().npcInfo, caughtDialogue[Random.Range(0, caughtDialogue.Count)]);
+                }
             }
-        }
-        else if (doormanState == AIState.idling)
-        {
-            destinationSetter.enabled = true;
+            else if (doormanState == AIState.idling)
+            {
+                destinationSetter.enabled = true;
 
-            doormanState = AIState.chasing;
-        }
+                doormanState = AIState.wandering;
+            }
 
+            if (speedChangeTimer > 0)
+            {
+                speedChangeTimer -= Time.deltaTime;
+            }
+            else
+            {
+                switch(increaseSpeed)
+                {
+                    case true:
+                        increaseSpeed = false;
+                        speedChangeTimer = speedChangeTimerReset;
+                        break;
+
+                    case false:
+                        increaseSpeed = true;
+                        speedChangeTimer = speedChangeTimerReset;
+                        break;
+                }
+            }
+
+            if (!increaseSpeed)
+            {
+                richAI.maxSpeed = Mathf.Lerp(maxSpeed, minSpeed, speedChangeTimer * increaseSpeedMultiplier);
+            }
+            else
+            {
+                richAI.maxSpeed = Mathf.Lerp(minSpeed, maxSpeed, speedChangeTimer * increaseSpeedMultiplier);
+            }
+
+        }
     }
 
-    public void Patrol()
+    public void Search()
     {
         if (waypointsList != null)
         {
-            if (destinationSetter.target == null || Vector3.Distance(transform.position, destinationSetter.target.transform.position) <= changeWaypointDistance)
+            if (destinationSetter.target == null || Vector3.Distance(transform.position, destinationSetter.target.transform.position) <= changeWaypointDistance || searchTimer <= 0f)
             {
                 destinationSetter.target = waypointsList[Random.Range(0, waypointsList.Count)];
+                searchTimer = searchTimerReset;
             }
         }
         else
@@ -191,14 +220,24 @@ public class DoormanHallwayAI : MonoBehaviour
 
     public void Chase()
     {
-        destinationSetter.target = player.transform; 
+        destinationSetter.target = player.transform;
+
+        Vector3 targetPostition = new Vector3(player.transform.position.x,
+                                      transform.position.y,
+                                      player.transform.position.z);
+        transform.LookAt(targetPostition);
     }
 
-    //public void Search()
+    //public void Wander()
     //{
-    //    destinationSetter.target = destinationSetter.target = closestWaypointToPlayer;
+    //    //transform.position = waypointsList[Random.Range(0, waypointsList.Count)].position;
+    //    if (randomWaypoint)
+    //    {
+    //        destinationSetter.target = waypointsList[Random.Range(0, waypointsList.Count)];
+    //        randomWaypoint = false;
+    //    }
 
-    //    if (Vector3.Distance(transform.position, destinationSetter.target.transform.position) <= changeWaypointDistance)
+    //    if (Vector3.Distance(transform.position, destinationSetter.target.position) <= minDistance)
     //    {
     //        destinationSetter.target = waypointsList[Random.Range(0, waypointsList.Count)];
     //    }
@@ -223,7 +262,7 @@ public class DoormanHallwayAI : MonoBehaviour
         //destinationSetter.enabled = true;
 
         //gameObject.SetActive(false);
-        doormanState = AIState.patrolling;
+        doormanState = AIState.searching;
     }
 
     public IEnumerator TrappedTime(float time) { 
@@ -231,8 +270,6 @@ public class DoormanHallwayAI : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         player.transform.position = lobbyWaypoint.position;
-
-
     }
 
 

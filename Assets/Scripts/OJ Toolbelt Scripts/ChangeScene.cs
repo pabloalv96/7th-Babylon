@@ -8,9 +8,9 @@ namespace Toolbelt_OJ
     public class ChangeScene : MonoBehaviour
     {
 
-        //public Animator transition;
+        public Animator transition;
 
-        //public float transitionTime = 1f;
+        public float transitionTime = 2f;
 
         public void MoveToScene(int sceneID)
         {
@@ -20,13 +20,13 @@ namespace Toolbelt_OJ
             SceneManager.LoadScene(sceneID);
         }
 
-        /*IEnumerator LoadLevel(int sceneID)
+        IEnumerator LoadLevel(int sceneID)
         {
 
             yield return new WaitForSeconds(transitionTime);
 
             SceneManager.LoadScene(sceneID);
-        }*/
+        }
 
     }
 }
