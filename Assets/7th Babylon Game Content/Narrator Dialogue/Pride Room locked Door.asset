@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: INTRO 1.1 Pride
+  m_Name: Pride Room locked Door
   m_EditorClassIdentifier: 
-  dialogue: The time has come my children.
-  toOtherNPC: 1
-  requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 68a445ec469a99d4095a5fd7e1fee281, type: 2}
+  dialogue: 'Huh?! It''s Locked! '
+  toOtherNPC: 0
+  requiresResponse: 1
+  continuedDialogue: {fileID: 0}
   playerResponses: []
-  limitedTime: 1
-  timeLimit: 2
-  playerCanChangeTopic: 0
-  playerCanLeaveDialogue: 0
+  limitedTime: 0
+  timeLimit: 0
+  playerCanChangeTopic: 1
+  playerCanLeaveDialogue: 1
   isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
