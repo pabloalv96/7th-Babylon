@@ -21,7 +21,7 @@ public class LightsChange : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            directionalLight.intensity = 0;
+            directionalLight.intensity = 0.4f;
         }
         
     }
