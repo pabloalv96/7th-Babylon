@@ -13,8 +13,8 @@ public class InventoryItem : ScriptableObject
     public int numCarried;
     public int maxNumCarried;
 
-    public bool canCollect;
     public bool canConsume;
+    public bool isImportant;
     public List<OJQuest> relatedQuests;
 
 

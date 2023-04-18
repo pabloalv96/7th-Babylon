@@ -354,6 +354,7 @@ public class DialogueListSystem : MonoBehaviour
                         //newDialogue.GetComponentInChildren<TextMeshProUGUI>().fontSize = leaveButton.GetComponentInChildren<TextMeshProUGUI>().fontSize;
                         newDialogue.GetComponent<DialogueListButton>().dialogueOption = dialogueOption;
                         newDialogue.transform.SetParent(listDialoguePanel.transform);
+                        newDialogue.transform.localScale = Vector3.one;
 
                         if (dialogueOption.relatedQuests != null)
                         {
@@ -638,7 +639,7 @@ public class DialogueListSystem : MonoBehaviour
             dialogueUI.SetActive(true);
             listDialoguePanel.SetActive(false);
 
-            if (pausedSubtitleDialogue != null && pausedSubtitleDialogue == npcDialogue)
+            if (pausedSubtitleDialogue != null && pausedSubtitleNPC != null && pausedSubtitleDialogue == npcDialogue && pausedSubtitleNPC == npc)
             {
                 pausedSubtitleDialogue = null;
                 pausedSubtitleNPC = null;

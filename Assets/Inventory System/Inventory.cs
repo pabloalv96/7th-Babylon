@@ -198,7 +198,7 @@ public class Inventory : MonoBehaviour/*, IDragHandler*/
         }
         else // otherwise add a new item to the inventory
         {
-            if (inventory.Count < inventorySlotLimit)
+            if (inventory.Count < inventorySlotLimit || item.isImportant)
             {
                 inventory.Add(item);
                 item.numCarried = 1;

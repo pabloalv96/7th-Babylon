@@ -554,6 +554,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
                     selectedObject.GetComponent<Breakable>().BreakObject();
                     StartCoroutine(DelaySettingFalseVariables());
 
+                    questManager.GetComponent<BreakObjectsQuest>().itemsBrokenCount++;
+
                     if (audioSource.isPlaying)
                     {
                         audioSource.Stop();

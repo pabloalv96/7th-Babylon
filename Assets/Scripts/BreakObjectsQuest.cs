@@ -13,21 +13,20 @@ public class BreakObjectsQuest : MonoBehaviour
     public float itemsBrokenCount, requiredBrokenCount;
     private void Update()
     {
-        if (questManager.activeQuestList.Contains(breakObjectsQuest))
-        {
-            if (interactionRaycast.isBreakable && Input.GetKeyDown(interactionRaycast.consumeInput))
-            {
-                if (itemsBrokenCount < requiredBrokenCount)
-                {
-                    itemsBrokenCount += 1;
-                }
-                
-            }
-        }
+        //if (interactionRaycast.isBreakableInteracted && Input.GetKeyDown(interactionRaycast.breakInput))
+        //{
 
-        if (itemsBrokenCount >= requiredBrokenCount)
+        //     itemsBrokenCount ++;
+            
+
+        //}
+
+        if (breakObjectsQuest.questStarted)
         {
-            questManager.EndQuest(breakObjectsQuest);
+            if (itemsBrokenCount >= requiredBrokenCount)
+            {
+                questManager.EndQuest(breakObjectsQuest);
+            }
         }
     }
 }
