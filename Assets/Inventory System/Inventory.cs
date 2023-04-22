@@ -450,6 +450,19 @@ public class Inventory : MonoBehaviour/*, IDragHandler*/
         }
     }
 
+    public void SelectInventoryItemAsButton(TextMeshProUGUI itemText)
+    {
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (itemText.text.Contains(inventory[i].itemName))
+            {
+                selectedItem = inventory[i];
+                EndItemInspection();
+                InspectItem();
+            }
+        }
+    }
+
     private void SelectInventoryItem()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))

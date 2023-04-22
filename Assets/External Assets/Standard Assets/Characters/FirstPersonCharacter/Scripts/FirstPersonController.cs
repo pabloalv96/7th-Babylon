@@ -53,6 +53,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
         [SerializeField] private AudioSource staminaAudioSource;
+        [SerializeField] private float staminaAudioTimer;
+        [SerializeField] private float staminaAudioTimerReset;
 
 
         // Use this for initialization
@@ -253,8 +255,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (stamina <= 0)
             {
                 m_IsWalking = true;
-                //staminaAudioSource.Stop();
-                staminaAudioSource.PlayOneShot(outOfStaminaSound);
+
+                if (staminaAudioSource.isPlaying)
+                {
+                    staminaAudioSource.Stop();
+                    staminaAudioSource.Play();
+                    
+
+                }
+            }
+
+            if (staminaAudioSource.isPlaying)
+            {
+                staminaAudioTimer -= Time.deltaTime;
+
+                if (staminaAudioTimer <= 0f)
+                {
+                    staminaAudioSource.Stop();
+                    staminaAudioTimer = staminaAudioTimerReset;
+                }
             }
 
             //if (m_IsWalking && stamina < maxStamina / 3)

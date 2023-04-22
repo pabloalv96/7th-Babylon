@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 440626}
   - component: {fileID: 20515816}
   - component: {fileID: 2852330469052564496}
+  - component: {fileID: 1765226384927570418}
   m_Layer: 0
   m_Name: Champaign_Flute (2)
   m_TagString: Untagged
@@ -245,6 +246,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1765226384927570418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e4831f871e28546b4a0e9ed84b59cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenPartsPrefabs:
+  - {fileID: 2171026056970117194, guid: b3f05ef7568ecb940904c798f1430446, type: 3}
+  - {fileID: 8736107594368469976, guid: 916fb3e7a1d513048a7a961afee8df52, type: 3}
+  - {fileID: 6497874741785163186, guid: b71648cbb4220cf46b30903433126f42, type: 3}
+  - {fileID: 1283004069779433001, guid: a9c4ec25c90ba3a46a801b3be878ff9d, type: 3}
+  - {fileID: 1112793604548269494, guid: 9e2308f0707f62a48a311281c7d82754, type: 3}
+  relatedSin:
+  - statName: Wrath
+    statValue: 1
+  objectName: 
+  brokenParts: 7
 --- !u!1 &173712
 GameObject:
   m_ObjectHideFlags: 0

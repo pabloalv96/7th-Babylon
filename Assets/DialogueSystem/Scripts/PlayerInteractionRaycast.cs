@@ -335,7 +335,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 isNPC = false;
             }
 
-            if (hit.transform.GetComponent<DoorActivator>())
+            if (hit.transform.GetComponent<DoorActivator>() && hit.transform.GetComponent<DoorActivator>().enabled)
             {
                 isDoor = true;
                 selectedObject = hit.transform.gameObject;
@@ -599,6 +599,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
             {
                 isLookSinInteracted = false;
                 lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
+                lookSinObject = null;
                 //audioSource.Stop();
                 //audioSource.clip = null;
             }

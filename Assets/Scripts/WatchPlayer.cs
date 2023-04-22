@@ -9,15 +9,18 @@ using UnityEngine;
 //Comment when they see the player do stuff
 public class WatchPlayer : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
 
-    public DialogueInitiator dialogueInitiator;
+    private DialogueInitiator dialogueInitiator;
+    private DialogueListSystem dialogueListSystem;
+
+    //public bool watchPlayer;
 
     public List<ResponseToPlayerActions> responseToPlayerActionsList;
 
     public float viewDistance = 10, viewRadius = 25;
 
-    public PlayerInteractionRaycast playerInteractionRaycast;
+    private PlayerInteractionRaycast playerInteractionRaycast;
 
     private NPCBrain brain;
     public Transform eyes;
@@ -27,6 +30,10 @@ public class WatchPlayer : MonoBehaviour
     void Start()
     {
         brain = GetComponent<NPCBrain>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        dialogueInitiator = FindObjectOfType<DialogueInitiator>();
+        playerInteractionRaycast = FindObjectOfType<PlayerInteractionRaycast>();
+        dialogueListSystem = FindObjectOfType<DialogueListSystem>();
     }
 
     void Update()
@@ -46,48 +53,56 @@ public class WatchPlayer : MonoBehaviour
         RaycastHit hit;
         playerLayer = 1 << 7;
 
-        if (Physics.Raycast(eyes.position, transform.forward, out hit, Mathf.Infinity, playerLayer))
-        {
+        int notPlayerLayer = ~playerLayer;
 
-            if (hit.transform.CompareTag("Player"))
+        if (Physics.Raycast(eyes.position, transform.forward, out hit, Mathf.Infinity/*, playerLayer*/))
+        {
+            if (hit.collider.CompareTag("Wall") || hit.collider.CompareTag("Untagged"))
             {
-                Debug.DrawRay(eyes.position, transform.TransformDirection(Vector3.forward) * 1000, Color.magenta);
-                eyes.GetComponent<MeshRenderer>().material.color = Color.red;
+                Debug.DrawRay(eyes.position, transform.TransformDirection(Vector3.forward) * Vector3.Distance(transform.position, hit.point), Color.blue);
+                //eyes.GetComponent<MeshRenderer>().material.color = Color.cyan;
+            }
+            else if (hit.collider.CompareTag("Player"))
+            {
+                Debug.DrawRay(eyes.position, transform.TransformDirection(Vector3.forward) * Vector3.Distance(transform.position, hit.point), Color.red);
+                //eyes.GetComponent<MeshRenderer>().material.color = Color.magenta;
 
                 JudgePlayerActions();
             }
-           
         }
-        else
-        {
-            Debug.DrawRay(eyes.position, transform.TransformDirection(Vector3.forward) * 1000, Color.blue);
-            eyes.GetComponent<MeshRenderer>().material.color = Color.cyan;
-        }
+
     }
+
 
     public void JudgePlayerActions()
     {
         if (playerInteractionRaycast.isItemInteracted)
         {
-            foreach(ResponseToPlayerActions responseToPlayerActions in responseToPlayerActionsList)
+
+            foreach (ResponseToPlayerActions responseToPlayerActions in responseToPlayerActionsList)
             {
                 if (responseToPlayerActions.playerAction == PlayerAction.steal)
                 {
-                    dialogueInitiator.BeginSubtitleSequence(brain.npcInfo, responseToPlayerActions.npcDialogueResponse);
+                    if (!dialogueListSystem.enabled)
+                    {
+                        dialogueInitiator.BeginSubtitleSequence(brain.npcInfo, responseToPlayerActions.npcDialogueResponses[Random.Range(0, responseToPlayerActions.npcDialogueResponses.Count)]);
+                    }
+                    Debug.Log("Steal reaction dialogue");
+                    playerInteractionRaycast.isItemInteracted = false;
                 }
             }
         }
 
-        if (playerInteractionRaycast.isLookSinInteracted)
-        {
-            foreach (ResponseToPlayerActions responseToPlayerActions in responseToPlayerActionsList)
-            {
-                if (responseToPlayerActions.playerAction == PlayerAction.lookSin)
-                {
-                    dialogueInitiator.BeginSubtitleSequence(brain.npcInfo, responseToPlayerActions.npcDialogueResponse);
-                }
-            }
-        }
+        //if (playerInteractionRaycast.isLookSinInteracted)
+        //{
+        //    foreach (ResponseToPlayerActions responseToPlayerActions in responseToPlayerActionsList)
+        //    {
+        //        if (responseToPlayerActions.playerAction == PlayerAction.lookSin)
+        //        {
+        //            dialogueInitiator.BeginSubtitleSequence(brain.npcInfo, responseToPlayerActions.npcDialogueResponses[Random.Range(0, responseToPlayerActions.npcDialogueResponses.Count)]);
+        //        }
+        //    }
+        //}
 
         if (playerInteractionRaycast.isConsumableInteracted)
         {
@@ -95,7 +110,13 @@ public class WatchPlayer : MonoBehaviour
             {
                 if (responseToPlayerActions.playerAction == PlayerAction.consume)
                 {
-                    dialogueInitiator.BeginSubtitleSequence(brain.npcInfo, responseToPlayerActions.npcDialogueResponse);
+                    if (!dialogueListSystem.enabled)
+                    {
+                        dialogueInitiator.BeginSubtitleSequence(brain.npcInfo, responseToPlayerActions.npcDialogueResponses[Random.Range(0, responseToPlayerActions.npcDialogueResponses.Count)]);
+                    }
+                    Debug.Log("Consume reaction dialogue");
+                    playerInteractionRaycast.isConsumableInteracted = false;
+
                 }
             }
         }
@@ -106,20 +127,26 @@ public class WatchPlayer : MonoBehaviour
             {
                 if (responseToPlayerActions.playerAction == PlayerAction.destroy)
                 {
-                    dialogueInitiator.BeginSubtitleSequence(brain.npcInfo, responseToPlayerActions.npcDialogueResponse);
+                    if (!dialogueListSystem.enabled)
+                    {
+                        dialogueInitiator.BeginSubtitleSequence(brain.npcInfo, responseToPlayerActions.npcDialogueResponses[Random.Range(0, responseToPlayerActions.npcDialogueResponses.Count)]);
+                    }
+                    Debug.Log("Break reaction dialogue");
+                    playerInteractionRaycast.isBreakableInteracted = false;
+
                 }
             }
         }
     }
 
     [System.Serializable]
-    public enum PlayerAction { steal, lookSin, consume, destroy }
+    public enum PlayerAction { steal, /*lookSin,*/ consume, destroy }
 
     [System.Serializable]
     public class ResponseToPlayerActions
     {
         public PlayerAction playerAction;
 
-        public NPCDialogueOption npcDialogueResponse;
+        public List<NPCDialogueOption> npcDialogueResponses;
     }
 }

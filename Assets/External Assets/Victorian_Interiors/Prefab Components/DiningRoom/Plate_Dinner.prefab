@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 20544656}
   - component: {fileID: 6531410}
   - component: {fileID: 5416198}
+  - component: {fileID: 2119877064907039546}
+  - component: {fileID: -6525234470383225523}
   m_Layer: 0
   m_Name: Plate_Dinner
   m_TagString: Untagged
@@ -88,6 +90,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2119877064907039546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e4831f871e28546b4a0e9ed84b59cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenPartsPrefabs:
+  - {fileID: 1562745526367141249, guid: e5a9bf0cca76006478556fbd6bc694a8, type: 3}
+  - {fileID: 2947611487962043959, guid: 9e5954a8bf0585845b7aff1506254ea5, type: 3}
+  - {fileID: 2000367340315628625, guid: a01094e2ae8e965438ab982e3455647a, type: 3}
+  - {fileID: 8231772088410012066, guid: 1f80ceb63ba1a56439bf579b1acf6ce9, type: 3}
+  - {fileID: 7485691036865958626, guid: 4efd57357edb4d1448b835c61d425215, type: 3}
+  relatedSin:
+  - statName: Wrath
+    statValue: 1
+  objectName: 
+  brokenParts: 7
+--- !u!114 &-6525234470383225523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5add0410dfffe74f80ecde41d7d8915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 30beb0b7b372d6448ae2dc04c6a8b8cf, type: 2}
+  itemInteractions: []
 --- !u!1 &167854
 GameObject:
   m_ObjectHideFlags: 0
