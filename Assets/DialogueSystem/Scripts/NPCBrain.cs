@@ -20,7 +20,7 @@ public class NPCBrain : MonoBehaviour
 
     private Animator animator;
 
-    private void Awake()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }

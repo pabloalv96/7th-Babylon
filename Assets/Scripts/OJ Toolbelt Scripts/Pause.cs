@@ -6,7 +6,7 @@ public class Pause : MonoBehaviour
 {
     [SerializeField] private GameObject pauseUI;
 
-    private void Awake()
+    private void Start()
     {
         pauseUI.SetActive(false);
     }

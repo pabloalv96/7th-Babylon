@@ -21,7 +21,7 @@ public class AIStomp : MonoBehaviour
 
 
     [SerializeField] private List<AudioClip> footstepSounds;
-    void Awake()
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
         //controller = GetComponent<CharacterController>();

@@ -62,7 +62,7 @@ public class DoormanHallwayAI : MonoBehaviour
 
     //public float teleportCount
 
-    private void Awake()
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         searchTimerReset = searchTimer;
