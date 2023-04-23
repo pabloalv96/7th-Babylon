@@ -27,7 +27,7 @@ public class WatchPlayer : MonoBehaviour
 
     private int playerLayer;
 
-    void Start()
+    void Awake()
     {
         brain = GetComponent<NPCBrain>();
         player = GameObject.FindGameObjectWithTag("Player").transform;

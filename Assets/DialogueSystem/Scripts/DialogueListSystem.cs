@@ -60,7 +60,7 @@ public class DialogueListSystem : MonoBehaviour
     private PlayerInteractionRaycast playerInteractionRaycast;
 
     public AudioSource audioSource;
-    private void Start()
+    private void Awake()
     {
         //dialogueSystem = FindObjectOfType<DialogueListSystem>();
         //dialogueInitiator = FindObjectOfType<DialogueInitiator>();
@@ -809,9 +809,8 @@ public class DialogueListSystem : MonoBehaviour
 
     public void ChangeSpeaker(NPCInfo newSpeaker)
     {
-        DialogueListSystem dialogueListSystem = FindObjectOfType<DialogueListSystem>();
-        dialogueListSystem.npc = newSpeaker;
-        dialogueListSystem.npcNameText.text = newSpeaker.npcName;
+        npc = newSpeaker;
+        npcNameText.text = newSpeaker.npcName;
 
         Debug.Log("New Speaker = " + newSpeaker.npcName);
         // set new speaker animations
