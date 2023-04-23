@@ -31,7 +31,7 @@ public class EnvironmentalChangeController : MonoBehaviour
     //Check highest stat's value
     //determine what assets to set
 
-    private void Awake()
+    private void Start()
     {
         foreach (EnvironmentalChangesPerStat environmentalChange in environmentalChanges)
         {

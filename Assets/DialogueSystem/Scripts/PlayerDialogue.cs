@@ -33,7 +33,7 @@ public class PlayerDialogue : MonoBehaviour
     // npc & respective dialogue options set at runtime
     public List<PlayerQuestions> playerQuestions;
 
-    private void Awake()
+    private void Start()
     {
         dialogueSystem = FindObjectOfType<DialogueListSystem>();
         inventorySystem = FindObjectOfType<Inventory>();

@@ -21,7 +21,7 @@ public class OJQuestTrigger : MonoBehaviour
     public AudioClip audioClip;
 
 
-    private void Awake()
+    private void Start()
     {
         questManager = FindObjectOfType<OJQuestManager>();
 

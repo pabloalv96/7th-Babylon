@@ -10,7 +10,7 @@ public class SinsBreakdown : MonoBehaviour
     public Slider lustSlider, gluttSlider, greedSlider, wrathSlider, slothSlider, envySlider, prideSlider;
     
 
-    void Awake()
+    void Start()
     {
         playerInfoController = FindObjectOfType<PlayerInfoController>();
 

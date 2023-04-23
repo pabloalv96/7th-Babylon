@@ -11,7 +11,7 @@ public class SinTimer : MonoBehaviour
 
     private PlayerInfoController playerInfoController;
 
-    private void Awake()
+    private void Start()
     {
         playerInfoController = FindObjectOfType<PlayerInfoController>();
     }
