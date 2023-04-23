@@ -8,7 +8,7 @@ public class TogglePanel : MonoBehaviour
     [SerializeField] private KeyCode toggleKey;
 
     [SerializeField] private Inventory inventory;
-    void Start()
+    void Awake()
     {
         panel.SetActive(false);
     }
