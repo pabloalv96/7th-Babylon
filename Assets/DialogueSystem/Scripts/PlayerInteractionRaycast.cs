@@ -36,7 +36,7 @@ public class PlayerInteractionRaycast : MonoBehaviour
     [HideInInspector] public bool isLookSinInteracted;
     [HideInInspector] public bool isBreakableInteracted;
 
-    [SerializeField] private GameObject lookSinObject;
+    private GameObject lookSinObject;
 
     [SerializeField] private TextPopUp popUpText;
 
@@ -375,8 +375,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
             if (hit.transform.GetComponent<LookSinTimer>())
             {
                 isLookSin = true;
-                lookSinObject = hit.transform.gameObject;
-                Debug.Log("Hit Look Sin Object: " + lookSinObject.name);
+                selectedObject = hit.transform.gameObject;
+                Debug.Log("Hit Look Sin Object: " + selectedObject.name);
 
             }
             else
@@ -565,22 +565,8 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
                 }
             }
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            //Debug.Log("Did not Hit");
-            selectedObject = null;
-            interactPromptIndicator.SetActive(false);
-            consumePromptIndicator.SetActive(false);
-            breakPromptIndicator.SetActive(false);
 
-            interactionAimIndicator.color = Color.white;
-        }
-
-        if (lookSinObject != null)
-        {
-            if (isLookSin)
+            if (selectedObject != null && isLookSin)
             {
                 /*if (audioSource.isPlaying)
                 {
@@ -592,18 +578,29 @@ public class PlayerInteractionRaycast : MonoBehaviour
                 audioSource.pitch = Mathf.Lerp(defaultPitch, maxPitch, lookSinObject.GetComponent<LookSinTimer>().lookTimer);
                 audioSource.volume = Mathf.Lerp(defaultVolume, maxVolume, lookSinObject.GetComponent<LookSinTimer>().lookTimer);*/
 
-                isLookSinInteracted = true;
-                lookSinObject.GetComponent<LookSinTimer>().isLooking = true;
-            }
-            else
-            {
-                isLookSinInteracted = false;
-                lookSinObject.GetComponent<LookSinTimer>().isLooking = false;
-                lookSinObject = null;
-                //audioSource.Stop();
-                //audioSource.clip = null;
-            }
+                //isLookSinInteracted = true;
+                selectedObject.GetComponent<LookSinTimer>().isLooking = true;
 
+                playerInfoController.AffectStatValues(selectedObject.GetComponent<LookSinTimer>().relatedSin);
+            }
+            //else
+            //{
+            //    //isLookSinInteracted = false;
+            //    selectedObject.GetComponent<LookSinTimer>().isLooking = false;
+            //    //audioSource.Stop();
+            //    //audioSource.clip = null;
+            //}
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            //Debug.Log("Did not Hit");
+            selectedObject = null;
+            interactPromptIndicator.SetActive(false);
+            consumePromptIndicator.SetActive(false);
+            breakPromptIndicator.SetActive(false);
+
+            interactionAimIndicator.color = Color.white;
         }
 
 

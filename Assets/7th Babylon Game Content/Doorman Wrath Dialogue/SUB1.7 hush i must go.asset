@@ -12,16 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: SUB1.7 hush i must go
   m_EditorClassIdentifier: 
-  dialogue: 'Silence! You have done quite enough!
-
-    I must find those two before
-    they ruin everything!'
+  dialogue: 'Stay here while I retrieve them! '
   toOtherNPC: 1
   requiresResponse: 0
-  continuedDialogue: {fileID: 11400000, guid: 6ee2ba94a4844c64dab8daeb105fbe3f, type: 2}
+  continuedDialogue: {fileID: 11400000, guid: 885e69456c9e33c4782bdec230c7a359, type: 2}
   playerResponses: []
   limitedTime: 1
-  timeLimit: 5
+  timeLimit: 2
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
   isRepeatable: 0
@@ -51,3 +48,4 @@ MonoBehaviour:
   newStartingDialogue: {fileID: 0}
   statsToEffectList: []
   designatedNPC: {fileID: 0}
+  audioClip: {fileID: 0}

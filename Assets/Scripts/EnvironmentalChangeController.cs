@@ -28,6 +28,13 @@ public class EnvironmentalChangeController : MonoBehaviour
     [SerializeField] private string highestStatName;
     [SerializeField] private float highestStatValue;
 
+    private DialogueInitiator dialogueInitiator;
+    private DialogueListSystem dialogueSystem;
+
+    public NPCInfo narrator;
+
+    public NPCDialogueOption narratorSinDialogue;
+
     //Check highest stat's value
     //determine what assets to set
 
@@ -46,6 +53,9 @@ public class EnvironmentalChangeController : MonoBehaviour
                 }
             }
         }
+
+        dialogueInitiator = FindObjectOfType<DialogueInitiator>();
+        dialogueSystem = FindObjectOfType<DialogueListSystem>();
     }
 
     private void Update()
@@ -69,13 +79,16 @@ public class EnvironmentalChangeController : MonoBehaviour
 
         playerInfo.playerStats.highestStat = playerInfo.playerStats.listOfStats[0];
 
-        if (highestStatName != playerInfo.playerStats.highestStat.statName || highestStatName == playerInfo.playerStats.highestStat.statName && highestStatValue != playerInfo.playerStats.highestStat.statValue)
+        if (highestStatName != playerInfo.playerStats.highestStat.statName || highestStatName == playerInfo.playerStats.highestStat.statName && highestStatValue <= playerInfo.playerStats.highestStat.statValue - 10)
         {
             SetEnvironmentalChanges();
+
+            highestStatName = playerInfo.playerStats.highestStat.statName;
+            highestStatValue = playerInfo.playerStats.highestStat.statValue;
         }
 
-        highestStatName = playerInfo.playerStats.highestStat.statName;
-        highestStatValue = playerInfo.playerStats.highestStat.statValue;
+        //highestStatName = playerInfo.playerStats.highestStat.statName;
+        //highestStatValue = playerInfo.playerStats.highestStat.statValue;
     }
 
     public void SetEnvironmentalChanges()
@@ -154,6 +167,13 @@ public class EnvironmentalChangeController : MonoBehaviour
                             //}
                         }
 
+                        narratorSinDialogue.dialogue = "A sense of " + playerInfo.playerStats.highestStat.statName + " washes over you";
+
+                        if (!dialogueSystem.enabled)
+                        {
+                            dialogueInitiator.BeginSubtitleSequence(narrator, narratorSinDialogue);
+                        }
+
                         //if (change.changeColourFilter)
                         //{
 
@@ -165,6 +185,7 @@ public class EnvironmentalChangeController : MonoBehaviour
         }
     }
 }
+
 
 [System.Serializable]
 public struct EnvironmentalChangesPerStat
