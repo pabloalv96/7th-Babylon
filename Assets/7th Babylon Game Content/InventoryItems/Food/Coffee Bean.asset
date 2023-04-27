@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Coffee Bean
   numCarried: 0
   maxNumCarried: 100
-  canCollect: 0
   canConsume: 1
+  isImportant: 0
   relatedQuests: []
   statsToEffectOnCollectionList: []
   statsToEffectOnConsumptionList:
   - statName: Gluttony
-    statValue: 0
+    statValue: 0.7

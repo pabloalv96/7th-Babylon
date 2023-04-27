@@ -16,10 +16,10 @@ MonoBehaviour:
   itemName: Tomato
   numCarried: 0
   maxNumCarried: 8
-  canCollect: 0
   canConsume: 1
+  isImportant: 0
   relatedQuests: []
   statsToEffectOnCollectionList: []
   statsToEffectOnConsumptionList:
   - statName: Gluttony
-    statValue: 1
+    statValue: 0.7

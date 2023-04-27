@@ -558,7 +558,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 39803302}
   m_FillRect: {fileID: 106630357}
   m_HandleRect: {fileID: 39803301}
@@ -1644,7 +1644,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 20
+  m_Intensity: 9.48
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2058,7 +2058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transition: {fileID: 1212703002}
-  transitionTime: 1
+  transitionTime: 5
   loadingBar: {fileID: 211562643}
   loadingBarFill: {fileID: 106630358}
   loadingCam: {fileID: 828143715}
@@ -2088,7 +2088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 409870, guid: 9c424923785f67c47ac3a67a2ea8f3eb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.489
+      value: -5.704
       objectReference: {fileID: 0}
     - target: {fileID: 409870, guid: 9c424923785f67c47ac3a67a2ea8f3eb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2118,6 +2118,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2487718004378977702, guid: 9c424923785f67c47ac3a67a2ea8f3eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 628e70384bd706e4682ae6d3e734edf5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c424923785f67c47ac3a67a2ea8f3eb, type: 3}
 --- !u!1 &1759906694
@@ -19827,7 +19832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1337437396440236994
 GameObject:
   m_ObjectHideFlags: 0
