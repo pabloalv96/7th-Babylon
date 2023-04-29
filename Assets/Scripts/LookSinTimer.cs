@@ -6,7 +6,7 @@ public class LookSinTimer : MonoBehaviour
 {
     public List<StatContainer.Stat> relatedSin;
     public float lookTimer;
-    float statIncreaseMultiplier = 0.01f;
+    [SerializeField] float statIncreaseMultiplier = 0.01f;
 
     public bool isLooking;
 
