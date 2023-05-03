@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
-  m_Name: INTRO 17.3 Pride
+  m_Name: Ceremony4
   m_EditorClassIdentifier: 
-  dialogue: I just need some time to think. Don't disturb me!
+  dialogue: They will be use as sacrifice and must likely will refuse to our goals,
+    so you will have to use other methods.
   toOtherNPC: 1
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 1b093dd9680113b48af710b4227e3309, type: 2}
   playerResponses: []
   limitedTime: 1
-  timeLimit: 4.5
+  timeLimit: 5
   playerCanChangeTopic: 0
   playerCanLeaveDialogue: 0
-  isRepeatable: 0
+  isRepeatable: 1
   hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0

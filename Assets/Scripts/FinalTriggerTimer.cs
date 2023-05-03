@@ -37,4 +37,14 @@ public class FinalTriggerTimer : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void RemoveDontDestroy()
+    {
+        if (GameObject.FindWithTag("Player"))
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            Destroy(player.GetComponent<DontDestroy>());
+        }
+    }
+
 }

@@ -66,5 +66,9 @@ namespace Toolbelt_OJ
             }
         }
 
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }
