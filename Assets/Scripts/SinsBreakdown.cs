@@ -5,49 +5,47 @@ using UnityEngine.UI;
 
 public class SinsBreakdown : MonoBehaviour
 {
-    private PlayerInfoController playerInfoController;
+    public PlayerStatScriptableObject playerStatSO;
 
     public Slider lustSlider, gluttSlider, greedSlider, wrathSlider, slothSlider, envySlider, prideSlider;
     
 
     void Start()
     {
-        playerInfoController = FindObjectOfType<PlayerInfoController>();
+        //playerInfoController = FindObjectOfType<PlayerInfoController>();
+
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
 
         string currentStat;
-        for (int i = 0; i < playerInfoController.playerStats.listOfStats.Count; i++)
+        for (int i = 0; i < playerStatSO.playerStats.listOfStats.Count; i++)
         {
-            currentStat = playerInfoController.playerStats.listOfStats[i].statName;
+            currentStat = playerStatSO.playerStats.listOfStats[i].statName;
             switch (currentStat)
             {
                 case "Lust":
-                    lustSlider.value = playerInfoController.playerStats.listOfStats[i].statValue;
+                    lustSlider.value = playerStatSO.playerStats.listOfStats[i].statValue;
                     break;
                 case "Gluttony":
-                    gluttSlider.value = playerInfoController.playerStats.listOfStats[i].statValue;
+                    gluttSlider.value = playerStatSO.playerStats.listOfStats[i].statValue;
                     break;
                 case "Greed":
-                    greedSlider.value = playerInfoController.playerStats.listOfStats[i].statValue;
+                    greedSlider.value = playerStatSO.playerStats.listOfStats[i].statValue;
                     break;
                 case "Wrath":
-                    wrathSlider.value = playerInfoController.playerStats.listOfStats[i].statValue;
+                    wrathSlider.value = playerStatSO.playerStats.listOfStats[i].statValue;
                     break;
                 case "Sloth":
-                    slothSlider.value = playerInfoController.playerStats.listOfStats[i].statValue;
+                    slothSlider.value = playerStatSO.playerStats.listOfStats[i].statValue;
                     break;
                 case "Envy":
-                    envySlider.value = playerInfoController.playerStats.listOfStats[i].statValue;
+                    envySlider.value = playerStatSO.playerStats.listOfStats[i].statValue;
                     break;
                 case "Pride":
-                    prideSlider.value = playerInfoController.playerStats.listOfStats[i].statValue;
+                    prideSlider.value = playerStatSO.playerStats.listOfStats[i].statValue;
                     break;
             }
-        }
-        
+        }  
     }
 
-    void Update()
-    {
-        
-    }
 }

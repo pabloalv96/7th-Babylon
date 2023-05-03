@@ -12,6 +12,8 @@ public class PlayerInfoController : MonoBehaviour
 
     public int foodConsumed;
 
+    public PlayerStatScriptableObject playerStatScriptableObject;
+
 
     //public float AffectStatalues(StatContainer.Stat stat)
     //{
@@ -37,6 +39,8 @@ public class PlayerInfoController : MonoBehaviour
                 }
             }
         }
+
+        playerStatScriptableObject.playerStats = playerStats;
 
         CheckStatValues();
     }

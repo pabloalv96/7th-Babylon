@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 //using UnityEngine.Rendering;
 
 //change textures, props, lighting, and audio based on sins
@@ -33,7 +34,8 @@ public class EnvironmentalChangeController : MonoBehaviour
 
     public NPCInfo narrator;
 
-    public NPCDialogueOption narratorSinDialogue;
+    //public NPCDialogueOption narratorSinDialogue;
+    public TextPopUp sinPopUpText;
 
     //Check highest stat's value
     //determine what assets to set
@@ -167,12 +169,17 @@ public class EnvironmentalChangeController : MonoBehaviour
                             //}
                         }
 
-                        narratorSinDialogue.dialogue = "A sense of " + playerInfo.playerStats.highestStat.statName + " washes over you";
+                        sinPopUpText.popUpText.text = "A Sense of " + playerInfo.playerStats.highestStat.statName + " Washes Over You. \n What did you just do?";
 
-                        if (!dialogueSystem.enabled)
-                        {
-                            dialogueInitiator.BeginSubtitleSequence(narrator, narratorSinDialogue);
-                        }
+                        sinPopUpText.popUpIndicator = true;
+
+
+                        sinPopUpText.DisplayPopUp();
+
+                        //if (!dialogueSystem.enabled)
+                        //{
+                        //    dialogueInitiator.BeginSubtitleSequence(narrator, narratorSinDialogue);
+                        //}
 
                         //if (change.changeColourFilter)
                         //{

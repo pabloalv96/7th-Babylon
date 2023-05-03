@@ -666,98 +666,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &240413048
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_Name
-      value: FPSController
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 140.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -46.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530029204760519967, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      propertyPath: playerStats.highestStat.statValue
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530029204760519967, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      propertyPath: playerStats.listOfStats.Array.data[1].statName
-      value: Pride
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530029204760519967, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      propertyPath: playerStats.listOfStats.Array.data[2].statName
-      value: Wrath
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530029204760519967, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      propertyPath: playerStats.listOfStats.Array.data[3].statName
-      value: Envy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530029204760519967, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      propertyPath: playerStats.listOfStats.Array.data[0].statValue
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530029204760519967, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      propertyPath: playerStats.listOfStats.Array.data[1].statValue
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 8530029204760519967, guid: 5e9e851c0e142814dac026a256ba2ac0,
-        type: 3}
-      propertyPath: playerStats.listOfStats.Array.data[3].statValue
-      value: 88
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
 --- !u!1 &309234930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,18 +1381,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1939033228}
-        m_TargetAssemblyTypeName: FinalTriggerTimer, Assembly-CSharp
-        m_MethodName: RemoveDontDestroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1939033228}
         m_TargetAssemblyTypeName: FinalTriggerTimer, Assembly-CSharp
         m_MethodName: MainMenu
@@ -4760,6 +4656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e9cbecee45f654eb5bb3aacfafa334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStatSO: {fileID: 11400000, guid: 0ce5116ba0bba5646b337e3f8ad7a6b4, type: 2}
   lustSlider: {fileID: 352146708}
   gluttSlider: {fileID: 1128909675}
   greedSlider: {fileID: 2093370641}
@@ -4797,7 +4694,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1939033228
 MonoBehaviour:

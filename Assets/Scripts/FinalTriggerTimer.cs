@@ -8,18 +8,6 @@ public class FinalTriggerTimer : MonoBehaviour
     [SerializeField] float delayBeforeLoading = 24f;
     [SerializeField] public bool endScreen = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void CoorutineStarter()
     {
         StartCoroutine(ChangeSceneAfterSeconds());
@@ -36,15 +24,6 @@ public class FinalTriggerTimer : MonoBehaviour
     public void MainMenu ()
     {
         SceneManager.LoadScene("Main Menu");
-    }
-
-    public void RemoveDontDestroy()
-    {
-        if (GameObject.FindWithTag("Player"))
-        {
-            GameObject player = GameObject.FindWithTag("Player");
-            Destroy(player.GetComponent<DontDestroy>());
-        }
     }
 
 }
