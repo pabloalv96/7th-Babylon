@@ -5,6 +5,7 @@ using UnityEngine;
 public class LightsChange : MonoBehaviour
 {
     [SerializeField] Light directionalLight;
+    [SerializeField] float lightChangeValue = 0.4f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class LightsChange : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            directionalLight.intensity = 0.4f;
+            directionalLight.intensity = lightChangeValue;
         }
         
     }
