@@ -439,7 +439,10 @@ public class PlayerInteractionRaycast : MonoBehaviour
 
                 if (isItem)
                 {
-                    isItemInteracted = true;
+                    if (!selectedObject.GetComponent<ItemInWorld>().item.isImportant)
+                    {
+                        isItemInteracted = true;
+                    }
                     PickUpItem();
                 }
 

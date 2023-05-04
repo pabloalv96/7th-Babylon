@@ -14,12 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: The Greek goddes of love, lust, and pleasure. It is said both men and
     women worshiped her beauty.
+  toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 15d4f5ff76de9b349a9c8148c0cee086, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}
+  audioClip: {fileID: 0}

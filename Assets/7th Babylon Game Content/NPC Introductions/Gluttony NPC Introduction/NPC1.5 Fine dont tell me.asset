@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0ac01b80dc323a54b9b6604cd448a9da, type: 2}
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
+  playerCanChangeTopic: 0
   playerCanLeaveDialogue: 1
   isRepeatable: 1
   hasBeenSeen: 0
@@ -33,3 +33,6 @@ MonoBehaviour:
   itemsToGive: []
   itemsToTake: []
   newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}
+  audioClip: {fileID: 0}

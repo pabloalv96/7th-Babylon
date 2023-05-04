@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 0.1 NPCGluttonyDialogue
   m_EditorClassIdentifier: 
   dialogue: I can't wait for the delicacies of the chef. I am starving right now.
+  toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
   playerResponses:
@@ -20,6 +21,16 @@ MonoBehaviour:
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}
+  audioClip: {fileID: 0}

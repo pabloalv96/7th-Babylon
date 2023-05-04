@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5922adb5f474c44a695e1cb2b70518, type: 3}
   m_Name: WRATH 4.1 no shut up
   m_EditorClassIdentifier: 
-  dialogue: No. Shut up.
+  dialogue: I've been here for ages and that bald guy said we were waiting on more
+    guests, what did you think you're special?
   toOtherNPC: 0
   requiresResponse: 1
   continuedDialogue: {fileID: 0}
@@ -21,7 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cdaf961b25873324ebdd10aa33298285, type: 2}
   limitedTime: 0
   timeLimit: 0
-  playerCanChangeTopic: 1
+  playerCanChangeTopic: 0
   playerCanLeaveDialogue: 1
   isRepeatable: 1
   hasBeenSeen: 0
@@ -34,3 +35,4 @@ MonoBehaviour:
   newStartingDialogue: {fileID: 0}
   statsToEffectList: []
   designatedNPC: {fileID: 0}
+  audioClip: {fileID: 0}

@@ -169,7 +169,7 @@ public class EnvironmentalChangeController : MonoBehaviour
                             //}
                         }
 
-                        sinPopUpText.popUpText.text = "A Sense of " + playerInfo.playerStats.highestStat.statName + " Washes Over You. \n What did you just do?";
+                        sinPopUpText.popUpText.text = "A Sense of " + playerInfo.playerStats.highestStat.statName + " Washes Over You. \n What just happened?";
 
                         sinPopUpText.popUpIndicator = true;
 

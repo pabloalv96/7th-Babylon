@@ -13,12 +13,23 @@ MonoBehaviour:
   m_Name: That is all for now 1
   m_EditorClassIdentifier: 
   dialogue: You can also talk see the other option's effects by refreshing the page.
+  toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 8efb10d0f5f584f4d993fa589a7b9c28, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}
+  audioClip: {fileID: 0}

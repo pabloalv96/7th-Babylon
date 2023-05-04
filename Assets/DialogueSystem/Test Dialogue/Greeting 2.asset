@@ -13,12 +13,23 @@ MonoBehaviour:
   m_Name: Greeting 2
   m_EditorClassIdentifier: 
   dialogue: Yo yo
+  toOtherNPC: 0
   requiresResponse: 0
   continuedDialogue: {fileID: 11400000, guid: 71860d2b2bb6b7447ad02deb8099d2d3, type: 2}
   playerResponses: []
   limitedTime: 0
   timeLimit: 0
   playerCanChangeTopic: 0
+  playerCanLeaveDialogue: 1
+  isRepeatable: 1
+  hasBeenSeen: 0
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
+  relatedQuests: []
+  itemsToGive: []
+  itemsToTake: []
+  newStartingDialogue: {fileID: 0}
+  statsToEffectList: []
+  designatedNPC: {fileID: 0}
+  audioClip: {fileID: 0}

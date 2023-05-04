@@ -47,14 +47,14 @@ public class DoormanHallwayAI : MonoBehaviour
     public float maxSpeed, minSpeed;
 
     public float speedChangeTimer;
-    public float speedChangeTimerReset;
+    public float speedChangeTimerMinReset, speedChangeTimerMaxReset;
 
     public bool increaseSpeed;
 
     public float increaseSpeedMultiplier;
     //public bool randomWaypoint;
 
-    public float minDistance = 2f;
+    public float minDistance = 2f, minYPos = -1.2f;
 
     private RichAI richAI;
 
@@ -106,7 +106,11 @@ public class DoormanHallwayAI : MonoBehaviour
             searchTimer -= Time.deltaTime;
 
         }
-       
+
+        if (transform.localPosition.y <= minYPos)
+        {
+            transform.position = waypointsList[Random.Range(0, waypointsList.Count)].position;
+        }
 
         RaycastHit hit;
         //playerLayer = 1 << 7;
@@ -177,12 +181,12 @@ public class DoormanHallwayAI : MonoBehaviour
                 {
                     case true:
                         increaseSpeed = false;
-                        speedChangeTimer = speedChangeTimerReset;
+                        speedChangeTimer = Random.Range(speedChangeTimerMinReset, speedChangeTimerMaxReset);
                         break;
 
                     case false:
                         increaseSpeed = true;
-                        speedChangeTimer = speedChangeTimerReset;
+                        speedChangeTimer = Random.Range(speedChangeTimerMinReset, speedChangeTimerMaxReset);
                         break;
                 }
             }
@@ -197,6 +201,7 @@ public class DoormanHallwayAI : MonoBehaviour
             }
 
         }
+
     }
 
     public void Search()

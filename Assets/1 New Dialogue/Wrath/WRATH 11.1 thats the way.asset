@@ -27,7 +27,8 @@ MonoBehaviour:
   endOfConversation: 0
   changeOfTopic: 0
   conditionalEvents: []
-  relatedQuests: []
+  relatedQuests:
+  - {fileID: 11400000, guid: 3054d38f14f3a8b469d31788274687b9, type: 2}
   itemsToGive:
   - requiredAmount: 1
     item: {fileID: 11400000, guid: f6e1bbcf04adc3f42bd7f779382169a0, type: 2}
@@ -38,3 +39,4 @@ MonoBehaviour:
     type: 2}
   statsToEffectList: []
   designatedNPC: {fileID: 0}
+  audioClip: {fileID: 0}
